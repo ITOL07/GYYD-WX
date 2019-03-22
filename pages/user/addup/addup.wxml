@@ -1,0 +1,27 @@
+<!--pages/addup/addup.wxml-->
+<view class="container">
+  <scroll-view scroll-y="true" class="scroll_body">
+    <view wx:for="{{addupData}}" wx:key="this">
+      <view class="list"> 
+        <view class="left">
+          <image src="{{item.imgurl}}"></image>
+        </view>
+        <view class="right">
+          <view class="top">
+            <text class="text1">{{item.title}}</text>
+            <text class="text2">{{item.finish}}</text>
+          </view>
+          <view class="middle">
+            <text>{{item.introduce}}</text>
+            <text>{{item.time}}</text>
+          </view>
+          <view class="bottom">
+            <text>{{item.name}}</text>
+            <text>{{item.store}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+

@@ -1,0 +1,101 @@
+/* pages/coach/coach.wxss */
+.container{
+  background:#FFFFFF;
+}
+.head{
+  width:100%;
+  height:50rpx;
+  display:flex;
+  flex-direction:row;
+  margin-bottom: 20rpx;
+}
+.head image{
+  display:block;
+  width:20rpx;
+  height:20rpx;
+  margin-left:5%;
+  padding-top:2%;
+}
+.head text{
+  font-size:35rpx;
+  color:#999999;
+  margin-left:3%;
+}
+.bottom{
+  width: 100%;
+}
+.list_data{
+  width:93%;
+  height:200rpx;
+  padding:10rpx 10rpx;
+  box-sizing:border-box;
+  color:#666666;
+  margin:20rpx auto;
+}
+.list_data .list_item{
+  display:flex;
+  flex-direction:row;
+  width:100%;
+  height:100%;
+}
+.list_left{
+  width:20%;
+  height: 100%;
+} 
+.list_left image{
+  display: block;
+  width:100%;
+  height:70%;
+}
+.list_right{
+  width:70%;
+  height:100%;
+  display: flex;
+  flex-direction: column;
+}
+.list_right .right1{
+  display: flex;
+  flex-direction:row;
+  justify-content:space-between;
+}
+.list_right .right1 .right1_name{
+  width: 15%;
+  font-size:30rpx;
+  color: #333333;
+}
+.list_right .right1 .right1_title{
+  font-size:25rpx;
+  margin-left:2%;
+  color: #666666;
+}
+.list_right .right1 .right1_price{
+  font-size:30rpx;
+  color: #F85F58;
+  margin-left:4%;
+}
+.list_right .right2{
+  display: flex;
+  flex-direction:row;
+  margin-top: 20rpx;
+}
+.list_right .right2 image{
+  display: block;
+  width:20rpx;
+  height:20rpx;
+  line-height:20rpx;
+  padding-top:1%;
+}
+.list_right .right2 text{
+  font-size:25rpx;
+  margin-left:5%;
+  color: #666666;
+}
+.list_right .right3{
+  display: flex;
+  flex-direction:row;
+  margin-top: 20rpx;
+}
+.list_right .right3 text{
+  font-size:25rpx;
+  color: #666666;
+}

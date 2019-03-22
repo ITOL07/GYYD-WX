@@ -1,0 +1,25 @@
+/* pages/set/set.wxss */
+.container{
+  background:#FFFFFF;
+}
+.top{
+  width:90%;
+  height:110rpx;
+  display:flex;
+  flex-direction:row;
+  justify-content:space-between;
+  padding-top:20rpx;
+}
+.top text{
+  color:#666666;
+  font-size:35rpx;
+}
+button{
+  width:70%;
+  height:90rpx;
+  display:block;
+  margin:50rpx auto;
+  font-size:35rpx;
+  border-radius:50rpx;
+  background:#EE6F2D;
+}

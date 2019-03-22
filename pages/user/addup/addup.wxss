@@ -1,0 +1,58 @@
+/* pages/addup/addup.wxss */
+.container{
+  background:#FFFFFF;
+  padding-top:30rpx;
+}
+.list{
+  width:93%;
+  height:auto;
+  margin:20rpx auto;
+  display:flex;
+  flex-direction:row;
+}
+.left{
+  width:25%;
+  height:180rpx;
+}
+.left image{
+  width:150rpx;
+  height:150rpx;
+}
+.right{
+  width:68%;
+  height:180rpx;
+}
+.right .top{
+  display:flex;
+  flex-direction:row;
+  justify-content:space-between;
+  height:33%;
+}
+.right .top .text1{
+  font-size:35rpx;
+  color:#333333;
+}
+.right .top .text2{
+  font-size:35rpx;
+  color:#F85F58;
+}
+.right .middle{
+  display:flex;
+  flex-direction:row;
+  justify-content:space-between;
+  height:33%;
+}
+.right .middle text{
+  font-size:28rpx;
+  color:#999999;
+}
+.right .bottom{
+  display:flex;
+  flex-direction:row;
+  justify-content:space-between;
+  height:33%;
+}
+.right .bottom text{
+  font-size:35rpx;
+  color:#666666;
+}

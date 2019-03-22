@@ -1,0 +1,12 @@
+<!--pages/set/set.wxml-->
+<view class="container">
+  <view class="top">
+    <text>修改密码</text>
+    <text>></text>
+  </view>
+  <view class="top">
+    <text>版本信息</text>
+    <text>V1.0.0</text>
+  </view>
+  <button bindtap="exitClick">退出登录</button>
+</view>

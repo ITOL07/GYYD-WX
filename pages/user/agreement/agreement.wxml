@@ -1,0 +1,15 @@
+<!--pages/agreement/agreement.wxml-->
+<view class="container">
+  <view class="list">
+    <text>古越运动用户协议</text>
+    <image src="../../../static/images/littleicon/more.png"></image>
+  </view>
+  <view class="list">
+    <text>古越运动用户协议</text>
+    <image src="../../../static/images/littleicon/more.png"></image>
+  </view>
+  <view class="list">
+    <text>古越运动用户协议</text>
+    <image src="../../../static/images/littleicon/more.png"></image>
+  </view>
+</view>

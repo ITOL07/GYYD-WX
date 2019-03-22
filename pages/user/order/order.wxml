@@ -1,0 +1,32 @@
+<!--pages/order/order.wxml-->
+<view class="container">
+  <scroll-view scroll-y="true" class="scroll_body">
+    <view class="top">
+      <text>全部</text>
+      <text>待支付</text>
+      <text>已支付</text>
+    </view>
+    <view class="bottom">
+      <view wx:for="{{orderData}}" wx:key="this">
+        <view class="list">
+          <view class="list_top">
+            <text class="text1">订单号:{{item.number}}</text>
+            <text class="text2">{{item.state}}</text>
+          </view>
+          <view class="list_middle">
+            <image src="{{item.imgurl}}"></image>
+            <view class="detail">
+              <text>{{item.title}}</text>
+              <text class="introduce">{{item.introduce}}</text>
+              <text>{{item.name}}</text>
+            </view>
+            <text class="price">￥{{item.price}}</text>
+          </view>
+          <view class="list_bottom">
+            <text>下单时间：{{item.time}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

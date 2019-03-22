@@ -1,0 +1,21 @@
+/* pages/agreement/agreement.wxss */
+.list{
+  width:100%;
+  height:100rpx;
+  display:flex;
+  flex-direction:row;
+  margin:0 auto;
+  line-height:100rpx;
+}
+.list text{
+  color:#666666;
+  font-size:30rpx;
+  width:80%;
+  margin-left:5%;
+}
+.list image{
+  display:block;
+  width:30rpx;
+  height:30rpx;
+  padding-top:5%;
+}

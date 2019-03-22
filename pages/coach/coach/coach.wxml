@@ -1,0 +1,36 @@
+<!--pages/coach/coach.wxml-->
+<view class="container">
+  <scroll-view scroll-y="true" class="scroll_body">
+    <view class="head">
+      <image src="../../../static/images/store/mendian.png"></image>
+      <text>选择教练</text>
+    </view>
+    <view class="bottom">
+      <view wx:for="{{listData}}" wx:key="this" class="list_data">
+        <view class="list_item" bindtap="coachClick">
+          <view class="list_left">
+            <image src="{{item.imgurl}}"></image>
+          </view>
+          <view class="list_right">
+            <view class="right1">
+              <text class="right1_name">{{item.name}}</text>
+              <text class="right1_title">{{item.title}}</text>
+              <text class="right1_price">￥{{item.price}}/课起</text>
+            </view>
+            <view class="right2">
+              <image src="../../../static/images/littleicon/xing1.png"></image>
+              <image src="../../../static/images/littleicon/xing1.png"></image>
+              <image src="../../../static/images/littleicon/xing1.png"></image>
+              <image src="../../../static/images/littleicon/xing1.png"></image>
+              <image src="../../../static/images/littleicon/xing1.png"></image>
+              <text>{{item.rate}}</text>
+            </view>
+            <view class="right3">
+              <text>{{item.shanchang}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

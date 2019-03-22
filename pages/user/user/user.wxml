@@ -1,0 +1,58 @@
+<!--pages/user/user.wxml-->
+<view class="container">
+  <scroll-view scroll-y="true" class="scroll_body">
+    <view class="user_head">
+      <image src="{{headImage}}" bindtap="headImageClick">></image>
+      <text>nieli</text>  
+      <text class="text2">13333333333</text>
+    </view>
+    <view class="user_nav">
+      <view class="nav_list" bindtap="addupClick">
+        <image src="../../../static/images/user/gouke.png"></image>
+        <text>累计购课</text>
+      </view>
+      <view class="nav_list" bindtap="finishedClick">
+        <image src="../../../static/images/user/yiwancheng.png"></image>
+        <text>已完成</text>
+      </view>
+      <view class="nav_list" bindtap="appointmentClick">
+        <image src="../../../static/images/user/yuyuezhong.png"></image>
+        <text>预约中</text>
+      </view>
+      <view class="nav_list" bindtap="loadClick">
+        <image src="../../../static/images/user/daiyuyue.png"></image>
+        <text>待预约</text>
+      </view>
+    </view>
+    <view class="user_list">
+      <view class="list_item" bindtap="fileClick">
+        <text>身体档案</text>
+        <image src="../../../static/images/littleicon/more.png"></image>
+      </view>
+      <view class="list_item" bindtap="orderClick">
+        <text>我的订单</text>
+        <image src="../../../static/images/littleicon/more.png"></image>
+      </view>
+      <view class="list_item" bindtap="agreementClick">
+        <text>用户协议</text>
+        <image src="../../../static/images/littleicon/more.png"></image>
+      </view>
+      <view class="list_item">
+        <text>联系客服</text>
+        <image src="../../../static/images/littleicon/more.png"></image>
+      </view>
+      <view class="list_item">
+        <text>消息</text>
+        <image src="../../../static/images/littleicon/more.png"></image>
+      </view>
+      <view class="list_item" bindtap="setClick">
+        <text>设置</text>
+        <image src="../../../static/images/littleicon/more.png"></image>
+      </view>
+    </view>
+    <action-sheet hidden="{{actionSheetHidden}}" bindchange="actionSheetChange">
+      <action-sheet-item bindtap="selectPhoto">从相册选择照片</action-sheet-item>
+      <action-sheet-cancel>取消</action-sheet-cancel>
+    </action-sheet>
+  </scroll-view>
+</view>

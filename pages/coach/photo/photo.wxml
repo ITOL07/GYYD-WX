@@ -1,0 +1,9 @@
+<!--pages/photo/photo.wxml-->
+<view class="container">
+  <view class="header">
+    <image src="../../../static/images/coach/photo2.png"></image>
+  </view>
+  <view class="footer">
+    <text>2/10</text>
+  </view>
+</view>

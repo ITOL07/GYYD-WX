@@ -1,0 +1,14 @@
+<!--pages/reg/reg.wxml-->
+<view class="container">
+  <view class="top">
+    <text class="text1">1.请输入手机号</text>
+    <text class="text2">>2.输入验证码</text>
+    <text class="text3">>3.设置密码</text>
+  </view>
+  <view wx:if="true" class="middle">
+    <input placeholder='输入您的手机号'></input>
+  </view>
+  <view class="bottom">
+    <button>获取验证码</button>
+  </view>
+</view>

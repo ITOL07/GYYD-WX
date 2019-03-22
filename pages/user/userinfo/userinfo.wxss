@@ -1,0 +1,42 @@
+/* pages/userinfo/userinfo.wxss */
+.list{
+  width:90%;
+  height:100rpx;
+  margin:0 auto;
+  display:flex;
+  flex-direction:row;
+  border-bottom:3rpx solid #FFFFFF;
+}
+.list .text1{
+  display:block;
+  width:50%;
+  font-size:40rpx;
+  color:#666666;
+  text-align:left;
+}
+.list .text2{
+  display:block;
+  width:50%;
+  font-size:40rpx;
+  color:#666666;
+  text-align:right;
+}
+.list image{
+  display:block;
+  width:100rpx;
+  height:100rpx;
+  margin-left:40%;
+}
+.listbtn{
+  width:90%;
+  height:100rpx;
+  margin:50rpx auto;
+  
+}
+.listbtn button{
+  width:80%;
+  height:100rpx;
+  background:#FBBE44;
+  color:#292A2E;
+  border-radius:50rpx;
+}

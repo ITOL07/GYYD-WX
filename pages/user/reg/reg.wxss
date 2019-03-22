@@ -1,0 +1,46 @@
+/* pages/reg/reg.wxss */
+.container{
+  background:#FFFFFF;
+}
+.top{
+  width:100%;
+  height:25%;
+  text-align:center;
+  margin-top:20rpx;
+  margin-bottom:100rpx;
+}
+.top text{
+  font-size:35rpx;
+}
+.top .text1{
+  color:#FAC830;
+}
+.top .text2{
+  color:#999999;
+}
+.top .text3{
+  color:#999999;
+}
+.middle{
+  width:100%;
+  height:25%;
+  margin-bottom:50rpx;
+}
+.middle input{
+  width:80%;
+  height:100%;
+  display:block;
+  margin:20rpx auto;
+  border-bottom:#EEEEEE;
+}
+.bottom{
+  width:100%;
+  height:50%;
+  margin-top:50rpx;
+}
+.bottom button{
+  width:80%;
+  height:100rpx;
+  border-radius:50rpx;
+  background:#F9CE0E;
+}

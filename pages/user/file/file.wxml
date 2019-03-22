@@ -1,0 +1,82 @@
+<!--pages/file/file.wxml-->
+<view class="container">
+  <scroll-view scroll-y="true" class="scroll_body">
+    <view class="top">
+      <text class="text1">2018年12月04日</text>
+      <text class="text2">左滑查看历史档案</text>
+      <view class="history">
+        <image></image>
+        <image></image>
+        <image></image>
+      </view>
+    </view>
+    <view class="bottom">
+      <text class="body">身体数据</text>
+      <view class="list">
+        <image src="../../../static/images/user/tizhong.png"></image>
+        <text>体重</text>
+        <text>60.0kg</text>
+      </view>
+      <view class="list">
+        <image src="../../../static/images/user/shengao.png"></image>
+        <text>身高</text>
+        <text>173.0cm</text>
+      </view>
+      <view class="list">
+        <image src="../../../static/images/user/tizhilv.png"></image>
+        <text>体脂率</text>
+        <text>25%</text>
+      </view>
+      <view class="list">
+        <image src="../../../static/images/user/bmi.png"></image>
+        <text>BMI</text>
+        <text>27.3</text>
+      </view>
+      <view class="list">
+        <image src="../../../static/images/user/jichudaixie.png"></image>
+        <text>基础代谢</text>
+        <text>---</text>
+      </view>
+      <view class="list">
+        <image src="../../../static/images/user/jirou.png"></image>
+        <text>肌肉</text>
+        <text>18.1kg</text>
+      </view>
+      <view class="list">
+        <image src="../../../static/images/user/zhifanglv.png"></image>
+        <text>脂肪</text>
+        <text>15.0kg</text>
+      </view>
+      <view class="list">
+        <image src="../../../static/images/user/xiongwei.png"></image>
+        <text>胸围</text>
+        <text>82cm</text>
+      </view>
+      <view class="list">
+        <image src="../../../static/images/user/tunwei1.png"></image>
+        <text>臀围</text>
+        <text>86cm</text>
+      </view>
+      <view class="list">
+        <image src="../../../static/images/user/yaowei.png"></image>
+        <text>腰围</text>
+        <text>67cm</text>
+      </view>
+      <view class="list">
+        <image src="../../../static/images/user/datuiwei.png"></image>
+        <text>大腿围</text>
+        <text>L:56cm  r:56cm</text>
+      </view>
+      <view class="list">
+        <image src="../../../static/images/user/xiaotuiwei.png"></image>
+        <text>小腿围</text>
+        <text>L:56cm  r:56cm 拷贝</text>
+      </view>
+      <view class="list">
+        <image src="../../../static/images/user/tunwei.png"></image>
+        <text>臂围</text>
+        <text>L:26cm  r:26cm</text>
+      </view>
+    </view>
+  </scroll-view>
+</view>

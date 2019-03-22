@@ -1,0 +1,85 @@
+/* pages/file/file.wxss */
+.top{
+  width:100%;
+  height:500rpx;
+  background:#FFFFFF;
+  display:flex;
+  flex-direction:column;
+  margin:0 auto;
+  text-align:center;
+  padding-top:30rpx;
+}
+.top .text1{
+  color:#666666;
+  font-size:50rpx;
+  display:block;
+  text-align:center;
+}
+.top .text2{
+  color:#666666;
+  font-size:30rpx;
+  display:block;
+  text-align:center;
+  margin-top:20rpx;
+  margin-bottom:30rpx;
+}
+.top .history{
+  display:flex;
+  flex-direction:row;
+  width:93%;
+  height:50%;
+  margin:20rpx auto;
+  justify-content:space-between;
+}
+.top .history image{
+  display:block;
+  width:30%;
+  height:80%;
+  background:#E5E5E5;
+  margin-top:30rpx;
+}
+.bottom{
+  width:100%;
+  height:auto;
+  background:#FFFFFF;
+  margin-top:20rpx;
+  display:flex;
+  flex-direction:column;
+}
+.bottom .body{
+  width:90%;
+  height:100rpx;
+  font-size:35rpx;
+  color:#333333;
+  margin:0 auto;
+}
+.bottom .list{
+  width:90%;
+  height:50rpx;
+  display:flex;
+  flex-direction:row;
+  margin:20rpx auto;
+}
+.bottom .list image{
+  display:block;
+  width:40rpx;
+  height:40rpx;
+}
+.bottom .list text:nth-child(2){
+  width:63%;
+  height:50rpx;
+  font-size:28rpx;
+  color:#333333;
+  text-align:left;
+  display:block;
+  margin-left:5%;
+}
+.bottom .list text:last-child{
+  color:#333333;
+  width:63%;
+  height:50rpx;
+  font-size:28rpx;
+  /* color:#333333; */
+  text-align:right;
+  display:block;
+}

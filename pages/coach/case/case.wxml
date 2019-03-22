@@ -1,0 +1,25 @@
+<!--pages/case/case.wxml-->
+<view class="container">
+  <view class="top">
+    <view class="title">
+      <image src="{{caseDta[index].imgurl}}"></image>
+      <text>{{caseDta[index].coach}}的学员</text>
+    </view>
+    <view class="result">
+      <text class="text1">健身成果</text>
+      <text class="text2">{{caseDta[index].result}}</text>
+    </view>
+    <view class="compare">
+      <text>健身前后</text>
+      <view class="compare_img">
+        <image src="{{caseDta[index].compare[0]}}"></image>
+        <image src="{{caseDta[index].compare[1]}}"></image>
+        <image src="{{caseDta[index].compare[2]}}"></image>
+      </view>
+    </view>
+  </view>
+  <view class="footer">
+    <image src="../../../static/images/littleicon/left.png"></image>
+    <image src="../../../static/images/littleicon/right.png"></image>
+  </view>
+</view>

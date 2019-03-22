@@ -1,0 +1,123 @@
+<!--pages/privatedetail/privatedetail.wxml-->
+<view class="container">
+  <scroll-view scroll-y="true" class="scroll_body">
+    <view class="private_header">
+      <view class="header_left">
+        <image src="../../../static/images/coach/image1.png"></image>
+      </view>
+      <view class="header_right"> 
+        <view class="header_right_top">
+          <view class="name">
+            <text class="name_text1">杨宋</text>
+            <text class="name_text2">累计授课283节</text>
+          </view>
+          <view class="rate">
+            <image src="../../../static/images/littleicon/xing1.png"></image>
+            <image src="../../../static/images/littleicon/xing1.png"></image>
+            <image src="../../../static/images/littleicon/xing1.png"></image>
+            <image src="../../../static/images/littleicon/xing1.png"></image>
+            <image src="../../../static/images/littleicon/xing1.png"></image>
+            <text>5.0</text>
+          </view>
+          <view class="phone">
+            <image src="../../../static/images/littleicon/wx.png"></image>
+            <image src="../../../static/images/littleicon/phone.png"></image>
+          </view>
+        </view>
+        <view class="header_right_bottom">
+          <view class="certificate" bindtap="certificateClick">
+            <image src="../../../static/images/coach/certificate.png"></image>
+            <text>证书(4)</text>
+          </view>
+          <view class="case" bindtap="caseClick">
+            <image src="../../../static/images/coach/case.png"></image>
+            <text>案例(6)</text>
+          </view>
+          <view class="photo" bindtap="photoClick">
+            <image src="../../../static/images/coach/photo.png"></image>
+            <text>相册(20)</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="private_middle">
+      <text class="title">教练简介</text>
+      <text class="introduce">身材一直便瘦身体也不是很好，之后决定开始健身就去费恩莱斯国际健身学院学习教练行业，从110多斤的瘦猴增肌到168斤</text>
+    </view>
+    <view class="private_middle">
+      <text class="title">擅长</text>
+      <text class="introduce">体态改善，男性增肌，女性塑形及产后恢复，拉伸放松提高身体柔韧性，体能提升</text>
+    </view>
+    <view class="place">
+      <view class="place_header">
+        <text>服务场地</text>
+      </view>
+      <view class="place_bottom">
+        <view class="place_all">
+          <image src="../../../static/images/coach/image2.png"></image>
+          <text>腾讯众创空间B座</text>
+          <text>364m</text>
+        </view>
+        <view class="place_all">
+          <image src="../../../static/images/coach/image2.png"></image>
+          <text>腾讯众创空间B座</text>
+          <text>364m</text>
+        </view>
+        <view class="place_all">
+          <image src="../../../static/images/coach/image2.png"></image>
+          <text>腾讯众创空间B座</text>
+          <text>364m</text>
+        </view>
+      </view>
+    </view>
+    <view class="course">
+      <view class="private_head">
+        <text>教授课程</text>
+      </view>
+      <view class="listall">
+        <view class="private_list" wx:for="{{courseData}}" wx:key="this">
+          <view class="list_item" bindtap="courseClick">
+            <image src="{{item.imgurl}}"></image>
+            <text class="text1">{{item.title}}</text>
+            <text class="text2">{{item.introduce}}</text>
+            <view class="buy">
+              <text>￥{{item.price}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="comment">
+      <view class="comment_header">
+        <text>会员评价</text>
+      </view>
+      <view class="comment_title">
+        <view class="comment_title_head">
+          <image src="../../../static/images/user/head.png"></image>
+        </view>
+        <view class="comment_title_name">
+          <text class="text1">小米粒儿</text>
+          <text class="text2">2018-10-13</text>
+        </view>
+        <view class="xing">
+          <image src="../../../static/images/littleicon/xing1.png"></image>
+          <image src="../../../static/images/littleicon/xing1.png"></image>
+          <image src="../../../static/images/littleicon/xing1.png"></image>
+          <image src="../../../static/images/littleicon/xing1.png"></image>
+          <image src="../../../static/images/littleicon/xing1.png"></image>
+        </view>
+      </view>
+      <view class="content">
+        <text>身材一直便瘦身体也不是很好，之后决定开始健身就去费恩莱斯国际健身学院学习教练行业，从110多斤的瘦猴增肌到168斤</text>
+      </view>
+      <view class="comment_img">
+        <image src="../../../static/images/coach/course.png"></image>
+        <image src="../../../static/images/coach/course.png"></image>
+        <image src="../../../static/images/coach/course.png"></image>
+      </view>
+      <view class="comment_footer">
+        <text>增肌max（私教课）</text>
+      </view>
+    </view>
+  </scroll-view>
+</view>

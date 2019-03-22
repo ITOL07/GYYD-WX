@@ -1,0 +1,85 @@
+<!--pages/storedetail/storedetail.wxml-->
+<view class="container">
+  <scroll-view scroll-y="true" class="scroll_body">
+    <view class="detail_header">
+      <view class="header_left">
+        <image src="../../../static/images/coach/jiaolianheader.png"></image>
+      </view> 
+      <view class="header_right">
+        <view>
+          <text class="title">腾讯众创空间店</text>
+        </view>
+        <view>
+          <text class="addr">北京市昌平区回龙观东大街338号腾讯重创空间B座349</text>
+        </view>
+        <view class="phone">
+          <text>联系电话：010-89778899</text>
+          <text class="detail">详情</text>
+          <image src="../../../static/images/littleicon/more.png"></image>
+        </view>
+      </view>
+    </view>
+    <view class="detail_experience">
+      <view class="experience_header"> 
+        <text>体验课</text>
+      </view>
+      <view class="listall">
+      <view class="experience_list" wx:for="{{courseData}}" wx:key="this"> 
+        <image src="{{item.imgurl}}"></image>
+        <text class="text1">{{item.title}}</text>
+        <text class="text2">{{item.introduce}}</text>
+        <view class="buy">
+          <text>￥{{item.price}}</text>
+          <button>购买</button>
+        </view>
+      </view>
+      </view>
+    </view>
+    <view class="detail_private">
+      <view class="private_header">
+        <text>私教课</text>
+      </view>
+      <view class="listall">
+      <view class="private_list" wx:for="{{courseData}}" wx:key="this"> 
+        <image src="{{item.imgurl}}"></image>
+        <text class="text1">{{item.title}}</text>
+        <text class="text2">{{item.introduce}}</text>
+        <view class="buy">
+          <text>￥{{item.price}}</text>
+          <button>购买</button>
+        </view>
+      </view>
+      </view>
+    </view>
+    <view class="detail_store">
+      <view class="store_header">
+        <text>本店私教</text>
+      </view>
+      <view class="store_list">
+        <view wx:for="{{listData}}" wx:key="this" class="list_data">
+          <view class="list_left">
+            <image src="{{item.imgurl}}"></image>
+          </view>
+          <view class="list_right">
+            <view class="right1">
+              <text class="right1_name">{{item.name}}</text>
+              <text class="right1_title">{{item.title}}</text>
+              <text class="right1_price">￥{{item.price}}/课起</text>
+            </view>
+            <view class="right2">
+              <image src="../../../static/images/littleicon/xing1.png"></image>
+              <image src="../../../static/images/littleicon/xing1.png"></image>
+              <image src="../../../static/images/littleicon/xing1.png"></image>
+              <image src="../../../static/images/littleicon/xing1.png"></image>
+              <image src="../../../static/images/littleicon/xing1.png"></image>
+              <text>{{item.rate}}</text>
+            </view>
+            <view class="right3">
+              <text>{{item.shanchang}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

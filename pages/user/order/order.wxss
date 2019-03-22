@@ -1,0 +1,85 @@
+/* pages/order/order.wxss */
+.top{
+  width:100%;
+  height:80rpx;
+  background:#FFFFFF;
+  display:flex;
+  flex-direction:row;
+  padding-top:20rpx;
+  padding-bottom:20rpx;
+}
+.top text{
+  width:33%;
+  height:100%;
+  display:block;
+  text-align:center;
+}
+.bottom{
+  width:100%;
+  height:auto;
+  background:#FFFFFF;
+}
+.list{
+  width:90%;
+  height:300rpx;
+  margin:20rpx auto;
+  padding-top:30rpx;
+}
+.list_top{
+  width:100%;
+  height:20%;
+  display:flex;
+  flex-direction:row;
+  justify-content:space-between;
+}
+.list_top .text1{
+  color:#666666;
+  font-size:28rpx;
+}
+.list_top .text2{
+  color:#666666;
+  font-size:32rpx;
+}
+.list_middle{
+  width:100%;
+  height:60%;
+  display:flex;
+  flex-direction:row;
+}
+.list_middle image{
+  width:120rpx;
+  height:120rpx;
+  display:block;
+}
+.list_middle .detail{
+  width:70%;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  margin-left:5%;
+}
+.list_middle .detail text{
+  width:100%;
+  height:33%;
+  display:block;
+  color:#333333;
+  font-size:30rpx;
+}
+.list_middle .detail .introduce{
+  color:#999999;
+  font-size:25rpx;
+}
+.list_middle .price{
+  color:#F85F58;
+  font-size:30rpx;
+  text-align:right;
+  display:block;
+}
+.list_bottom{
+  width:100%;
+  height:20%;
+}
+.list_bottom text{
+  color:#999999;
+  font-size:28rpx;
+}

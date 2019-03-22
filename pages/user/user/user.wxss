@@ -1,0 +1,74 @@
+/* pages/user/user.wxss */
+.user_head{
+  width:100%;
+  height:400rpx;
+  display:flex;
+  flex-direction:column;
+  background:#2D2E32;
+}
+.user_head image{
+  display:block;
+  width:130rpx;
+  height:130rpx;
+  margin:auto;
+}
+.user_head text{
+  color: #FFFFFF;
+  text-align:center;
+  
+}
+.user_head .text2{
+  padding-bottom:40rpx;
+}
+
+.user_nav{
+  display:flex;
+  flex-direction:row;
+  width:100%;
+  height:170rpx;
+  box-sizing:border-box;
+  color:#333333;
+  justify-content:space-around;
+  background:#FFFFFF;
+}
+.user_nav .nav_list{
+  display:flex;
+  flex-direction:column;
+  width:25%;
+  height:100%;
+}
+.user_nav .nav_list image{
+  display:block;
+  width:80rpx;
+  height:80rpx;
+  margin:20rpx auto;
+}
+.user_nav .nav_list text{
+  font-size:25rpx;
+  text-align:center;
+}
+.user_list{
+  display:flex;
+  flex-direction:column;
+  margin-top:20rpx;
+  background:#FFFFFF;
+}
+.list_item{
+  display:flex;
+  flex-direction:row;
+  justify-content:space-between;
+  padding-top:10rpx;
+  border-bottom:1rpx aolid #EEEEEE;
+}
+.list_item text{
+  width:70%;
+  height:80rpx;
+  font-size:25rpx;
+  color:#333333;
+  margin-left:5%;
+}
+.list_item image{
+  width:20rpx;
+  height:30rpx;
+  margin-right:25rpx;
+}

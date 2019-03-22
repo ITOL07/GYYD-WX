@@ -1,0 +1,24 @@
+<!--pages/login/login.wxml-->
+<view class="container">
+  <view class="top">
+    <view class="top_item"> 
+      <image src="../../../static/images/user/phone.png"></image>
+      <input placeholder='请输入手机号' bindinput="inputValue1" type="text"></input>
+    </view>
+    <view class="top_item">
+      <image src="../../../static/images/user/password.png"></image>
+      <input password placeholder='请输入登录密码' bindinput="inputValue2" type="text"></input>
+    </view>
+  </view>
+  <view class="middle">
+    <button bindtap="loginClick">登录</button>
+    <view class="reg">
+      <text class="text1" bindtap="quickClick">手机快速注册</text>
+      <text class="text2" bindtap="forgetClick">忘记密码</text>
+    </view>
+  </view>
+  <view class="bottom">
+    <text>第三方登录</text>
+    <image src="../../../static/images/user/wx.png"></image>
+  </view>
+</view>

@@ -1,0 +1,154 @@
+/* pages/orderdetail/orderdetail.wxss */
+.container{
+  background:#FFFFFF;
+}
+.header{
+  width:90%;
+  height:200rpx;
+  display:flex;
+  flex-direction:row;
+  margin:10rpx auto;
+}
+.header image{
+  width:150rpx;
+  height:150rpx;
+  display:block;
+}
+.header text{
+  color:#F85F58;
+  font-size:35rpx;
+}
+.name{
+  width:50%;
+  height:150rpx;
+  display:flex;
+  flex-direction:column;
+}
+.name .text1{
+  color:#333333;
+  font-size:35rpx;
+  height:50%;
+  display:block;
+  padding-left:2%;
+}
+.name .text2{
+  color:#999999;
+  font-size:28rpx;
+  height:50%;
+  display:block;
+  padding-left:2%;
+}
+
+.count{
+  width:90%;
+  height:150rpx;
+  display:flex;
+  flex-direction:row;
+  margin:10rpx auto;
+}
+.left{
+  width:50%;
+  height:100%;
+}
+.left .text1{
+  color:#333333;
+  font-size:35rpx;
+}
+.left .text2{
+  color:#333333;
+  font-size:28rpx;
+}
+.right{
+  width:30%;
+  height:100%;
+  display:flex;
+  flex-direction:row;
+  margin-left:30%;
+}
+.right .text{
+  background:#EEEEEE;
+  width:80rpx;
+  height:60rpx;
+  border:1px solid #999999;
+  text-align:center;
+}
+.right .text2{
+  border-top:1px solid #999999;
+  width:80rpx;
+  height:60rpx;
+  border-bottom:1px solid #999999;
+  text-align:center;
+}
+.store{
+  width:90%;
+  height:150rpx;
+  display:flex;
+  flex-direction:row;
+  margin:10rpx auto;
+}
+.store .text1{
+  width:50%;
+  height:100%;
+  color:#666666;
+  font-size:35rpx;
+}
+.store .text2{
+  width:50%;
+  height:100%;
+  display:block;
+  color:#666666;
+  font-size:35rpx;
+  text-align:right;
+}
+.coach{
+  width:90%;
+  height:150rpx;
+  display:flex;
+  flex-direction:row;
+  margin:10rpx auto;
+}
+.coach .text1{
+  width:50%;
+  height:100%;
+  color:#666666;
+  font-size:35rpx;
+}
+.coach .text2{
+  width:50%;
+  height:100%;
+  display:block;
+  margin-right:0;
+  color:#666666;
+  font-size:35rpx;
+  text-align:right;
+}
+.pay{
+  width:100%;
+  height:100rpx;
+  position:fixed;
+  bottom:0;
+  display:flex;
+  flex-direction:row;
+}
+.pay_list{
+  width:60%;
+  height:100%;
+  background:#EEEEEE;
+  text-align:center;
+  padding-top:20rpx;
+}
+.pay_list .text1{
+  color:#292A2E;
+  font-size:30rpx;
+  margin-right:5%;
+}
+.pay_list .text2{
+  color:#F85F58;
+  font-size:30rpx;
+}
+.pay button{
+  width:40%;
+  height:100%;
+  background:#FBBE44;
+  color:#292A2E;
+}

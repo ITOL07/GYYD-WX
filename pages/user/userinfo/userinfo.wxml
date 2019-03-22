@@ -1,0 +1,24 @@
+<!--pages/userinfo/userinfo.wxml-->
+<view class="list">
+  <text class="text1">头像</text>
+  <image src="../icon/head.png"></image>
+</view>
+<view class="list">
+  <text class="text1">昵称</text>
+  <text class="text2">Chuang</text> 
+</view>
+<view class="list">
+  <text class="text1">性别</text>
+  <text class="text2">男</text>
+</view>
+<view class="list">
+  <text class="text1">出生年月</text>
+  <text class="text2">1990年04月13日</text>
+</view>
+<view class="list">
+  <text class="text1">身高</text>
+  <text class="text2">173cm</text>
+</view>
+<view class="listbtn">
+  <button>保存</button>
+</view>
