@@ -31,7 +31,7 @@
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "古越运动",
     "navigationBarTextStyle":"black"
   },
   "tabBar": {
