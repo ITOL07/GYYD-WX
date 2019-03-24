@@ -9,7 +9,7 @@
         <view class="header_right_top">
           <view class="name">
             <text class="name_text1">杨宋</text>
-            <text class="name_text2">累计授课283节</text>
+            <text class="name_text2">{{name}}</text>
           </view>
           <view class="rate">
             <image src="../../../static/images/littleicon/xing1.png"></image>

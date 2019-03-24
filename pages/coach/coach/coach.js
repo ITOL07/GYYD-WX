@@ -9,12 +9,36 @@ Page({
    * 页面的初始数据
    */
   data: {
-    listData: fileData.getListData()
+    listData: fileData.getListData(),
+    coachList:'',
+    name:'',
+    tel:''
   },
   coachClick: function(){
     var privatedetailRouter = '../../coach/privatedetail/privatedetail';
     var privatedetailTitle = '私教详情';
     commonData.routers(privatedetailRouter, privatedetailTitle);
+  },
+  coachClick1: function (nu) {
+    var _this = this;
+    var coachArr=[];
+    wx.request({
+      url: 'http://39.106.156.239/mydb/getCoach',
+      success: function (res) {
+        //console.log(res.data)
+        console.log(res.data),
+          _this.setData({ name: res.data[0].name }),
+          _this.setData({ tel: res.data[0].tel })
+
+          for(var i =0;i<res.data.length;i++){
+            coachArr.push(res.data[i])
+           // coachArr.push(res.data[i].tel,tel)
+          }
+          _this.setData({
+            coachList: coachArr
+          })
+      }
+    })
   },
   /**
    * 生命周期函数--监听页面加载

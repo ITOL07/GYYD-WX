@@ -19,6 +19,6 @@
   </view>
   <view class="bottom">
     <text>第三方登录</text>
-    <image src="../../../static/images/user/wx.png"></image>
+    <image src="../../../static/images/user/wx.png" bindtap="wxlogin"></image>
   </view>
 </view>
