@@ -52,6 +52,15 @@ function getNavData() {
   ]
   return arr;
 }
+//获取系统配置
+function getListConfig() {
+  var arr = 
+    {
+    url_sc:'http://39.106.156.239:80',
+    url_test: 'http://localhost:8099'
+  }
+  return arr;
+}
 //获取列表
 function getListData() {
   var arr = [
@@ -332,6 +341,39 @@ function getMessageData() {
   return arr;
 }
 //获取案例信息
+function getCaseData() {
+  var arr = [
+    {
+      id: '0',
+      imgurl: '../../../static/images/coach/image1.png',
+      coach: '杨宋',
+      result: '身材一直便瘦身体也不是很好，之后决定开始健身就去费恩莱斯国际健身学院学习教练行业，从110多斤的瘦猴增肌到168斤',
+      compare: ['../../../static/images/coach/course.png', '../../../static/images/coach/course.png','../../../static/images/coach/course.png']
+    },
+    {
+      id: '1',
+      imgurl: '../../../static/images/coach/image1.png',
+      coach: '杨宋',
+      result: '身材一直便瘦身体也不是很好，之后决定开始健身就去费恩莱斯国际健身学院学习教练行业，从110多斤的瘦猴增肌到168斤',
+      compare: ['../../../static/images/coach/course.png', '../../../static/images/coach/course.png', '../../../static/images/coach/course.png']
+    },
+    {
+      id: '2',
+      imgurl: '../../../static/images/coach/image1.png',
+      coach: '杨宋',
+      result: '身材一直便瘦身体也不是很好，之后决定开始健身就去费恩莱斯国际健身学院学习教练行业，从110多斤的瘦猴增肌到168斤',
+      compare: ['../../../static/images/coach/course.png', '../../../static/images/coach/course.png', '../../../static/images/coach/course.png']
+    },
+    {
+      id: '3',
+      imgurl: '../../../static/images/coach/image1.png',
+      coach: '杨宋',
+      result: '身材一直便瘦身体也不是很好，之后决定开始健身就去费恩莱斯国际健身学院学习教练行业，从110多斤的瘦猴增肌到168斤',
+      compare: ['../../../static/images/coach/course.png', '../../../static/images/coach/course.png', '../../../static/images/coach/course.png']
+    }
+  ]
+  return arr;
+}
 function getCaseData() {
   var arr = [
     {

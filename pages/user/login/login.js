@@ -62,15 +62,15 @@ Page({
         if (res.code) {
           //把获取到的code通过一个request的请求发给java服务器
           wx.request({
-            //url: 'http://localhost:8099/mydb/getUsers',
-            url: 'http://39.106.156.239:8099/mydb/getUsers',
+            url: 'http://localhost:8099/api/me/login',
+            //url: 'http://39.106.156.239:80/mydb/getUsers',
             data: {
               code: res.data
             },
             method: 'GET',
-            dataType: 'json',
+            // dataType: 'json',
             header: {
-              'content-type': 'application/json' // 默认值     
+              'content-type': 'application/x-www-form' // 默认值     
             },  
             success: function (res) {
               //请求成功的处理

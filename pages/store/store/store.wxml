@@ -17,11 +17,11 @@
               <text class="right1_name">{{item.name}}</text>
             </view>
             <view class="right2">
-              <text>{{item.address}}</text>
+              <text>{{item.tel}}</text>
             </view>
             <view class="right3">
               <image src="../../../static/images/store/address.png"></image>
-              <text>{{item.distance}}</text>
+              <text>{{item.address}}</text>
             </view>
           </view>
         </view>

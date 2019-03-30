@@ -9,7 +9,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    storeListData: fileData.getStoreListData()
+    // storeListData: fileData.getStoreListData()
+    storeListData: null
   },
   storeClick: function(){
     var storedetailRouter = '../../store/storedetail/storedetail';
@@ -20,7 +21,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var _this=this
+    console.log("开始请求门店信息！！")
+      wx.request({
+        url: 'http://localhost:8099/mydb/getClub',
+        success(res){
+          console.log(res.data)
+          _this.setData({
+             storeListData:res.data
+          })
+        }
+      }) 
   },
 
   /**
