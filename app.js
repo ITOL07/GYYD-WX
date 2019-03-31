@@ -10,6 +10,22 @@ App({
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        wx.request({
+          url: 'http://www.guyueyundong.com/api/me/login',
+          data: {
+            code: res.code
+          },
+          method: 'POST',
+          // dataType: 'json',
+          header: {
+            'content-type': 'application/x-www-form-urlencoded'  //发送post请求
+          },
+          success: function (res) {
+            //请求成功的处理
+            //console.log(code);
+            console.log("发送code成功", res.data);
+          }
+        })
       }
     })
     // 获取用户信息

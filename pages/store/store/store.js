@@ -10,7 +10,9 @@ Page({
    */
   data: {
     // storeListData: fileData.getStoreListData()
-    storeListData: null
+    storeListData: null,
+    la:null,
+    lo:null
   },
   storeClick: function(){
     var storedetailRouter = '../../store/storedetail/storedetail';
@@ -22,16 +24,49 @@ Page({
    */
   onLoad: function (options) {
     var _this=this
-    console.log("开始请求门店信息！！")
-      wx.request({
-        url: 'http://localhost:8099/mydb/getClub',
-        success(res){
-          console.log(res.data)
-          _this.setData({
-             storeListData:res.data
-          })
-        }
-      }) 
+    wx.getLocation({
+      //type: 'wgs84',  
+      type: 'gcj02', //微信可用的坐标
+      success(res) {
+        // _this.setData({
+        //   la: res.latitude,
+        //   lo: res.longitude
+        // })
+        const la = res.latitude
+        const lo = res.longitude
+        console.log(res.latitude + '| ' + res.longitude)
+        console.log("开始请求门店信息！！")
+        var url_tmp = fileData.getListConfig().url_test;
+        wx.request({
+          url: url_tmp + '/mydb/getClub',
+          success(res) {
+            console.log(res.data)
+            let tmp = [];
+            for (var i = 0; i < res.data.length; i++) {
+              var distance = commonData.distance(la, lo, res.data[i].jd, res.data[i].wd)
+              console.log('i===' + i + ' lat==' + res.data[i].jd + ' lo==' + res.data[i].wd + '_this.la =====' + la + ' distance===' + distance)
+              
+              // if(distance<15000){
+              if (distance >900000) {
+                tmp.push(res.data[i])
+              }
+            }
+            if(tmp.length===0){
+              console.log('无符合条件记录')
+            }
+            _this.setData({
+              storeListData: tmp
+            })
+
+            // _this.setData({
+            //   storeListData: res.data
+            // })
+          }
+        }) 
+      }
+      
+    })
+
   },
 
   /**

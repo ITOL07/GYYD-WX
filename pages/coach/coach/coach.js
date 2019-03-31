@@ -10,7 +10,7 @@ Page({
    */
   data: {
     listData: fileData.getListData(),
-    // url_test: 'http://localhost:8099',
+    // url: fileData.getListConfig(),
     coachList:'',
     name:'',
     tel:''
@@ -26,10 +26,10 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function (options) {   
     var _this = this;
     var coachArr = [];
-    var url_test ='http://localhost:8099';
+    var url_test = fileData.getListConfig().url_test;
     wx.request({
       
       url: url_test+'/mydb/getCoach',

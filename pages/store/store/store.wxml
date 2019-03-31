@@ -6,6 +6,7 @@
       <text>选择门店</text>
     </view>
     <view class="bottom">
+    <view wx:if="{{storeListData.length===0}}">无符合条件记录 </view>
       <view wx:for="{{storeListData}}" wx:key="this" class="list_data">
         <view class="list_item" bindtap="storeClick">
           <view class="list_left">
