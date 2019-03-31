@@ -4,12 +4,12 @@
   height:400rpx;
   display:flex;
   flex-direction:column;
-  background:#2D2E32;
+  background:rgb(218, 219, 223);
 }
 .user_head image{
   display:block;
-  width:130rpx;
-  height:130rpx;
+  width:150rpx;
+  height:150rpx;
   margin:auto;
 }
 .user_head text{

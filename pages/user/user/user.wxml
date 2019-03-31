@@ -2,9 +2,26 @@
 <view class="container">
   <scroll-view scroll-y="true" class="scroll_body">
     <view class="user_head">
-      <image src="{{headImage}}" bindtap="headImageClick">></image>
+      <!-- <image src="{{headImage}}" bindtap="headImageClick">></image>
       <text>nieli</text>  
-      <text class="text2">13333333333</text>
+      <text class="text2">13333333333</text> -->
+      <!-- 如果只是展示用户头像昵称，可以使用 <open-data /> 组件 -->
+      <!-- <open-data type="userAvatarUrl"></open-data>
+      <open-data type="userNickName"></open-data> -->
+      <!-- 需要使用 button 来授权登录 -->
+  <!-- <button
+  wx:if="{{canIUse}}"
+  open-type="getUserInfo"
+  bindgetuserinfo="getUserInfo"
+  >
+  授权登录
+  </button>
+<view wx:else>请升级微信版本</view> -->
+<button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      </block>
     </view>
     <view class="user_nav">
       <view class="nav_list" bindtap="addupClick">
