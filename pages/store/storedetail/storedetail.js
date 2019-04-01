@@ -9,13 +9,28 @@ Page({
    */
   data: {
     courseData: fileData.getCourseData(),
-    listData: fileData.getListData()
+    listData: fileData.getListData(),
+    storeListData:null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log("开始请求门店信息！！")
+    var url_tmp = fileData.getListConfig().url_test;
+    var _this=this;
+    console.log('options.id==='+options.id)
+    wx.request({
+      url: url_tmp + '/mydb/showClub?id=' + options.id,
+      success(res) {
+        console.log(res.data)
+        
+        _this.setData({
+          storeListData: res.data
+        })
+      }
+    }) 
 
   },
 

@@ -8,7 +8,7 @@
     <view class="bottom">
     <view wx:if="{{storeListData.length===0}}">无符合条件记录 </view>
       <view wx:for="{{storeListData}}" wx:key="this" class="list_data">
-        <view class="list_item" bindtap="storeClick">
+        <view class="list_item" bindtap="storeClick" id="{{item.club_Id}}">
           <view class="list_left">
             <image src="{{item.imgurl}}"></image>
           </view>

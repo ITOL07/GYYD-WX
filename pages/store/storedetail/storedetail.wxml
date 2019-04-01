@@ -1,6 +1,11 @@
 <!--pages/storedetail/storedetail.wxml-->
 <view class="container">
   <scroll-view scroll-y="true" class="scroll_body">
+  <!-- <view wx:for="{{storeListData}}" wx:key="this"> -->
+  <view class="phone">
+  <text >clubId:{{storeListData.clubId}}</text>
+  <text >address:{{storeListData.address}}</text>
+  </view>
     <view class="detail_header">
       <view class="header_left">
         <image src="../../../static/images/coach/jiaolianheader.png"></image>

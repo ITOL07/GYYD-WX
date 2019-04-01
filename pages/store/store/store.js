@@ -14,10 +14,12 @@ Page({
     la:null,
     lo:null
   },
-  storeClick: function(){
-    var storedetailRouter = '../../store/storedetail/storedetail';
-    var storedetailTitle = '门店详情';
-    commonData.routers(storedetailRouter, storedetailTitle);
+  storeClick: function(e){
+    console.log(e)
+    var storedetailRouter = '../../store/storedetail/storedetail?id=' + e.currentTarget.id;
+     var storedetailTitle = '门店详情';
+     commonData.routers(storedetailRouter, storedetailTitle);
+
   },
   /**
    * 生命周期函数--监听页面加载
@@ -46,8 +48,8 @@ Page({
               var distance = commonData.distance(la, lo, res.data[i].jd, res.data[i].wd)
               console.log('i===' + i + ' lat==' + res.data[i].jd + ' lo==' + res.data[i].wd + '_this.la =====' + la + ' distance===' + distance)
               
-              // if(distance<15000){
-              if (distance >900000) {
+              if(distance<15000){
+              // if (distance >900000) {
                 tmp.push(res.data[i])
               }
             }

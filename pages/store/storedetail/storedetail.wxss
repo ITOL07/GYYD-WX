@@ -7,6 +7,12 @@
   background:#FFFFFF;
   padding-top:20rpx;
 }
+
+.phone{
+  width:100%;
+  display:flex;
+  flex-direction:row;
+}
 .detail_header .header_left{
   width:25%;
   height:100%;
