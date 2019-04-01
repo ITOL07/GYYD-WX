@@ -12,9 +12,9 @@
       </block>
     </view>
     <view class="user_nav">
-      <view class="nav_list" bindtap="addupClick">
+      <view class="nav_list" bindtap="queryLesson">
         <image src="../../../static/images/user/gouke.png"></image>
-        <text>累计购课</text>
+        <text>累计购课</text> 
       </view>
       <view class="nav_list" bindtap="finishedClick">
         <image src="../../../static/images/user/yiwancheng.png"></image>

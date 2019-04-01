@@ -2,11 +2,21 @@
 <view class="container">
   <scroll-view scroll-y="true" class="scroll_body">
   <!-- <view wx:for="{{storeListData}}" wx:key="this"> -->
-  <view class="phone">
-  <text >clubId:{{storeListData.clubId}}</text>
-  <text >address:{{storeListData.address}}</text>
-  </view>
-    <view class="detail_header">
+  <view class="detail_header">
+    <view class="header_left">
+        <image src="../../../static/images/coach/jiaolianheader.png"></image>
+      </view> 
+    <view class="header_right">
+      <view>
+       <text class="title">clubId:{{storeListData.clubId}}</text>
+      </view>
+    
+    <view>
+       <text class="addr">address:{{storeListData.address}}</text>
+     </view>
+    </view>
+    </view>
+    <!-- <view class="detail_header">
       <view class="header_left">
         <image src="../../../static/images/coach/jiaolianheader.png"></image>
       </view> 
@@ -23,7 +33,7 @@
           <image src="../../../static/images/littleicon/more.png"></image>
         </view>
       </view>
-    </view>
+    </view> -->
     <view class="detail_experience">
       <view class="experience_header"> 
         <text>体验课</text>

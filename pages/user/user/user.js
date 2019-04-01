@@ -14,6 +14,10 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
+  queryLesson:function(){
+    console.log('累计购课明细！！')
+
+  },
   headImageClick: function () {
     this.setData({
       actionSheetHidden: false
