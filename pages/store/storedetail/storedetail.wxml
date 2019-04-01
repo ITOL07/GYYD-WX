@@ -35,7 +35,7 @@
         <text class="text2">{{item.introduce}}</text>
         <view class="buy">
           <text>￥{{item.price}}</text>
-          <button>购买</button>
+          <button bindtap='buyCourse'>购买</button>
         </view>
       </view>
       </view>

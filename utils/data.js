@@ -57,8 +57,8 @@ function getListConfig() {
   var arr = 
     {
     url_sc:'http://39.106.156.239:80',
-    //  url_test: 'https://www.guyueyundong.com',
-    url_test: 'http://localhost:8099'
+     url_test: 'https://www.guyueyundong.com',
+    // url_test: 'http://localhost:8099'
   }
   return arr;
 }
@@ -178,7 +178,7 @@ function getCourseData() {
       imgurl: '../../../static/images/coach/course.png',
       title: '机械入门',
       introduce: '熟悉健身房器械',
-      price: '19'
+      price: '0.01'
     },
     {
       id: '1',
