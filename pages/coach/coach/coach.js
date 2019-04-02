@@ -10,7 +10,6 @@ Page({
    */
   data: {
     listData: fileData.getListData(),
-    // url: fileData.getListConfig(),
     coachList:'',
     name:'',
     tel:''
@@ -29,10 +28,9 @@ Page({
   onLoad: function (options) {   
     var _this = this;
     var coachArr = [];
-    var url_test = fileData.getListConfig().url_test;
+    var url_tmp = fileData.getListConfig().url_test;
     wx.request({
-      
-      url: url_test+'/mydb/getCoach',
+      url: url_tmp+'/mydb/getCoach',
       success: function (res) {
         //console.log(res.data)
         console.log(res.data),

@@ -8,7 +8,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    courseData: fileData.getCourseData(),
+    // courseData: fileData.getCourseData(),
+    courseData:null,
     listData: fileData.getListData(),
     storeListData:null
   },
@@ -18,8 +19,11 @@ Page({
     wx.request({
       url: url_tmp+'/pay/id',
       data: {
-        desc: 'iPhone XS Max',
-        order_no: '20190329000002'
+        // desc: 'iPhone XS Max',
+        // order_no: '20190329000002'
+        desc:'示例商品...',
+        order_no: _this.getOrderNo(),
+        openid: app.globalData.openid
       },
       method: 'POST',
       header: {
@@ -38,12 +42,24 @@ Page({
           timeStamp: _this.data.timeStamp,
           nonceStr: _this.data.nonceStr,
           package: _this.data.package,
-          signType: '',
-          paySign: _this.data.paySign
+          signType: 'MD5',
+          paySign: _this.data.paySign,
+          success(res) {
+            console.log('支付成功：'+res)
+          },
+          fail(res){
+            console.log('支付失败'+res)
+          }
         })
       }
 
     })
+  },
+  getOrderNo: function () {
+    const now = new Date()
+    var tmp = (now - 1) + (Math.round(Math.random() * 89 + 100)).toString()
+    console.log('订单号为'+tmp)
+    return tmp
   },
   /**
    * 生命周期函数--监听页面加载
@@ -63,6 +79,17 @@ Page({
         })
       }
     }) 
+    wx.request({
+      url: url_tmp + '/mydb/showCoachCourse?id=' + options.id,
+      success(res) {
+        console.log(res.data)
+
+        _this.setData({
+          courseData: res.data
+        })
+      }
+    }) 
+
 
   },
 

@@ -5,18 +5,38 @@
       <image src="../../../static/images/store/mendian.png"></image>
       <text>选择教练</text>
     </view>
-
-
     <view class="bottom">
+   
      <view wx:for="{{coachList}}" wx:key="this" class="list_data">
-      <text class="right1_name">{{item.name}}</text> 
+       <!-- <view class="list_left">
+        <image src="../../../static/images/coach/image1.png"></image>
+      </view> -->
+      <view class="list_right">
+            <view class="right1">
+              <text class="right1_name">{{item.name}}</text>
+              <text class="right1_title">{{item.tel}}</text>
+              <text class="right1_price">￥{{item.price}}/课起</text>
+            </view>
+            <view class="right2">
+              <image src="../../../static/images/littleicon/xing1.png"></image>
+              <image src="../../../static/images/littleicon/xing1.png"></image>
+              <image src="../../../static/images/littleicon/xing1.png"></image>
+              <image src="../../../static/images/littleicon/xing1.png"></image>
+              <image src="../../../static/images/littleicon/xing1.png"></image>
+              <text>{{item.score}}</text>
+            </view>
+            <view class="right3">
+              <text>{{item.comment}}</text>
+            </view>
+      </view>
+      <!-- <text class="right1_name">{{item.name}}</text> 
       <text class="right1_name">  {{item.tel}}</text> 
       <text class="right1_name">  {{item.sex}}</text> 
       <text class="right1_name">  {{item.height}}</text> 
       <text class="right1_name">  {{item.weight}}</text> 
-      <text class="right1_price">￥{{item.price}}/课起</text>
+      <text class="right1_price">￥{{item.price}}/课起</text> -->
       </view>
-      <view wx:for="{{listData}}" wx:key="this" class="list_data">
+      <!-- <view wx:for="{{listData}}" wx:key="this" class="list_data">
         <view class="list_item" bindtap="coachClick1">
           <view class="list_left">
             <image src="{{item.imgurl}}"></image>
@@ -40,7 +60,7 @@
             </view>
           </view>
         </view>
-      </view>
+      </view> -->
     </view>
   </scroll-view>
 </view>

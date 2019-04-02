@@ -1,6 +1,7 @@
 // pages/login/login.js
 const app = getApp()
 var commonData = require("../../../utils/util.js"); 
+var fileData = require("../../../utils/data.js");
 
 Page({
 
@@ -61,8 +62,9 @@ Page({
       success(res) {
         if (res.code) {
           //把获取到的code通过一个request的请求发给java服务器
+          var url_tmp = fileData.getListConfig().url_test;
           wx.request({
-            url: 'http://localhost:8099/api/me/login',
+            url: url_tmp+'/api/me/login',
             //url: 'http://39.106.156.239:80/mydb/getUsers',
             data: {
               code: res.data
