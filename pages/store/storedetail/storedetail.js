@@ -13,7 +13,7 @@ Page({
     listData: fileData.getListData(),
     storeListData:null
   },
-  buyCourse: function () {
+  buyCourse: function (e) {
     var _this = this
     var url_tmp = fileData.getListConfig().url_test;
     wx.request({
@@ -23,7 +23,8 @@ Page({
         // order_no: '20190329000002'
         desc:'示例商品...',
         order_no: _this.getOrderNo(),
-        openid: app.globalData.openid
+        openid: app.globalData.openid,
+        price: e.currentTarget.dataset.price
       },
       method: 'POST',
       header: {
@@ -80,10 +81,9 @@ Page({
       }
     }) 
     wx.request({
-      url: url_tmp + '/mydb/showCoachCourse?id=' + options.id,
+      url: url_tmp + '/mydb/showCoachCourse1?id=' + options.id,
       success(res) {
         console.log(res.data)
-
         _this.setData({
           courseData: res.data
         })

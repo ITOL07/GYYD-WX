@@ -42,24 +42,25 @@
       </view>
       <view class="listall">
       <view class="experience_list" wx:for="{{courseData}}" wx:key="this"> 
+      <!-- <view class="experience_list" > -->
         <image src="{{item.imgurl}}"></image>
-        <text class="text1">{{item.title}}</text>
-        <text class="text2">{{item.introduce}}</text>
-        <view class="buy">
+        <text class="text1">{{item.coach_name}}</text>
+        <text class="text2">{{item.name}}</text>
+        <view  class="buy">
           <text>￥{{item.price}}</text>
-          <button bindtap='buyCourse'>购买</button>
+          <button data-price="{{item.price}}" bindtap='buyCourse'>购买</button>
         </view>
       </view>
       </view>
     </view>
-    <view class="detail_private">
+    <!-- <view class="detail_private">
       <view class="private_header">
         <text>私教课</text>
       </view>
       <view class="listall">
       <view class="private_list" wx:for="{{courseData}}" wx:key="this"> 
         <image src="{{item.imgurl}}"></image>
-        <text class="text1">{{item.title}}</text>
+        <text class="text1">{{item.name}}</text>
         <text class="text2">{{item.introduce}}</text>
         <view class="buy">
           <text>￥{{item.price}}</text>
@@ -67,7 +68,7 @@
         </view>
       </view>
       </view>
-    </view>
+    </view> -->
     <view class="detail_store">
       <view class="store_header">
         <text>本店私教</text>
