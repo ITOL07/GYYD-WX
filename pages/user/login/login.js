@@ -24,24 +24,34 @@ Page({
   },
   loginClick: function(){
     var This = this;
+    var warn = null;
     if (This.data.inputVal1 == '') {
       wx.showToast({
         title: '手机号不能为空',
-        image: 'loading',
+        icon: 'loading',
         duration: 1500
       })
       return;
-    } else if (This.data.inputVal2 == '') {
+    } else if (This.data.inputVal1.trim().length != 11 || !/^1[3|4|5|6|7|8|9]\d{9}$/.test(This.data.inputVal1)) {
+      wx.showToast({
+        title: '手机号格式不正确',
+        icon: 'loading',
+        duration: 1500
+      })
+      return;
+    } 
+    else if (This.data.inputVal2 == '') {
       wx.showToast({
         title: '密码不能为空',
-        image: 'loading',
+        icon: 'loading',
         duration: 1500
       })
       return;
     }
+    var url_tmp = fileData.getListConfig().url_test;
     wx.request({
       // url: 'https://www.guyueyundong.com/api/me/login',
-      url: 'http://localhost:8099/user/login',
+      url: url_tmp+'/user/login',
       data: {
         phoneNo: This.data.inputVal1,
         passwd: This.data.inputVal2
@@ -54,7 +64,7 @@ Page({
       success: function (res) {
         //请求成功的处理
         console.log(res.data)
-        if (res.data.errocode==="ok")
+        if (res.data.errono==0)
         {
           wx.switchTab({
             url: '../../index/index/index',
@@ -64,6 +74,13 @@ Page({
               })
             }
           })
+        }else {
+          wx.showToast({
+            title: res.data.errocode,
+            icon: 'loading',
+            duration: 1500
+          })
+          return;
         }
       }
     })
