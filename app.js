@@ -6,30 +6,7 @@ App({
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
 
-    // 登录
-    wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-        var _this=this
-        wx.request({
-          url: 'https://www.guyueyundong.com/api/me/login',
-          data: {
-            code: res.code
-          },
-          method: 'POST',
-          // dataType: 'json',
-          header: {
-            'content-type': 'application/x-www-form-urlencoded'  //发送post请求
-          },
-          success: function (res) {
-            //请求成功的处理
-            //console.log(code);
-            _this.globalData.openid = res.data.openid
-            console.log("发送code成功", res.data);
-          }
-        })
-      }
-    })
+
     // 获取用户信息
     wx.getSetting({
       success: res => {

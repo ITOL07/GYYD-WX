@@ -18,6 +18,7 @@
     </view>
   </view>
   <view class="bottom">
+  <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber"></button>
     <text>第三方登录</text>
     <image src="../../../static/images/user/wx.png" bindtap="wxlogin"></image>
   </view>

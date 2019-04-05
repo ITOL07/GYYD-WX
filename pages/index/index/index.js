@@ -27,8 +27,8 @@ Page({
     })
   },
   //点击导航栏跳转到对应门店信息
-  storeClick: function(){
-    var storeRouter= '../../store/storedetail/storedetail';
+  storeClick: function(e){
+    var storeRouter = '../../store/storedetail/storedetail?id='+e.currentTarget.id;
     var storeTitle= '门店信息';
     commonData.routers(storeRouter, storeTitle);
   },
