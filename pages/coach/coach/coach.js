@@ -30,7 +30,7 @@ Page({
     var coachArr = [];
     var url_tmp = fileData.getListConfig().url_test;
     wx.request({
-      url: url_tmp+'/mydb/getCoach',
+      url: url_tmp +'/coach/getCoach',
       success: function (res) {
         //console.log(res.data)
         console.log(res.data),

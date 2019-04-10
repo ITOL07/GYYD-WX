@@ -8,14 +8,32 @@ Page({
    * 页面的初始数据
    */
   data: {
-    addupData: fileData.getAddupData()
+    // addupData: 
+    addupData:null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log("开始请求门店信息！！")
+    var url_tmp = fileData.getListConfig().url_test;
+    var _this = this;
+    console.log('options.id===' + options.id)
+    wx.request({
+      url: url_tmp + '/member/qryLesson',
+      data:{
+        mem_id:app.globalData.user_id,
+        status:'1'
+      },
+      success(res) {
+        console.log(res.data)
 
+        _this.setData({
+          addupData: res.data
+        })
+      }
+    }) 
   },
 
   /**

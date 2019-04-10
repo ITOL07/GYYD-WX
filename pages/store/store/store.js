@@ -40,22 +40,25 @@ Page({
         console.log("开始请求门店信息！！")
         var url_tmp = fileData.getListConfig().url_test;
         wx.request({
-          url: url_tmp + '/mydb/getClub',
+          url: url_tmp + '/club/getClub',
           success(res) {
             console.log(res.data)
             let tmp = [];
+            var json = {};
             for (var i = 0; i < res.data.length; i++) {
-              var distance = commonData.distance(la, lo, res.data[i].jd, res.data[i].wd)
-              console.log('i===' + i + ' lat==' + res.data[i].jd + ' lo==' + res.data[i].wd + '_this.la =====' + la + ' distance===' + distance)
-              
-              if(distance<15000){
+              var distance = commonData.distance(la, lo, res.data[i].la, res.data[i].lo)
+              console.log('i===' + i + ' lat==' + res.data[i].la + ' lo==' + res.data[i].lo + '_this.la =====' + la + ' distance===' + distance)
+              json=res.data[i]
+              json.dis=distance
+              // if(distance<15000){
               // if (distance >900000) {
-                tmp.push(res.data[i])
-              }
+              tmp.push(json)
+              // }
             }
             if(tmp.length===0){
               console.log('无符合条件记录')
             }
+            
             _this.setData({
               storeListData: tmp
             })

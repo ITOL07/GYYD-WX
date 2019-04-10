@@ -64,6 +64,8 @@ Page({
       success: function (res) {
         //请求成功的处理
         console.log(res.data)
+        app.globalData.user_id = res.data.id
+        console.log("user_id==="+app.globalData.user_id)
         if (res.data.errono==0)
         {
           wx.switchTab({
@@ -112,8 +114,8 @@ Page({
         var _this = this
         var url_tmp = fileData.getListConfig().url_test;
         wx.request({
-          // url: 'https://www.guyueyundong.com/api/me/login',
-          url: url_tmp+'/api/me/login',
+          // url: 'https://www.guyueyundong.com/wxuser/login',
+          url: url_tmp+'/wxuser/login',
           data: {
             code: res.code,
           },
@@ -125,7 +127,7 @@ Page({
           success: function (res) {
             //请求成功的处理
             //console.log(code);
-            // _this.globalData.openid = res.data.openid
+            app.globalData.openid = res.data.openid
             console.log("发送code成功", res.data);
             console.log("发送code成功", res.data.openid);
             wx.switchTab({

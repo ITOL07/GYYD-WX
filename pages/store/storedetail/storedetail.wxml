@@ -53,7 +53,7 @@
       </view>
       </view>
     </view>
-    <!-- <view class="detail_private">
+    <view class="detail_private">
       <view class="private_header">
         <text>私教课</text>
       </view>
@@ -68,7 +68,7 @@
         </view>
       </view>
       </view>
-    </view> -->
+    </view>
     <view class="detail_store">
       <view class="store_header">
         <text>本店私教</text>

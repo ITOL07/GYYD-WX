@@ -1,12 +1,10 @@
 {
-  "pages":[
-    "pages/user/login/login",
-    "pages/index/index/index", 
-
+  "pages": [
+ 
+    "pages/index/index/index",
     "pages/store/store/store",
     "pages/store/storedetail/storedetail",
     "pages/store/storeinfo/storeinfo",
-    
     "pages/coach/coach/coach",
     "pages/coach/case/case",
     "pages/coach/certificate/certificate",
@@ -14,26 +12,24 @@
     "pages/coach/coursedetail/coursedetail",
     "pages/coach/photo/photo",
     "pages/coach/privatedetail/privatedetail",
-
     "pages/user/user/user",
-    
-    "pages/user/set/set",   
+    "pages/user/set/set",
     "pages/user/message/message",
-    "pages/user/order/order", 
+    "pages/user/order/order",
     "pages/user/addup/addup",
     "pages/user/file/file",
     "pages/user/orderdetail/orderdetail",
     "pages/user/reg/reg",
     "pages/user/userinfo/userinfo",
-    "pages/user/agreement/agreement",  
-
-    "pages/logs/logs"
+    "pages/user/agreement/agreement",
+    "pages/logs/logs",
+    "pages/user/addLess/addLess"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "古越运动",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
     "color": "#999999",

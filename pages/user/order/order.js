@@ -8,14 +8,35 @@ Page({
    * 页面的初始数据
    */
   data: {
-    orderData: fileData.getOrderData()
+    // orderData: fileData.getOrderData()
+    orderData: null
   },
+  getOrderData(){
+    var _this = this
+    var url_tmp = fileData.getListConfig().url_test;
+    wx.request({
+      url: url_tmp +'/member/qryOrder',
+      data:{
+        mem_id: app.globalData.user_id
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded' // 默认值
+      },
+      success(res) {
+        console.log(res.data)
+        _this.setData({
+          orderData: res.data
+        })
+      }
+    })
 
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getOrderData()
   },
 
   /**

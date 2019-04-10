@@ -51,7 +51,7 @@
           <view class="list_right">
             <view class="right1">
               <text class="right1_name">{{item.name}}</text>
-              <text class="right1_title">{{item.title}}</text>
+              <text class="right1_title">累计授课{{item.title}}节</text>
               <text class="right1_price">￥{{item.price}}/课起</text>
             </view>
             <view class="right2">

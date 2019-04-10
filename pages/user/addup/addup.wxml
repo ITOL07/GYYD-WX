@@ -8,16 +8,16 @@
         </view>
         <view class="right">
           <view class="top">
-            <text class="text1">{{item.title}}</text>
-            <text class="text2">{{item.finish}}</text>
+            <text class="text1">{{item.club_name}}</text>
+            <text class="text2">{{item.coach_name}}</text>
           </view>
           <view class="middle">
-            <text>{{item.introduce}}</text>
-            <text>{{item.time}}</text>
+            <text>{{item.course_name}}</text>
+            <text>{{item.seq_no}}</text>
           </view>
           <view class="bottom">
-            <text>{{item.name}}</text>
-            <text>{{item.store}}</text>
+            <text>{{item.start_time_1}}</text>
+            <text>{{item.end_time_1}}</text>
           </view>
         </view>
       </view>

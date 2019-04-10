@@ -14,11 +14,11 @@ Page({
     //测试
     swiperImg: fileData.getSwiperImgData(),
     navData: fileData.getNavData(),
-    listData: fileData.getListData(),
+    // listData: fileData.getListData(),
     //正式
     // swiperImg: '',
     // navData: '',
-    // listData: ''
+    listData: null
   },
   //事件处理函数
   bindViewTap: function() {
@@ -40,6 +40,7 @@ Page({
   },
   onLoad: function () {
     var that= this;
+    console.log("openid====" + app.globalData.openid)
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -66,6 +67,18 @@ Page({
         }
       })
     }
+    var _this=this
+    var url_tmp = fileData.getListConfig().url_test;
+    wx.request({
+      // url: url_tmp + '/coach/qry',
+      url: url_tmp + '/coach/getCoach',
+      success(res) {
+        console.log(res.data)
+        _this.setData({
+          listData: res.data
+        })
+      }
+    }) 
   },
   getUserInfo: function(e) {
     console.log(e)
