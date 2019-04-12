@@ -63,7 +63,7 @@ Page({
     var warn = null; //warn为当手机号为空或格式不正确时提示用户的文字，默认为空
     var url_tmp = fileData.getListConfig().url_test;
     wx.request({
-      url: url_tmp +'/user/isReg', //后端判断是否已被注册， 已被注册返回1 ，未被注册返回0
+      url: url_tmp+'/user/isReg', //后端判断是否已被注册， 已被注册返回1 ，未被注册返回0
       method: "POST",
       data: {
         phoneNo: that.data.phone
@@ -81,10 +81,10 @@ Page({
         } else if (phone.trim().length != 11 || !/^1[3|4|5|6|7|8|9]\d{9}$/.test(phone)) {
           warn = "手机号格式不正确";
         } //手机号已被注册提示信息
-        else if (that.data.state == 0) {  //判断是否被注册
-          warn = "手机号已被注册,请登录或者找回密码!";
+        else if (that.data.state == -1) {  //判断是否被注册
+          warn = "手机号未注册,请先注册!";
           wx.navigateTo({
-            url: '/pages/user/login/login',
+            url: '/pages/user/reg/reg',
           })
         }
         else {
@@ -183,7 +183,7 @@ Page({
       var phone = that.data.phone;
       var url_tmp = fileData.getListConfig().url_test;
       wx.request({
-        url: url_tmp + '/user/signup',
+        url: url_tmp + '/user/forgetPass',
         method: "POST",
         data: {
           phoneNo: phone,

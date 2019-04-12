@@ -1,0 +1,9 @@
+<!--pages/user/showLess/showLess.wxml-->
+<text>pages/user/showLess/showLess.wxml</text>
+<view wx:for="{{array}}" wx:key="this" >
+  <view >
+    <text> {{item.sale_id}}</text>
+    <text> {{item.coach_name}}</text>
+    <text> {{item.course_name}}</text>
+  </view>
+</view>

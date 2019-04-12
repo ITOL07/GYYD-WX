@@ -24,75 +24,178 @@ Page({
   },
   loginClick: function(){
     var This = this;
+    var warn = null;
     if (This.data.inputVal1 == '') {
       wx.showToast({
         title: '手机号不能为空',
-        image: 'loading',
+        icon: 'loading',
         duration: 1500
       })
       return;
-    } else if (This.data.inputVal2 == '') {
+    } else if (This.data.inputVal1.trim().length != 11 || !/^1[3|4|5|6|7|8|9]\d{9}$/.test(This.data.inputVal1)) {
+      wx.showToast({
+        title: '手机号格式不正确',
+        icon: 'loading',
+        duration: 1500
+      })
+      return;
+    } 
+    else if (This.data.inputVal2 == '') {
       wx.showToast({
         title: '密码不能为空',
-        image: 'loading',
+        icon: 'loading',
         duration: 1500
       })
       return;
     }
+    var url_tmp = fileData.getListConfig().url_test;
+    wx.request({
+      // url: 'https://www.guyueyundong.com/api/me/login',
+      url: url_tmp+'/user/login',
+      data: {
+        phoneNo: This.data.inputVal1,
+        passwd: This.data.inputVal2
+      },
+      method: 'POST',
+      // dataType: 'json',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'  //发送post请求
+      },
+      success: function (res) {
+        //请求成功的处理
+        console.log(res.data)
+        app.globalData.user_id = res.data.id
+        console.log("user_id==="+app.globalData.user_id)
+        if (res.data.errono==0)
+        {
+          wx.switchTab({
+            url: '../../index/index/index',
+            success: function () {
+              wx.setNavigationBarTitle({
+                title: '首页'
+              })
+            }
+          })
+        }else {
+          wx.showToast({
+            title: res.data.errocode,
+            icon: 'loading',
+            duration: 1500
+          })
+          return;
+        }
+      }
+    })
 
-    wx.switchTab({
-      url: '../../index/index/index',
-      success: function () {
-        wx.setNavigationBarTitle({
-          title: '首页'
+    // wx.switchTab({
+    //   url: '../../index/index/index',
+    //   success: function () {
+    //     wx.setNavigationBarTitle({
+    //       title: '首页'
+    //     })
+    //   }
+    // })
+  },
+  quickClick: function () {
+    var regRouter = '../../user/reg/reg';
+    var regTitle = '注册';
+    commonData.routers(regRouter, regTitle);
+  },
+  forgetClick: function(){
+    var regRouter = '../../user/forgetPass/forgetPass';
+    var regTitle = '重置密码';
+    commonData.routers(regRouter, regTitle);
+  },
+  wxlogin:function(){
+    // 登录
+    wx.login({
+      success: res => {
+        // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        var _this = this
+        var url_tmp = fileData.getListConfig().url_test;
+        wx.request({
+          // url: 'https://www.guyueyundong.com/wxuser/login',
+          url: url_tmp+'/wxuser/login',
+          data: {
+            code: res.code,
+          },
+          method: 'POST',
+          // dataType: 'json',
+          header: {
+            'content-type': 'application/x-www-form-urlencoded'  //发送post请求
+          },
+          success: function (res) {
+            //请求成功的处理
+            //console.log(code);
+            app.globalData.openid = res.data.openid
+            console.log("发送code成功", res.data);
+            console.log("发送code成功", res.data.openid);
+            wx.switchTab({
+              url: '../../index/index/index',
+              success: function () {
+                wx.setNavigationBarTitle({
+                  title: '首页'
+                })
+              }
+            })
+          }
         })
       }
     })
   },
-  quickClick: function () {
-    var regRouter = '../../user/reg/reg';
-    var regTitle = '首注册页';
-    commonData.routers(regRouter, regTitle);
-  },
-  forgetClick: function(){
-    console.log(0);
-  },
-  wxlogin:function(){
+  getPhoneNumber: function (e) {
+    console.log(e.detail.iv);
+    console.log(e.detail.encryptedData);
     wx.login({
-      success(res) {
-        if (res.code) {
-          //把获取到的code通过一个request的请求发给java服务器
-          var url_tmp = fileData.getListConfig().url_test;
-          wx.request({
-            url: url_tmp+'/api/me/login',
-            //url: 'http://39.106.156.239:80/mydb/getUsers',
-            data: {
-              code: res.data
-            },
-            method: 'GET',
-            // dataType: 'json',
-            header: {
-              'content-type': 'application/x-www-form' // 默认值     
-            },  
-            success: function (res) {
-              //请求成功的处理
-              console.log(code);
-              console.log(res.data);
+      success: res => {
+        console.log(res.code);
+        wx.request({
+          url: 'http://localhost:8099/user/getPhone',
+          data: {
+            'encryptedData': encodeURIComponent(e.detail.encryptedData),
+            'iv': e.detail.iv,
+            'code': res.code
+          },
+          method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+          header: {
+            'content-type': 'application/json'
+          }, // 设置请求的 header
+          success: function (res) {
+            if (res.status == 1) {//我后台设置的返回值为1是正确
+              //存入缓存即可
+              wx.setStorageSync('phone', res.phone);
             }
-          })
-        }
-      },
-        fail: function () {
-          console.log("发送code失败：", res.data);
-        }
-      })
+          },
+          fail: function (err) {
+            console.log(err);
+          }
+        })
+      }
+    })
   },
-    
+  
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+wx.getSetting({
+  success(res) {
+    console.log(res)
+    // res.authSetting = {
+    //   "scope.userInfo": true,
+    //   "scope.userLocation": true
+    // }
+  }
+}), 
+wx.openSetting({
+  success(res) {
+    console.log(res)
+    // res.authSetting = {
+    //   "scope.userInfo": true,
+    //   "scope.userLocation": true
+    // }
+  }
+})
   },
 
   /**

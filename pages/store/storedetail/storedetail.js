@@ -10,19 +10,24 @@ Page({
   data: {
     // courseData: fileData.getCourseData(),
     courseData:null,
-    listData: fileData.getListData(),
-    storeListData:null
+    // listData: fileData.getListData(),
+    listData: null,
+    storeListData:null,
+    order_no:null
   },
   buyCourse: function (e) {
     var _this = this
     var url_tmp = fileData.getListConfig().url_test;
+    _this.setData({
+      order_no:this.getOrderNo()
+    })
     wx.request({
       url: url_tmp+'/pay/id',
       data: {
         // desc: 'iPhone XS Max',
         // order_no: '20190329000002'
         desc:'示例商品...',
-        order_no: _this.getOrderNo(),
+        order_no: _this.data.order_no,
         openid: app.globalData.openid,
         price: e.currentTarget.dataset.price
       },
@@ -30,7 +35,9 @@ Page({
       header: {
         'content-type': 'application/x-www-form-urlencoded' // 默认值
       },
+      
       success(res) {
+        console.log("desc==" + _this.data.order_no + "openid===" + _this.data.openid)
         console.log(res.data)
         _this.setData({
           timeStamp: res.data.timestamp,
@@ -46,14 +53,40 @@ Page({
           signType: 'MD5',
           paySign: _this.data.paySign,
           success(res) {
-            console.log('支付成功：'+res)
+            console.log(_this.data.order_no+'支付成功：'+res)
+            //发送支付状态，服务端更新状态
+            _this.sendPayRes(_this.data.order_no)
           },
           fail(res){
-            console.log('支付失败'+res)
+            console.log(_this.data.order_no + '支付失败' + res)
+            _this.sendPayRes(_this.data.order_no)
           }
         })
       }
 
+    })
+  },
+  sendPayRes:function(order_no){
+    var _this = this
+    var url_tmp = fileData.getListConfig().url_test;
+    wx.request({
+      url: url_tmp+'/pay/res',
+      data: {
+        order_no: order_no,
+        openid: app.globalData.openid
+      }, 
+      method: 'POST',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded' // 默认值
+      },
+      success(res) {
+        console.log("支付结果反馈成功：" + res.data.trade_state_desc)
+        wx.showToast({
+          title: res.data.trade_state_desc,
+          icon: 'loading',
+          duration: 2000
+        });
+      }
     })
   },
   getOrderNo: function () {
@@ -71,7 +104,7 @@ Page({
     var _this=this;
     console.log('options.id==='+options.id)
     wx.request({
-      url: url_tmp + '/mydb/showClub?id=' + options.id,
+      url: url_tmp + '/club/qry?club_id=' + options.id,
       success(res) {
         console.log(res.data)
         
@@ -81,7 +114,7 @@ Page({
       }
     }) 
     wx.request({
-      url: url_tmp + '/mydb/showCoachCourse1?id=' + options.id,
+      url: url_tmp + '/club/qryCourse?club_id=' + options.id,
       success(res) {
         console.log(res.data)
         _this.setData({
@@ -89,7 +122,15 @@ Page({
         })
       }
     }) 
-
+    wx.request({
+      url: url_tmp + '/club/qryCoach?club_id=' + options.id,
+      success(res) {
+        console.log(res.data)
+        _this.setData({
+          listData: res.data
+        })
+      }
+    }) 
 
   },
 

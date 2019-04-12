@@ -16,6 +16,7 @@
             <view class="right1">
               <image src="../../../static/images/store/mendian.png"></image>
               <text class="right1_name">{{item.name}}</text>
+              <text class="right2">    距我{{item.dis}}米</text>
             </view>
             <view class="right2">
               <text>{{item.tel}}</text>
