@@ -31,6 +31,6 @@ App({
   globalData: {
     userInfo: null,
     openid:null,
-    user_id:'201904050002'
+    user_id:'201904050003'
   }
 })

@@ -49,17 +49,17 @@ Page({
     commonData.routers(addupRouter, addupTitle);
   },
   finishedClick: function () {
-    var addupRouter = '../../user/addup/addup';
+    var addupRouter = '../../user/addup/addup?status=2';
     var addupTitle = '已完成';
     commonData.routers(addupRouter, addupTitle);
   },
   appointmentClick: function () {
-    var addupRouter = '../../user/addup/addup';
+    var addupRouter = '../../user/addup/addup?status=1';
     var addupTitle = '预约中';
     commonData.routers(addupRouter, addupTitle);
   },
   loadClick: function () {
-    var addupRouter = '../../user/addLess/addLess';
+    var addupRouter = '../../user/addLess/addLess?status=0';
     var addupTitle = '待预约';
     commonData.routers(addupRouter, addupTitle);
   },

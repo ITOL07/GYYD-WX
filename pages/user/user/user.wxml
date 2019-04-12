@@ -12,7 +12,7 @@
       </block>
     </view>
     <view class="user_nav">
-      <view class="nav_list" bindtap="queryLesson">
+      <view class="nav_list" bindtap="addupClick">
         <image src="../../../static/images/user/gouke.png"></image>
         <text>累计购课</text> 
       </view>

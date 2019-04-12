@@ -1,6 +1,6 @@
 {
   "pages": [
- 
+    
     "pages/index/index/index",
     "pages/store/store/store",
     "pages/store/storedetail/storedetail",
@@ -23,7 +23,8 @@
     "pages/user/userinfo/userinfo",
     "pages/user/agreement/agreement",
     "pages/logs/logs",
-    "pages/user/addLess/addLess"
+    "pages/user/addLess/addLess",
+    "pages/user/showLess/showLess"
   ],
   "window": {
     "backgroundTextStyle": "light",

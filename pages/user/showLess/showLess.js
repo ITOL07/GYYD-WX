@@ -1,39 +1,37 @@
-// pages/addup/addup.js
-const app = getApp()
-var fileData = require("../../../utils/data.js");
-
+// pages/user/showLess/showLess.js
+var app=getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    // addupData: 
-    addupData:null
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log("开始请求门店信息！！")
-    var url_tmp = fileData.getListConfig().url_test;
-    var _this = this;
-    console.log('options.id===' + options.id + 'options.status' + options.status)
+    console.log("user_id==" + app.globalData.user_id)
+    var _this = this
+    var arr = []
     wx.request({
-      url: url_tmp + '/member/qryLesson',
+      url: 'http://localhost:8099/member/qryLesson',
       data:{
-        mem_id:app.globalData.user_id,
-        status:(typeof(options.status) == "undefined") ? '' : options.status
+        mem_id: app.globalData.user_id,
+        status:0
       },
-      success(res) {
+      success: function (res) {
         console.log(res.data)
-
+        for (var i = 0; i < res.data.length; i++) {
+          arr.push(res.data[i])
+        }
         _this.setData({
-          addupData: res.data
+          array: arr
         })
       }
-    }) 
+    })
   },
 
   /**
