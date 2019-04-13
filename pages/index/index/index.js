@@ -79,6 +79,16 @@ Page({
         })
       }
     }) 
+    wx.request({
+      // url: url_tmp + '/coach/qry',
+      url: url_tmp + '/club/getClub',
+      success(res) {
+        console.log(res.data)
+        _this.setData({
+          navData: res.data
+        })
+      }
+    }) 
   },
   getUserInfo: function(e) {
     console.log(e)

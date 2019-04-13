@@ -1,6 +1,7 @@
 // pages/storedetail/storedetail.js
 const app = getApp()
 var fileData = require("../../../utils/data.js");
+var commonData = require("../../../utils/util.js"); 
 
 Page({
 
@@ -26,7 +27,7 @@ Page({
       data: {
         // desc: 'iPhone XS Max',
         // order_no: '20190329000002'
-        desc:'示例商品...',
+        desc: e.currentTarget.dataset.desc,
         order_no: _this.data.order_no,
         openid: app.globalData.openid,
         price: e.currentTarget.dataset.price
@@ -130,7 +131,12 @@ Page({
           listData: res.data
         })
       }
-    }) 
+    })
+    if (app.globalData.openid==null) {
+      console.log("openid为空，请绑定微信，否则不能支付哦")
+      console.log("调用微信登录接口....")
+      commonData.wxlogin()
+    }
 
   },
 
@@ -181,6 +187,6 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
+  }
 
 })

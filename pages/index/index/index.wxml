@@ -25,9 +25,9 @@
       <view class="nav_bottom">
         <view class="nav_all" wx:for="{{navData}}" wx:key="this">
           <view id="4" bindtap="storeClick">
-            <image src="{{item.imgurl}}"></image>
-            <text>{{item.introduce1}}</text>
-            <text>{{item.introduce2}}</text>
+            <image src="../../../static/images/coach/image2.png"></image>
+            <text>{{item.name}}</text>
+            <text>{{item.tel}}</text>
           </view>
         </view>
       </view>
@@ -46,7 +46,7 @@
       <view wx:for="{{listData}}" wx:key="this" class="list_data">
         <view class="list_data_item" bindtap="coachClick">
           <view class="list_left">
-            <image src="{{item.imgurl}}"></image>
+            <image src="../../../static/images/coach/image1.png"></image>
           </view>
           <view class="list_right">
             <view class="right1">

@@ -136,6 +136,7 @@
   height: 500rpx;
   background:#FFFFFF;
   margin-top:20rpx;
+  display:flex;
 }
 .private_header{
   width:100%;
@@ -285,4 +286,12 @@
 .list_right .right3 text{
   font-size:27rpx;
   color: #666666;
+}
+.scroll_body2{
+  width:90%;
+  height:320rpx;
+  display:flex;
+  flex-direction:row;
+  white-space: nowrap;
+  margin:0 auto;
 }

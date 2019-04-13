@@ -1,3 +1,6 @@
+const app = getApp()
+var fileData = require("data.js");
+
 function routers(routers,title){
   wx.navigateTo({
     url: routers,
@@ -40,8 +43,39 @@ const distance = (la1, lo1, la2, lo2) => {
   return s
 }
 
+function wxlogin() {
+  // 登录
+  wx.login({
+    success: res => {
+      // 发送 res.code 到后台换取 openId, sessionKey, unionId
+      var _this = this
+      var url_tmp = fileData.getListConfig().url_test;
+      wx.request({
+        // url: 'https://www.guyueyundong.com/wxuser/login',
+        url: url_tmp + '/wxuser/login',
+        data: {
+          code: res.code,
+        },
+        method: 'POST',
+        // dataType: 'json',
+        header: {
+          'content-type': 'application/x-www-form-urlencoded'  //发送post请求
+        },
+        success: function (res) {
+          //请求成功的处理
+          //console.log(code);
+          app.globalData.openid = res.data.openid
+          console.log("发送code成功", res.data);
+          console.log("发送code成功", res.data.openid);
+        }
+      })
+    }
+  })
+}
+
 module.exports = {
   formatTime: formatTime,
   routers,
-  distance
+  distance,
+  wxlogin: wxlogin
 }

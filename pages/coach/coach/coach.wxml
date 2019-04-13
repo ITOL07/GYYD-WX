@@ -7,10 +7,11 @@
     </view>
     <view class="bottom">
    
-     <view wx:for="{{coachList}}" wx:key="this" class="list_data">
-       <!-- <view class="list_left">
+     <view wx:for="{{coachList}}" wx:key="this" class="list_data" bindtap='coachClick'>
+   
+       <view class="list_left">
         <image src="../../../static/images/coach/image1.png"></image>
-      </view> -->
+      </view>
       <view class="list_right">
             <view class="right1">
               <text class="right1_name">{{item.name}}</text>
@@ -29,6 +30,7 @@
               <text>{{item.comment}}</text>
             </view>
       </view>
+     
       <!-- <text class="right1_name">{{item.name}}</text> 
       <text class="right1_name">  {{item.tel}}</text> 
       <text class="right1_name">  {{item.sex}}</text> 

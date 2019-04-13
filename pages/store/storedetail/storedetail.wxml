@@ -5,19 +5,19 @@
   <view class="detail_header">
     <view class="header_left">
         <image src="../../../static/images/coach/jiaolianheader.png"></image>
-      </view> 
+    </view> 
     <view class="header_right">
-    <view>
-       <text class="title">{{storeListData.name}}</text>
+      <view>
+        <text class="title">{{storeListData.name}}</text>
       </view>
       <view>
-       <text class="addr">addr:{{storeListData.address}}</text>
+        <text class="addr">addr:{{storeListData.address}}</text>
       </view>
       <view>
-       <text class="addr">tel:{{storeListData.tel}}</text>
+        <text class="addr">tel:{{storeListData.tel}}</text>
       </view>
     </view>
-    </view>
+  </view>
     <!-- <view class="detail_header">
       <view class="header_left">
         <image src="../../../static/images/coach/jiaolianheader.png"></image>
@@ -36,23 +36,25 @@
         </view>
       </view>
     </view> -->
-    <view class="detail_experience">
-      <view class="experience_header"> 
-        <text>体验课</text>
-      </view>
-      <view class="listall">
-      <view class="experience_list" wx:for="{{courseData}}" wx:key="this"> 
-      <!-- <view class="experience_list" > -->
-        <image src="{{item.imgurl}}"></image>
-        <text class="text1">{{item.coach_name}}</text>
-        <text class="text2">{{item.name}}</text>
-        <view  class="buy">
-          <text>￥{{item.price}}</text>
-          <button data-price="{{item.price}}" bindtap='buyCourse'>购买</button>
+    <!-- <scroll-view scroll-x class='scroll_body2'> -->
+      <view class="detail_experience">
+        <view class="experience_header"> 
+         <text>体验课</text>
         </view>
+        <view class="listall">
+          <view class="experience_list" wx:for="{{courseData}}" wx:key="this"> 
+          <!-- <view class="experience_list" > -->
+            <image src="{{item.imgurl}}"></image>
+            <text class="text1">{{item.coach_name}}</text>
+            <text class="text2">{{item.name}}</text>
+            <view  class="buy">
+              <text>￥{{item.price}}</text>
+              <button data-price="{{item.price}}" data-desc="{{item.name}}" bindtap='buyCourse'>购买</button>
+            </view>
+          </view>
+       </view>
       </view>
-      </view>
-    </view>
+    <!-- </scroll-view> -->
     <view class="detail_private">
       <view class="private_header">
         <text>私教课</text>
