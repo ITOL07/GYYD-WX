@@ -2,11 +2,15 @@
 <view class="container">
   <view class="top">
     <text>修改密码</text>
-    <text>></text>
+    <text>></text> 
   </view>
+  <!-- <view wx:if="{{phoneNo==null}}"> 绑定微信</view> -->
   <view class="top">
     <text>版本信息</text>
-    <text>V1.0.0</text>
+    <text>{{version}}</text>
   </view>
-  <button bindtap="exitClick">退出登录</button>
+  <button wx:if="{{phoneNo!=null||open_id!=null}}" bindtap="exitClick">退出登录</button>
+
+  <button wx:if="{{open_id!=null}}" bindtap="">绑定手机号</button>
+  <button wx:if="{{phoneNo!=null}}" bindtap="">绑定微信号</button>
 </view>

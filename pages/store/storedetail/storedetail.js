@@ -5,14 +5,14 @@ var commonData = require("../../../utils/util.js");
 
 Page({
 
-  /**
+  /** 
    * 页面的初始数据
    */
   data: {
     // courseData: fileData.getCourseData(),
     courseData:null,
-    // listData: fileData.getListData(),
-    listData: null,
+    listData: fileData.getListData(),
+    // listData: null,
     storeListData:null,
     order_no:null
   },

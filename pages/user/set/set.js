@@ -1,11 +1,15 @@
 // pages/set/set.js
+var app=getApp()
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    phoneNo:app.globalData.phoneNo,
+    open_id: app.globalData.openid,
+    version:app.globalData.version
   },
   exitClick: function(){
     wx.showModal({
@@ -30,7 +34,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      phoneNo: app.globalData.phoneNo,
+      open_id: app.globalData.openid,
+      version: app.globalData.version
+    })
+    console.log('this.data.open_id====' + this.data.open_id)
+    console.log('this.data.phoneNo====' + this.data.phoneNo)
   },
 
   /**

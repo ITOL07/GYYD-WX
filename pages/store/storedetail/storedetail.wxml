@@ -39,12 +39,12 @@
     <!-- <scroll-view scroll-x class='scroll_body2'> -->
       <view class="detail_experience">
         <view class="experience_header"> 
-         <text>体验课</text>
+         <text>体验课</text> 
         </view>
         <view class="listall">
           <view class="experience_list" wx:for="{{courseData}}" wx:key="this"> 
           <!-- <view class="experience_list" > -->
-            <image src="{{item.imgurl}}"></image>
+            <image src="../../../static/images/coach/course.pngg"></image>
             <text class="text1">{{item.coach_name}}</text>
             <text class="text2">{{item.name}}</text>
             <view  class="buy">
@@ -61,7 +61,7 @@
       </view>
       <view class="listall">
       <view class="private_list" wx:for="{{courseData}}" wx:key="this"> 
-        <image src="{{item.imgurl}}"></image>
+        <image src="../../../static/images/coach/course.png"></image>
         <text class="text1">{{item.name}}</text>
         <text class="text2">{{item.introduce}}</text>
         <view class="buy">
@@ -78,7 +78,7 @@
       <view class="store_list">
         <view wx:for="{{listData}}" wx:key="this" class="list_data">
           <view class="list_left">
-            <image src="{{item.imgurl}}"></image>
+            <image src="../../../static/images/coach/image1.png"></image>
           </view>
           <view class="list_right">
             <view class="right1">

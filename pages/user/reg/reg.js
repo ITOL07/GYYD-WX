@@ -1,6 +1,6 @@
 const app = getApp() 
 var fileData = require("../../../utils/data.js");
-
+var util = require('../../../utils/md5.js') 
 Page({
 
   /**
@@ -126,7 +126,7 @@ Page({
                     color: '#33FF99'
                   })
                 }
-              }, 100);
+              }, 1000);
             }
           })
         };
@@ -187,7 +187,7 @@ Page({
         method: "POST",
         data: {
           phoneNo: phone,
-          passwd: that.data.NewChanges
+          passwd: util.hexMD5(that.data.NewChanges)
         },
         header: {
           "content-type": "application/x-www-form-urlencoded"

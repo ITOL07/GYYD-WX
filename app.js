@@ -31,6 +31,8 @@ App({
   globalData: {
     userInfo: null,
     openid:null,
-    user_id:'201904050003'
+    user_id:'201904050003',
+    phoneNo:null,
+    version:'1.0.5'
   }
 })

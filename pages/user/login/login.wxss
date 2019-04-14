@@ -45,18 +45,24 @@
 .reg{
   width:100%;
   height:80rpx;
+  display: flex;
+  justify-content:space-around;
 }
 .reg text{
   font-size:30rpx;
   color:#FAC72C;
 }
 .reg .text1{
-  width:50%;
-  margin-left:26%;
+  width:33%;
+  margin-left:10%;
 }
 .reg .text2{
-  width:50%;
+  width:33%;
   margin-left:10%;
+}
+.reg .text3{
+  width:33%;
+  /* margin-left:10%; */
 }
 .bottom{
   width:100%;

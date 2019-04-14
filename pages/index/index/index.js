@@ -41,6 +41,7 @@ Page({
   onLoad: function () {
     var that= this;
     console.log("openid====" + app.globalData.openid)
+    console.log("phoneNo====" + app.globalData.phoneNo)
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,

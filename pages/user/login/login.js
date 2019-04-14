@@ -2,7 +2,7 @@
 const app = getApp()
 var commonData = require("../../../utils/util.js"); 
 var fileData = require("../../../utils/data.js");
-
+var util = require('../../../utils/md5.js') 
 Page({
 
   /**
@@ -25,6 +25,8 @@ Page({
   loginClick: function(){
     var This = this;
     var warn = null;
+    console.log('pass++++'+This.data.inputVal2)
+    console.log('util.hexMD5 pass++++' + util.hexMD5(This.data.inputVal2))
     if (This.data.inputVal1 == '') {
       wx.showToast({
         title: '手机号不能为空',
@@ -54,7 +56,7 @@ Page({
       url: url_tmp+'/user/login',
       data: {
         phoneNo: This.data.inputVal1,
-        passwd: This.data.inputVal2
+        passwd: util.hexMD5(This.data.inputVal2)
       },
       method: 'POST',
       // dataType: 'json',
@@ -64,8 +66,10 @@ Page({
       success: function (res) {
         //请求成功的处理
         console.log(res.data)
+        app.globalData.phoneNo = This.data.inputVal1
         app.globalData.user_id = res.data.id
         console.log("user_id==="+app.globalData.user_id)
+        console.log("phoneNo===" + app.globalData.phoneNo)
         if (res.data.errono==0)
         {
           wx.switchTab({
@@ -106,6 +110,15 @@ Page({
     var regTitle = '重置密码';
     commonData.routers(regRouter, regTitle);
   },
+  justLook: function () {
+    wx.switchTab({
+      url: '../../index/index/index',
+      success: function () {
+        wx.setNavigationBarTitle({
+          title: '古越运动'
+        })
+      }
+    })  },
   wxlogin:function(){
     // 登录
     wx.login({

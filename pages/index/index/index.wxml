@@ -17,8 +17,8 @@
         <text>推荐门店</text>
       </view>
       <view class="nav_right">
-        <text>全部</text>
-        <image src="../../../static/images/littleicon/more.png"></image>
+        <!-- <text>全部</text>
+        <image src="../../../static/images/littleicon/more.png"></image> -->
       </view>
     </view>
     <scroll-view scroll-x class='scroll_body2'>
@@ -38,8 +38,8 @@
         <text>明星私教</text>
       </view>
       <view class="nav_right">
-        <text>全部</text>
-        <image src="../../../static/images/littleicon/more.png"></image>
+        <!-- <text>全部</text>
+        <image src="../../../static/images/littleicon/more.png"></image> -->
       </view>
     </view>
     <view class="list">
