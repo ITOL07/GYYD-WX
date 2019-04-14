@@ -44,7 +44,7 @@
         <view class="listall">
           <view class="experience_list" wx:for="{{courseData}}" wx:key="this"> 
           <!-- <view class="experience_list" > -->
-            <image src="../../../static/images/coach/course.pngg"></image>
+            <image src="../../../static/images/coach/course.png"></image>
             <text class="text1">{{item.coach_name}}</text>
             <text class="text2">{{item.name}}</text>
             <view  class="buy">

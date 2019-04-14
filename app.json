@@ -24,7 +24,8 @@
     "pages/user/agreement/agreement",
     "pages/logs/logs",
     "pages/user/addLess/addLess",
-    "pages/user/showLess/showLess"
+    "pages/user/showLess/showLess",
+    "pages/user/bindPhone/bindPhone"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -1,5 +1,6 @@
 // pages/set/set.js
 var app=getApp()
+var commonData = require("../../../utils/util.js"); 
 
 Page({
 
@@ -28,6 +29,11 @@ Page({
         }
       }
     })
+  },
+  bindPhone:function(){
+    var addupRouter = '../../user/bindPhone/bindPhone';
+    var addupTitle = '绑定手机号';
+    commonData.routers(addupRouter, addupTitle);
   },
 
   /**

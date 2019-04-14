@@ -191,24 +191,24 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-wx.getSetting({
-  success(res) {
-    console.log(res)
-    // res.authSetting = {
-    //   "scope.userInfo": true,
-    //   "scope.userLocation": true
-    // }
-  }
-}), 
-wx.openSetting({
-  success(res) {
-    console.log(res)
-    // res.authSetting = {
-    //   "scope.userInfo": true,
-    //   "scope.userLocation": true
-    // }
-  }
-})
+    var _this=this
+    wx.getSetting({
+      success(res) {
+        console.log(res.authSetting['scope.userInfo'])
+        if (res.authSetting['scope.userInfo']){
+          _this.wxlogin()
+        }
+      }
+    })
+    // wx.openSetting({
+    //   success(res) {
+    //     console.log(res.authSetting)
+    //     res.authSetting = {
+    //       "scope.userInfo": true,
+    //       "scope.userLocation": true
+    //     }
+    //   }
+    // })
   },
 
   /**
