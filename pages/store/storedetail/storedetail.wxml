@@ -42,14 +42,14 @@
          <text>体验课</text> 
         </view>
         <view class="listall">
-          <view class="experience_list" wx:for="{{courseData}}" wx:key="this"> 
+          <view class="experience_list" wx:for="{{courseData_try}}" wx:key="this"> 
           <!-- <view class="experience_list" > -->
             <image src="../../../static/images/coach/course.png"></image>
             <text class="text1">{{item.coach_name}}</text>
             <text class="text2">{{item.name}}</text>
             <view  class="buy">
               <text>￥{{item.price}}</text>
-              <button data-price="{{item.price}}" data-desc="{{item.name}}" bindtap='buyCourse'>购买</button>
+              <button data-saleid="{{item.courseId}}" data-try_flag="{{item.try_flag}}" data-price="{{item.price}}" data-desc="{{item.name}}" bindtap='buyCourse'>购买</button>
             </view>
           </view>
        </view>
@@ -66,7 +66,7 @@
         <text class="text2">{{item.introduce}}</text>
         <view class="buy">
           <text>￥{{item.price}}</text>
-          <button>购买</button>
+          <button data-saleid="{{item.courseId}}" data-try_flag="{{item.try_flag}}" data-price="{{item.price}}" data-desc="{{item.name}}" bindtap='buyCourse'>购买</button>
         </view>
       </view>
       </view>

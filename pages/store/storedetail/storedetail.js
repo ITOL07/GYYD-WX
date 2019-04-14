@@ -11,6 +11,7 @@ Page({
   data: {
     // courseData: fileData.getCourseData(),
     courseData:null,
+    courseData_try:null,
     listData: fileData.getListData(),
     // listData: null,
     storeListData:null,
@@ -30,6 +31,8 @@ Page({
         desc: e.currentTarget.dataset.desc,
         order_no: _this.data.order_no,
         openid: app.globalData.openid,
+        sale_id: e.currentTarget.dataset.saleid,
+        try_flag: e.currentTarget.dataset.try_flag,
         price: e.currentTarget.dataset.price
       },
       method: 'POST',
@@ -40,6 +43,15 @@ Page({
       success(res) {
         console.log("desc==" + _this.data.order_no + "openid===" + _this.data.openid)
         console.log(res.data)
+        // console.log(res.data.errno)
+        if(res.data.errno=="-1"){
+          wx.showToast({
+            title: res.data.errcode,
+            icon: 'none',
+            duration: 2000
+          });
+          return
+        }
         _this.setData({
           timeStamp: res.data.timestamp,
           nonceStr: res.data.noncestr,
@@ -115,7 +127,16 @@ Page({
       }
     }) 
     wx.request({
-      url: url_tmp + '/club/qryCourse?club_id=' + options.id,
+      url: url_tmp + '/club/qryCourse?club_id=' + options.id+'&bz1=1',
+      success(res) {
+        console.log(res.data)
+        _this.setData({
+          courseData_try: res.data
+        })
+      }
+    }) 
+    wx.request({
+      url: url_tmp + '/club/qryCourse?club_id=' + options.id + '&bz1=0',
       success(res) {
         console.log(res.data)
         _this.setData({
