@@ -24,7 +24,7 @@
     <scroll-view scroll-x class='scroll_body2'>
       <view class="nav_bottom">
         <view class="nav_all" wx:for="{{navData}}" wx:key="this">
-          <view id="4" bindtap="storeClick">
+          <view id="{{item.club_Id}}" bindtap="storeClick">
             <image src="../../../static/images/coach/image2.png"></image>
             <text>{{item.name}}</text>
             <text>{{item.tel}}</text>

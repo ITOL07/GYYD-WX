@@ -66,6 +66,7 @@
         <text class="text2">{{item.introduce}}</text>
         <view class="buy">
           <text>￥{{item.price}}</text>
+          <stepper bindnumChange="numChange"></stepper>
           <button data-saleid="{{item.courseId}}" data-try_flag="{{item.try_flag}}" data-price="{{item.price}}" data-desc="{{item.name}}" bindtap='buyCourse'>购买</button>
         </view>
       </view>

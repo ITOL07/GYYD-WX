@@ -120,10 +120,11 @@
   color:#F85F58;
   margin-left:8%;
   font-size:28rpx;
-  width:45%;
+  width:40%;
 }
 .experience_list button{
-  width:105rpx;
+  /* width:105rpx; */
+  width:30%;
   height:50rpx;
   border-radius:20rpx;
   font-size:18rpx;

@@ -15,6 +15,7 @@ Page({
     listData: fileData.getListData(),
     // listData: null,
     storeListData:null,
+    count:10,
     order_no:null
   },
   buyCourse: function (e) {
@@ -33,7 +34,7 @@ Page({
         openid: app.globalData.openid,
         sale_id: e.currentTarget.dataset.saleid,
         try_flag: e.currentTarget.dataset.try_flag,
-        price: e.currentTarget.dataset.price
+        price: e.currentTarget.dataset.price*_this.data.count
       },
       method: 'POST',
       header: {
@@ -107,6 +108,12 @@ Page({
     var tmp = (now - 1) + (Math.round(Math.random() * 89 + 100)).toString()
     console.log('订单号为'+tmp)
     return tmp
+  },
+  numChange(e) {
+    this.setData({
+      count:e.detail
+    })
+    console.log(e.detail)
   },
   /**
    * 生命周期函数--监听页面加载
