@@ -56,7 +56,8 @@ Page({
       url: url_tmp+'/user/login',
       data: {
         phoneNo: This.data.inputVal1,
-        passwd: util.hexMD5(This.data.inputVal2)
+        passwd: util.hexMD5(This.data.inputVal2),
+        type:1
       },
       method: 'POST',
       // dataType: 'json',
@@ -121,40 +122,7 @@ Page({
     })  },
   wxlogin:function(){
     // 登录
-    wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-        var _this = this
-        var url_tmp = fileData.getListConfig().url_test;
-        wx.request({
-          // url: 'https://www.guyueyundong.com/wxuser/login',
-          url: url_tmp+'/wxuser/login',
-          data: {
-            code: res.code,
-          },
-          method: 'POST',
-          // dataType: 'json',
-          header: {
-            'content-type': 'application/x-www-form-urlencoded'  //发送post请求
-          },
-          success: function (res) {
-            //请求成功的处理
-            //console.log(code);
-            app.globalData.openid = res.data.openid
-            console.log("发送code成功", res.data);
-            console.log("发送code成功", res.data.openid);
-            wx.switchTab({
-              url: '../../index/index/index',
-              success: function () {
-                wx.setNavigationBarTitle({
-                  title: '首页'
-                })
-              }
-            })
-          }
-        })
-      }
-    })
+    commonData.wxlogin()
   },
   getPhoneNumber: function (e) {
     console.log(e.detail.iv);

@@ -5,9 +5,22 @@ Page({
    * 页面的初始数据
    */
   data: {
+    tmp:null
 
   },
 
+  loadClick:function(){
+    // var _this=this
+    // wx.request({
+    //   url: 'http://www.guyueyundong.com/images/member.pdf',
+    //   success(res){
+    //     console.log(res.data)
+    //   _this.setData({
+    //     tmp:res.data
+    //   })
+    //   }
+    // })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

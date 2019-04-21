@@ -24,6 +24,11 @@ Page({
     _this.setData({
       order_no:this.getOrderNo()
     })
+    if(e.currentTarget.dataset.try_flag==1){
+      this.setData({
+        count:1
+      })
+    }
     wx.request({
       url: url_tmp+'/pay/id',
       data: {

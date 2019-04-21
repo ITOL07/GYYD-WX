@@ -55,6 +55,7 @@ function wxlogin() {
         url: url_tmp + '/wxuser/login',
         data: {
           code: res.code,
+          type:1
         },
         method: 'POST',
         // dataType: 'json',
@@ -67,6 +68,14 @@ function wxlogin() {
           app.globalData.openid = res.data.openid
           console.log("发送code成功", res.data);
           console.log("发送code成功", res.data.openid);
+          wx.switchTab({
+            url: '../../index/index/index',
+            success: function () {
+              wx.setNavigationBarTitle({
+                title: '首页'
+              })
+            }
+          })
         }
       })
     }
