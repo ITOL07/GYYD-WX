@@ -1,73 +1,74 @@
 {
-  "pages": [
-    "pages/user/login/login",
-    "pages/index/index/index",
-    "pages/store/store/store",
-    "pages/store/storedetail/storedetail",
-    "pages/store/storeinfo/storeinfo",
-    "pages/coach/coach/coach",
-    "pages/coach/case/case",
-    "pages/coach/certificate/certificate",
-    "pages/coach/comment/comment",
-    "pages/coach/coursedetail/coursedetail",
-    "pages/coach/photo/photo",
-    "pages/coach/privatedetail/privatedetail",
-    "pages/user/user/user",
-    "pages/user/set/set",
-    "pages/user/message/message",
-    "pages/user/order/order",
-    "pages/user/addup/addup",
-    "pages/user/file/file",
-    "pages/user/orderdetail/orderdetail",
-    "pages/user/reg/reg",
-    "pages/user/userinfo/userinfo",
-    "pages/user/agreement/agreement",
-    "pages/logs/logs",
-    "pages/user/addLess/addLess",
-    "pages/user/showLess/showLess",
-    "pages/user/bindPhone/bindPhone"
-  ],
-  "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "古越运动",
-    "navigationBarTextStyle": "black"
-  },
-  "tabBar": {
-    "color": "#999999",
-    "selectedColor": "#F9CE0E",
-    "backgroundColor": "#333752",
-    "borderStyle": "white",
-    "list": [
-      {
-        "pagePath": "pages/index/index/index",
-        "text": "首页",
-        "iconPath": "./static/images/tabbar/index.png",
-        "selectedIconPath": "./static/images/tabbar/indexSelect.png"
-      },
-      {
-        "pagePath": "pages/store/store/store",
-        "text": "门店",
-        "iconPath": "./static/images/tabbar/store.png",
-        "selectedIconPath": "./static/images/tabbar/storeSelect.png"
-      },
-      {
-        "pagePath": "pages/coach/coach/coach",
-        "text": "教练",
-        "iconPath": "./static/images/tabbar/coach.png",
-        "selectedIconPath": "./static/images/tabbar/coachSelect.png"
-      },
-      {
-        "pagePath": "pages/user/user/user",
-        "text": "我的",
-        "iconPath": "./static/images/tabbar/user.png",
-        "selectedIconPath": "./static/images/tabbar/userSelect.png"
-      }
-    ]
-  },
-  "permission": {
-    "scope.userLocation": {
-      "desc": "你的位置信息将用于小程序位置接口的效果展示"
-    }
-  }
+	"pages": [
+		"pages/user/login/login",
+		"pages/index/index/index",
+		"pages/store/store/store",
+		"pages/store/storedetail/storedetail",
+		"pages/store/storeinfo/storeinfo",
+		"pages/coach/coach/coach",
+		"pages/coach/case/case",
+		"pages/coach/certificate/certificate",
+		"pages/coach/comment/comment",
+		"pages/coach/coursedetail/coursedetail",
+		"pages/coach/photo/photo",
+		"pages/coach/privatedetail/privatedetail",
+		"pages/user/user/user",
+		"pages/user/set/set",
+		"pages/user/message/message",
+		"pages/user/order/order",
+		"pages/user/addup/addup",
+		"pages/user/file/file",
+		"pages/user/orderdetail/orderdetail",
+		"pages/user/reg/reg",
+		"pages/user/userinfo/userinfo",
+		"pages/user/agreement/agreement",
+		"pages/logs/logs",
+		"pages/user/addLess/addLess",
+		"pages/user/showLess/showLess",
+		"pages/user/bindPhone/bindPhone"
+	],
+	"window": {
+		"backgroundTextStyle": "light",
+		"navigationBarBackgroundColor": "#fff",
+		"navigationBarTitleText": "古越运动",
+		"navigationBarTextStyle": "black"
+	},
+	"tabBar": {
+		"color": "#999999",
+		"selectedColor": "#F9CE0E",
+		"backgroundColor": "#333752",
+		"borderStyle": "white",
+		"list": [
+			{
+				"pagePath": "pages/index/index/index",
+				"text": "首页",
+				"iconPath": "./static/images/tabbar/index.png",
+				"selectedIconPath": "./static/images/tabbar/indexSelect.png"
+			},
+			{
+				"pagePath": "pages/store/store/store",
+				"text": "门店",
+				"iconPath": "./static/images/tabbar/store.png",
+				"selectedIconPath": "./static/images/tabbar/storeSelect.png"
+			},
+			{
+				"pagePath": "pages/coach/coach/coach",
+				"text": "教练",
+				"iconPath": "./static/images/tabbar/coach.png",
+				"selectedIconPath": "./static/images/tabbar/coachSelect.png"
+			},
+			{
+				"pagePath": "pages/user/user/user",
+				"text": "我的",
+				"iconPath": "./static/images/tabbar/user.png",
+				"selectedIconPath": "./static/images/tabbar/userSelect.png"
+			}
+		]
+	},
+	"permission": {
+		"scope.userLocation": {
+			"desc": "你的位置信息将用于小程序位置接口的效果展示"
+		}
+	},
+	"sitemapLocation": "sitemap.json"
 }
