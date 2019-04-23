@@ -7,18 +7,19 @@ var commonData = require("../../../utils/util.js");
 Page({ 
   data: {
     index_dots: true,
+		circular: true,
     index_color: "#646967",
     index_activeColor: "#FFFFFF",
     index_interval: 3000,
     index_duration: 1000,
     //测试
     swiperImg: fileData.getSwiperImgData(),
-    navData: fileData.getNavData(),
-    // listData: fileData.getListData(),
+    // navData: fileData.getNavData(),
+    listData: fileData.getListData(),
     //正式
     // swiperImg: '',
-    // navData: '',
-    listData: null
+    navData: [],
+    // listData: null
   },
   //事件处理函数
   bindViewTap: function() {
@@ -76,7 +77,7 @@ Page({
       success(res) {
         console.log(res.data)
         _this.setData({
-          listData: res.data
+          // listData: res.data
         })
       }
     }) 
