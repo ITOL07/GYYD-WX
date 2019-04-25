@@ -3,22 +3,26 @@
 //获取轮播图
 function getSwiperImgData() {
   var arr = [
-    {
-      id: '0',
-      imgurl: '../../../static/images/swiper/swiper.png',
-    },
-    {
-      id: '1',
-      imgurl: '../../../static/images/swiper/swiper.png',
-    },
-    {
-      id: '2',
-      imgurl: '../../../static/images/swiper/swiper.png',
-    },
-    {
-      id: '3',
-      imgurl: '../../../static/images/swiper/swiper.png',
-    },
+    // {
+    //   id: '0',
+    //   imgurl: '../../../static/images/swiper/swiper.png',
+    // },
+    // {
+    //   id: '1',
+    //   imgurl: '../../../static/images/swiper/swiper.png',
+    // },
+    // {
+    //   id: '2',
+    //   imgurl: '../../../static/images/swiper/swiper.png',
+    // },
+    // {
+    //   id: '3',
+    //   imgurl: '../../../static/images/swiper/swiper.png',
+    // },
+		{
+			id: '4',
+			imgurl: '../../../static/images/swiper/swiper2.jpg'
+		}
   ]
   return arr;
 }
