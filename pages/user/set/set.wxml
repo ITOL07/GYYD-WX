@@ -1,6 +1,6 @@
 <!--pages/set/set.wxml-->
 <view class="container">
-  <view class="top">
+  <view class="top" bindtap=''>
     <text>修改密码</text>
     <text>></text> 
   </view>

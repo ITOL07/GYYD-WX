@@ -18,25 +18,6 @@
       </view>
     </view>
   </view>
-    <!-- <view class="detail_header">
-      <view class="header_left">
-        <image src="../../../static/images/coach/jiaolianheader.png"></image>
-      </view> 
-      <view class="header_right">
-        <view>
-          <text class="title">腾讯众创空间店</text>
-        </view>
-        <view>
-          <text class="addr">北京市昌平区回龙观东大街338号腾讯重创空间B座349</text>
-        </view>
-        <view class="phone">
-          <text>联系电话：010-89778899</text>
-          <text class="detail">详情</text>
-          <image src="../../../static/images/littleicon/more.png"></image>
-        </view>
-      </view>
-    </view> -->
-    <!-- <scroll-view scroll-x class='scroll_body2'> -->
       <view class="detail_experience">
         <view class="experience_header"> 
          <text>体验课</text> 
@@ -66,7 +47,7 @@
         <text class="text2">{{item.introduce}}</text>
         <view class="buy">
           <text>￥{{item.price}}</text>
-          <stepper bindnumChange="numChange"></stepper>
+          <!-- <stepper bindnumChange="numChange"></stepper> -->
           <button data-saleid="{{item.courseId}}" data-try_flag="{{item.try_flag}}" data-price="{{item.price}}" data-desc="{{item.name}}" bindtap='buyCourse'>购买</button>
         </view>
       </view>

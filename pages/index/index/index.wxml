@@ -6,7 +6,7 @@
       <swiper indicator-dots="{{index_dots}}" indicator-color="{{index_color}}" indicator-active-color="{{index_activeColor}}" duration="{{index_duration}}" interval="{{index_interval}}" autoplay>
         <block wx:for="{{swiperImg}}" wx:key="this">
           <swiper-item>
-            <image src="{{item.imgurl}}" class="swiper_image"></image>
+            <image src="{{item.img_url}}" class="swiper_image"></image>
           </swiper-item>
         </block>
       </swiper>

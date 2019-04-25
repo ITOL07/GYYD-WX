@@ -12,7 +12,8 @@ Page({
     index_interval: 3000,
     index_duration: 1000,
     //测试
-    swiperImg: fileData.getSwiperImgData(),
+    // swiperImg: fileData.getSwiperImgData(),
+    swiperImg:null,
     navData: fileData.getNavData(),
     // listData: fileData.getListData(),
     //正式
@@ -70,6 +71,19 @@ Page({
     }
     var _this=this
     var url_tmp = fileData.getListConfig().url_test;
+    wx.request({
+      // url: url_tmp + '/coach/qry',
+      url: url_tmp + '/img/load1',
+      data:{
+        type:6
+      },
+      success(res) {
+        console.log(res.data)
+        _this.setData({
+          swiperImg: res.data
+        })
+      }
+    }) 
     wx.request({
       // url: url_tmp + '/coach/qry',
       url: url_tmp + '/coach/getCoach',
