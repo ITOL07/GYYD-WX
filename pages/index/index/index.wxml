@@ -3,7 +3,10 @@
   <scroll-view scroll-y="true" class="scroll_body">
     <!-- 轮播图 -->
     <view class="index_head">
-      <swiper indicator-dots="{{index_dots}}" indicator-color="{{index_color}}" indicator-active-color="{{index_activeColor}}" duration="{{index_duration}}" interval="{{index_interval}}" autoplay>
+			<!--test-->
+      <swiper indicator-dots="{{index_dots}}" indicator-color="{{index_color}}"
+							indicator-active-color="{{index_activeColor}}" duration="{{index_duration}}" 
+							circular="{{circular}}" interval="{{index_interval}}" autoplay="{{autoplay}}">
         <block wx:for="{{swiperImg}}" wx:key="this">
           <swiper-item>
             <image src="{{item.img_url}}" class="swiper_image"></image>
@@ -13,13 +16,7 @@
     </view>
     <!-- 导航 -->
     <view class="nav_top">
-      <view class="nav_left">
         <text>推荐门店</text>
-      </view>
-      <view class="nav_right">
-        <!-- <text>全部</text>
-        <image src="../../../static/images/littleicon/more.png"></image> -->
-      </view>
     </view>
     <scroll-view scroll-x class='scroll_body2'>
       <view class="nav_bottom">
@@ -33,14 +30,10 @@
       </view>
     </scroll-view>
     <!-- 列表 -->
-    <view class="nav_top">
-      <view class="nav_left">
+    <view class="nav_bottom2">
+      <view class="title">
         <text>明星私教</text>
-      </view>
-      <view class="nav_right">
-        <!-- <text>全部</text>
-        <image src="../../../static/images/littleicon/more.png"></image> -->
-      </view>
+			</view>
     </view>
     <view class="list">
       <view wx:for="{{listData}}" wx:key="this" class="list_data">
@@ -50,9 +43,15 @@
           </view>
           <view class="list_right">
             <view class="right1">
-              <text class="right1_name">{{item.name}}</text>
-              <text class="right1_title">累计授课{{item.title}}节</text>
-              <text class="right1_price">￥{{item.price}}/课起</text>
+							<view>
+								<text class="right1_name">{{item.name}}</text>
+								<text>累计授课{{item.title}}节</text>
+							</view>
+              <view class="right1_price">
+								<text>￥</text>
+								<text>{{item.price}}</text>
+								<text>/课起</text>
+							</view>
             </view>
             <view class="right2">
               <image src="../../../static/images/littleicon/xing1.png"></image>
