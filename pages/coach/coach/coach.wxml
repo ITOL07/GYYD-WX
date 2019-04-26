@@ -7,10 +7,10 @@
     </view>
     <view class="bottom">
    
-     <view wx:for="{{coachList}}" wx:key="this" class="list_data" bindtap='coachClick'>
+     <view wx:for="{{coachList}}" wx:key="this" class="list_data" data-coachId="{{item.coach_Id}}" bindtap='coachClick'>
    
        <view class="list_left">
-        <image src="../../../static/images/coach/image1.png"></image>
+        <image src="{{item.icon}}"></image>
       </view>
       <view class="list_right">
             <view class="right1">
@@ -30,39 +30,7 @@
               <text>擅长：{{item.comment}}</text>
             </view>
       </view>
-     
-      <!-- <text class="right1_name">{{item.name}}</text> 
-      <text class="right1_name">  {{item.tel}}</text> 
-      <text class="right1_name">  {{item.sex}}</text> 
-      <text class="right1_name">  {{item.height}}</text> 
-      <text class="right1_name">  {{item.weight}}</text> 
-      <text class="right1_price">￥{{item.price}}/课起</text> -->
       </view>
-      <!-- <view wx:for="{{listData}}" wx:key="this" class="list_data">
-        <view class="list_item" bindtap="coachClick1">
-          <view class="list_left">
-            <image src="{{item.imgurl}}"></image>
-          </view>
-          <view class="list_right">
-            <view class="right1">
-              <text class="right1_name">{{item.name}}</text>
-              <text class="right1_title">{{tel}}</text>
-              <text class="right1_price">￥{{item.price}}/课起</text>
-            </view>
-            <view class="right2">
-              <image src="../../../static/images/littleicon/xing1.png"></image>
-              <image src="../../../static/images/littleicon/xing1.png"></image>
-              <image src="../../../static/images/littleicon/xing1.png"></image>
-              <image src="../../../static/images/littleicon/xing1.png"></image>
-              <image src="../../../static/images/littleicon/xing1.png"></image>
-              <text>{{item.rate}}</text>
-            </view>
-            <view class="right3">
-              <text>{{item.shanchang}}</text>
-            </view>
-          </view>
-        </view>
-      </view> -->
     </view>
   </scroll-view>
 </view>

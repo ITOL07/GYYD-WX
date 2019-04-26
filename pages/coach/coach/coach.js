@@ -14,13 +14,14 @@ Page({
     name:'',
     tel:''
   },
-  coachClick: function(){
-    var privatedetailRouter = '../../coach/privatedetail/privatedetail';
+  coachClick: function(e){
+    var privatedetailRouter = '../../coach/privatedetail/privatedetail?coach_id=' + e.currentTarget.dataset.coachId;
+    console.log(e.currentTarget.dataset.coachId)
     var privatedetailTitle = '私教详情';
     commonData.routers(privatedetailRouter, privatedetailTitle);
   },
   coachClick1: function (nu) {
-    
+    console.log(nu.coachId)
   },
   /**
    * 生命周期函数--监听页面加载

@@ -11,7 +11,7 @@
   <view class="count">
     <view class="left">
       <text class="text1">课次</text>
-      <text class="text2">（8节起售）</text>
+      <text class="text2">（10节起售）</text>
     </view>
     <view class="right">
       <text class="text">-</text>
