@@ -16,7 +16,7 @@
             <view class="right1">
               <text class="right1_name">{{item.name}}</text>
               <text class="right1_title">{{item.tel}}</text>
-              <text class="right1_price">￥{{item.price}}/课起</text>
+              <text class="right1_price">￥{{item.min_price}}/课起</text>
             </view>
             <view class="right2">
               <image src="../../../static/images/littleicon/xing1.png"></image>
@@ -27,7 +27,7 @@
               <text>{{item.score}}</text>
             </view>
             <view class="right3">
-              <text>{{item.comment}}</text>
+              <text>擅长：{{item.comment}}</text>
             </view>
       </view>
      

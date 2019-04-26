@@ -19,6 +19,7 @@
     "pages/user/order/order",
     "pages/user/addup/addup",
     "pages/user/file/file",
+    "pages/user/useragree/useragree",
     "pages/user/orderdetail/orderdetail",
     "pages/user/reg/reg",
     "pages/user/userinfo/userinfo",

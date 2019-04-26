@@ -21,7 +21,7 @@ Page({
     //正式
     // swiperImg: '',
     navData: [],
-    // listData: null
+    listData: null
   },
   //事件处理函数
   bindViewTap: function() {
@@ -77,6 +77,7 @@ Page({
       // url: url_tmp + '/coach/qry',
       url: url_tmp + '/img/load1',
       data:{
+        //6为轮播图
         type:6
       },
       success(res) {
@@ -92,20 +93,21 @@ Page({
       success(res) {
         console.log(res.data)
         _this.setData({
-          // listData: res.data
+          listData: res.data
         })
       }
     }) 
-    wx.request({
-      // url: url_tmp + '/coach/qry',
-      url: url_tmp + '/club/getClub',
-      success(res) {
-        console.log(res.data)
-        _this.setData({
-          navData: res.data
-        })
-      }
-    }) 
+    // wx.request({
+    //   // url: url_tmp + '/coach/qry',
+    //   url: url_tmp + '/club/getClub',
+    //   success(res) {
+    //     console.log(res.data)
+    //     _this.setData({
+    //       navData: res.data
+    //     })
+    //   }
+    // }) 
+    that.getClubInfo()
   },
   getUserInfo: function(e) {
     console.log(e)
@@ -114,5 +116,47 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
-  }
+  },
+  getClubInfo: function () {
+    var _this = this
+    wx.getLocation({
+      //type: 'wgs84',  
+      type: 'gcj02', //微信可用的坐标
+      success(res) {
+        // _this.setData({
+        //   la: res.latitude,
+        //   lo: res.longitude
+        // })
+        const la = res.latitude
+        const lo = res.longitude
+        console.log(res.latitude + '| ' + res.longitude)
+        console.log("开始请求门店信息！！")
+        var url_tmp = fileData.getListConfig().url_test;
+        wx.request({
+          url: url_tmp + '/club/getClub',
+          success(res) {
+            console.log(res.data)
+            let tmp = [];
+            var json = {};
+            for (var i = 0; i < res.data.length; i++) {
+              var distance = commonData.distance(la, lo, res.data[i].la, res.data[i].lo)
+              console.log('i===' + i + ' lat==' + res.data[i].la + ' lo==' + res.data[i].lo + '_this.la =====' + la + ' distance===' + distance)
+              json = res.data[i]
+              json.dis = distance
+
+              tmp.push(json)
+            }
+            if (tmp.length === 0) {
+              console.log('无符合条件记录')
+            }
+
+            _this.setData({
+              navData: tmp
+            })
+          }
+        })
+      }
+
+    })
+  },
 })

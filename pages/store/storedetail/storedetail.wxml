@@ -2,7 +2,7 @@
 <view class="container">
   <scroll-view scroll-y="true" class="scroll_body">
   <!-- <view wx:for="{{storeListData}}" wx:key="this"> -->
-  <view class="detail_header">
+  <view class="detail_header" bindtap='bindStoreInfo'>
     <view class="header_left">
         <image src="../../../static/images/coach/jiaolianheader.png"></image>
     </view> 
@@ -30,7 +30,9 @@
             <text class="text2">{{item.name}}</text>
             <view  class="buy">
               <text>￥{{item.price}}</text>
-              <button data-saleid="{{item.courseId}}" data-try_flag="{{item.try_flag}}" data-price="{{item.price}}" data-desc="{{item.name}}" bindtap='buyCourse'>购买</button>
+              <!-- <button data-saleid="{{item.courseId}}" data-try_flag="{{item.try_flag}}" data-price="{{item.price}}" data-desc="{{item.name}}" bindtap='buyCourse'>购买</button> -->
+              
+              <button data-saleid="{{item.courseId}}" data-try_flag="{{item.try_flag}}" data-price="{{item.price}}" data-desc="{{item.name}}" bindtap='gotobuy'>购买</button>
             </view>
           </view>
        </view>
@@ -48,7 +50,8 @@
         <view class="buy">
           <text>￥{{item.price}}</text>
           <!-- <stepper bindnumChange="numChange"></stepper> -->
-          <button data-saleid="{{item.courseId}}" data-try_flag="{{item.try_flag}}" data-price="{{item.price}}" data-desc="{{item.name}}" bindtap='buyCourse'>购买</button>
+          <!-- <button data-saleid="{{item.courseId}}" data-try_flag="{{item.try_flag}}" data-price="{{item.price}}" data-desc="{{item.name}}" bindtap='buyCourse'>购买</button> -->
+          <button data-saleid="{{item.courseId}}" data-try_flag="{{item.try_flag}}" data-price="{{item.price}}" data-desc="{{item.name}}" bindtap='gotobuy'>购买</button>
         </view>
       </view>
       </view>
@@ -57,16 +60,16 @@
       <view class="store_header">
         <text>本店私教</text>
       </view>
-      <view class="store_list">
-        <view wx:for="{{listData}}" wx:key="this" class="list_data">
+      <view class="store_list" >
+        <view wx:for="{{listData}}" wx:key="this" class="list_data" >
           <view class="list_left">
             <image src="../../../static/images/coach/image1.png"></image>
           </view>
-          <view class="list_right">
+          <view class="list_right" bindtap="getCoachInfo" id="{{item.coachId}}">
             <view class="right1">
               <text class="right1_name">{{item.name}}</text>
               <text class="right1_title">{{item.title}}</text>
-              <text class="right1_price">￥{{item.price}}/课起</text>
+              <text class="right1_price">￥{{item.min_price}}/课起</text>
             </view>
             <view class="right2">
               <image src="../../../static/images/littleicon/xing1.png"></image>
@@ -77,7 +80,7 @@
               <text>{{item.rate}}</text>
             </view>
             <view class="right3">
-              <text>{{item.shanchang}}</text>
+              <text>擅长：{{item.comment}}</text>
             </view>
           </view>
         </view>

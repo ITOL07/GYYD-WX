@@ -1,4 +1,7 @@
 // pages/coursedetail/coursedetail.js
+const app = getApp()
+var fileData = require("../../../utils/data.js");
+var commonData = require("../../../utils/util.js"); 
 Page({
 
   /**
@@ -12,6 +15,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+
+  },
+  gotoOrderdtl:function(){
+    var storedetailRouter = '../../user/orderdetail/orderdetail?id=' + this.data.club_id;
+    var storedetailTitle = '课程详情';
+    commonData.routers(storedetailRouter, storedetailTitle);
 
   },
 

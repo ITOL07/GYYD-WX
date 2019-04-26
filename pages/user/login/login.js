@@ -168,6 +168,7 @@ Page({
         }
       }
     })
+    
     // wx.openSetting({
     //   success(res) {
     //     console.log(res.authSetting)

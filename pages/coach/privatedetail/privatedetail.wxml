@@ -87,7 +87,8 @@
         </view>
       </view>
     </view>
-    <view class="comment">
+    <!--暂时隐去会员评价-->
+    <!-- <view class="comment">
       <view class="comment_header">
         <text>会员评价</text>
       </view>
@@ -118,6 +119,6 @@
       <view class="comment_footer">
         <text>增肌max（私教课）</text>
       </view>
-    </view>
+    </view> -->
   </scroll-view>
 </view>

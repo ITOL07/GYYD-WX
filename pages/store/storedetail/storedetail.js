@@ -15,6 +15,7 @@ Page({
     listData: fileData.getListData(),
     // listData: null,
     storeListData:null,
+    club_id:null,
     count:10,
     order_no:null
   },
@@ -127,6 +128,9 @@ Page({
     console.log("开始请求门店信息！！")
     var url_tmp = fileData.getListConfig().url_test;
     var _this=this;
+    _this.setData({
+      club_id: options.id
+    })
     console.log('options.id==='+options.id)
     wx.request({
       url: url_tmp + '/club/qry?club_id=' + options.id,
@@ -172,7 +176,25 @@ Page({
     }
 
   },
+  bindStoreInfo:function(){
+    // console.log(e)
+    var storedetailRouter = '../../store/storeinfo/storeinfo?id=' + this.data.club_id;
+    var storedetailTitle = '门店详情';
+    commonData.routers(storedetailRouter, storedetailTitle);
 
+  },
+  gotobuy:function(){
+    var storedetailRouter = '../../coach/coursedetail/coursedetail?id=' + this.data.club_id;
+    var storedetailTitle = '课程详情';
+    commonData.routers(storedetailRouter, storedetailTitle);
+
+  },
+  getCoachInfo:function(e){
+    var storedetailRouter = '../../coach/privatedetail/privatedetail?id=' + e.currentTarget.id;
+    var storedetailTitle = '教练详情';
+    commonData.routers(storedetailRouter, storedetailTitle);
+
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

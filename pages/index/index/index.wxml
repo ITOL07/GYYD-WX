@@ -24,7 +24,7 @@
           <view id="{{item.club_Id}}" bindtap="storeClick">
             <image src="../../../static/images/coach/image2.png"></image>
             <text>{{item.name}}</text>
-            <text>{{item.tel}}</text>
+            <text>{{item.dis}}米</text>
           </view>
         </view>
       </view>
@@ -45,11 +45,11 @@
             <view class="right1">
 							<view>
 								<text class="right1_name">{{item.name}}</text>
-								<text>累计授课{{item.title}}节</text>
+								<text>累计授课{{item.total_count}}节</text>
 							</view>
               <view class="right1_price">
 								<text>￥</text>
-								<text>{{item.price}}</text>
+								<text>{{item.min_price}}</text>
 								<text>/课起</text>
 							</view>
             </view>
@@ -62,7 +62,7 @@
               <text>{{item.rate}}</text>
             </view>
             <view class="right3">
-              <text>{{item.shanchang}}</text>
+              <text>擅长：{{item.comment}}</text>
             </view>
           </view>
         </view>

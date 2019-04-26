@@ -24,8 +24,8 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    var _this=this
+  getClubInfo:function(){
+    var _this = this
     wx.getLocation({
       //type: 'wgs84',  
       type: 'gcj02', //微信可用的坐标
@@ -48,30 +48,26 @@ Page({
             for (var i = 0; i < res.data.length; i++) {
               var distance = commonData.distance(la, lo, res.data[i].la, res.data[i].lo)
               console.log('i===' + i + ' lat==' + res.data[i].la + ' lo==' + res.data[i].lo + '_this.la =====' + la + ' distance===' + distance)
-              json=res.data[i]
-              json.dis=distance
-              // if(distance<15000){
-              // if (distance >900000) {
+              json = res.data[i]
+              json.dis = distance
+
               tmp.push(json)
-              // }
             }
-            if(tmp.length===0){
+            if (tmp.length === 0) {
               console.log('无符合条件记录')
             }
-            
+
             _this.setData({
               storeListData: tmp
             })
-
-            // _this.setData({
-            //   storeListData: res.data
-            // })
           }
-        }) 
+        })
       }
-      
-    })
 
+    })
+  },
+  onLoad: function (options) {
+    this.getClubInfo()
   },
 
   /**

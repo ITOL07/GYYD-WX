@@ -27,12 +27,19 @@ App({
         }
       }
     })
+    wx.getSystemInfo({
+      success: res=> {
+        console.log(res)
+        this.globalData.systemInfo = res.system.toUpperCase()
+      }
+    })
   },
   globalData: {
     userInfo: null,
     openid:null,
     user_id:'201904050003',
     phoneNo:null,
-    version:'1.0.5'
+    version:'1.0.5',
+    systemInfo:null
   }
 })

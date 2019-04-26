@@ -1,0 +1,3 @@
+<!--pages/user/useragree/useragree.wxml-->
+<web-view wx:if="{{flag}}" src="{{url}}"> </web-view>
+<!-- <wx:if="{{systeminfo.indexof("ios")>0}}"> -->

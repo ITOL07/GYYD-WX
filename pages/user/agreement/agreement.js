@@ -1,4 +1,7 @@
 // pages/agreement/agreement.js
+const app = getApp()
+var commonData = require("../../../utils/util.js"); 
+
 Page({
 
   /**
@@ -10,6 +13,10 @@ Page({
   },
 
   loadClick:function(){
+    var regRouter = '../../user/useragree/useragree';
+    var regTitle = '用户协议';
+    commonData.routers(regRouter, regTitle);
+
     // var _this=this
     // wx.request({
     //   url: 'http://www.guyueyundong.com/images/member.pdf',
