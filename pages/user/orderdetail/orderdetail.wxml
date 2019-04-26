@@ -14,9 +14,9 @@
       <text class="text2">（10节起售）</text>
     </view>
     <view class="right">
-      <text class="text">-</text>
-      <text class="text2">0</text>
-      <text class="text">+</text>
+      <text class="text" bindtap="bindMinus">-</text>
+     <input class="text2" type="number" bindchange="bindManual" value="{{num}}" /> 
+      <text class="text" bindtap="bindPlus">+</text>
     </view>
   </view>
   <view class="store">

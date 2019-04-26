@@ -1,11 +1,16 @@
 // pages/storeinfo/storeinfo.js
+const app = getApp()
+var fileData = require("../../../utils/data.js");
+var commonData = require("../../../utils/util.js"); 
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    open_time:null,
+    close_time:null
   },
 
   /**
@@ -13,7 +18,27 @@ Page({
    */
   onLoad: function (options) {
     console.log('club_id==='+options.id)
-    
+    var url_tmp = fileData.getListConfig().url_test;
+    var _this = this;
+    _this.setData({
+      club_id: options.id
+    })
+    console.log('options.id===' + options.id)
+    wx.request({
+      url: url_tmp + '/club/qry?club_id=' + options.id,
+      success(res) {
+        console.log(res.data)
+
+        _this.setData({
+          storeData: res.data,
+          open_time: res.data.openTime.substring(9, 14),
+          close_time: res.data.closeTime.substring(9, 14)
+        })
+        
+        console.log("open_time====" + _this.data.open_time)
+        console.log("close_time====" + _this.data.close_time)
+      }
+    }) 
   },
 
   /**

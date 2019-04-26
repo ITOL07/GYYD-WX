@@ -33,7 +33,7 @@
 }
 .name .text2{
   color:#999999;
-  font-size:28rpx;
+  font-size:25rpx;
   height:50%;
   display:block;
   padding-left:2%;

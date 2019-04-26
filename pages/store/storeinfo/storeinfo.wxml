@@ -7,15 +7,15 @@
       </view>
       <view class="header_right">
         <view>
-          <text class="title">腾讯众创空间店</text>
+          <text class="title">{{storeData.name}}</text>
         </view>
         <view> 
-          <text>北京市昌平区回龙观东大街338号腾讯重创空间B座349</text>
+          <text>{{storeData.address}}</text>
         </view>
         <view class="phone">
-          <text>联系电话：010-89778899</text>
-          <text>详情</text>
-          <image src="../../../static/images/littleicon/more.png"></image>
+          <text>联系电话：{{storeData.tel}}</text>
+          <!-- <text>详情</text> -->
+          <!-- <image src="../../../static/images/littleicon/more.png"></image> -->
         </view>
       </view>
     </view>
@@ -24,14 +24,14 @@
         <text class="line">|</text>
         <text class="txt">门店面积</text>
       </view>
-      <text class="middle_bottom">300m²</text>
+      <text class="middle_bottom">{{storeData.area}} m²</text>
     </view>
     <view class="store_middle">
       <view class="middle_top">
         <text class="line">|</text>
         <text class="txt">营业时间</text>
       </view>
-      <text class="middle_bottom">每天00:00~23:59</text>
+      <text class="middle_bottom">每天{{open_time}}~{{close_time}}</text>
     </view>
     <view class="store_middle">
       <view class="middle_top">
@@ -39,10 +39,10 @@
         <text class="txt">基础设施</text>
       </view>
       <view class="store_facilities">
-        <text class="middle_bottom">充电宝</text>
-        <text class="middle_bottom">洗浴</text>
+        <text class="middle_bottom">{{storeData.jcss}}</text>
+        <!-- <text class="middle_bottom">洗浴</text>
         <text class="middle_bottom">WIFI</text>
-        <text class="middle_bottom">停车场</text>
+        <text class="middle_bottom">停车场</text> -->
       </view>
     </view>
     <view class="map">
