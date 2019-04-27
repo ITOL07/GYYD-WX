@@ -32,6 +32,6 @@
       <text class="text1">总计</text>
       <text class="text1">¥1760.00</text>
     </view>
-    <button>去支付</button>
+    <button bindtap="buyCourse" data-saleid="{{item.courseId}}" data-try_flag="{{item.try_flag}}" data-price="{{item.price}}" data-desc="{{item.name}}">去支付</button>
   </view>
 </view>

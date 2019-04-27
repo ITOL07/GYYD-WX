@@ -40,9 +40,6 @@
       </view>
       <view class="store_facilities">
         <text class="middle_bottom">{{storeData.jcss}}</text>
-        <!-- <text class="middle_bottom">洗浴</text>
-        <text class="middle_bottom">WIFI</text>
-        <text class="middle_bottom">停车场</text> -->
       </view>
     </view>
     <view class="map">
@@ -50,15 +47,16 @@
         <text class="line">|</text>
         <text>门店地址</text>
       </view>
-      <image src="../../../static/images/store/map.png"></image>
+      <text bindtap="openLocation">{{storeData.address}}</text>
     </view>
     <view class="storeimg">
       <view class="middle_top">
         <text class="line">|</text>
         <text>门店图片</text>
       </view>
-      <view class="imgall">
-        <image></image>
+      
+      <view wx:for="{{storeImg}}" wx:key="this" class="imgall">
+        <image src="{{item.img_url}}"></image>
       </view>
     </view>
   </scroll-view>
