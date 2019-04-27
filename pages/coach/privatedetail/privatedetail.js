@@ -137,6 +137,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+<<<<<<< HEAD
     console.log("教练详情页" + options.coach_id)
     //默认加载教练个人信息
     this.showCoachInfo(options.coach_id);
@@ -144,6 +145,9 @@ Page({
     this.showCoachPapersNum(options.coach_id);
     //默认加载场地信息
     this.getClubInfo();
+=======
+    console.log("教练详情页"+options.id)
+>>>>>>> panyb
   },
 
   /**
