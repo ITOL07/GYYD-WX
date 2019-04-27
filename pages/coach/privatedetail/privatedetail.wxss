@@ -338,3 +338,39 @@
   color:#999999;
   font-size:28rpx;
 }
+.scroll_body2{
+  width: 95%;
+  height: 300rpx;
+  margin: 0 2.5%;
+  display:flex;
+  flex-direction:row;
+  white-space: nowrap;
+}
+.nav_bottom{
+  width: auto;
+  height: 300rpx;
+  display:flex;
+  flex-direction:row;
+  box-sizing:border-box;
+}
+.nav_bottom .nav_all{
+  width: 210rpx;
+  height: 100%;
+	background-color: #FFFFFF;
+  margin-right: 10rpx;
+  display:inline-block;
+  flex-direction:column;
+}
+.nav_bottom .nav_all image{
+  width: 210rpx;
+  height: 208rpx;
+}
+.nav_bottom .nav_all text{
+  width: 100%;
+  font-size: 22rpx;
+	color: #666666;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  display:block;
+}
