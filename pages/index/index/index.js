@@ -36,8 +36,8 @@ Page({
     commonData.routers(storeRouter, storeTitle);
   },
   //点击列表跳转到对应私教信息
-  coachClick: function(){
-    var coachRouter = '../../coach/privatedetail/privatedetail';
+  coachClick: function(e){
+    var coachRouter = '../../coach/privatedetail/privatedetail?id='+e.currentTarget.id;
     var coachTitle = '私教信息';
     commonData.routers(coachRouter, coachTitle);
   },

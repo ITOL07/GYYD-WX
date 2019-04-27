@@ -37,9 +37,9 @@
     </view>
     <view class="list">
       <view wx:for="{{listData}}" wx:key="this" class="list_data">
-        <view class="list_data_item" bindtap="coachClick">
+        <view class="list_data_item" bindtap="coachClick" id="{{item.coach_Id}}">
           <view class="list_left">
-            <image src="../../../static/images/coach/image1.png"></image>
+            <image src="{{item.icon}}"></image>
           </view>
           <view class="list_right">
             <view class="right1">

@@ -22,7 +22,14 @@ const formatTime = date => {
 
   return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
 }
+const formatTimeHM = str => {
+  // const hour = date.getHours()
+  // const minute = date.getMinutes()
 
+  // return [year, month, day].map(formatNumber).join('-') + ' ' + [hour, minute, second].map(formatNumber).join(':')
+  // return [hour, minute].map(formatNumber).join(':')
+  return str.substring(9,14)
+}
 const formatNumber = n => {
   n = n.toString()
   return n[1] ? n : '0' + n
@@ -84,6 +91,7 @@ function wxlogin() {
 
 module.exports = {
   formatTime: formatTime,
+  formatTimeHM: formatTimeHM,
   routers,
   distance,
   wxlogin: wxlogin

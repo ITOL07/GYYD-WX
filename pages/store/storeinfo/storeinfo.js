@@ -1,11 +1,15 @@
 // pages/storeinfo/storeinfo.js
+const app = getApp()
+var fileData = require("../../../utils/data.js");
+var commonData = require("../../../utils/util.js"); 
+
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    open_time: null,
+    close_time: null,
+    storeImg: null,
+    latitude:null,
+    longitude:null
   },
 
   /**
@@ -13,16 +17,65 @@ Page({
    */
   onLoad: function (options) {
     console.log('club_id==='+options.id)
-    
-  },
+    var url_tmp = fileData.getListConfig().url_test;
+    var _this = this;
+    _this.setData({
+      club_id: options.id
+    })
+    console.log('options.id===' + options.id)
+    wx.request({
+      url: url_tmp + '/club/qry?club_id=' + options.id,
+      success(res) {
+        console.log(res.data)
 
+        _this.setData({
+          storeData: res.data,
+          open_time: res.data.openTime.substring(9, 14),
+          close_time: res.data.closeTime.substring(9, 14),
+          latitude:res.data.la,
+          longitude:res.data.lo
+        })
+        
+        console.log("storeData====" + _this.data.storeData)
+        console.log("close_time====" + _this.data.close_time)
+      }
+    }) 
+    wx.request({
+      url: url_tmp + '/img/load2',
+      data:{
+        user_id: options.id,
+        type:32
+      },
+      success(res) {
+        _this.setData({
+          storeImg: res.data   
+        })
+        console.log(_this.data.storeImg)  
+      }
+    })
+      
+  },
+  openLocation:function(){
+    var _this=this
+    // wx.getLocation({
+    // type: 'gcj02', // 返回可以用于wx.openLocation的经纬度
+      // success(res) {
+    const latitude = _this.data.latitude
+    const longitude = _this.data.longitude
+      wx.openLocation({
+        latitude,
+        longitude,
+        scale: 18
+      })
+    //  }
+    // })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
 
   },
-
   /**
    * 生命周期函数--监听页面显示
    */
