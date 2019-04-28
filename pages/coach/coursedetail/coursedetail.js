@@ -8,14 +8,28 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    CourseInfo:null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log("开始请求课程详细信息，课程id为"+options.id)
+    var url_tmp = fileData.getListConfig().url_test;
+    var _this = this;
+    wx.request({
+      url: url_tmp + '/club/getCourseInfo',
+      data:{
+        type:options.id
+      },
+      success(res) {
+        console.log(res.data)
+        _this.setData({
+          CourseInfo: res.data
+        })
+      }
+    }) 
   },
   gotoOrderdtl:function(){
     var storedetailRouter = '../../user/orderdetail/orderdetail?id=' + this.data.club_id;

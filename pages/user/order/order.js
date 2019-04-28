@@ -17,7 +17,8 @@ Page({
     wx.request({
       url: url_tmp +'/member/qryOrder',
       data:{
-        mem_id: app.globalData.user_id
+        // mem_id: app.globalData.user_id
+        mem_id: app.globalData.open_id
       },
       method: 'POST',
       header: {

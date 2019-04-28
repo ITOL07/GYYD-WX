@@ -5,29 +5,29 @@
       <image src="../../../static/images/swiper/swiper.png"></image>
       <view class="header_list"> 
         <view class="header_list_item">
-          <text class="text1">增肌max</text>
+          <text class="text1">{{CourseInfo.courseName}}</text>
           <text class="text2">8节课起售</text>
           <text class="text3">¥220/课</text>
         </view>
-        <text class="pri">私人定制肌肉强化训练</text>
+        <text class="pri">{{CourseInfo.brief}}</text>
       </view>
     </view>
     <view class="introduce">
       <view class="introduce_list">
         <text class="title">课程内容</text>
-        <text class="content2">专业教练通过分析不同学员的体脂、体型及健康状况，通过不同的方法针对身体的肌肉强化训练，使肌肉线条美化。</text>
+        <text class="content2">{{CourseInfo.detail}}</text>
       </view>
       <view class="introduce_list">
         <text class="title">适合人群</text>
-        <text class="content2">体型瘦弱、需要快速获得强壮身材及体型的人群</text>
+        <text class="content2">{{CourseInfo.approp}}</text>
       </view>
       <view class="introduce_list">
         <text class="title">课程时间</text>
-        <text class="content2">60分钟/次，3-5次/周</text>
+        <text class="content2">{{CourseInfo.courseTime}}</text>
       </view>
       <view class="introduce_list">
         <text class="title">运动建议</text>
-        <text class="content2">1.根据教练安排，坚持合理的运动频率。 2.根据教练安排，坚持合理的运动频率。根绝教练安排，坚持合理的运动频率。</text>
+        <text class="content2">{{CourseInfo.suggest}}</text>
       </view>
     </view>
     <!-- <view class="vip">
