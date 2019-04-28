@@ -42,7 +42,7 @@
     </view>
     <view class="private_middle">
       <text class="title">教练简介</text>
-      <text class="introduce">{{introduction}}身材一直便瘦身体也不是很好，之后决定开始健身就去费恩莱斯国际健身学院学习教练行业，从110多斤的瘦猴增肌到168斤</text>
+      <text class="introduce">{{introduction}}</text>
     </view>
     <view class="private_middle">
       <text class="title">擅长</text>

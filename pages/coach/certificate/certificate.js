@@ -21,14 +21,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options)
     var that = this
     var url_tmp = fileData.getListConfig().url_test;
     wx.request({
       url: url_tmp + '/userIcons/queryCoachInfoIcons',
       method: 'POST',
       data: { 
-        coach_id:that.data.coach_id,
-        type:that.data.type
+        coach_id:options.coachid,
+        type: options.type
         },//param
       header: {
         'content-type': 'application/x-www-form-urlencoded'  //发送post请求

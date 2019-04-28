@@ -7,7 +7,7 @@
     </view>
     <view class="bottom">
    
-     <view wx:for="{{coachList}}" wx:key="this" class="list_data" id="{{item.coach_Id}}" bindtap='coachClick'>
+     <view wx:for="{{coachList}}" wx:key="this" class="list_data" id="{{item.coach_Id}}" data-coach_id="{{item.coach_Id}}" bindtap='coachClick'>
    
        <view class="list_left">
         <image src="{{item.icon}}"></image>

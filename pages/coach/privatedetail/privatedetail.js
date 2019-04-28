@@ -10,6 +10,7 @@ Page({
    */
   data: {
     courseData: fileData.getCourseData(),
+    param_id:'',//存储传如本页面的教练ID，作为参数传到下一级
     nick_name:'',//昵称
     coach_name:'',//教练姓名
     score:'',//评分
@@ -26,18 +27,18 @@ Page({
   },
   certificateClick: function(event){
     console.log(event)
-    var certificateRouter = '../../coach/certificate/certificate';
-    // var certificateRouter = '../../coach/certificate/certificate?coachid=' + app.globalData.user_id+'&type='+event.currentTarget.dataset.param;
+   // var certificateRouter = '../../coach/certificate/certificate';
+     var certificateRouter = '../../coach/certificate/certificate?coachid=' + this.data.param_id+'&type='+event.currentTarget.dataset.param;
     var certificateTitle = '证书';
     commonData.routers(certificateRouter, certificateTitle);
   },
-  caseClick: function(){
-    var caseRouter = '../../coach/case/case';
+  caseClick: function (event){
+    var caseRouter = '../../coach/case/case?coachid=' + this.data.param_id + '&type=' + event.currentTarget.dataset.param;
     var caseTitle = '案例';
     commonData.routers(caseRouter, caseTitle);
   },
-  photoClick: function(){
-    var photoRouter = '../../coach/photo/photo';
+  photoClick: function (event){
+    var photoRouter = '../../coach/photo/photo?coachid=' + this.data.param_id + '&type=' + event.currentTarget.dataset.param;
     var photoTitle = '相册';
     commonData.routers(photoRouter, photoTitle);
   },
@@ -46,9 +47,11 @@ Page({
     var coursedetailTitle = '课程详情';
     commonData.routers(coursedetailRouter, coursedetailTitle);
   },
+  //展示教练个人信息
   showCoachInfo:function(param){
     var that = this
     var url_tmp = fileData.getListConfig().url_test;
+    var coach_info = "暂时没有信息"
     console.log(param)
     wx.request({
       url: url_tmp + '/coach/getCoachInfo',
@@ -63,12 +66,14 @@ Page({
             coach_name: res.data.name,
             nick_name: res.data.nickName,
             score: res.data.score,
-            adept:res.data.comment
+            adept:res.data.comment,
+            introduction: (res.data.introduction == null)? coach_info : res.data.introduction
           })
           }
         }
     })
   },
+  //展示教练证件信息
   showCoachPapersNum: function (param) {
     var that = this
     var url_tmp = fileData.getListConfig().url_test;
@@ -83,14 +88,15 @@ Page({
         console.info(res)
         if (res.statusCode == 200) {
           that.setData({
-            credentials: res.data.credentials,
-            cases: res.data.cases,
-            albums: res.data.albums
+            credentials: res.data.credentials == undefined ? 0 : res.data.credentials,
+            cases: res.data.cases == undefined ? 0 : res.data.cases,
+            albums: res.data.albums == undefined ? 0 : res.data.albums
           })
         }
       }
     })
   },
+  //获取教练场地信息
   getClubInfo: function () {
     var _this = this
     wx.getLocation({
@@ -133,18 +139,43 @@ Page({
 
     })
   },
+  getCourseInfo: function (param) {
+    var that = this
+    var url_tmp = fileData.getListConfig().url_test;
+    console.log(param)
+    wx.request({
+      url: url_tmp + '/course/getCourseInfo',
+      method: 'POST',
+      data: { coach_id: param },//param
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'  //发送post请求
+      }, success: function (res) {
+        console.info(res)
+        if (res.statusCode == 200) {
+          that.setData({
+            courseData:res.data
+          })
+        }
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
 
-    console.log("教练详情页" + options.coach_id)
+    console.log("教练详情页" + options.id)
+    this.setData({
+      param_id: options.id
+    });
     //默认加载教练个人信息
-    this.showCoachInfo(options.coach_id);
+    this.showCoachInfo(options.id);
     //默认加载教练证件信息
-    this.showCoachPapersNum(options.coach_id);
+    this.showCoachPapersNum(options.id);
     //默认加载场地信息
     this.getClubInfo();
+    //默认加载教授课程信息
+    //this.getCourseInfo(options.id);
   },
 
   /**
