@@ -3,8 +3,8 @@
   <view class="header">
     <image src="../icon/course.png"></image>
     <view class="name"> 
-      <text class="text1">增肌max</text>
-      <text class="text2">私人定制肌肉强化训练</text>
+      <text class="text1">{{courseData.courseName}}</text>
+      <text class="text2">{{courseData.brief}}</text>
     </view>
     <text>¥220/课起</text>
   </view>
@@ -30,8 +30,8 @@
   <view class="pay">
     <view class="pay_list">
       <text class="text1">总计</text>
-      <text class="text1">¥1760.00</text>
+      <text class="text1">¥{{sum}}</text>
     </view>
-    <button bindtap="buyCourse" data-saleid="{{item.courseId}}" data-try_flag="{{item.try_flag}}" data-price="{{item.price}}" data-desc="{{item.name}}">去支付</button>
+    <button bindtap="buyCourse" data-try_flag="0" data-price="{{sum}}" data-desc="{{courseData.courseName}}" data-count="{{num}}">去支付</button>
   </view>
 </view>
