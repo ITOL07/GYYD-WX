@@ -15,8 +15,9 @@ Page({
     tel:''
   },
   coachClick: function(e){
+    console.log(e)
     var privatedetailRouter = '../../coach/privatedetail/privatedetail?id=' + e.currentTarget.id;
-    console.log(e.currentTarget.dataset.coachId)
+    console.log(e.currentTarget.dataset.coach_id)
     var privatedetailTitle = '私教详情';
     commonData.routers(privatedetailRouter, privatedetailTitle);
   },
