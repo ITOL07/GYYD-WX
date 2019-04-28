@@ -183,7 +183,8 @@ Page({
 
   },
   gotobuy:function(e){
-    var storedetailRouter = '../../coach/coursedetail/coursedetail?id=' + e.currentTarget.id;
+    console.log(e.currentTarget.dataset.clubId)
+    var storedetailRouter = '../../coach/coursedetail/coursedetail?id=' + e.currentTarget.id+'&club_id='+e.currentTarget.dataset.clubId;
     var storedetailTitle = '课程详情';
     commonData.routers(storedetailRouter, storedetailTitle);
 

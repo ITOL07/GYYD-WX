@@ -8,16 +8,24 @@ Page({
    * 页面的初始数据
    */
   data: {
-    CourseInfo:null
+    CourseInfo:null,
+    club_id:null,
+    course_type:null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log("开始请求课程详细信息，课程id为"+options.id)
+    
+    console.log("开始请求课程详细信息，课程id为" + options.id + "club_id为" + options.club_id)
+    
     var url_tmp = fileData.getListConfig().url_test;
     var _this = this;
+    _this.setData({
+      course_type: options.id,
+      club_id: options.club_id
+    })
     wx.request({
       url: url_tmp + '/club/getCourseInfo',
       data:{
@@ -32,10 +40,10 @@ Page({
     }) 
   },
   gotoOrderdtl:function(){
-    var storedetailRouter = '../../user/orderdetail/orderdetail?id=' + this.data.club_id;
+    var that=this
+    var storedetailRouter = '../../user/orderdetail/orderdetail?club_id=' + that.data.club_id+'&type='+that.data.course_type;
     var storedetailTitle = '课程详情';
     commonData.routers(storedetailRouter, storedetailTitle);
-
   },
 
   /**

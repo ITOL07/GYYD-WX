@@ -21,7 +21,7 @@
   </view>
   <view class="store">
     <text class="text1">门店</text>
-    <text class="text2">腾讯众创空间店</text>
+    <text class="text2">{{storeListData.name}}</text>
   </view>
   <view class="coach">
     <text class="text1">私教</text>

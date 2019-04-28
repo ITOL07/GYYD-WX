@@ -162,7 +162,19 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log("传入的club_id为"+options.club_id+'course_type为：'+options.type)
+    var _this=this
+    var url_tmp = fileData.getListConfig().url_test;
+    wx.request({
+      url: url_tmp + '/club/qry?club_id=' + options.club_id,
+      success(res) {
+        console.log(res.data)
 
+        _this.setData({
+          storeListData: res.data
+        })
+      }
+    }) 
   },
 
   /**
