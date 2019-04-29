@@ -38,12 +38,50 @@ Page({
       that.setData({
         flag:true
       })
+      that.getUrl()
       console.log('flag====' + that.data.flag)
     }
-
+    var _this = this
     if(!that.data.flag){
-      var that=this
-      that.getUrl()
+      var url_tmp = fileData.getListConfig().url_test;
+      var _this = this
+      wx.request({
+        // url: url_tmp + '/coach/qry',
+        url: url_tmp + '/doc/load',
+        data: {
+          name: 'user',
+          type: '1'
+        },
+        method: 'POST',
+        header: {
+          'content-type': 'application/x-www-form-urlencoded' // 默认值
+        },
+        success(res) {
+          console.log(res.data)
+          // _this.setData({
+          //   url_doc: res.data.url
+          // })
+          wx.downloadFile({
+            url: res.data.url,
+            success: function (res) {
+              console.log(res)
+              var Path = res.tempFilePath              //返回的文件临时地址，用于后面打开本地预览所用
+              wx.openDocument({
+                filePath: Path,
+                success: function (res) {
+                  console.log('打开成功');
+                }
+              })
+            },
+            fail: function (res) {
+              console.log(res);
+            }
+          })
+        }
+      })
+      // that.getUrl()
+      
+
     }
   },
   getUrl: function () {
@@ -62,25 +100,10 @@ Page({
       },
       success(res) {
         console.log(res.data)
-        // _this.setData({
-        //   url_doc: res.data.url
-        // })
-        wx.downloadFile({
-          url: res.data.url,
-          success: function (res) {
-            console.log(res)
-            var Path = res.tempFilePath              //返回的文件临时地址，用于后面打开本地预览所用
-            wx.openDocument({
-              filePath: Path,
-              success: function (res) {
-                console.log('打开成功');
-              }
-            })
-          },
-          fail: function (res) {
-            console.log(res);
-          }
+        _this.setData({
+          url_doc: res.data.url
         })
+       
       }
     })
   },
