@@ -105,7 +105,7 @@
 .experience_list .text2{
   font-size:25rpx;
   color:#999999;
-  width:100%;
+  width:90%;
   text-align:left;
   margin-left:8%;
   margin-bottom:20rpx;
@@ -171,7 +171,7 @@
 .private_list .text2{
   font-size:25rpx;
   color:#999999;
-  width:100%;
+  width:90%;
   text-align:left;
   margin-left:8%;
 }

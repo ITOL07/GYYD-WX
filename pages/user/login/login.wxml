@@ -19,8 +19,9 @@
     </view>
   </view>
   <view class="bottom">
-  <button open-type="getUserInfo" bindgetuserinfo="wxlogin"></button>
-    <text>第三方登录</text>
+  <text>第三方登录</text>
+  <button class='wxbtn' open-type="getUserInfo" bindgetuserinfo="wxlogin">
     <image src="../../../static/images/user/wx.png" bindtap="wxlogin"></image>
+  </button>
   </view>
 </view>

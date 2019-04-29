@@ -2,7 +2,7 @@
 <view class="container">
   <scroll-view scroll-y="true" class="scroll_body">
     <view class="header">
-      <image src="../../../static/images/swiper/swiper.png"></image>
+      <image src="{{img_url}}"></image>
       <view class="header_list"> 
         <view class="header_list_item">
           <text class="text1">{{CourseInfo.courseName}}</text>

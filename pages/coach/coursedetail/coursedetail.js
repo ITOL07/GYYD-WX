@@ -10,7 +10,8 @@ Page({
   data: {
     CourseInfo:null,
     club_id:null,
-    course_type:null
+    course_type:null,
+    img_url:null
   },
 
   /**
@@ -34,7 +35,8 @@ Page({
       success(res) {
         console.log(res.data)
         _this.setData({
-          CourseInfo: res.data
+          CourseInfo: res.data,
+          img_url:'https://www.guyueyundong.com/'+res.data.bz2.substring(9)
         })
       }
     }) 
