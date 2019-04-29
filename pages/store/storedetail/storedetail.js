@@ -20,6 +20,7 @@ Page({
     order_no:null,
     // img_url_try:null
   },
+
   // buyCourse: function (e) {
   //   var _this = this
   //   var url_tmp = fileData.getListConfig().url_test;
@@ -45,6 +46,8 @@ Page({
   //     header: {
   //       'content-type': 'application/x-www-form-urlencoded' // 默认值
   //     },
+
+
       
   //     success(res) {
   //       console.log("desc==" + _this.data.order_no + "openid===" + _this.data.openid)
@@ -185,8 +188,10 @@ Page({
 
   },
   gotobuy:function(e){
+
+    console.info(e)
     console.log(e.currentTarget.dataset.clubId)
-    var storedetailRouter = '../../coach/coursedetail/coursedetail?id=' + e.currentTarget.id+'&club_id='+e.currentTarget.dataset.clubId;
+    var storedetailRouter = '../../coach/coursedetail/coursedetail?id=' + e.currentTarget.id + '&club_id=' + e.currentTarget.dataset.clubId + '&club_name=' + e.currentTarget.dataset.club_name;
     var storedetailTitle = '课程详情';
     commonData.routers(storedetailRouter, storedetailTitle);
 

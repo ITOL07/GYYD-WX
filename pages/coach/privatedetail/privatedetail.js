@@ -27,7 +27,6 @@ Page({
   },
   certificateClick: function(event){
     console.log(event)
-
    // var certificateRouter = '../../coach/certificate/certificate';
      var certificateRouter = '../../coach/certificate/certificate?coachid=' + this.data.param_id+'&type='+event.currentTarget.dataset.param;
     var certificateTitle = '证书';
@@ -167,7 +166,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
 
     console.log("教练详情页" + options.id)
     this.setData({

@@ -12,12 +12,21 @@ Page({
     num: 10,
     // 使用data数据对象设置样式名 
     minusStatus: 'disabled',
+    course_type:'',
     courseData: null,
     courseData_try: null,
     listData: fileData.getListData(),
     // listData: null,
     storeListData: null,
     club_id: null,
+    coach_id: null,
+    club_name: null,
+    coach_name: null,
+    club_id_list: [],
+    coach_id_list: [],
+    club_name_list: [],
+    coach_name_list: [],
+    index:0,
     count: 10,
     order_no: null,
     sum:0.001*10
@@ -169,19 +178,22 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log("传入的club_id为"+options.club_id+'course_type为：'+options.type)
-    var _this=this
+    var _this = this
+    console.log("传入信息为 options： "+options)
+   console.log("传入的club_id为"+options.club_id+'course_type为：'+options.type)
+    var club_idx = options.club_id == undefined ? null : options.club_id
+    var coach_idx = options.coach_id == undefined ? null : options.coach_id
+    var club_namex = options.club_name == undefined ? null : options.club_name
+    var coach_namex = options.coach_name == undefined ? null : options.coach_name
+    _this.setData({
+      course_type:options.type,
+      club_id: club_idx,
+      coach_id: coach_idx,
+      club_name: club_namex,
+      coach_name: coach_namex
+    })
     var url_tmp = fileData.getListConfig().url_test;
-    wx.request({
-      url: url_tmp + '/club/qry?club_id=' + options.club_id,
-      success(res) {
-        console.log(res.data)
-
-        _this.setData({
-          storeListData: res.data
-        })
-      }
-    }) 
+    //根据课程类型加载课程讯息
     wx.request({
       url: url_tmp + '/club/getCourseInfo',
       data: {
@@ -194,6 +206,64 @@ Page({
         })
       }
     }) 
+    //根据传入信息判断查询优先场地名称或者教练名称
+    if (club_idx == null){
+      _this.returnClubInfo(coach_idx, options.type);
+    } else if (coach_idx == null){
+      _this.returnCoachInfo(club_idx, options.type);
+    }else{
+      return
+    }
+  },
+  //根据教练ID和课程类型查询场地信息
+  returnClubInfo: function (coach_idx,course_type){
+    var _this = this
+    var url_tmp = fileData.getListConfig().url_test;
+    wx.request({
+      url: url_tmp + '/course/getClubOrCoach',
+      method:'POST',
+      data:{
+        coach_id: coach_idx,
+        course_type: course_type,
+        club_id:''
+      }, header: {
+        'content-type': 'application/x-www-form-urlencoded'  //发送post请求
+      },
+      success(res) {
+        console.log(res.data)
+        if (res.statusCode == 200) {
+          _this.setData({
+            club_id_list: res.data.id_list,
+            club_name_list: res.data.name_list
+          })
+        }
+      }
+    }) 
+  },
+  //根据场地ID和课程类型查询教练信息
+  returnCoachInfo: function (club_idx,course_type) {
+    var _this = this
+    var url_tmp = fileData.getListConfig().url_test;
+    wx.request({
+      url: url_tmp + '/course/getClubOrCoach',
+      method: 'POST',
+      data: {
+        coach_id: '',
+        course_type: course_type,
+        club_id: club_idx
+      }, header: {
+        'content-type': 'application/x-www-form-urlencoded'  //发送post请求
+      },
+      success(res) {
+        console.log(res)
+        if(res.statusCode == 200){
+        _this.setData({
+          coach_id_list: res.data.id_list,
+          coach_name_list: res.data.name_list
+        })
+        }
+      }
+    })
   },
 
   /**

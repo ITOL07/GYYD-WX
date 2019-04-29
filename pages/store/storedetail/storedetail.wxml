@@ -25,7 +25,8 @@
         <view class="listall">
           <view class="experience_list" wx:for="{{courseData_try}}" wx:key="this"> 
           <!-- <view class="experience_list" > -->
-            <image src="../../../static/images/coach/course.png" bindtap='gotobuy' id="{{item.courseType}}" data-club-id="{{storeListData.clubId}}"></image>
+
+            <image src="../../../static/images/coach/course.png" bindtap='gotobuy' id="{{item.courseType}}" data-club-id="{{storeListData.clubId}}" data-club_name="{{storeListData.name}}"></image>
             <text class="text1">{{item.courseName}}</text>
             <text class="text2">{{item.brief}}</text>
             <!-- <view  class="buy">
@@ -44,7 +45,8 @@
       </view>
       <view class="listall">
       <view class="private_list" wx:for="{{courseData}}" wx:key="this"> 
-        <image src="../../../static/images/coach/course.png" bindtap='gotobuy' id="{{item.courseType}}" data-club-id="{{storeListData.clubId}}"></image>
+
+        <image src="../../../static/images/coach/course.png" bindtap='gotobuy' id="{{item.courseType}}" data-club-id="{{storeListData.clubId}}" data-club_name="{{storeListData.name}}"></image>
         <text class="text1">{{item.courseName}}</text>
         <text class="text2">{{item.brief}}</text>
         <!-- <view class="buy">
