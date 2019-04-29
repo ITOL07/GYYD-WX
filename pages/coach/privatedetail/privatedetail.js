@@ -47,6 +47,7 @@ Page({
     var coursedetailTitle = '课程详情';
     commonData.routers(coursedetailRouter, coursedetailTitle);
   },
+
   //展示教练个人信息
   showCoachInfo:function(param){
     var that = this
@@ -73,6 +74,7 @@ Page({
         }
     })
   },
+
   //展示教练证件信息
   showCoachPapersNum: function (param) {
     var that = this
@@ -96,6 +98,7 @@ Page({
       }
     })
   },
+
   //获取教练场地信息
   getClubInfo: function () {
     var _this = this

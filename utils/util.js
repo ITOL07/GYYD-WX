@@ -73,6 +73,7 @@ function wxlogin() {
           //请求成功的处理
           //console.log(code);
           app.globalData.openid = res.data.openid
+          app.globalData.user_id = res.data.id
           console.log("发送code成功", res.data);
           console.log("发送code成功", res.data.openid);
           wx.switchTab({

@@ -166,7 +166,7 @@ Page({
         },
         success: function (res) {
           wx.showToast({
-            title: '提交成功~',
+            title: '绑定手机号成功~',
             icon: 'loading',
             duration: 2000
           })

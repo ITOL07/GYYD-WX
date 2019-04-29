@@ -33,8 +33,6 @@ Page({
     wx.request({
       url: url_tmp+'/pay/id',
       data: {
-        // desc: 'iPhone XS Max',
-        // order_no: '20190329000002'
         desc: e.currentTarget.dataset.desc,
         order_no: _this.data.order_no,
         openid: app.globalData.openid,
@@ -143,7 +141,8 @@ Page({
       }
     }) 
     wx.request({
-      url: url_tmp + '/club/qryCourse?club_id=' + options.id+'&bz1=1',
+      // url: url_tmp + '/club/qryCourse?club_id=' + options.id+'&bz1=1',
+      url: url_tmp + '/club/getCourseType?club_id=' + options.id + '&bz1=1',
       success(res) {
         console.log(res.data)
         _this.setData({
@@ -152,7 +151,7 @@ Page({
       }
     }) 
     wx.request({
-      url: url_tmp + '/club/qryCourse?club_id=' + options.id + '&bz1=0',
+      url: url_tmp + '/club/getCourseType?club_id=' + options.id + '&bz1=0',
       success(res) {
         console.log(res.data)
         _this.setData({
@@ -183,8 +182,9 @@ Page({
     commonData.routers(storedetailRouter, storedetailTitle);
 
   },
-  gotobuy:function(){
-    var storedetailRouter = '../../coach/coursedetail/coursedetail?id=' + this.data.club_id;
+  gotobuy:function(e){
+    console.log(e.currentTarget.dataset.clubId)
+    var storedetailRouter = '../../coach/coursedetail/coursedetail?id=' + e.currentTarget.id+'&club_id='+e.currentTarget.dataset.clubId;
     var storedetailTitle = '课程详情';
     commonData.routers(storedetailRouter, storedetailTitle);
 
