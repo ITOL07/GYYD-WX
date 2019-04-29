@@ -21,11 +21,11 @@
   </view>
   <view class="store">
     <text class="text1">门店</text>
-    <text class="text2">{{storeListData.name}}</text>
+    <text class="text2">{{club_name==null?club_name_list[index]:club_name}}</text>
   </view>
   <view class="coach">
     <text class="text1">私教</text>
-    <text class="text2">杨晓松</text>
+    <text class="text2">{{coach_name==null?coach_name_list[index]:coach_name}}</text>
   </view>
   <view class="pay">
     <view class="pay_list">
