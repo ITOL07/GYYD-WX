@@ -12,7 +12,9 @@ Page({
     club_id:null,
     course_type:null,
     img_url:null,
-    club_name:null
+    club_name:null,
+    coach_id:null,
+    coach_name:null
   },
 
   /**
@@ -20,13 +22,16 @@ Page({
    */
   onLoad: function (options) {
     
-    console.log("开始请求课程详细信息，课程类型为" + options.id + "club_id为" + options.club_id + "club_name为" + options.club_name)
+    console.log("开始请求课程详细信息，课程类型为" + options.id + "club_id为" + options.club_id + "club_name为" + options.club_name+"coach_id为"+options.coach_id+"coach_name为"+options.coach_name)
     var url_tmp = fileData.getListConfig().url_test;
     var _this = this;
     _this.setData({
       course_type: options.id,
-      club_id: options.club_id,
-      club_name: options.club_name
+      club_id: (typeof (options.club_id) == "undefined") ? null : options.club_id,
+      club_name: (typeof (options.club_name) == "undefined") ? null : options.club_name,
+      // coach_id: options.coach_id == "undefined" ? null : options.coach_id,
+      coach_id: (typeof (options.coach_id) == "undefined") ? null : options.coach_id,
+      coach_name: (typeof (options.coach_name) == "undefined") ? null : options.coach_name,
     })
     wx.request({
       url: url_tmp + '/club/getCourseInfo',
@@ -44,7 +49,8 @@ Page({
   },
   gotoOrderdtl:function(){
     var that=this
-    var storedetailRouter = '../../user/orderdetail/orderdetail?club_id=' + that.data.club_id + '&club_name=' + that.data.club_name+'&type='+that.data.course_type;
+    var storedetailRouter = '../../user/orderdetail/orderdetail?club_id=' + that.data.club_id + '&club_name=' + that.data.club_name+'&type='+that.data.course_type+'&coach_id='+that.data.coach_id+'&coach_name='+that.data.coach_name;
+    console.log(storedetailRouter)
     var storedetailTitle = '课程详情';
     commonData.routers(storedetailRouter, storedetailTitle);
   },

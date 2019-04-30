@@ -26,10 +26,12 @@ Page({
     coach_id_list: [],
     club_name_list: [],
     coach_name_list: [],
-    index:0,
+    index_club:0,
+    index_coach: 0,
     count: 10,
     order_no: null,
-    sum:0.001*10
+    sum:0.001*10,
+    course_id:null
   },
 
     // 这里放置自定义方法
@@ -79,10 +81,11 @@ Page({
     var _this = this
     var url_tmp = fileData.getListConfig().url_test;
     _this.setData({
-      order_no: this.getOrderNo()
+      order_no: _this.getOrderNo(),
+     
     })
     if (e.currentTarget.dataset.try_flag == 1) {
-      this.setData({
+      _this.setData({
         count: 1
       })
     }
@@ -95,7 +98,7 @@ Page({
         order_no: _this.data.order_no,
         openid: app.globalData.openid,
         // sale_id: e.currentTarget.dataset.saleid,
-        sale_id:'0011',
+        sale_id: _this.data.course_id,
         try_flag: e.currentTarget.dataset.try_flag,
         // price: e.currentTarget.dataset.price * _this.data.count
         price: e.currentTarget.dataset.price,
@@ -165,6 +168,14 @@ Page({
           icon: 'loading',
           duration: 2000
         });
+        wx.switchTab({
+          url: '../../user/user/user',
+          success: function () {
+            wx.setNavigationBarTitle({
+              title: '我的'
+            })
+          }
+        })
       }
     })
   },
@@ -174,17 +185,41 @@ Page({
     console.log('订单号为' + tmp)
     return tmp
   },
+  getCourseId:function(club_id,coach_id){
+    console.log('开始获取课程id ')
+    var _this = this
+    var url_tmp = fileData.getListConfig().url_test;
+    wx.request({
+      url: url_tmp + '/course/getCourseId',
+      data: {
+        club_id: club_id,
+        coach_id: coach_id,
+        course_type:_this.data.course_type
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded' // 默认值
+      },
+      success(res) {
+        console.log(res.data)
+        _this.setData({
+          course_id:res.data.courseId
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     var _this = this
     console.log("传入信息为 options： "+options)
-   console.log("传入的club_id为"+options.club_id+'course_type为：'+options.type)
-    var club_idx = options.club_id == undefined ? null : options.club_id
-    var coach_idx = options.coach_id == undefined ? null : options.coach_id
-    var club_namex = options.club_name == undefined ? null : options.club_name
-    var coach_namex = options.coach_name == undefined ? null : options.coach_name
+    console.log("传入的club_id为" + options.club_id + 'course_type为：' + options.type + 'coach_id为' + options.coach_id)
+     
+    var club_idx = (typeof (options.club_id) == "undefined") ? null : options.club_id
+    var coach_idx = (typeof (options.coach_id )== "undefined")? null : options.coach_id
+    var club_namex = (typeof (options.club_name) == "undefined")? null : options.club_name
+    var coach_namex = (typeof (options.coach_name) == "undefined") ? null : options.coach_name
     _this.setData({
       course_type:options.type,
       club_id: club_idx,
@@ -206,10 +241,11 @@ Page({
         })
       }
     }) 
+    console.log(club_idx+'coach_idx==='+coach_idx+'options.type==='+options.type)
     //根据传入信息判断查询优先场地名称或者教练名称
-    if (club_idx == null){
+    if (club_idx == "null"){
       _this.returnClubInfo(coach_idx, options.type);
-    } else if (coach_idx == null){
+    } else if (coach_idx=="null"){
       _this.returnCoachInfo(club_idx, options.type);
     }else{
       return
@@ -242,6 +278,7 @@ Page({
   },
   //根据场地ID和课程类型查询教练信息
   returnCoachInfo: function (club_idx,course_type) {
+    console.log('return coachInfo')
     var _this = this
     var url_tmp = fileData.getListConfig().url_test;
     wx.request({
@@ -266,11 +303,22 @@ Page({
     })
   },
   //普通选择器：
-  bindPickerChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
+  bindPickerChange_club: function (e) {
+    console.log('club picker发送选择改变，携带值为', e.detail.value)
     this.setData({
-      index: e.detail.value
+      index_club: e.detail.value
     })
+
+    this.getCourseId(this.data.club_id_list[this.data.index_club], this.data.coach_id)
+  },
+  bindPickerChange_coach: function (e) {
+    console.log('coach picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      index_coach: e.detail.value
+    })
+
+    console.log('选择的教练id为' + this.data.coach_id_list[this.data.index_coach])
+    this.getCourseId(this.data.club_id,this.data.coach_id_list[this.data.index_coach])
   },
 
   /**

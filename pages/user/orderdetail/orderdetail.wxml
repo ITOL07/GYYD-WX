@@ -23,18 +23,18 @@
     <text class="text1">门店</text>
 
     <!--  -->
-      <picker bindchange="bindPickerChange" value="{{index}}" range="{{club_name_list}}" disabled="{{club_name==null?false:true}}">
+      <picker bindchange="bindPickerChange_club" value="{{index_club}}" range="{{club_name_list}}" disabled="{{club_name=='null'?false:true}}">
         <view class="picker">
-          {{club_name==null?club_name_list[index]:club_name}}
+          {{club_name=='null'?club_name_list[index_club]:club_name}}
         </view>
       </picker>
     <!-- <text class="text2">{{club_name==null?club_name_list[index]:club_name}}</text> -->
   </view>
   <view class="coach">
     <text class="text1">私教</text>
-        <picker bindchange="bindPickerChange" value="{{index}}" range="{{coach_name_list}}" disabled="{{coach_name==null?false:true}}">
+        <picker bindchange="bindPickerChange_coach" value="{{index_coach}}" range="{{coach_name_list}}" disabled="{{coach_name=='null'?false:true}}">
         <view class="picker">
-          {{coach_name==null?coach_name_list[index]:coach_name}}
+          {{coach_name=='null'?coach_name_list[index_coach]:coach_name}}
         </view>
       </picker>
     <!-- <text class="text2">{{coach_name==null?coach_name_list[index]:coach_name}}</text> -->
