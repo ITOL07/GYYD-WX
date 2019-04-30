@@ -188,7 +188,6 @@ Page({
 
   },
   gotobuy:function(e){
-
     console.info(e)
     console.log(e.currentTarget.dataset.clubId)
     var storedetailRouter = '../../coach/coursedetail/coursedetail?id=' + e.currentTarget.id + '&club_id=' + e.currentTarget.dataset.clubId + '&club_name=' + e.currentTarget.dataset.club_name;

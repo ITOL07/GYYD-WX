@@ -22,11 +22,22 @@
   <view class="store">
     <text class="text1">门店</text>
 
-    <text class="text2">{{club_name==null?club_name_list[index]:club_name}}</text>
+    <!--  -->
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{club_name_list}}" disabled="{{club_name==null?false:true}}">
+        <view class="picker">
+          {{club_name==null?club_name_list[index]:club_name}}
+        </view>
+      </picker>
+    <!-- <text class="text2">{{club_name==null?club_name_list[index]:club_name}}</text> -->
   </view>
   <view class="coach">
     <text class="text1">私教</text>
-    <text class="text2">{{coach_name==null?coach_name_list[index]:coach_name}}</text>
+        <picker bindchange="bindPickerChange" value="{{index}}" range="{{coach_name_list}}" disabled="{{coach_name==null?false:true}}">
+        <view class="picker">
+          {{coach_name==null?coach_name_list[index]:coach_name}}
+        </view>
+      </picker>
+    <!-- <text class="text2">{{coach_name==null?coach_name_list[index]:coach_name}}</text> -->
   </view>
   <view class="pay">
     <view class="pay_list">

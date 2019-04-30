@@ -21,7 +21,6 @@ Page({
   onLoad: function (options) {
     
     console.log("开始请求课程详细信息，课程类型为" + options.id + "club_id为" + options.club_id + "club_name为" + options.club_name)
-    
     var url_tmp = fileData.getListConfig().url_test;
     var _this = this;
     _this.setData({
@@ -45,7 +44,6 @@ Page({
   },
   gotoOrderdtl:function(){
     var that=this
-
     var storedetailRouter = '../../user/orderdetail/orderdetail?club_id=' + that.data.club_id + '&club_name=' + that.data.club_name+'&type='+that.data.course_type;
     var storedetailTitle = '课程详情';
     commonData.routers(storedetailRouter, storedetailTitle);
