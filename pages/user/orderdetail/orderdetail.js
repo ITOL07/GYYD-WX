@@ -94,7 +94,6 @@ Page({
         desc: e.currentTarget.dataset.desc,
         order_no: _this.data.order_no,
         openid: app.globalData.openid,
-
         // sale_id: e.currentTarget.dataset.saleid,
         sale_id:'0011',
         try_flag: e.currentTarget.dataset.try_flag,
@@ -264,6 +263,13 @@ Page({
         })
         }
       }
+    })
+  },
+  //普通选择器：
+  bindPickerChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      index: e.detail.value
     })
   },
 

@@ -20,7 +20,6 @@ Page({
   onLoad: function (options) {
     
     console.log("开始请求课程详细信息，课程类型为" + options.id + "club_id为" + options.club_id + "club_name为" + options.club_name)
-    
     var url_tmp = fileData.getListConfig().url_test;
     var _this = this;
     _this.setData({
