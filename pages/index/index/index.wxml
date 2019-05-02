@@ -24,7 +24,7 @@
           <view id="{{item.club_Id}}" bindtap="storeClick">
             <image src="../../../static/images/coach/image2.png"></image>
             <text>{{item.name}}</text>
-            <text>{{item.dis}}米</text>
+            <text>{{item.dis}}km</text>
           </view>
         </view>
       </view>

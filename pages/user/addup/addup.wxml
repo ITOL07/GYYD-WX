@@ -13,11 +13,11 @@
           </view>
           <view class="middle">
             <text>{{item.course_name}}</text>
-            <text>{{item.seq_no}}</text>
+            <text>第{{item.seq_no}}节课</text>
           </view>
           <view class="bottom">
             <text>{{item.start_time_1}}</text>
-            <text>{{item.end_time_1}}</text>
+            <text>{{item.end_time_1|substr(9,16)}}</text>
           </view>
         </view>
       </view>

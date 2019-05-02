@@ -22,7 +22,7 @@
 }
 .header_list_item .text1{
   color:#333333;
-  font-size:40rpx;
+  font-size:35rpx;
   padding-top:5rpx;
   margin-right:3%;
 }
@@ -34,7 +34,7 @@
 .header_list_item .text3{
   width:50%;
   color:#F85F58;
-  font-size:40rpx;
+  font-size:35rpx;
   padding-top:5rpx;
   text-align:right;
   display:block;
@@ -62,7 +62,7 @@
   flex-direction:column;
 }
 .introduce_list .title{
-  font-size:35rpx;
+  font-size:30rpx;
   color:#333333;
   margin-top:10rpx;
   margin-bottom:10rpx;

@@ -30,7 +30,8 @@ Page({
         console.log(res.data)
 
         _this.setData({
-          addupData: res.data
+          addupData: res.data,
+          open_time: res.data.start_time_1
         })
       }
     }) 

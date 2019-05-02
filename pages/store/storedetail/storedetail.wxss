@@ -70,7 +70,7 @@
   height:10%;
 }
 .experience_header text{
-  font-size:40rpx;
+  font-size:35rpx;
   color:#333333;
   margin-left:5%;
   padding-top:20rpx;
@@ -145,7 +145,7 @@
   height:10%;
 }
 .private_header text{
-  font-size:40rpx;
+  font-size:35rpx;
   color:#333333;
   margin-left:5%;
 }
@@ -209,7 +209,11 @@
   margin-left:5%;
   margin-bottom:20rpx;
 }
-
+.store_header text{
+  font-size:35rpx;
+  color:#333333;
+  margin-left:5%;
+}
 .store_list{
   width:100%;
 }
@@ -245,7 +249,7 @@
 }
 .list_right .right1 .right1_name{
   width: 15%;
-  font-size:30rpx;
+  font-size:25rpx;
   color: #333333;
 }
 .list_right .right1 .right1_title{

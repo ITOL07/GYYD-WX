@@ -62,7 +62,7 @@
 }
 .list_right .right1 .right1_name{
   width: 20%;
-  font-size:30rpx;
+  font-size:25rpx;
   color: #333333;
 }
 .list_right .right1 .right1_title{
