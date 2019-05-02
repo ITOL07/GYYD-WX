@@ -1,11 +1,12 @@
 <!--pages/order/order.wxml-->
+
+<view class="navbar">
+ <lable wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">
+  <text>{{item}}</text>
+ </lable>
+</view>
 <view class="container">
   <scroll-view scroll-y="true" class="scroll_body">
-    <view class="top">
-      <text>全部</text>
-      <text>待支付</text>
-      <text>已支付</text>
-    </view>
     <!-- <view class="bottom" wx:if="{{orderData.length===1}}">
     <view class="list">
           <view class="list_top">
