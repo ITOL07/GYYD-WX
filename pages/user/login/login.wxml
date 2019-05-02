@@ -1,27 +1,28 @@
 <!--pages/login/login.wxml-->
 <view class="container">
   <view class="top">
-    <view class="top_item"> 
+    <view class="top_item1"> 
       <image src="../../../static/images/user/phone.png"></image>
-      <input placeholder='请输入手机号' bindinput="inputValue1" type="text"></input>
+      <input placeholder='请输入手机号' placeholder-class="place" bindinput="inputValue1" type="text"></input>
     </view>
-    <view class="top_item">
+    <view class="top_item2">
       <image src="../../../static/images/user/password.png"></image>
-      <input password placeholder='请输入登录密码' bindinput="inputValue2" type="text"></input>
+      <input password placeholder='请输入登录密码' placeholder-class="place" bindinput="inputValue2" 
+			       type="text"></input>
     </view>
   </view>
   <view class="middle">
     <button bindtap="loginClick">登录</button>
     <view class="reg">
-      <text class="text1" bindtap="quickClick">手机快速注册</text>
-      <text class="text2" bindtap="forgetClick">忘记密码</text>
-      <text class="text3" bindtap="justLook">随便看看</text>
+      <text bindtap="quickClick">手机快速注册</text>
+      <text bindtap="forgetClick">忘记密码</text>
+      <text bindtap="justLook">随便看看</text>
     </view>
   </view>
   <view class="bottom">
-  <text>第三方登录</text>
-  <button class='wxbtn' open-type="getUserInfo" bindgetuserinfo="wxlogin">
-    <image src="../../../static/images/user/wx.png" bindtap="wxlogin"></image>
-  </button>
+		<view>第三方登录</view>
+		<button class='wxbtn' open-type="getUserInfo" bindgetuserinfo="wxlogin">
+			<image src="../../../static/images/user/wx.png" bindtap="wxlogin"></image>
+		</button>
   </view>
 </view>
