@@ -53,6 +53,7 @@
   text-overflow:ellipsis;
   white-space:nowrap;
   display:block;
+	margin-left: 13rpx;
 }
 /*列表*/
 .nav_bottom2{
@@ -93,6 +94,7 @@
 .list_left image{
   width: 120rpx;
   height: 120rpx;
+	border-radius: 50%;
 }
 .list_right{
   width: 80%;
@@ -123,7 +125,7 @@
 	font-size: 32rpx;
 }
 .right2{
-	width: 35%;
+	width: 27%;
   display: flex;
   flex-direction:row;
 	justify-content: space-around;
