@@ -3,93 +3,94 @@
   background:#FFFFFF;
 }
 .head{
-  width:100%;
-  height:50rpx;
+  width: 97.5%;
+  height: 68rpx;
+	border-bottom: 2rpx solid #EEEEEE;
+  margin-left: 2.5%;
   display:flex;
   flex-direction:row;
-  margin-bottom: 60rpx;
-  margin-top:20rpx;
+	align-items: center; 
 }
 .head image{
   display:block;
-  width:30rpx;
-  height:30rpx;
-  margin-left:5%;
-  padding-top:8rpx;
+  width: 18rpx;
+  height: 24rpx;
+	margin-right: 2%;
 }
 .head text{
-  font-size:35rpx;
+  font-size: 22rpx;
   color:#999999;
-  margin-left:5%;
 }
 .bottom{
   width:100%;
 }
 .list_data{
   width:100%;
-  height:200rpx;
+  height: 228rpx;
   padding:10rpx 10rpx;
   box-sizing:border-box;
   color:#666666;
 }
 .list_item{
+  width: 95%;
+  height:100%;
+	border-bottom: 2rpx solid #EEEEEE;
   display:flex;
   flex-direction:row;
-  justify-content:space-around;
-  width:100%;
-  height:100%;
+	align-items: center;
+	margin: 0 2.5%;
 }
 .list_left{
-  width:20%;
-  height: 100%;
-} 
+	margin-right: 5%;
+}
 .list_left image{
-  display: block;
-  width:100%;
-  height:70%;
+  width: 150rpx;
+  height: 150rpx;
 }
 .list_right{
-  width:70%;
-  height:100%;
+	width: 70%;
+	height: 150rpx;
   display: flex;
   flex-direction: column;
+	justify-content: space-between;
+	margin-top: -10rpx;
 }
-.list_right .right1{
+.right1{
   display: flex;
   flex-direction:row;
+	align-items: center;
 }
-.list_right .right1 image{
-  display: block;
-  width:20rpx;
-  height:20rpx;
-  margin-top:1%;
+.right1 image{
+  width: 27rpx;
+  height: 24rpx;
 }
-.list_right .right1 text{
+.right1 text:nth-child(2){
   color:#333333;
-  font-size:28rpx;
+  font-size: 30rpx;
+	margin-left: 3%;
 }
-.list_right .right2{
-  display: flex;
-  flex-direction:row;
-  margin-top: 20rpx;
+.right1 text:nth-child(3){
+  color:#999999;
+  font-size: 22rpx;
+	margin-left: 3%;
+	margin-top: 6rpx;
 }
-.list_right .right2 text{
+.right2 text{
   font-size:25rpx;
-  margin-left:5%;
+  margin-left:8%;
   color: #666666;
 }
-.list_right .right3{
-  display:flex;
-  flex-direction:row;
-  margin-top:20rpx;
+.right3 {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
 }
-.list_right .right3 image{
+.right3 image{
   display: block;
-  width:20rpx;
-  height:20rpx;
-  margin-top:1%;
+  width: 14rpx;
+  height: 19rpx;
 }
-.list_right .right3 text{
+.right3 text{
   font-size:25rpx;
   margin-left:5%;
   color: #999999;
