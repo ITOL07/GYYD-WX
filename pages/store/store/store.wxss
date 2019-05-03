@@ -32,13 +32,13 @@
   color:#666666;
 }
 .list_item{
-  width: 95%;
+  width: 100%;
   height:100%;
 	border-bottom: 2rpx solid #EEEEEE;
   display:flex;
   flex-direction:row;
 	align-items: center;
-	margin: 0 2.5%;
+	margin: 0 1.5%;
 }
 .list_left{
 	margin-right: 5%;
