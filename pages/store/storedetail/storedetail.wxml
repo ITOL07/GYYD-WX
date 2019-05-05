@@ -7,15 +7,12 @@
         <image src="../../../static/images/coach/jiaolianheader.png"></image>
     </view> 
     <view class="header_right">
-      <view>
         <text class="title">{{storeListData.name}}</text>
-      </view>
-      <view>
         <text class="addr">addr:{{storeListData.address}}</text>
-      </view>
-      <view>
-        <text class="addr">tel:{{storeListData.tel}}</text>
-      </view>
+				<view  class="phone">
+					<view>tel:{{storeListData.tel}}</view>
+					<view>详情></view>
+				</view>
     </view>
   </view>
       <view class="detail_experience">
@@ -67,9 +64,15 @@
           </view>
           <view class="list_right" bindtap="getCoachInfo" id="{{item.coachId}}">
             <view class="right1">
-              <text class="right1_name">{{item.name}}</text>
-              <text class="right1_title">{{item.title}}</text>
-              <text class="right1_price">￥{{item.min_price}}/课起</text>
+							<view class="right1_name">
+								<text>{{item.name}}</text>
+								<text>{{item.title}}</text>
+							</view>
+							<view class="right1_price">
+              	<text>￥</text>
+								<text>{{item.min_price}}</text>
+								<text>/课起</text>
+							</view>
             </view>
             <view class="right2">
               <image src="../../../static/images/littleicon/xing1.png"></image>
