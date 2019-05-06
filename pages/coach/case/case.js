@@ -12,6 +12,38 @@ Page({
     index: 0
   },
 
+	blur: function () {
+		console.log(this.data.index)
+		if (this.data.index == 1 || this.data.index == 0) {
+			this.setData({
+				flag: 0,
+				index: 0
+			})
+		} else {
+			this.setData({
+				flag: 1,
+				index: this.data.index - 1
+			})
+		}
+	},
+
+	focus: function () {
+		console.log(this.data.index)
+		var index = this.data.index
+		var length = this.data.caseDta.length
+		if (index == (length - 2) || index == (length - 1)) {
+			this.setData({
+				flag: 2,
+				index: length - 1
+			})
+		} else {
+			this.setData({
+				flag: 1,
+				index: index + 1
+			})
+		}
+	},
+
   /**
    * 生命周期函数--监听页面加载
    */

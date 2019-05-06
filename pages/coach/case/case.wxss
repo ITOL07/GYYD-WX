@@ -1,11 +1,13 @@
-/* pages/case/case.wxss */
+/* container */
+
+/* top */
 .top{
-  width:90%;
-  height:80%;
-  border-radius:50rpx;
+  width: 94%;
+  height: 950rpx;
+  border-radius: 120rpx;
   background:#F9CE0E;
-  margin-top:30rpx;
-  padding-top:30rpx;
+  margin: 6% 3% 0;
+  padding-top: 7%;
 }
 .footer{
   width:100%;
@@ -14,72 +16,77 @@
 .title{
   width:100%;
   height:200rpx;
+	margin-bottom: 40rpx;
 }
 .title image{
-  display:block;
-  width:100rpx;
-  height:100rpx;
+  width: 120rpx;
+  height: 120rpx;
+	border: 10rpx solid rgba(238, 238, 238, 0.7);
+	border-radius: 50%;
   margin:20rpx auto;
+  display:block;
 }
 .title text{
   color:#333333;
   text-align:center;
-  font-size:35rpx;
+  font-size: 32rpx;
   display:block;
 }
 .result{
   width:100%;
-  height:auto;
+  height: 270rpx;
   display:flex;
   flex-direction:column;
 }
 .result .text1{
+  width: 180rpx;
+  height: 60rpx;
+  font-size: 30rpx;
+  text-align:center;
+  line-height: 60rpx;
   color:#333333;
-  background:#FFFFFF;
-  width:200rpx;
-  height:80rpx;
+  background: rgba(255, 255, 255, 0.5);
   border-top-right-radius:50rpx;
   border-bottom-right-radius:50rpx;
-  text-align:center;
-  line-height:80rpx;
-  font-size:35rpx;
 }
 .result .text2{
   width:90%;
-  margin:30rpx auto;
+  margin: 30rpx auto;
   color:#333333;
-  font-size:28rpx;
+  font-size: 24rpx;
 }
 .compare{
   width:100%;
-  height:auto;
+  height: 295rpx;
   display:flex;
   flex-direction:column;
+	justify-content: space-between;
 }
 .compare text{
+  width: 180rpx;
+  height: 60rpx;
+  font-size: 30rpx;
+  text-align:center;
+  line-height: 60rpx;
   color:#333333;
-  background:#FFFFFF;
-  width:200rpx;
-  height:80rpx;
+  background: rgba(255, 255, 255, 0.5);
   border-top-right-radius:50rpx;
   border-bottom-right-radius:50rpx;
-  text-align:center;
-  line-height:80rpx;
-  font-size:35rpx;
 }
 .compare_img{
+	width: 95%;
   display:flex;
   flex-direction:row;
-  margin:40rpx auto;
+	justify-content: space-between;
+  margin: 0 2.5%;
 }
 .compare_img image{
   display:block;
   width:200rpx;
   height:200rpx;
-  margin-bottom:80rpx;
 }
 .footer{
-  width:30%;
+  width: 30%;
   height:200rpx;
   margin:50rpx auto;
   display:flex;
@@ -87,8 +94,12 @@
   justify-content:space-between;
 }
 .footer image{
-  display:block;
-  width:50rpx;
-  height:50rpx;
-  margin-top:30rpx;
+  width: 36rpx;
+  height: 60rpx;
+}
+.leftimage{
+	width: 36rpx;
+  height: 60rpx;
+	/* 图片旋转180度 */
+	transform: rotate(180deg);
 }

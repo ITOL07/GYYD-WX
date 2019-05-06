@@ -18,8 +18,19 @@
       </view>
     </view>
   </view>
-  <view class="footer">
-    <image src="../../../static/images/littleicon/left.png"></image>
-    <image src="../../../static/images/littleicon/right.png"></image>
+  <view wx:if="{{flag==0}}" class="footer">
+    <image src="../../../static/images/littleicon/left.png" bindtap="blur"></image>
+    <image src="../../../static/images/littleicon/right.png" bindtap="focus"></image>
+  </view>
+  <view wx:if="{{flag==1}}" class="footer">
+    <image src="../../../static/images/littleicon/right.png" class="leftimage" 
+					 bindtap="blur"></image>
+    <image src="../../../static/images/littleicon/right.png" bindtap="focus"></image>
+  </view>
+  <view wx:else class="footer">
+    <image src="../../../static/images/littleicon/right.png" class="leftimage" 
+					 bindtap="blur"></image>
+    <image src="../../../static/images/littleicon/left.png" class="leftimage" 
+					 bindtap="focus"></image>
   </view>
 </view>
