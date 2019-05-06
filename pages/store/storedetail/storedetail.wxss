@@ -51,8 +51,9 @@
 
 .detail_experience{
   width: 100%;
-  height: 600rpx;
+  height: 594rpx;
   background:#FFFFFF;
+	padding-bottom: 30rpx;
 }
 .experience_header{
   width:100%;
@@ -72,7 +73,7 @@
 }
 .experience_list{
   width: 44%;
-  height: 460rpx;
+  height: 490rpx;
 	margin: 0 3%;
   display:flex;
   flex-direction:column;
@@ -87,25 +88,30 @@
   color: #666666;
 }
 .experience_list .text2{
-	height: 96rpx;
-	overflow: hidden;
   font-size: 22rpx;
   color: #999999;
+	overflow: hidden;
+	-webkit-line-clamp: 1;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
-.experience_list .buy{
+.buy{
   display:flex;
   flex-direction:row;
   width:100%;
   align-items:center;
 }
-.experience_list .buy text{
+.buy view{
   color:#F85F58;
-  margin-left:8%;
-  font-size:28rpx;
-  width:40%;
+  width: 65%;
+}
+.buy view text:nth-child(1), .buy view text:nth-child(3){
+	font-size: 22rpx;
+}
+.buy view text:nth-child(2){
+	font-size: 32rpx;
 }
 .experience_list button{
-  /* width:105rpx; */
   width:30%;
   height:50rpx;
   border-radius:20rpx;
@@ -118,7 +124,8 @@
 
 .detail_private{
   width: 100%;
-	height: 600rpx;
+	height: 594rpx;
+	padding-bottom: 30rpx;
   background:#FFFFFF;
   margin-top: 15rpx;
 }
@@ -134,7 +141,7 @@
 }
 .private_list{
   width: 44%;
-  height: 460rpx;
+  height: 490rpx;
 	margin: 0 3%;
   display:flex;
   flex-direction:column;
@@ -149,21 +156,12 @@
   color:#666666;
 }
 .private_list .text2{
-	height: 100rpx;
-  font-size: 22rpx;
-  color:#999999;
-}
-.private_list .buy{
-  display:flex;
-  flex-direction:row;
-  width:100%;
-  align-items:center;
-}
-.private_list .buy text{
-  color:#F85F58;
-  margin-left:8%;
-  font-size:28rpx;
-  width:45%;
+	font-size: 22rpx;
+  color: #999999;
+	overflow: hidden;
+	-webkit-line-clamp: 1;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 .private_list button{
   width:105rpx;
@@ -184,7 +182,7 @@
 }
 .store_header{
   width:100%;
-  height: 100rpx;
+  height: 85rpx;
   margin-left:3%;
 	line-height: 100rpx;
 }

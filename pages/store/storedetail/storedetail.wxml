@@ -25,12 +25,16 @@
             <image src="../../../static/images/coach/course.png" bindtap='gotobuy' id="{{item.courseType}}" data-club-id="{{storeListData.clubId}}" data-club_name="{{storeListData.name}}"></image>
             <text class="text1">{{item.courseName}}</text>
             <text class="text2">{{item.brief}}</text>
-            <!-- <view  class="buy">
-              <text>￥{{item.price}}</text> -->
+            <view  class="buy">
+							<view>
+              	<text>￥</text>
+								<!-- <text>19</text> -->
+              	<text>{{item.price}}</text>
+								<text>/课</text>
+							</view>
               <!-- <button data-saleid="{{item.courseId}}" data-try_flag="{{item.try_flag}}" data-price="{{item.price}}" data-desc="{{item.name}}" bindtap='buyCourse'>购买</button> -->
-              
-              <!-- <button data-saleid="{{item.courseId}}" data-try_flag="{{item.try_flag}}" data-price="{{item.price}}" data-desc="{{item.name}}" bindtap='gotobuy'>购买</button> -->
-            <!-- </view> -->
+              <button data-saleid="{{item.courseId}}" data-try_flag="{{item.try_flag}}" data-price="{{item.price}}" data-desc="{{item.name}}" bindtap='gotobuy'>购买</button>
+            </view>
           </view>
        </view>
       </view>
@@ -44,12 +48,17 @@
         <image src="../../../static/images/coach/course.png" bindtap='gotobuy' id="{{item.courseType}}" data-club-id="{{storeListData.clubId}}" data-club_name="{{storeListData.name}}"></image>
         <text class="text1">{{item.courseName}}</text>
         <text class="text2">{{item.brief}}</text>
-        <!-- <view class="buy">
-          <text>￥{{item.price}}</text>
+        <view class="buy">
+					<view>
+          	<text>￥</text>
+						<text>{{item.price}}</text>
+						<!-- <text>20</text> -->
+						<text>/课</text>
+					</view>
           <!-- <stepper bindnumChange="numChange"></stepper> -->
           <!-- <button data-saleid="{{item.courseId}}" data-try_flag="{{item.try_flag}}" data-price="{{item.price}}" data-desc="{{item.name}}" bindtap='buyCourse'>购买</button> -->
-          <!-- <button data-saleid="{{item.courseId}}" data-try_flag="{{item.try_flag}}" data-price="{{item.price}}" data-desc="{{item.name}}" bindtap='gotobuy'>购买</button>
-        </view> -->
+          <button data-saleid="{{item.courseId}}" data-try_flag="{{item.try_flag}}" data-price="{{item.price}}" data-desc="{{item.name}}" bindtap='gotobuy'>购买</button>
+        </view>
       </view>
       </view>
     </view>
