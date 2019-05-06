@@ -8,8 +8,8 @@
       <view class="header_right"> 
         <view class="header_right_top">
           <view class="name">
-            <text class="name_text1">{{coach_name}}</text>
-            <text class="name_text2">{{nick_name}}</text>
+            <text>{{coach_name}}</text>
+            <text>{{nick_name}}</text>
           </view>
           <view class="rate">
             <image src="../../../static/images/littleicon/xing1.png"></image>
@@ -24,21 +24,21 @@
             <image src="../../../static/images/littleicon/phone.png"></image>
           </view>
         </view>
-        <view class="header_right_bottom">
-          <view class="certificate" data-param='1'   bindtap="certificateClick">
-            <image src="../../../static/images/coach/certificate.png"></image>
-            <text>证书({{credentials}})</text>
-          </view>
-          <view class="case" data-param='2' bindtap="caseClick">
-            <image src="../../../static/images/coach/case.png"></image>
-            <text>案例({{cases}})</text>
-          </view>
-          <view class="photo" data-param='3' bindtap="photoClick">
-            <image src="../../../static/images/coach/photo.png"></image>
-            <text>相册({{albums}})</text>
-          </view>
-        </view>
-      </view>
+				<view class="header_right_bottom">
+					<view data-param='1'   bindtap="certificateClick">
+						<image src="../../../static/images/coach/certificate.png"></image>
+						<text>证书({{credentials}})</text>
+					</view>
+					<view data-param='2' bindtap="caseClick">
+						<image src="../../../static/images/coach/case.png"></image>
+						<text>案例({{cases}})</text>
+					</view>
+					<view data-param='3' bindtap="photoClick">
+						<image src="../../../static/images/coach/photo.png"></image>
+						<text>相册({{albums}})</text>
+					</view>
+				</view>
+			</view>
     </view>
     <view class="private_middle">
       <text class="title">教练简介</text>
@@ -50,22 +50,20 @@
       <!-- 体态改善，男性增肌，女性塑形及产后恢复，拉伸放松提高身体柔韧性，体能提升 -->
       </text>
     </view>
-
-      <view class="place_header">
-        <text>服务场地</text>
-      </view>
-<scroll-view scroll-x class='scroll_body2'>
-      <view class="nav_bottom">
-        <view class="nav_all" wx:for="{{navData}}" wx:key="this">
-          <view id="{{item.club_Id}}" bindtap="storeClick">
-            <image src="../../../static/images/coach/image2.png"></image>
-            <text>{{item.name}}</text>
-            <text>{{item.dis}}米</text>
-          </view>
-        </view>
-      </view>
-    </scroll-view>
-
+		<view class="place_header">
+			<text>服务场地</text>
+			<scroll-view scroll-x class='scroll_body2'>
+				<view class="nav_bottom">
+					<view class="nav_all" wx:for="{{navData}}" wx:key="this">
+						<view id="{{item.club_Id}}" bindtap="storeClick">
+							<image src="../../../static/images/coach/image2.png"></image>
+							<text>{{item.name}}</text>
+							<text>{{item.dis}}米</text>
+						</view>
+					</view>
+				</view>
+			</scroll-view>
+		</view>
     <view class="course">
       <view class="private_head">
         <text>教授课程</text>
@@ -74,10 +72,12 @@
         <view class="private_list" wx:for="{{courseData}}" wx:key="this">
           <view class="list_item" id="{{item.type}}" data-coach-id="{{param_id}}" data-coach_name="{{coach_name}}" bindtap="courseClick">
             <image src="{{item.imgurl}}"></image>
-            <text class="text1">{{item.name}}</text>
-            <text class="text2">{{item.introduce}}</text>
+            <text>{{item.name}}</text>
+            <text>{{item.introduce}}</text>
             <view class="buy">
-              <text>￥{{item.price}}</text>
+              <text>￥</text>
+							<text>{{item.price}}</text>
+							<text>/课</text>
             </view>
           </view>
         </view>

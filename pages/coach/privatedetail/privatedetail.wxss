@@ -3,20 +3,20 @@
   background:#FFFFFF;
 }
 .private_header{
-  width:90%;
+  width: 95%;
   height:300rpx;
   display:flex;
   flex-direction:row;
-  margin:10rpx auto;
+  margin: 38rpx 2.5%;
 }
 .header_left{
   width:20%;
   height:100%;
 }
 .header_left image{
-  display:block;
-  width:100rpx; 
-  height:100rpx;
+  width: 120rpx; 
+  height: 120rpx;
+	margin-top: 15rpx; 
 }
 .header_right{
   width:80%;
@@ -25,47 +25,49 @@
 .header_right_top{
   width:100%;
   height:50%;
+	border-bottom: 2rpx solid #EEEEEE;
 }
-.header_right_top .name{
+.name{
   width:100%;
   height:33%;
 }
-.header_right_top .name .name_text1{
-  color:#333;
-  font-size:35rpx;
+.name text:nth-child(1){
+  color:#333333;
+  font-size: 32rpx;
+	font-weight: 600rpx;
 }
-.header_right_top .name .name_text2{
-  color:#666;
-  font-size:28rpx;
+.name text:nth-child(2){
+  color:#666666;
+  font-size: 22rpx;
   margin-left:5%;
 }
-.header_right_top .rate{
-  width:100%;
+.rate{
+  width: 40%;
   height:33%;
   display:flex;
   flex-direction:row;
+	align-items: center;
+	justify-content: space-around;
 }
-.header_right_top .rate image{
-  display:block;
-  width:20rpx;
-  height:20rpx;
-  margin-right:10rpx;
-  padding-top:2%;
+.rate image{
+  width: 19rpx;
+  height: 18rpx;
 }
-.header_right_top .rate text{
-  font-size:28rpx;
+.rate text{
+  font-size: 22rpx;
+	color: #333333;
 }
-.header_right_top .phone{
-  width:100%;
+.phone{
+  width: 20%;
   height:33%;
   display:flex;
   flex-direction:row;
+	align-items: center;
+	justify-content: space-around;
 }
-.header_right_top .phone image{
-  display:block;
-  width:20rpx;
-  height:20rpx;
-  margin-right:20rpx;
+.phone image{
+  width: 22rpx;
+  height: 18rpx;
 }
 .header_right_bottom{
   width:100%;
@@ -73,87 +75,54 @@
   display:flex;
   flex-direction:row;
 }
-.certificate{
-  width:33%;
-  height:100%;
+.header_right_bottom view{
+	width: 33%;
+	height: 150rpx;
+	margin-top: 30rpx;
+  display: flex;
+	flex-direction: column;
 }
-.certificate image{
-  display:block;
-  width:50rpx;
-  height:50rpx;
-  margin-left:13%;
+.header_right_bottom image{
+  width: 60rpx;
+  height: 54rpx;
+	margin-bottom: 30rpx;
 }
-.certificate text{
+.header_right_bottom text{
   color:#999999;
-  font-size:30rpx;
-  text-align:left;
-  display:block;
+  font-size: 24rpx;
+	margin-left: -12rpx;
 }
-.case{
-  width:33%;
-  height:100%;
-}
-.case image{
-  display:block;
-  width:50rpx;
-  height:50rpx;
-  margin-left:13%;
-}
-.case text{
-  color:#999999;
-  font-size:30rpx;
-  text-align:left;
-  display:block;
-}
-.photo{
-  width:33%;
-  height:100%;
-}
-.photo image{
-  display:block;
-  width:50rpx;
-  height:50rpx;
-  margin-left:13%;
-}
-.photo text{
-  color:#999999;
-  font-size:30rpx;
-  text-align:left;
-  display:block;
-}
-
 .private_middle{
-  width:90%;
+  width: 94%;
   height:auto;
   display:flex;
   flex-direction:column;
+	margin: 0 3%;
 }
 .private_middle .title{
   color:#333333;
-  font-size:35rpx;
-  margin-left:3%;
+  font-size: 30rpx;
 }
 .private_middle .introduce{
   color:#666666;
-  font-size:28rpx;
+  font-size: 24rpx;
   margin-top:20rpx;
-  margin-left:3%;
-  margin-bottom:20rpx;
+  margin-bottom: 50rpx;
 }
 .place{
   width:100%;
-  height:auto;
   display:flex;
   flex-direction:column;
 }
 .place_header{
-  width:100%;
-  height:10%;
-  margin-left:3%;
+	width: 100%;
+  height: 30%;
+	margin-left: 3%;
 }
 .place_header text{
-  font-size:35rpx;
+  font-size: 30rpx;
   color:#333333;
+	margin-bottom: 20rpx;
 }
 .place_bottom{
   width:93%;
@@ -177,73 +146,65 @@
 }
 
 .course{
-  width: 100%;
-  height: auto;
-  margin-top:10rpx;
+
 }
 .private_head{
-  width:100%;
-  height:50rpx;
+	margin-left: 3%;
 }
 .listall{
-  width:93%;
-  height:400rpx;
+  width: 100%;
+  height: 900rpx;
+	margin-top: 10rpx;
   display:flex;
   flex-direction:row;
-  margin:10rpx auto;
+	flex-wrap: wrap;
   justify-content:space-between;
 }
 .private_head text{
-  font-size:35rpx;
+  font-size: 30rpx;
   color:#333333;
-  margin-left:3%;
 }
 .private_list{
-  width:50%;
-  height:100%;
+  width: 44%;
+	height: 430rpx;
+	margin: 30rpx 3%;
 }
-.private_list .list_item{
+.list_item{
+	width: 100%;
+	height: 100%;
+  display:flex;
+  flex-direction:column;
+	justify-content: space-around;
+}
+.list_item image{
+  width: 320rpx;
+  height: 260rpx;
+}
+.private_list text:nth-child(2){
   width:100%;
-  height:100%;
-  display:flex;
-  flex-direction:column;
-}
-.private_list{
-  width:50%;
-  height:100%;
-  display:flex;
-  flex-direction:column;
-}
-.private_list image{
-  display:block;
-  width:90%;
-  height:50%;
-  margin-top:20rpx;
-}
-.private_list .text1{
-  font-size:35rpx;
+  font-size: 30rpx;
   color:#666666;
-  width:100%;
-  text-align:left;
-  margin-left:8%;
 }
-.private_list .text2{
-  font-size:25rpx;
+.private_list text:nth-child(3){
+  width:100%;
+  font-size: 22rpx;
   color:#999999;
-  width:100%;
-  text-align:left;
-  margin-left:8%;
+	overflow: hidden;
+	-webkit-line-clamp: 1;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
-.private_list .buy{
-  display:flex;
-  flex-direction:row;
-  width:100%;
+.buy{
+  
 }
-.private_list .buy text{
+.buy text:nth-child(1), .buy text:nth-child(3){
+	font-size: 22rpx;
   color:#F85F58;
-  margin-left:8%;
 }
-
+.buy text:nth-child(2){
+	font-size: 32rpx;
+  color:#F85F58;
+}
 .comment{
   width:100%;
   height:auto;
@@ -339,9 +300,10 @@
   font-size:28rpx;
 }
 .scroll_body2{
-  width: 95%;
+  width: 94%;
   height: 300rpx;
-  margin: 0 2.5%;
+	margin-top: 20rpx;
+	margin-bottom: 30rpx;
   display:flex;
   flex-direction:row;
   white-space: nowrap;
@@ -353,7 +315,7 @@
   flex-direction:row;
   box-sizing:border-box;
 }
-.nav_bottom .nav_all{
+.nav_all{
   width: 210rpx;
   height: 100%;
 	background-color: #FFFFFF;
@@ -361,16 +323,26 @@
   display:inline-block;
   flex-direction:column;
 }
-.nav_bottom .nav_all image{
+.nav_all view{
+	width: 100%;
+	height: 300rpx;
+	border: 2rpx solid #EEEEEE;
+	box-shadow:0px 3px 7px 0px rgba(0, 0, 0, 0.04);
+	border-radius:4px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+.nav_all image{
   width: 210rpx;
   height: 208rpx;
 }
-.nav_bottom .nav_all text{
-  width: 100%;
+.nav_all text{
+  width: 96%;
   font-size: 22rpx;
 	color: #666666;
   overflow:hidden;
   text-overflow:ellipsis;
   white-space:nowrap;
-  display:block;
+	margin: 0 3%;
 }
