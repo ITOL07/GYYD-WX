@@ -87,7 +87,7 @@
   color: #666666;
 }
 .experience_list .text2{
-	height: 100rpx;
+	height: 96rpx;
 	overflow: hidden;
   font-size: 22rpx;
   color: #999999;
