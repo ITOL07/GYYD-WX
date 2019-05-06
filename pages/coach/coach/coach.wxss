@@ -3,101 +3,99 @@
   background:#FFFFFF;
 }
 .head{
-  width:100%;
-  height:50rpx;
+  width: 730rpx;
+  height: 68rpx;
+	border-bottom: 2rpx solid #EEEEEE;
+  margin-left: 20rpx;
   display:flex;
   flex-direction:row;
-  margin-bottom: 20rpx;
+	align-items: center;
 }
-.head image{
-  display:block;
-  width:20rpx;
-  height:20rpx;
-  margin-left:5%;
-  padding-top:2%;
+.head image:nth-child(1){
+  width: 18rpx;
+  height: 24rpx;
+	margin-right: 3%;
+}
+.head image:nth-child(3){
+  width: 31rpx;
+  height: 22rpx;
+	margin-left: 75%;
 }
 .head text{
-  font-size:35rpx;
+  font-size: 22rpx;
   color:#999999;
-  margin-left:3%;
 }
-.bottom{
-  width: 100%;
-  height:100%;
-}
+
 .list_data{
-  width:100%;
-  height:200rpx;
-  padding:10rpx 10rpx;
+  width: 94%;
+  height: 214rpx;
   box-sizing:border-box;
-  color:#666666;
-  margin:20rpx auto;
+  margin: 0 3%;
   display:flex;
-}
-.list_data .list_item{
-  display:flex;
-  flex-direction:row;
-  width:100%;
-  height:100%;
+	flex-direction: row;
+	align-items: center;
 }
 .list_left{
-  width:20%;
-  height: 100%;
-} 
+	width: 20%;
+	margin-right: 3.5%;
+}
 .list_left image{
-  display: block;
-  width:100%;
-  height:70%;
+  width: 120rpx;
+  height: 120rpx;
+	border-radius: 50%;
 }
 .list_right{
-  width:70%;
-  height:100%;
+	width: 80%;
   display: flex;
   flex-direction: column;
 }
 .list_right .right1{
   display: flex;
   flex-direction:row;
-  justify-content:space-between;
 }
-.list_right .right1 .right1_name{
-  width: 15%;
-  font-size:30rpx;
+.right1_name{
+	width: 50%;
+}
+.right1_price{
+	width: 50%;
+	text-align: right;
+}
+.right1_name text:nth-child(1){
+  font-size: 32rpx;
   color: #333333;
 }
-.list_right .right1 .right1_title{
-  font-size:25rpx;
-  margin-left:2%;
+.right1_name text:nth-child(2){
+  font-size:22rpx;
+  margin-left: 5%;
   color: #666666;
 }
-.list_right .right1 .right1_price{
-  font-size:30rpx;
+.right1_price text:nth-child(1), .right1_price text:nth-child(3){
+  font-size: 22rpx;
   color: #F85F58;
-  margin-left:4%;
+}
+ .right1_price text:nth-child(2){
+  font-size: 32rpx;
+  color: #F85F58;
+}
+.right1_price text:nth-child(3){
+	margin-right: 2%;
 }
 .list_right .right2{
+	width: 35%;
   display: flex;
   flex-direction:row;
-  margin-top: 20rpx;
+	justify-content: space-between;
+	align-items: center;
 }
 .list_right .right2 image{
-  display: block;
   width:20rpx;
-  height:20rpx;
-  line-height:20rpx;
-  padding-top:1%;
+  height: 19rpx;
 }
 .list_right .right2 text{
-  font-size:25rpx;
-  margin-left:5%;
-  color: #666666;
-}
-.list_right .right3{
-  display: flex;
-  flex-direction:row;
-  margin-top: 20rpx;
+  font-size: 22rpx;
+  color: #333333;
 }
 .list_right .right3 text{
-  font-size:25rpx;
+  font-size: 22rpx;
   color: #666666;
 }

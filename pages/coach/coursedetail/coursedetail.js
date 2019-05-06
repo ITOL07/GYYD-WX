@@ -11,7 +11,14 @@ Page({
     CourseInfo:null,
     club_id:null,
     course_type:null,
+<<<<<<< HEAD
     club_name:null
+=======
+    img_url:null,
+    club_name:null,
+    coach_id:null,
+    coach_name:null
+>>>>>>> online
   },
 
   /**
@@ -19,13 +26,25 @@ Page({
    */
   onLoad: function (options) {
     
+<<<<<<< HEAD
     console.log("开始请求课程详细信息，课程类型为" + options.id + "club_id为" + options.club_id + "club_name为" + options.club_name)
+=======
+    console.log("开始请求课程详细信息，课程类型为" + options.id + "club_id为" + options.club_id + "club_name为" + options.club_name+"coach_id为"+options.coach_id+"coach_name为"+options.coach_name)
+>>>>>>> online
     var url_tmp = fileData.getListConfig().url_test;
     var _this = this;
     _this.setData({
       course_type: options.id,
+<<<<<<< HEAD
       club_id: options.club_id,
       club_name: options.club_name
+=======
+      club_id: (typeof (options.club_id) == "undefined") ? null : options.club_id,
+      club_name: (typeof (options.club_name) == "undefined") ? null : options.club_name,
+      // coach_id: options.coach_id == "undefined" ? null : options.coach_id,
+      coach_id: (typeof (options.coach_id) == "undefined") ? null : options.coach_id,
+      coach_name: (typeof (options.coach_name) == "undefined") ? null : options.coach_name,
+>>>>>>> online
     })
     wx.request({
       url: url_tmp + '/club/getCourseInfo',
@@ -35,14 +54,24 @@ Page({
       success(res) {
         console.log(res.data)
         _this.setData({
+<<<<<<< HEAD
           CourseInfo: res.data
+=======
+          CourseInfo: res.data,
+          img_url:'https://www.guyueyundong.com/'+res.data.bz2.substring(9)
+>>>>>>> online
         })
       }
     }) 
   },
   gotoOrderdtl:function(){
     var that=this
+<<<<<<< HEAD
     var storedetailRouter = '../../user/orderdetail/orderdetail?club_id=' + that.data.club_id + '&club_name=' + that.data.club_name+'&type='+that.data.course_type;
+=======
+    var storedetailRouter = '../../user/orderdetail/orderdetail?club_id=' + that.data.club_id + '&club_name=' + that.data.club_name+'&type='+that.data.course_type+'&coach_id='+that.data.coach_id+'&coach_name='+that.data.coach_name;
+    console.log(storedetailRouter)
+>>>>>>> online
     var storedetailTitle = '课程详情';
     commonData.routers(storedetailRouter, storedetailTitle);
   },

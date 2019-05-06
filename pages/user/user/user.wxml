@@ -5,11 +5,16 @@
       <!-- <image src="{{headImage}}" bindtap="headImageClick">></image>
       <text>nieli</text>  
       <text class="text2">13333333333</text> -->
-<button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-      </block>
+			<view class="img">
+				<image src="../../../static/images/user/background.png"></image>
+			</view>
+			<button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 
+    		获取头像昵称
+		  </button>
+			<block wx:else>
+				<image bindtap="bindViewTap" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+				<text>{{userInfo.nickName}}</text>
+			</block>	
     </view>
     <view class="user_nav">
       <view class="nav_list" bindtap="addupClick">

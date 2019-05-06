@@ -2,8 +2,9 @@
 <view class="container">
   <scroll-view scroll-y="true" class="scroll_body">
     <view class="head">
-      <image src="../../../static/images/store/mendian.png"></image>
+      <image src="../../../static/images/store/sousuo.png"></image>
       <text>选择教练</text>
+			<!-- <image src="../../../static/images/coach/screen.png"></image> -->
     </view>
     <view class="bottom">
      <view wx:for="{{coachList}}" wx:key="this" class="list_data" id="{{item.coach_Id}}" data-coach_id="{{item.coach_Id}}" bindtap='coachClick'>
@@ -13,9 +14,15 @@
       </view>
       <view class="list_right">
             <view class="right1">
-              <text class="right1_name">{{item.name}}</text>
-              <text class="right1_title">{{item.tel}}</text>
-              <text class="right1_price">￥{{item.min_price}}/课起</text>
+							<view  class="right1_name">
+								<text>{{item.name}}</text>
+								<text>{{item.tel}}</text>
+							</view>
+							<view class="right1_price">
+              	<text>￥</text>
+								<text>{{item.min_price}}</text>
+								<text>/课起</text>
+							</view>
             </view>
             <view class="right2">
               <image src="../../../static/images/littleicon/xing1.png"></image>

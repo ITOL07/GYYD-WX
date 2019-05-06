@@ -72,9 +72,9 @@
       </view>
       <view class="listall">
         <view class="private_list" wx:for="{{courseData}}" wx:key="this">
-          <view class="list_item" bindtap="courseClick">
+          <view class="list_item" id="{{item.type}}" data-coach-id="{{param_id}}" data-coach_name="{{coach_name}}" bindtap="courseClick">
             <image src="{{item.imgurl}}"></image>
-            <text class="text1">{{item.title}}</text>
+            <text class="text1">{{item.name}}</text>
             <text class="text2">{{item.introduce}}</text>
             <view class="buy">
               <text>￥{{item.price}}</text>

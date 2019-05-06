@@ -33,7 +33,31 @@ App({
         this.globalData.systemInfo = res.system.toUpperCase()
       }
     })
+    let that = this
+    // that.checkLoginStatus()
   },
+  // checkLoginStatus: function(){
+  //   let that=this
+  //   let loginFlag = wx.getStorageSync('loginFlag');
+  //   if(loginFlag){
+  //     wx.checkSession({
+  //       success:function(){
+  //         let userStorageInfo=wx.getStorageSync('userInfo');
+  //         if (userStorageInfo){
+  //           that.globalData.userInfo = JSON.parse(userStorageInfo)
+  //         } else{
+  //           that.showInfo('缓存信息缺失');
+  //           console.error('登录成功后将用户信息')
+  //         }
+  //       },
+  //       fail:function(){
+  //         that.doLogin();
+  //       }
+  //     });
+  //   } else {
+  //     that.doLogin();
+  //   }
+  // },
   globalData: {
     userInfo: null,
     openid:null,

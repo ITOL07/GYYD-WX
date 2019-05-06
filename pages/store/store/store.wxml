@@ -2,7 +2,7 @@
 <view class="container">
   <scroll-view scroll-y="true" class="scroll_body">
     <view class="head"> 
-      <image src="../../../static/images/store/mendian.png"></image>
+      <image src="../../../static/images/store/sousuo.png"></image>
       <text>选择门店</text>
     </view>
     <view class="bottom">
@@ -15,8 +15,8 @@
           <view class="list_right">
             <view class="right1">
               <image src="../../../static/images/store/mendian.png"></image>
-              <text class="right1_name">{{item.name}}</text>
-              <text class="right2">    距我{{item.dis}}米</text>
+              <text>{{item.name}}</text>
+              <text>距我{{item.dis}}米</text>
             </view>
             <view class="right2">
               <text>{{item.tel}}</text>

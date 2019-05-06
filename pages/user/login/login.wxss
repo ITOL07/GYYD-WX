@@ -2,82 +2,81 @@
 .container{
   background:#FFFFFF;
 }
+   
 .top{
-  width:90%;
-  height:25%;
-  margin:0 auto;
+  width: 88%;
+  height: 226rpx;
+  margin: 20rpx 6%;
 }
-.top_item{
-  width:100%;
-  height:40%;
+.top_item1, .top_item2{
+  width: 100%;
+  height: 33%;
+	border-bottom: 2rpx solid #EEEEEE;
+	margin-top: 50rpx;
   display:flex;
   flex-direction:row;
-  margin-top:70rpx;
+	align-items: center;
 }
-.top_item image{
+.top_item1 image{
   display:block;
-  width:30rpx;
-  height:30rpx;
-  margin-left:5%;
-  margin-right:5%;
-  padding-top:2%;
+  width: 17rpx;
+  height: 27rpx;
+	margin-right: 5%;
 }
-.top_item input{
-  width:80%;
-  height:50rpx;
-  border-bottom:1px aolid #EEEEEE;
-  font-size:30rpx;
-  color:#999999;
+.top_item2 image{
+  display:block;
+  width: 25rpx;
+  height: 29rpx;
+	margin-right: 5%;
+}
+.place{
+	font-size: 26rpx;
+	color: #999999;
 }
 .middle{
   width:100%;
-  height:25%;
-  margin-top:30rpx;
+  margin-top: 60rpx;
 }
 .middle button{
-  width:70%;
-  margin:60rpx auto;
-  height:100rpx;
+  width: 72%;
+  height: 84rpx;
   background:#F9CE0E;
-  font-size:40rpx;
-  border-radius:50rpx;
+  font-size: 32rpx;
+  border-radius: 42rpx;
+  margin: 27rpx 14%;
 }
 .reg{
-  width:100%;
-  height:80rpx;
+  width: 76%;
+	margin: 0 12%;
   display: flex;
-  justify-content:space-around;
+  justify-content:space-between;
 }
 .reg text{
-  font-size:30rpx;
-  color:#FAC72C;
-}
-.reg .text1{
-  width:33%;
-  margin-left:10%;
-}
-.reg .text2{
-  width:33%;
-  margin-left:10%;
-}
-.reg .text3{
-  width:33%;
-  /* margin-left:10%; */
+  font-size: 24rpx;
+  color: #FAC72C;
 }
 .bottom{
-  width:100%;
-  height:50%;
+	width: 100%;
   margin-top:50%;
 }
-.bottom text{
+.bottom view{
+	width: 100%;
+	height: 30rpx;
+  font-size: 24rpx;
   color:#999999;
-  font-size:30rpx;
+	line-height: 60rpx;
   text-align:center;
-  display:block;
+  border-bottom: 2rpx solid #EEEEEE;
 }
 .bottom image{
   display:block;
-  margin:10rpx auto;
-  width:100rpx;
-  height:100rpx;
+  width:90rpx;
+  height:90rpx;
+}
+.wxbtn{
+  border-radius:50%;
+  width:90rpx;
+  height:90rpx;
+  margin: 60rpx 44%;
+  padding: 0;
 }

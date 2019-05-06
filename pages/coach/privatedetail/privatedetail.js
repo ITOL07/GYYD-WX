@@ -42,8 +42,10 @@ Page({
     var photoTitle = '相册';
     commonData.routers(photoRouter, photoTitle);
   },
-  courseClick: function(){
-    var coursedetailRouter = '../../coach/coursedetail/coursedetail';
+  courseClick: function(e){
+    console.log('privateDetail.coach_id' + e.currentTarget.dataset.coachId + 'coach_name' + e.currentTarget.dataset.coach_name)
+    // var coursedetailRouter = '../../coach/coursedetail/coursedetail';
+    var coursedetailRouter = '../../coach/coursedetail/coursedetail?id=' + e.currentTarget.id + '&coach_id=' + e.currentTarget.dataset.coachId + '&coach_name=' + e.currentTarget.dataset.coach_name;
     var coursedetailTitle = '课程详情';
     commonData.routers(coursedetailRouter, coursedetailTitle);
   },
@@ -145,11 +147,12 @@ Page({
   getCourseInfo: function (param) {
     var that = this
     var url_tmp = fileData.getListConfig().url_test;
-    console.log(param)
+    console.log('获取教练课程信息'+param)
     wx.request({
-      url: url_tmp + '/course/getCourseInfo',
+      // url: url_tmp + '/course/getCourseInfo',
+      url: url_tmp + '/coach/qryCourse',
       method: 'POST',
-      data: { coach_id: param },//param
+      data: { coach_id: param ,try_flag:''},//param
       header: {
         'content-type': 'application/x-www-form-urlencoded'  //发送post请求
       }, success: function (res) {
@@ -177,7 +180,7 @@ Page({
     //默认加载场地信息
     this.getClubInfo();
     //默认加载教授课程信息
-    //this.getCourseInfo(options.id);
+    this.getCourseInfo(options.id);
   },
 
   /**
@@ -227,5 +230,12 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+  storeClick: function (e) {
+    console.log(e)
+    var storedetailRouter = '../../store/storedetail/storedetail?id=' + e.currentTarget.id;
+    var storedetailTitle = '门店详情';
+    commonData.routers(storedetailRouter, storedetailTitle);
+
+  },
 })

@@ -6,58 +6,51 @@
         <image src="../../../static/images/coach/jiaolianheader.png"></image>
       </view>
       <view class="header_right">
-        <view>
           <text class="title">{{storeData.name}}</text>
-        </view>
-        <view> 
           <text>{{storeData.address}}</text>
-        </view>
-        <view class="phone">
-          <text>联系电话：{{storeData.tel}}</text>
+          <text class="phone">联系电话：{{storeData.tel}}</text>
           <!-- <text>详情</text> -->
           <!-- <image src="../../../static/images/littleicon/more.png"></image> -->
-        </view>
       </view>
     </view>
-    <view class="store_middle">
-      <view class="middle_top">
-        <text class="line">|</text>
-        <text class="txt">门店面积</text>
-      </view>
-      <text class="middle_bottom">{{storeData.area}} m²</text>
-    </view>
-    <view class="store_middle">
-      <view class="middle_top">
-        <text class="line">|</text>
-        <text class="txt">营业时间</text>
-      </view>
-      <text class="middle_bottom">每天{{open_time}}~{{close_time}}</text>
-    </view>
-    <view class="store_middle">
-      <view class="middle_top">
-        <text class="line">|</text>
-        <text class="txt">基础设施</text>
-      </view>
-      <view class="store_facilities">
-        <text class="middle_bottom">{{storeData.jcss}}</text>
-      </view>
-    </view>
-    <view class="map">
-      <view class="middle_top">
-        <text class="line">|</text>
-        <text>门店地址</text>
-      </view>
-      <text bindtap="openLocation">{{storeData.address}}</text>
-    </view>
-    <view class="storeimg">
-      <view class="middle_top">
-        <text class="line">|</text>
-        <text>门店图片</text>
-      </view>
-      
-      <view wx:for="{{storeImg}}" wx:key="this" class="imgall">
-        <image src="{{item.img_url}}"></image>
-      </view>
-    </view>
+		<view class="bottom">
+			<view class="store_middle">
+				<view>
+					<text>|</text>
+					<text class="txt">门店面积</text>
+				</view>
+				<text class="middle_bottom">{{storeData.area}} m²</text>
+			</view>
+			<view class="store_middle">
+				<view>
+					<text>|</text>
+					<text class="txt">营业时间</text>
+				</view>
+				<text class="middle_bottom">每天{{open_time}}~{{close_time}}</text>
+			</view>
+			<view class="store_middle">
+				<view>
+					<text>|</text>
+					<text class="txt">基础设施</text>
+				</view>
+				<text class="middle_bottom">{{storeData.jcss}}</text>
+			</view>
+			<view class="map">
+				<view>
+					<text>|</text>
+					<text>门店地址</text>
+				</view>
+				<text class="point" bindtap="openLocation">{{storeData.address}}</text>
+			</view>
+			<view class="storeimg">
+				<view>
+					<text>|</text>
+					<text>门店图片</text>      
+				</view>
+				<view wx:for="{{storeImg}}" wx:key="this" class="imgall">
+					<image src="{{item.img_url}}"></image>
+				</view>
+			</view>
+		</view>
   </scroll-view>
 </view>
