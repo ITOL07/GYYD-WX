@@ -3,7 +3,7 @@
   <scroll-view scroll-y="true" class="scroll_body">
     <view class="private_header">
       <view class="header_left">
-        <image src="../../../static/images/coach/image1.png"></image>
+        <image src="{{icon_url}}"></image>
       </view>
       <view class="header_right"> 
         <view class="header_right_top">
@@ -56,7 +56,7 @@
 				<view class="nav_bottom">
 					<view class="nav_all" wx:for="{{navData}}" wx:key="this">
 						<view id="{{item.club_Id}}" bindtap="storeClick">
-							<image src="../../../static/images/coach/image2.png"></image>
+							<image src="{{item.icon}}"></image>
 							<text>{{item.name}}</text>
 							<text>{{item.dis}}米</text>
 						</view>

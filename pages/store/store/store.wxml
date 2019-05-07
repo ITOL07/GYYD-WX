@@ -10,7 +10,7 @@
       <view wx:for="{{storeListData}}" wx:key="this" class="list_data">
         <view class="list_item" bindtap="storeClick" id="{{item.club_Id}}">
           <view class="list_left">
-            <image src="../../../static/images/coach/image2.png"></image>
+            <image src="{{item.icon}}"></image>
           </view>
           <view class="list_right">
             <view class="right1">
