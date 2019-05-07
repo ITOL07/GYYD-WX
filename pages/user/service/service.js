@@ -5,7 +5,14 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
+		flag: true
+	},
 
+	call: function(){
+		this.setData({
+			flag: !this.data.flag
+		})
+		console.log(this.data.flag)
 	},
 
 	/**

@@ -1,2 +1,15 @@
-<!--pages/user/service/service.wxml-->
-<text>pages/user/service/service.wxml</text>
+<view class="containe">
+	<view class="top" bindtap="call">
+		<view>
+			<image src="../../../static/images/user/service.jpg"></image>
+			<text>在线客服</text>
+		</view>
+		<image src="../../../static/images/littleicon/more.png"></image>
+	</view>
+	<view class="bottom">客服热线： 10101919</view>
+	<action-sheet class="action" hidden="{{flag}}" bindtap="call">
+		<action-sheet-item class="num">10101919</action-sheet-item>
+		<action-sheet-item class="call">呼叫</action-sheet-item>
+		<action-sheet-cancel class="cancel">取消</action-sheet-cancel>
+	</action-sheet>
+</view>
