@@ -42,7 +42,7 @@ Page({
         console.log(res.data)
         _this.setData({
           CourseInfo: res.data,
-          img_url:'https://www.guyueyundong.com/'+res.data.bz2.substring(9)
+          // img_url:'https://www.guyueyundong.com/'+res.data.bz2.substring(9)
         })
       }
     }) 

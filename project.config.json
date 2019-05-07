@@ -13,7 +13,7 @@
 		"checkInvalidKey": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.5.2",
+	"libVersion": "2.6.6",
 	"appid": "wx9dabed0089993ef3",
 	"projectname": "lanhu",
 	"debugOptions": {

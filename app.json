@@ -34,7 +34,8 @@
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#292A2E",
     "navigationBarTitleText": "古越运动",
-    "navigationBarTextStyle": "white"
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
   },
   "tabBar": {
     "color": "#999999",

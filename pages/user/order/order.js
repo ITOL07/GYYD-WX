@@ -94,6 +94,10 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
+    wx.showNavigationBarLoading();
+    this.getOrderData(orderStatus)
+    console.log('下拉刷新成功')
+    wx.hideNavigationBarLoading();
 
   },
 
