@@ -8,8 +8,21 @@ Page({
    * 页面的初始数据
    */
   data: {
-    messageData: fileData.getMessageData()
+    messageData: fileData.getMessageData(),
+		selected: true
   },
+
+	switch1: function () {
+		this.setData({
+			selected: true
+		})
+	},
+
+	switch2: function () {
+		this.setData({
+			selected: false
+		})
+	},
 
   /**
    * 生命周期函数--监听页面加载
