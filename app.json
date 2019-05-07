@@ -15,6 +15,7 @@
     "pages/coach/privatedetail/privatedetail",
     "pages/user/user/user",
     "pages/user/set/set",
+    "pages/user/service/service",
     "pages/user/message/message",
     "pages/user/order/order",
     "pages/user/addup/addup",
