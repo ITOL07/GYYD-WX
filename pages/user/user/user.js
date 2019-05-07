@@ -79,6 +79,16 @@ Page({
     var agreementTitle = '用户协议';
     commonData.routers(agreementRouter, agreementTitle);
   },
+	serviceClick: function () {
+		var agreementRouter = '../../user/service/service';
+    var agreementTitle = '客服';
+    commonData.routers(agreementRouter, agreementTitle);
+  },
+	messageClick: function () {
+		var agreementRouter = '../../user/message/message';
+    var agreementTitle = '消息';
+    commonData.routers(agreementRouter, agreementTitle);
+  },
   setClick: function(){
     var setRouter = '../../user/set/set';
     var setTitle = '设置';
