@@ -95,5 +95,6 @@ module.exports = {
   formatTimeHM: formatTimeHM,
   routers,
   distance,
-  wxlogin: wxlogin
+  wxlogin: wxlogin,
+
 }

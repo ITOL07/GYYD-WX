@@ -1,4 +1,5 @@
 <!--pages/storedetail/storedetail.wxml-->
+<wxs module="filters" src="../../../utils/util.wxs"></wxs>
 <view class="container">
   <scroll-view scroll-y="true" class="scroll_body">
   <!-- <view wx:for="{{storeListData}}" wx:key="this"> -->
@@ -30,11 +31,12 @@
             <view  class="buy">
 							<view>
               	<text>￥</text>
-              	<text>{{item.price}}</text>
+              	<text>{{filters.toFix(item.min_price/1,0)}}</text>
 								<text>/课</text>
 							</view>
-              <button data-saleid="{{item.courseId}}" data-try_flag="{{item.try_flag}}" 
-											data-price="{{item.price}}" data-desc="{{item.name}}" 
+              <button id="{{item.courseType}}" 
+									 data-club-id="{{storeListData.clubId}}" 
+									 data-club_name="{{storeListData.name}}" 
 											bindtap='gotobuy'>购买
 							</button>
             </view>
@@ -55,12 +57,13 @@
 					<view class="buy">
 						<view>
 							<text>￥</text>
-							<text>{{item.price}}</text>
+							<text>{{filters.toFix(item.min_price/1,0)}}</text>
 							<!-- <text>20</text> -->
 							<text>/课</text>
 						</view>
-						<button data-saleid="{{item.courseId}}" data-try_flag="{{item.try_flag}}" 
-										data-price="{{item.price}}" data-desc="{{item.name}}" bindtap='gotobuy'>
+						<button id="{{item.courseType}}" 
+									 data-club-id="{{storeListData.clubId}}" 
+									 data-club_name="{{storeListData.name}}" bindtap='gotobuy'>
 										购买
 						</button>
 					</view>
@@ -85,7 +88,7 @@
 							</view>
 							<view class="right1_price">
               	<text>￥</text>
-								<text>{{item.min_price}}</text>
+								<text>{{filters.toFix(item.min_price/1,0)}}</text>
 								<text>/课起</text>
 							</view>
             </view>

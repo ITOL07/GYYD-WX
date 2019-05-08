@@ -1,4 +1,5 @@
 <!--pages/store/store.wxml-->
+<wxs module="filters" src="../../../utils/util.wxs"></wxs>
 <view class="container">
   <scroll-view scroll-y="true" class="scroll_body">
     <view class="head"> 
@@ -16,7 +17,9 @@
             <view class="right1">
               <image src="../../../static/images/store/mendian.png"></image>
               <text>{{item.name}}</text>
-              <text>距我{{item.dis}}米</text>
+              <text wx:if="{{item.dis>1&&item.dis<=1000}}">距我{{filters.toFix(item.dis,0)}}m</text>
+            <text wx:if="{{item.dis>1000&&item.dis<=50000}}">距我{{filters.toFix(item.dis/1000,1)}}km</text>
+             <text wx:if="{{item.dis>50000}}">距我{{filters.toFix(item.dis/1000,0)}}km</text>
             </view>
             <view class="right2">
               <text>{{item.tel}}</text>

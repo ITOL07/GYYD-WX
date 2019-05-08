@@ -1,4 +1,5 @@
 <!--index.wxml-->
+<wxs module="filters" src="../../../utils/util.wxs"></wxs>
 <view class="container">
   <scroll-view scroll-y="true" class="scroll_body">
     <!-- 轮播图 -->
@@ -24,7 +25,9 @@
           <view id="{{item.club_Id}}" bindtap="storeClick">
             <image src="{{item.icon}}"></image>
             <text>{{item.name}}</text>
-            <text>{{item.dis}}km</text>
+            <text wx:if="{{item.dis>1&&item.dis<=1000}}">{{filters.toFix(item.dis/1,0)}}m</text>
+            <text wx:if="{{item.dis>1000&&item.dis<=50000}}">{{filters.toFix(item.dis/1000,1)}}km</text>
+             <text wx:if="{{item.dis>50000}}">{{filters.toFix(item.dis/1000,0)}}km</text>
           </view>
         </view>
       </view>

@@ -143,7 +143,7 @@ Page({
               console.log('i===' + i + ' lat==' + res.data[i].la + ' lo==' + res.data[i].lo + '_this.la =====' + la + ' distance===' + distance)
               json = res.data[i]
               json.dis = distance
-
+              
               tmp.push(json)
             }
             if (tmp.length === 0) {

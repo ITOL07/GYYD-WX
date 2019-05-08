@@ -42,7 +42,8 @@ Page({
     wx.request({
       url: url_tmp + '/club/getCourseInfo',
       data:{
-        type:options.id
+        type:options.id,
+        id:_this.data.club_id==null?_this.data.coach_id:_this.data.club_id
       },
       success(res) {
         console.log(res.data)

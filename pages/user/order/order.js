@@ -10,7 +10,8 @@ Page({
   data: {
     navbar: ["全部", "待支付", "已支付"],
     // orderData: fileData.getOrderData()
-    orderData: null
+    orderData: null,
+    currentTab:0
   },
   //顶部tab切换
   navbarTap: function (e) {

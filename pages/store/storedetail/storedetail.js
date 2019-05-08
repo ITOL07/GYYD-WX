@@ -151,7 +151,6 @@ Page({
 				console.log(res.data)
 				_this.setData({
 					courseData_try: res.data,
-					// img_url_try: 'https://www.guyueyundong.com/' + res.data.bz2.substring(9)
 				})
 			}
 		})
