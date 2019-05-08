@@ -6,9 +6,9 @@
 		</view>
 		<image src="../../../static/images/littleicon/more.png"></image>
 	</view>
-	<view class="bottom" bindtap="calls">客服热线： 10101919</view>
+	<view class="bottom" bindtap="calls">客服热线： 13011217759</view>
 	<action-sheet class="action" hidden="{{flag}}" bindtap="call">
-		<action-sheet-item class="num" bindtap="calls">10101919</action-sheet-item>
+		<action-sheet-item class="num" bindtap="calls">13011217759</action-sheet-item>
 		<action-sheet-item class="call" bindtap="calls">呼叫</action-sheet-item>
 		<action-sheet-cancel class="cancel">取消</action-sheet-cancel>
 	</action-sheet>
