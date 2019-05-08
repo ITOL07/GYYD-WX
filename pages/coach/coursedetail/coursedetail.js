@@ -18,8 +18,8 @@ Page({
   },
 
 	call: function(){
-		wx.makePhoneCall({
-			phoneNumber: "13011217759"
+		wx.navigateTo({
+			url: "../../user/service/service"
 		})
 	},
 
