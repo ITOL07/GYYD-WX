@@ -36,42 +36,10 @@
         <text class="content2">{{CourseInfo.suggest}}</text>
       </view>
     </view>
-    <!-- <view class="vip">
-      <view class="comment_header">
-        <text>会员评价</text>
-      </view>
-      <view class="comment_title">
-        <view class="comment_title_head">
-          <image src="../../../static/images/user/head.png"></image>
-        </view>
-        <view class="comment_title_name">
-          <text class="text1">小米粒儿</text>
-          <text class="text2">2018-10-13</text>
-        </view>
-        <view class="xing">
-          <image src="../../../static/images/littleicon/xing1.png"></image>
-          <image src="../../../static/images/littleicon/xing1.png"></image>
-          <image src="../../../static/images/littleicon/xing1.png"></image>
-          <image src="../../../static/images/littleicon/xing1.png"></image>
-          <image src="../../../static/images/littleicon/xing1.png"></image>
-        </view>
-      </view>
-      <view class="content">
-        <text>身材一直便瘦身体也不是很好，之后决定开始健身就去费恩莱斯国际健身学院学习教练行业，从110多斤的瘦猴增肌到168斤</text>
-      </view>
-      <view class="comment_img">
-        <image src="../../../static/images/coach/course.png"></image>
-        <image src="../../../static/images/coach/course.png"></image>
-        <image src="../../../static/images/coach/course.png"></image>
-      </view>
-      <view class="comment_footer">
-        <text>增肌max（私教课）</text>
-      </view>
-    </view> -->
     <view class="footer">
-      <view class="left">
-        <!-- <image src="../../../static/images/littleicon/service.png"></image>
-        <text>客服</text> -->
+      <view class="left" bindtap="call">
+        <image src="../../../static/images/littleicon/service.png"></image>
+        <text>客服</text>
       </view>
       <view class="right">
         <button bindtap='gotoOrderdtl'>立即购买</button>

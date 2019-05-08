@@ -185,14 +185,16 @@
 .left{
   width:20%;
   height:100%;
+  background:#EEEEEE;
+	padding-left: 30rpx;
   display:flex;
   flex-direction:row;
 	align-items: center;
-  background:#EEEEEE;
 }
 .left image{
   width: 29rpx;
   height: 33rpx;
+	margin-right: 10rpx;
 }
 .left text{
   font-size: 32rpx;
