@@ -51,7 +51,6 @@
 
 .detail_experience{
   width: 100%;
-  height: 594rpx;
   background:#FFFFFF;
 	padding-bottom: 30rpx;
 }
@@ -121,10 +120,17 @@
   border:1px solid #FBBE44;
   line-height:50rpx;
 }
+.tips{
+	width: 100%;
+	height: 80rpx;
+	text-align: center;
+	font-size: 28rpx;
+	color: #666666;
+	line-height: 80rpx;
+}
 
 .detail_private{
   width: 100%;
-	height: 594rpx;
 	padding-bottom: 30rpx;
   background:#FFFFFF;
   margin-top: 15rpx;

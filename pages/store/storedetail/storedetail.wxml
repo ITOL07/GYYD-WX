@@ -19,55 +19,61 @@
         <view class="experience_header"> 
          <text>体验课</text> 
         </view>
-        <view class="listall">
+        <view class="listall" wx:if="{{courseData_try!=null}}">
           <view class="experience_list" wx:for="{{courseData_try}}" wx:key="this"> 
-          <!-- <view class="experience_list" > -->
-            <image src="{{item.bz2}}" bindtap='gotobuy' id="{{item.courseType}}" data-club-id="{{storeListData.clubId}}" data-club_name="{{storeListData.name}}"></image>
+            <image src="{{item.bz2}}" bindtap='gotobuy' id="{{item.courseType}}" 
+									 data-club-id="{{storeListData.clubId}}" 
+									 data-club_name="{{storeListData.name}}">
+						</image>
             <text class="text1">{{item.courseName}}</text>
             <text class="text2">{{item.brief}}</text>
             <view  class="buy">
 							<view>
               	<text>￥</text>
-								<!-- <text>19</text> -->
               	<text>{{item.price}}</text>
 								<text>/课</text>
 							</view>
-              <!-- <button data-saleid="{{item.courseId}}" data-try_flag="{{item.try_flag}}" data-price="{{item.price}}" data-desc="{{item.name}}" bindtap='buyCourse'>购买</button> -->
-              <button data-saleid="{{item.courseId}}" data-try_flag="{{item.try_flag}}" data-price="{{item.price}}" data-desc="{{item.name}}" bindtap='gotobuy'>购买</button>
+              <button data-saleid="{{item.courseId}}" data-try_flag="{{item.try_flag}}" 
+											data-price="{{item.price}}" data-desc="{{item.name}}" 
+											bindtap='gotobuy'>购买
+							</button>
             </view>
           </view>
        </view>
+			 <view wx:else class="tips">这个店里暂时没有体验课！</view>
       </view>
     <!-- </scroll-view> -->
     <view class="detail_private">
       <view class="private_header">
         <text>私教课</text>
       </view>
-      <view class="listall">
-      <view class="private_list" wx:for="{{courseData}}" wx:key="this"> 
-        <image src="{{item.bz2}}" bindtap='gotobuy' id="{{item.courseType}}" data-club-id="{{storeListData.clubId}}" data-club_name="{{storeListData.name}}"></image>
-        <text class="text1">{{item.courseName}}</text>
-        <text class="text2">{{item.brief}}</text>
-        <view class="buy">
-					<view>
-          	<text>￥</text>
-						<text>{{item.price}}</text>
-						<!-- <text>20</text> -->
-						<text>/课</text>
+      <view class="listall" wx:if="{{courseData_try!=null}}">
+				<view class="private_list" wx:for="{{courseData}}" wx:key="this"> 
+					<image src="{{item.bz2}}" bindtap='gotobuy' id="{{item.courseType}}" data-club-id="{{storeListData.clubId}}" data-club_name="{{storeListData.name}}"></image>
+					<text class="text1">{{item.courseName}}</text>
+					<text class="text2">{{item.brief}}</text>
+					<view class="buy">
+						<view>
+							<text>￥</text>
+							<text>{{item.price}}</text>
+							<!-- <text>20</text> -->
+							<text>/课</text>
+						</view>
+						<button data-saleid="{{item.courseId}}" data-try_flag="{{item.try_flag}}" 
+										data-price="{{item.price}}" data-desc="{{item.name}}" bindtap='gotobuy'>
+										购买
+						</button>
 					</view>
-          <!-- <stepper bindnumChange="numChange"></stepper> -->
-          <!-- <button data-saleid="{{item.courseId}}" data-try_flag="{{item.try_flag}}" data-price="{{item.price}}" data-desc="{{item.name}}" bindtap='buyCourse'>购买</button> -->
-          <button data-saleid="{{item.courseId}}" data-try_flag="{{item.try_flag}}" data-price="{{item.price}}" data-desc="{{item.name}}" bindtap='gotobuy'>购买</button>
-        </view>
+				</view>
       </view>
-      </view>
+			<view wx:else class="tips">这个店里暂时没有私教课！</view>
     </view>
     <view class="detail_store">
       <view class="store_header">
         <text>本店私教</text>
       </view>
-      <view class="store_list" >
-        <view wx:for="{{listData}}" wx:key="this" class="list_data" >
+      <view class="store_list" wx:if="{{listData!=null}}">
+        <view wx:for="{{listData}}" wx:key="this" class="list_data">
           <view class="list_left">
             <image src="{{item.icon}}"></image>
           </view>
@@ -97,6 +103,7 @@
           </view>
         </view>
       </view>
+			<view wx:else class="tips">这个店里暂时没有私教！</view>
     </view>
   </scroll-view>
 </view>
