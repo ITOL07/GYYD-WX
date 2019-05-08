@@ -70,6 +70,7 @@ Page({
             nick_name: res.data.nickName,
             score: res.data.score,
             adept:res.data.comment,
+            icon_url:res.data.icon,
             introduction: (res.data.introduction == null)? coach_info : res.data.introduction
           })
           }

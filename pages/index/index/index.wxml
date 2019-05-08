@@ -22,7 +22,7 @@
       <view class="nav_bottom">
         <view class="nav_all" wx:for="{{navData}}" wx:key="this">
           <view id="{{item.club_Id}}" bindtap="storeClick">
-            <image src="../../../static/images/coach/image2.png"></image>
+            <image src="{{item.icon}}"></image>
             <text>{{item.name}}</text>
             <text>{{item.dis}}km</text>
           </view>
