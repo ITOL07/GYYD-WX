@@ -1,4 +1,5 @@
 <!--pages/privatedetail/privatedetail.wxml-->
+<wxs module="filters" src="../../../utils/util.wxs"></wxs>
 <view class="container">
   <scroll-view scroll-y="true" class="scroll_body">
     <view class="private_header">
@@ -58,7 +59,9 @@
 						<view id="{{item.club_Id}}" bindtap="storeClick">
 							<image src="{{item.icon}}"></image>
 							<text>{{item.name}}</text>
-							<text>{{item.dis}}米</text>
+              <text wx:if="{{item.dis>1&&item.dis<=1000}}">{{filters.toFix(item.dis/1,0)}}m</text>
+            <text wx:if="{{item.dis>1000&&item.dis<=50000}}">{{filters.toFix(item.dis/1000,1)}}km</text>
+             <text wx:if="{{item.dis>50000}}">{{filters.toFix(item.dis/1000,0)}}km</text>
 						</view>
 					</view>
 				</view>
@@ -70,13 +73,13 @@
       </view>
       <view class="listall">
         <view class="private_list" wx:for="{{courseData}}" wx:key="this">
-          <view class="list_item" id="{{item.type}}" data-coach-id="{{param_id}}" data-coach_name="{{coach_name}}" bindtap="courseClick">
-            <image src="{{item.imgurl}}"></image>
-            <text>{{item.name}}</text>
-            <text>{{item.introduce}}</text>
+          <view class="list_item" id="{{item.courseType}}" data-coach-id="{{param_id}}" data-coach_name="{{coach_name}}" bindtap="courseClick">
+            <image src="{{item.bz2}}"></image>
+            <text>{{item.courseName}}</text>
+            <text>{{item.brief}}</text>
             <view class="buy">
               <text>￥</text>
-							<text>{{item.price}}</text>
+							<text>{{filters.toFix(item.min_price/1,0)}}</text>
 							<text>/课</text>
             </view>
           </view>

@@ -5,7 +5,7 @@
   <!-- <view wx:for="{{storeListData}}" wx:key="this"> -->
   <view class="detail_header" bindtap='bindStoreInfo'>
     <view class="header_left">
-        <image src="../../../static/images/coach/jiaolianheader.png"></image>
+        <image src="{{storeListData.icon}}"></image>
     </view> 
     <view class="header_right">
         <text class="title">{{storeListData.name}}</text>

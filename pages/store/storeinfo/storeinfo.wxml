@@ -3,7 +3,7 @@
   <scroll-view scroll-y="true" class="scroll_body">
     <view class="detail_header">
       <view class="header_left">
-        <image src="../../../static/images/coach/jiaolianheader.png"></image>
+        <image src="{{storeData.icon}}"></image>
       </view>
       <view class="header_right">
           <text class="title">{{storeData.name}}</text>
