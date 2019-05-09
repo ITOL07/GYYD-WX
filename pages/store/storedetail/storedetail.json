@@ -2,5 +2,5 @@
   "usingComponents": {
     "stepper": "/components/stepper"
   },
-	"navigationBarTitleText": "门店详情"
+	"navigationBarTitleText": "门店信息"
 }
