@@ -4,15 +4,13 @@
   <scroll-view scroll-y="true" class="scroll_body">
   <!-- <view wx:for="{{storeListData}}" wx:key="this"> -->
   <view class="detail_header" bindtap='bindStoreInfo'>
-    <view class="header_left">
-        <image src="../../../static/images/coach/jiaolianheader.png"></image>
-    </view> 
+    <image class="header_left" src="../../../static/images/coach/jiaolianheader.png"></image>
     <view class="header_right">
         <text class="title">{{storeListData.name}}</text>
         <text class="addr">addr:{{storeListData.address}}</text>
 				<view  class="phone">
-					<view>tel:{{storeListData.tel}}</view>
-					<view>详情></view>
+					<text>tel:{{storeListData.tel}}</text>
+					<text>详情></text>
 				</view>
     </view>
   </view>
