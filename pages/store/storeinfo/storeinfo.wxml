@@ -47,8 +47,10 @@
 					<text>|</text>
 					<text>门店图片</text>      
 				</view>
-				<view wx:for="{{storeImg}}" wx:key="this" class="imgall">
-					<image src="{{item.img_url}}"></image>
+				<view class="imgall">
+					<block wx:for="{{storeImg}}" wx:key="this">
+						<image src="{{item.img_url}}"></image>
+					</block>
 				</view>
 			</view>
 		</view>
