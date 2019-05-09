@@ -233,7 +233,8 @@ Page({
       url: url_tmp + '/club/getCourseInfo',
       data: {
         type: options.type,
-        id: _this.data.club_id == null ? _this.data.coach_id : _this.data.club_id
+        // id: _this.data.club_id == null ? _this.data.coach_id : _this.data.club_id
+        id: club_idx == "null" ? coach_idx : club_idx
       },
       success(res) {
         console.log(res.data)
