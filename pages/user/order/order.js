@@ -2,37 +2,46 @@
 const app = getApp()
 var fileData = require("../../../utils/data.js");
 let orderStatus = ''
+var map = []
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    navbar: ["全部", "待支付", "已支付"],
-    // orderData: fileData.getOrderData()
-    orderData: null,
-    currentTab:0
-  },
-  //顶部tab切换
-  navbarTap: function (e) {
-    let index = e.currentTarget.dataset.idx;
-    this.setData({
-      currentTab: index
-    })
-
-    //1"全部";2, "待支付"；3"已支付"；
-    if (index == 0) {
-      orderStatus = '';
-    } else if (index == 1) {
-      orderStatus = -1;
-    } else if (index == 2) {
-      orderStatus = 0;
-    } else {
-      orderStatus = '';
-    }
-    this.getOrderData(orderStatus);
+    flag: '0',
+    orderData: fileData.getOrderData()
+    // orderData: null
   },
 
+	tab: function(e){
+		this.setData({
+			flag: e.target.id
+		})
+		var flag = this.data.flag
+		var data = []
+		if(flag=='1'){
+			for(var index in map){
+				if (map[index].tradeStateDesc=="待付款"){
+					data.push(map[index])
+				}
+			}
+		}else if(flag=='2'){
+			for(var index in map){
+				if (map[index].tradeStateDesc=="已付款"){
+					data.push(map[index])
+				}
+			}
+		}else{
+			for (var index in map) {
+				data.push(map[index])
+			}
+		}	
+		console.log("flag=2,data=" + data)
+		this.setData({
+			orderData: data
+		})
+	},
   getOrderData(orderStatus){
     var _this = this
     var url_tmp = fileData.getListConfig().url_test;
@@ -52,6 +61,7 @@ Page({
         _this.setData({
           orderData: res.data
         })
+				map = this.data.orderData
       }
     })
 
@@ -60,7 +70,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getOrderData(orderStatus)
+		map = this.data.orderData
+		console.log("map:"+map)
+    // this.getOrderData(orderStatus)
   },
 
   /**
