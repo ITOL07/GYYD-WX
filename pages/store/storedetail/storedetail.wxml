@@ -4,7 +4,7 @@
   <scroll-view scroll-y="true" class="scroll_body">
   <!-- <view wx:for="{{storeListData}}" wx:key="this"> -->
   <view class="detail_header" bindtap='bindStoreInfo'>
-    <image class="header_left" src="../../../static/images/coach/jiaolianheader.png"></image>
+    <image class="header_left" src="{{storeListData.icon}}"></image>
     <view class="header_right">
         <text class="title">{{storeListData.name}}</text>
         <text class="addr">addr:{{storeListData.address}}</text>
