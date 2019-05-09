@@ -1,16 +1,17 @@
-<!--pages/file/file.wxml-->
-<view class="container">
-  <scroll-view scroll-y="true" class="scroll_body">
-    <view class="top">
-      <text class="text1">2018年12月04日</text>
-      <text class="text2">左滑查看历史档案</text>
-      <view class="history">
-        <image></image>
-        <image></image>
-        <image></image>
-      </view>
-    </view>
-    <view class="bottom">
+<view class="container1">
+	<view class="displaycolumn top">
+	<!--档案标题部分-->
+		<view class="time">2018年12月04日</view>
+		<view class="text">左滑查看历史档案</view>
+		<scroll-view wx:if="{{flag}}" bindscroll="scroll" scroll-x 
+								class="displayrow inside">
+			<view class="space" wx:for="{{navData}}" wx:key="this"></view>
+		</scroll-view>
+		<scroll-view wx:else scroll-x class="displayrow inside2">
+			<view class="space" wx:for="{{navData}}" wx:key="this"></view>
+		</scroll-view>
+	</view>
+<view class="bottom">
       <text class="body">身体数据</text>
       <view class="list">
         <image src="../../../static/images/user/tizhong.png"></image>
@@ -53,7 +54,7 @@
         <text>82cm</text>
       </view>
       <view class="list">
-        <image src="../../../static/images/user/tunwei1.png"></image>
+        <image src="../../../static/images/user/tunwei.png"></image>
         <text>臀围</text>
         <text>86cm</text>
       </view>
@@ -70,13 +71,12 @@
       <view class="list">
         <image src="../../../static/images/user/xiaotuiwei.png"></image>
         <text>小腿围</text>
-        <text>L:56cm  r:56cm 拷贝</text>
+        <text>L:56cm  r:56cm</text>
       </view>
       <view class="list">
-        <image src="../../../static/images/user/tunwei.png"></image>
+        <image src="../../../static/images/user/biwei.png"></image>
         <text>臂围</text>
         <text>L:26cm  r:26cm</text>
       </view>
     </view>
-  </scroll-view>
 </view>

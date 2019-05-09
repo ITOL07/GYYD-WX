@@ -5,8 +5,31 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+		navData: [
+			{
+				id: 1
+			},
+			{
+				id: 1
+			},
+			{
+				id: 1
+			},
+			{
+				id: 1
+			},
+			{
+				id: 1
+			}
+		],
+		flag: true
   },
+
+	scroll: function () {
+		this.setData({
+			flag: false
+		})
+	},
 
   /**
    * 生命周期函数--监听页面加载
