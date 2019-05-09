@@ -1,21 +1,24 @@
 /* pages/agreement/agreement.wxss */
+.container{
+	height: 1200rpx;
+	background-color: #FAFAFA;
+	padding-top: 22rpx;
+}
 .list{
-  width:100%;
-  height:100rpx;
+  width: 93%;
+  height: 90rpx;
+	background-color: #FFFFFF;
+	padding: 0 3.5%;
   display:flex;
   flex-direction:row;
-  margin:0 auto;
-  line-height:100rpx;
+  align-items: center;
+	justify-content: space-between;
 }
 .list text{
   color:#666666;
   font-size:30rpx;
-  width:80%;
-  margin-left:5%;
 }
 .list image{
-  display:block;
-  width:30rpx;
-  height:30rpx;
-  padding-top:5%;
+  width: 12rpx;
+  height: 20rpx;
 }
