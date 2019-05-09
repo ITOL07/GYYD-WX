@@ -4,46 +4,52 @@
   <view class="header">
     <image src="{{courseData.bz2}}"></image>
     <view class="name"> 
-      <text class="text1">{{courseData.courseName}}</text>
-      <text class="text2">{{courseData.brief}}</text>
+			<view class="first">
+				<text>{{courseData.courseName}}</text>
+				<view class="price">
+					<text>￥</text>
+					<text>{{filters.toFix(courseData.min_price/1,0)}}</text>
+					<text>/课起</text>
+				</view>
+			</view>
+      <text class="brief">{{courseData.brief}}</text>
     </view>
-    <text>{{filters.toFix(courseData.min_price/1,0)}}/课起</text>
   </view>
   <view class="count">
     <view class="left">
-      <text class="text1">课次</text>
-      <text class="text2">（10节起售）</text>
+      <text>课次</text>
+      <text>（10节起售）</text>
     </view>
     <view class="right">
-      <text class="text" bindtap="bindMinus">-</text>
-     <input class="text2" type="number" bindchange="bindManual" value="{{num}}" /> 
-      <text class="text" bindtap="bindPlus">+</text>
+      <text bindtap="bindMinus">-</text>
+     	<input type="number" bindchange="bindManual" value="{{num}}"></input> 
+      <text bindtap="bindPlus">+</text>
     </view>
   </view>
   <view class="store">
-    <text class="text1">门店</text>
-
-    <!--  -->
-      <picker bindchange="bindPickerChange_club" value="{{index_club}}" range="{{club_name_list}}" disabled="{{club_name=='null'?false:true}}">
-        <view class="picker">
-          {{club_name=='null'?club_name_list[index_club]:club_name}}
-        </view>
-      </picker>
+    <text>门店</text>
+		<picker bindchange="bindPickerChange_club" value="{{index_club}}" range="{{club_name_list}}"
+						disabled="{{club_name=='null'?false:true}}">
+			<view>
+				{{club_name=='null'?club_name_list[index_club]:club_name}}
+			</view>
+    </picker>
     <!-- <text class="text2">{{club_name==null?club_name_list[index]:club_name}}</text> -->
   </view>
-  <view class="coach">
-    <text class="text1">私教</text>
-        <picker bindchange="bindPickerChange_coach" value="{{index_coach}}" range="{{coach_name_list}}" disabled="{{coach_name=='null'?false:true}}">
-        <view class="picker">
-          {{coach_name=='null'?coach_name_list[index_coach]:coach_name}}
-        </view>
-      </picker>
+  <view class="store">
+    <text>私教</text>
+    <picker bindchange="bindPickerChange_coach" value="{{index_coach}}"
+						range="{{coach_name_list}}" disabled="{{coach_name=='null'?false:true}}">
+			<view>
+				{{coach_name=='null'?coach_name_list[index_coach]:coach_name}}
+			</view>
+    </picker>
     <!-- <text class="text2">{{coach_name==null?coach_name_list[index]:coach_name}}</text> -->
   </view>
   <view class="pay">
     <view class="pay_list">
-      <text class="text1">总计</text>
-      <text class="text1">¥{{sum}}</text>
+      <text>总计</text>
+      <text>¥{{sum}}</text>
     </view>
     <button bindtap="buyCourse" data-try_flag="0" data-price="{{sum}}" data-desc="{{courseData.courseName}}" data-count="{{num}}">去支付</button>
   </view>

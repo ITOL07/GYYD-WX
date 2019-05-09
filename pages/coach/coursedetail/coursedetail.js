@@ -58,7 +58,7 @@ Page({
     var that=this
     var storedetailRouter = '../../user/orderdetail/orderdetail?club_id=' + that.data.club_id + '&club_name=' + that.data.club_name+'&type='+that.data.course_type+'&coach_id='+that.data.coach_id+'&coach_name='+that.data.coach_name;
     console.log(storedetailRouter)
-    var storedetailTitle = '课程详情';
+    var storedetailTitle = '订单详情';
     commonData.routers(storedetailRouter, storedetailTitle);
   },
 
