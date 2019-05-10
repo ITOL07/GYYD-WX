@@ -55,9 +55,26 @@
 	align-items: center;
 	justify-content: space-between;
 }
+.list_middle view:nth-child(1){
+	position: relative;
+}
 .list_middle image{
   width:120rpx;
   height:120rpx;
+	border-radius: 8rpx;
+}
+.space{
+	width: 47rpx;
+	height: 26rpx;
+	background-color: #FBBE44;
+	border-radius: 4rpx;
+	font-size: 20rpx;
+	color: #333333;
+	text-align: center;
+	line-height: 26rpx;
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 .detail{
   width: 78%;

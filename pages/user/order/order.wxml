@@ -13,7 +13,10 @@
 						<text>{{item.tradeStateDesc}}</text>
 					</view>
 					<view class="list_middle">
-						<image src="{{item.imgurl}}"></image>
+						<view>
+							<image src="{{item.imgurl}}"></image>
+							<view class="space">私教</view>
+						</view>
 						<view class="detail">
 							<view>
 								<text>{{item.desc}}</text>

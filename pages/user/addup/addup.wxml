@@ -1,27 +1,26 @@
 <!--pages/addup/addup.wxml-->
 <view class="container">
   <scroll-view scroll-y="true" class="scroll_body">
-    <view wx:for="{{addupData}}" wx:key="this">
-      <view class="list"> 
-        <view class="left">
-          <image src="{{item.imgurl}}"></image>
-        </view>
-        <view class="right">
-          <view class="top">
-            <text class="text1">{{item.club_name}}</text>
-            <text class="text2">{{item.coach_name}}</text>
-          </view>
-          <view class="middle">
-            <text>{{item.course_name}}</text>
-            <text>第{{item.seq_no}}节课</text>
-          </view>
-          <view class="bottom">
-            <text>{{item.start_time_1}}</text>
-            <text>{{item.end_time_1|substr(9,16)}}</text>
-          </view>
-        </view>
-      </view>
-    </view>
+		<view wx:for="{{addupData}}" wx:key="this" class="list"> 
+			<view class="left">
+				<image src="{{item.imgurl}}"></image>
+				<view>私教</view>
+			</view>
+			<view class="right">
+				<view class="top">
+					<text>{{item.course_name}}</text>
+					<text>第{{item.seq_no}}节课</text>
+				</view>
+				<view class="middle">
+					<text>上课时间：{{item.start_time_1}}</text>
+					<text>共{{item.sum}}节</text>
+				</view>
+				<view class="bottom">
+					<text>{{item.coach_name}}</text>
+					<text>{{item.club_name}}</text>
+				</view>
+			</view>
+		</view>
   </scroll-view>
 </view>
 
