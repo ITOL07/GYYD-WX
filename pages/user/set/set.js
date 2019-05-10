@@ -30,11 +30,24 @@ Page({
       }
     })
   },
+
   bindPhone:function(){
     var addupRouter = '../../user/bindPhone/bindPhone';
     var addupTitle = '绑定手机号';
     commonData.routers(addupRouter, addupTitle);
   },
+
+	forgetPass: function(){
+		wx.navigateTo({
+			url: "../forgetPass/forgetPass"
+		})
+	},
+
+	myinfo: function(){
+		wx.navigateTo({
+			url: "../userinfo/userinfo"
+		})
+	},
 
   /**
    * 生命周期函数--监听页面加载

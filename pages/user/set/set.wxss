@@ -2,19 +2,7 @@
 .container{
   background:#FAFAFA;
 	align-items: center;
-}
-.top1{
-  width: 93%;
-  height: 90rpx;
-	background-color: #FFFFFF;
-	line-height: 90rpx;
-	border: 2rpx solid #EEEEEE; 
-  margin-top: 22rpx;
-  margin-bottom: -22rpx;
-	padding: 0 3.5%;
-  display:flex;
-  flex-direction:row;
-  justify-content:space-between;
+	padding-top: 30rpx;
 }
 .top{
   width: 93%;
@@ -22,7 +10,6 @@
 	background-color: #FFFFFF;
 	line-height: 90rpx;
 	border: 2rpx solid #EEEEEE; 
-  margin-top: 22rpx;
 	padding: 0 3.5%;
   display:flex;
   flex-direction:row;
@@ -31,6 +18,9 @@
 .top text, .top1 text{
   color:#666666;
   font-size: 30rpx;
+}
+.else{
+	margin-top: 30rpx;
 }
 button{
   width:72%;

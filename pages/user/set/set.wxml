@@ -1,16 +1,20 @@
 <!--pages/set/set.wxml-->
 <view class="container">
-  <view wx:if="{{phoneNo!=null}}" class="top1" bindtap=''>
+  <view wx:if="{{phoneNo!=null}}" class="top" bindtap="bindPhone">
     <text>绑定手机号</text>
     <!-- <text>136****2345 ></text>  -->
     <text>{{phoneNo}} ></text> 
   </view>
-  <view class="top" bindtap=''>
+  <view class="top" bindtap='forgetPass'>
     <text>修改密码</text>
     <text>></text> 
   </view>
+  <view class="top" bindtap='myinfo'>
+    <text>个人信息</text>
+    <text>></text> 
+  </view>
   <!-- <view wx:if="{{phoneNo==null}}"> 绑定微信</view> -->
-  <view class="top">
+  <view class="top else">
     <text>版本信息</text>
     <text>{{version}}</text>
   </view>
