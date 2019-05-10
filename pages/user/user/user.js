@@ -44,7 +44,7 @@ Page({
   },
 
   addupClick: function(){
-    var addupRouter = '../../user/addup/addup';
+		var addupRouter = '../../user/addup/addup?status=3';
     var addupTitle = '累计购课';
     commonData.routers(addupRouter, addupTitle);
   },
@@ -54,12 +54,12 @@ Page({
     commonData.routers(addupRouter, addupTitle);
   },
   appointmentClick: function () {
-    var addupRouter = '../../user/addup/addup?status=0';
+    var addupRouter = '../../user/addup/addup?status=1';
     var addupTitle = '预约中';
     commonData.routers(addupRouter, addupTitle);
   },
   loadClick: function () {
-    var addupRouter = '../../user/addup/addup';
+		var addupRouter = '../../user/addup/addup?status=0';
     var addupTitle = '待预约';
     commonData.routers(addupRouter, addupTitle);
   },
