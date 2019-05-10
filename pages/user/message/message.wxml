@@ -1,19 +1,15 @@
 <!--pages/message/message.wxml-->
 <view class="container">
   <scroll-view scroll-y="true" class="scroll_body">
-    <view wx:if="{{selected}}" class="top">
-      <text class="selected">课程提醒</text>
-      <text bindtap="switch2">系统通知</text>
-    </view>
-    <view wx:else class="top">
-      <text bindtap="switch1">课程提醒</text>
-      <text class="selected">系统通知</text>
+    <view class="top">
+      <text class="{{selected==true?'selected':''}}" bindtap="switch1">课程提醒</text>
+      <text class="{{selected==false?'selected':''}}" bindtap="switch2">系统通知</text>
     </view>
     <view class="bottom">
       <view wx:for="{{messageData}}" wx:key="this">
         <view class="list">
           <view class="list_top">
-            <text class="text1">{{item.title}}</text>
+            <text class="text1">{{item.title}}{{item.type}}</text>
             <text class="text2">{{item.time}}</text>
           </view>
           <text class="text3">{{item.content}}</text>
