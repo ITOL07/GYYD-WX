@@ -262,58 +262,63 @@ function getOrderData() {
     {
       id: '0',
       imgurl: '../../../static/images/coach/course.png',
-      number: '381900009211',
-      state: '已付款',
-      title: '增肌max',
-      price: '1790',
-      introduce: '私人定制肌肉强化训练',
-      name: '杨宋（腾讯众创空间店）',
-      time: '2018/11/11  21:24:22'
+			orderNo: '381900009211',
+			tradeStateDesc: '已付款',
+			desc: '增肌max',
+			amount: '1790',
+			brief: '私人定制肌肉强化训练',
+			coachName: '杨宋',
+			clubName: '（腾讯众创空间店）',
+			recvTime: '2018/11/11  21:24:22'
     },
-    {
-      id: '1',
-      imgurl: '../../../static/images/coach/course.png',
-      number: '381900009211',
-      state: '已付款',
-      title: '增肌max',
-      price: '1790',
-      introduce: '私人定制肌肉强化训练',
-      name: '杨宋（腾讯众创空间店）',
-      time: '2018/11/11  21:24:22'
-    },
-    {
-      id: '2',
-      imgurl: '../../../static/images/coach/course.png',
-      number: '381900009211',
-      state: '已付款',
-      title: '增肌max',
-      price: '1790',
-      introduce: '私人定制肌肉强化训练',
-      name: '杨宋（腾讯众创空间店）',
-      time: '2018/11/11  21:24:22'
-    },
-    {
-      id: '3',
-      imgurl: '../../../static/images/coach/course.png',
-      number: '381900009211',
-      state: '已付款',
-      title: '增肌max',
-      price: '1790',
-      introduce: '私人定制肌肉强化训练',
-      name: '杨宋（腾讯众创空间店）',
-      time: '2018/11/11  21:24:22'
-    },
-    {
-      id: '4',
-      imgurl: '../../../static/images/coach/course.png',
-      number: '381900009211',
-      state: '已付款',
-      title: '增肌max',
-      price: '1790',
-      introduce: '私人定制肌肉强化训练',
-      name: '杨宋（腾讯众创空间店）',
-      time: '2018/11/11  21:24:22'
-    }
+		{
+			id: '1',
+			imgurl: '../../../static/images/coach/course.png',
+			orderNo: '381900009211',
+			tradeStateDesc: '已付款',
+			desc: '增肌max',
+			amount: '1790',
+			brief: '私人定制肌肉强化训练',
+			coachName: '杨宋',
+			clubName: '（腾讯众创空间店）',
+			recvTime: '2018/11/11  21:24:22'
+		},
+		{
+			id: '2',
+			imgurl: '../../../static/images/coach/course.png',
+			orderNo: '381900009211',
+			tradeStateDesc: '已取消',
+			desc: '增肌max',
+			amount: '1790',
+			brief: '私人定制肌肉强化训练',
+			coachName: '杨宋',
+			clubName: '（腾讯众创空间店）',
+			recvTime: '2018/11/11  21:24:22'
+		},
+		{
+			id: '3',
+			imgurl: '../../../static/images/coach/course.png',
+			orderNo: '381900009211',
+			tradeStateDesc: '待付款',
+			desc: '增肌max',
+			amount: '1790',
+			brief: '私人定制肌肉强化训练',
+			coachName: '杨宋',
+			clubName: '（腾讯众创空间店）',
+			recvTime: '2018/11/11  21:24:22'
+		},
+		{
+			id: '3',
+			imgurl: '../../../static/images/coach/course.png',
+			orderNo: '381900009211',
+			tradeStateDesc: '待付款',
+			desc: '增肌max',
+			amount: '1790',
+			brief: '私人定制肌肉强化训练',
+			coachName: '杨宋',
+			clubName: '（腾讯众创空间店）',
+			recvTime: '2018/11/11  21:24:22'
+		}
   ]
   return arr;
 }
