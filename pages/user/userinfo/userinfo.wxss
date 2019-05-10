@@ -1,42 +1,43 @@
-/* pages/userinfo/userinfo.wxss */
+/* container1 */
+.container1{
+	width: 95%;
+	height: 1200rpx;
+	background-color: #FAFAFA;
+	padding: 4% 2.5%;
+}
+
 .list{
-  width:90%;
-  height:100rpx;
-  margin:0 auto;
+  width: 100%;
+  height: 90rpx;
+	font-size: 30rpx;
+  color:#666666;
+	background-color: #FFFFFF;
+  border-bottom:3rpx solid #EEEEEE;
   display:flex;
   flex-direction:row;
-  border-bottom:3rpx solid #FFFFFF;
+	align-items: center;
+	justify-content: space-between;
 }
-.list .text1{
-  display:block;
-  width:50%;
-  font-size:40rpx;
-  color:#666666;
-  text-align:left;
+.list1{
+  height: 120rpx;
 }
-.list .text2{
-  display:block;
-  width:50%;
-  font-size:40rpx;
-  color:#666666;
-  text-align:right;
-}
-.list image{
-  display:block;
-  width:100rpx;
-  height:100rpx;
-  margin-left:40%;
+.image{
+  width: 90rpx;
+  height: 90rpx;
+	background-color: #F9CE0E;
+	border-radius: 50%;
 }
 .listbtn{
-  width:90%;
+  width:100%;
   height:100rpx;
-  margin:50rpx auto;
+  margin: 80rpx auto;
   
 }
 .listbtn button{
-  width:80%;
-  height:100rpx;
-  background:#FBBE44;
+  width: 72%;
+  height: 90rpx;
+  background:#F9CE0E;
   color:#292A2E;
   border-radius:50rpx;
+	margin: 0 14%;
 }
