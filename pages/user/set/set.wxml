@@ -9,10 +9,6 @@
     <text>修改密码</text>
     <text>></text> 
   </view>
-  <view class="top" bindtap='myinfo'>
-    <text>个人信息</text>
-    <text>></text> 
-  </view>
   <!-- <view wx:if="{{phoneNo==null}}"> 绑定微信</view> -->
   <view class="top else">
     <text>版本信息</text>
