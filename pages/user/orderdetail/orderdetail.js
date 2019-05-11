@@ -50,7 +50,7 @@ Page({
         minusStatus: minusStatus,
         sum: 0.001 * num
       });
-      this.triggerEvent('numChange', this.data.num);
+      // this.triggerEvent('numChange', this.data.num);
     },
     /* 点击加号 */
     bindPlus: function () {
@@ -65,7 +65,7 @@ Page({
         minusStatus: minusStatus,
         sum: 0.001 * num
       });
-      this.triggerEvent('numChange', this.data.num);
+      // this.triggerEvent('numChange', this.data.num);
     },
     /* 输入框事件 */
     bindManual: function (e) {

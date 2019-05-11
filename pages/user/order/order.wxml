@@ -1,9 +1,8 @@
 <view class="container">
   <scroll-view scroll-y="true" class="scroll_body">
 		<view class="top">
-			<text id="0" class="{{flag=='0'?'focus':''}}" bindtap="tab">全部</text>
-			<text id="1" class="{{flag=='1'?'focus':''}}" bindtap="tab">待支付</text>
-			<text id="2" class="{{flag=='2'?'focus':''}}" bindtap="tab">已支付</text>
+			<!-- <text id="0" class="{{flag=='0'?'focus':''}}" bindtap="navbarTap">全部</text> -->
+<text wx:for="{{navbar}}" data-idx="{{index}}" class="{{currentTab==index ? 'focus' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
 		</view>
     <view class="bottom" wx:if="{{orderData.length>=1}}">
       <view wx:for="{{orderData}}" wx:key="this">
@@ -19,7 +18,7 @@
 						</view>
 						<view class="detail">
 							<view>
-								<text>{{item.desc}}</text>
+								<text>{{item.des}}</text>
 								<view>
 									<text>￥</text>
 									<text>{{item.amount}}</text>
@@ -31,7 +30,7 @@
 					</view>
 					<view class="list_bottom">
 						<text>下单时间：{{item.recvTime}}</text>
-							<view wx:if="{{item.tradeStateDesc=='待付款'}}">
+							<view wx:if="{{item.tradeStateDesc=='订单未支付'}}">
 							<button>取消订单</button>
 							<button>支付</button>
 						</view>
