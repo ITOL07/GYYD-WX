@@ -8,12 +8,12 @@
       <view wx:for="{{orderData}}" wx:key="this">
 				<view class="list">
 					<view class="list_top">
-						<text>订单号:{{item.orderNo}}</text>
-						<text>{{item.tradeStateDesc}}</text>
+						<text>订单号:{{item.order_no}}</text>
+						<text>{{item.trade_state_desc}}</text>
 					</view>
 					<view class="list_middle">
 						<view>
-							<image src="{{item.imgurl}}"></image>
+							<image src="{{item.bz2}}"></image>
 							<view class="space">私教</view>
 						</view>
 						<view class="detail">
@@ -25,14 +25,14 @@
 								</view>
 							</view>
 							<text>{{item.brief}}</text>
-							<text>{{item.coachName}} ({{item.clubName}})</text>
+							<text>{{item.coach_name}} ({{item.club_name}})</text>
 						</view>
 					</view>
 					<view class="list_bottom">
-						<text>下单时间：{{item.recvTime}}</text>
-							<view wx:if="{{item.tradeStateDesc=='订单未支付'}}">
+						<text>下单时间：{{item.recv_time}}</text>
+							<view wx:if="{{item.trade_state_desc=='订单未支付'}}">
 							<button>取消订单</button>
-							<button>支付</button>
+							<button bindtap='buyCourse' id="{{item.order_no}}">支付</button>
 						</view>
 					</view>
 				</view>

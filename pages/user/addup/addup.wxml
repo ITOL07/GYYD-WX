@@ -3,7 +3,7 @@
   <scroll-view scroll-y="true" class="scroll_body">
 		<view wx:for="{{addupData}}" wx:key="this" class="list"> 
 			<view class="left">
-				<image src="{{item.imgurl}}"></image>
+				<image src="{{item.bz2}}"></image>
 				<view>私教</view>
 			</view>
 			<view class="right">
@@ -13,7 +13,7 @@
 				</view>
 				<view class="middle">
 					<text>上课时间：{{item.start_time_1}}</text>
-					<text>共{{item.sum}}节</text>
+					<text>共{{item.buy_count}}节</text>
 				</view>
 				<view class="bottom">
 					<text>{{item.coach_name}}</text>

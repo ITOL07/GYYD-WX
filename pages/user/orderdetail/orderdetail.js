@@ -31,7 +31,8 @@ Page({
     count: 10,
     order_no: null,
     sum:0.001*10,
-    course_id:null
+    course_id:null,
+    state_desc:null
   },
 
     // 这里放置自定义方法
@@ -162,20 +163,40 @@ Page({
         'content-type': 'application/x-www-form-urlencoded' // 默认值
       },
       success(res) {
-        console.log("支付结果反馈成功：" + res.data.trade_state_desc)
-        wx.showToast({
-          title: res.data.trade_state_desc,
-          icon: 'loading',
-          duration: 2000
-        });
-        wx.switchTab({
-          url: '../../user/user/user',
-          success: function () {
-            wx.setNavigationBarTitle({
-              title: '我的'
-            })
-          }
+        console.log("支付结果反馈成功：" + res.data.trade_state)
+        console.log("支付结果反馈成功：" + res)
+        _this.setData({
+          state_desc: res.data.trade_state
         })
+        
+        // wx.showToast({
+        //   title: res.data.trade_state_desc,
+        //   icon: 'loading',
+        //   duration: 2000
+        // });
+        if (_this.data.state_desc =='SUCCESS'){
+          console.log('succ')
+          wx.navigateTo({
+            url: '../msg/msg_success',
+            success: function () {
+              wx.setNavigationBarTitle({
+                title: '支付结果页'
+              })
+            }
+          })
+        }
+        else if (_this.data.state_desc =='NOTPAY') {
+          console.log('notpay')
+          wx.navigateTo({
+            url: '../msg/msg_fail',
+            success: function () {
+              wx.setNavigationBarTitle({
+                title: '支付结果页'
+              })
+            }
+          })
+        }
+       
       }
     })
   },

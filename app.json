@@ -28,7 +28,9 @@
     "pages/logs/logs",
     "pages/user/addLess/addLess",
     "pages/user/showLess/showLess",
-    "pages/user/bindPhone/bindPhone"
+    "pages/user/bindPhone/bindPhone",
+    "pages/user/msg/msg_success",
+    "pages/user/msg/msg_fail"
   ],
   "window": {
     "backgroundTextStyle": "light",
