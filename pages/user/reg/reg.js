@@ -16,7 +16,7 @@ Page({
     NewChanges: '',
     NewChangesAgain: '',
     success: false,
-    state: ''
+    state: '',
   },
   /**
     * 获取验证码

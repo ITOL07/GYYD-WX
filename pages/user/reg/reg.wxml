@@ -1,31 +1,61 @@
  <view wx:if="{{!success}}">
- <view class='row'>
-        <view class='info'>
-               <input  class= 'info-input1' bindinput="handleInputPhone" placeholder="请输入你的手机号" />
-         </view>
-          <button class='button' bindtap='doGetCode' disabled='{{disabled}}' style="background-color:{{color}}" >{{text}}</button>
- </view>
- <view class='row'>
-        <view class='info'>
-               <input  class= 'info-input' bindinput="handleVerificationCode" placeholder="请输入你的验证码" />
-         </view>
- 
- </view>
-  <view class='row'>
-        <view class='info'>
-               <input type='password' class= 'info-input' bindinput="handleNewChanges" placeholder="请输入你的密码" />
-         </view>
- 
- </view>
-  <view class='row'>
-        <view class='info'>
-               <input  type='password' class= 'info-input' bindinput="handleNewChangesAgain" placeholder="请重新输入你的密码" />
-         </view>
- 
- </view>
- <button class='submit' bindtap='submit'>提交</button>
- </view>
- <view class = 'success' wx:if="{{success}}">
- <view class='cheer'><icon type="success" size="24"/> 恭喜您注册成功!</view>
- <button type = "default" class = 'return' bindtap='return_home'>返回首页</button>
- </view>
+	<view class="container">
+		<view wx:if="{{state2==1}}">
+			<view class="top text2">
+				<text class="text1">1.请输入手机号</text>
+				<text>></text>
+				<text>2.输入验证码</text>
+				<text>></text>
+				<text>3.设置密码</text>
+			</view>
+			<view class="middle">
+				<input bindinput="handleInputPhone" placeholder='输入您的手机号' 
+							placeholder-class="placetext">
+				</input>
+			</view>
+			<view class="bottom">
+				<button bindtap="doGetCode">获取验证码</button>
+			</view>
+		</view>
+		<view wx:elif="{{state2==2}}">
+			<view class="top">
+				<text class="text1">1.请输入手机号</text>
+				<text class="text1">></text>
+				<text class="text1">2.输入验证码</text>
+				<text class="text2">></text>
+				<text class="text2">3.设置密码</text>
+			</view>
+			<view class="middle">
+				<input bindinput="handleVerificationCode" placeholder='输入验证码'
+							placeholder-class="placetext"></input>
+			</view>
+			<view class="bottom">
+				<button bindtap="submit">提交验证码</button>
+				<text>验证短信已发送到177***0000</text>
+			</view>
+		</view>
+		<view wx:else>
+			<view class="top">
+				<text class="text1">1.请输入手机号</text>
+				<text class="text1">></text>
+				<text class="text1">2.输入验证码</text>
+				<text class="text1">></text>
+				<text class="text1">3.设置密码</text>
+			</view>
+			<view class="middle">
+				<input type='password' bindinput="handleNewChanges" placeholder='输入密码'
+							placeholder-class="placetext"></input>
+				<input type='password' bindinput="handleNewChangesAgain" placeholder='确认密码'
+							placeholder-class="placetext"></input>
+				<text>密码长度8-32位，须包含 数字、字母、符号至少两种或以上元素</text>
+			</view>
+			<view class="bottom">
+				<button bindtap="submit">确认提交</button>
+			</view>
+		</view>
+	</view>
+</view>
+<view class = 'success' wx:if="{{success}}">
+	<view class='cheer'><icon type="success" size="24"/> 恭喜您注册成功!</view>
+	<button type = "default" class = 'return' bindtap='return_home'>返回首页</button>
+</view>
