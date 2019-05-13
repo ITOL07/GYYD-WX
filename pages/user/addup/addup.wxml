@@ -1,6 +1,6 @@
 <!--pages/addup/addup.wxml-->
 <view class="container">
-  <scroll-view scroll-y="true" class="scroll_body">
+  <scroll-view scroll-y="true" class="scroll_body"  wx:if="{{addupData.length>=1}}">
 		<view wx:for="{{addupData}}" wx:key="this" class="list"> 
 			<view class="left">
 				<image src="{{item.bz2}}"></image>
@@ -22,5 +22,8 @@
 			</view>
 		</view>
   </scroll-view>
+	<view wx:else class="tips">
+		您还没有购课，请前往购买！
+	</view>
 </view>
 
