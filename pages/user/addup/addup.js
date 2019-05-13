@@ -8,8 +8,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-		addupData: fileData.getAddupData(),
-    // addupData:null,
+		// addupData: fileData.getAddupData(),
+    addupData:null,
 		status: '0'
   },
 
@@ -17,7 +17,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-<<<<<<< Updated upstream
     console.log("开始请求课时信息！！")
     var url_tmp = fileData.getListConfig().url_test;
     var _this = this;
@@ -37,33 +36,6 @@ Page({
         })
       }
     }) 
-=======
-		if(options.status!=null){
-			this.setData({
-				status: options.status
-			})
-		}
-		console.log(options.status)
-    // console.log("开始请求课时信息！！")
-    // var url_tmp = fileData.getListConfig().url_test;
-    // var _this = this;
-    // console.log('options.id===' + options.id + 'options.status' + options.status)
-    // wx.request({
-    //   url: url_tmp + '/member/qryLesson',
-    //   data:{
-    //     mem_id:app.globalData.user_id,
-    //     status:(typeof(options.status) == "undefined") ? '' : options.status
-    //   },
-    //   success(res) {
-    //     console.log(res.data)
-
-    //     _this.setData({
-    //       addupData: res.data,
-    //       open_time: res.data.start_time_1
-    //     })
-    //   }
-    // }) 
->>>>>>> Stashed changes
   },
 
   /**
