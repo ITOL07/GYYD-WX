@@ -168,16 +168,6 @@ Page({
         }
       }
     })
-    
-    // wx.openSetting({
-    //   success(res) {
-    //     console.log(res.authSetting)
-    //     res.authSetting = {
-    //       "scope.userInfo": true,
-    //       "scope.userLocation": true
-    //     }
-    //   }
-    // })
   },
 
   /**
