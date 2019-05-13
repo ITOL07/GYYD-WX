@@ -8,8 +8,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-		addupData: fileData.getAddupData()
-    // addupData:null
+		// addupData: fileData.getAddupData(),
+    addupData:null,
+		status: '0'
   },
 
   /**
