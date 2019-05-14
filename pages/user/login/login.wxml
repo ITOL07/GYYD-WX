@@ -1,5 +1,5 @@
 <!--pages/login/login.wxml-->
-<view class="container">
+<view wx:if="{{logflag==false}}"class="container">
   <view class="top">
     <view class="top_item1"> 
       <image src="../../../static/images/user/phone.png"></image>

@@ -10,7 +10,8 @@ Page({
    */
   data: {
     inputVal1: '',
-    inputVal2: ''
+    inputVal2: '',
+    logflag: wx.getStorageSync("logFlag")
   },
   inputValue1: function (res) {
     this.setData({
@@ -159,15 +160,23 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var _this=this
-    wx.getSetting({
-      success(res) {
-        console.log(res.authSetting['scope.userInfo'])
-        if (res.authSetting['scope.userInfo']){
-          _this.wxlogin()
-        }
-      }
-    })
+    // var _this=this
+    // wx.getSetting({
+    //   success(res) {
+    //     console.log(res.authSetting['scope.userInfo'])
+    //     if (res.authSetting['scope.userInfo']){
+    //       _this.wxlogin()
+    //       _this.setData({
+    //         logflag: false
+    //       })
+    //       console.log("logflag====" + _this.data.logflag)
+    //     }
+    //   }
+    // })
+    console.log('logflag======'+this.data.logflag)
+    if (this.data.logflag){
+      this.wxlogin()
+    }
   },
 
   /**

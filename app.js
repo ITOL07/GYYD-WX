@@ -6,6 +6,9 @@ App({
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
 
+    var isLogged = wx.getStorageSync('logFlag')
+    // isLogged.unshift(false)
+
 
     // 获取用户信息
     wx.getSetting({
@@ -16,7 +19,7 @@ App({
             success: res => {
               // 可以将 res 发送给后台解码出 unionId
               this.globalData.userInfo = res.userInfo
-
+              wx.setStorageSync('logFlag', true)
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
               // 所以此处加入 callback 以防止这种情况
               if (this.userInfoReadyCallback) {
@@ -24,8 +27,9 @@ App({
               }
             }
           })
-
-        
+        }
+        else{
+          wx.setStorageSync('logFlag', false)
         }
       }
     })
