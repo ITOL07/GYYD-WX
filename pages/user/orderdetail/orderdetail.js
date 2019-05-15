@@ -207,7 +207,7 @@ Page({
     return tmp
   },
   getCourseId:function(club_id,coach_id){
-    console.log('开始获取课程id ')
+    console.log('开始获取课程id,入参为场地id：'+club_id+',教练ID：'+coach_id)
     var _this = this
     var url_tmp = fileData.getListConfig().url_test;
     wx.request({
@@ -295,6 +295,7 @@ Page({
             club_id_list: res.data.id_list,
             club_name_list: res.data.name_list
           })
+          _this.getCourseId(_this.data.club_id_list[_this.data.index_club], coach_idx)
         }
       }
     }) 
@@ -321,6 +322,7 @@ Page({
           coach_id_list: res.data.id_list,
           coach_name_list: res.data.name_list
         })
+          _this.getCourseId(club_idx, _this.data.coach_id_list[_this.data.index_coach])
         }
       }
     })
