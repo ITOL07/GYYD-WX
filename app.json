@@ -28,6 +28,7 @@
     "pages/user/addLess/addLess",
     "pages/user/showLess/showLess",
     "pages/user/bindPhone/bindPhone",
+    "pages/user/forgetPass/forgetPass",
     "pages/user/msg/msg_success",
     "pages/user/msg/msg_fail"
   ],

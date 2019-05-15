@@ -38,9 +38,9 @@ Page({
   },
 
 	forgetPass: function(){
-		wx.navigateTo({
-			url: "../forgetPass/forgetPass"
-		})
+    var addupRouter = '../../user/forgetPass/forgetPass';
+    var addupTitle = '忘记密码';
+    commonData.routers(addupRouter, addupTitle);	
 	},
 
   /**
