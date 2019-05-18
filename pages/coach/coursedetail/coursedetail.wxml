@@ -3,12 +3,12 @@
 <view class="container">
   <scroll-view scroll-y="true" class="scroll_body">
     <view class="header">
-      <image src="{{CourseInfo.bz2}}"></image>
+      <image src="{{CourseInfo.info_pic}}"></image>
       <view class="header_list"> 
         <view class="header_list_item">
 					<view>
 						<text>{{CourseInfo.courseName}}</text>
-						<text>10节课起售</text>
+						<text>{{CourseInfo.min_count}}节课起售</text>
 					</view>
 					<view>
           	<text>¥</text>

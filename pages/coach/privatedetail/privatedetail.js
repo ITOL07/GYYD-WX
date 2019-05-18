@@ -38,7 +38,7 @@ Page({
     commonData.routers(caseRouter, caseTitle);
   },
   photoClick: function (event){
-    var photoRouter = '../../coach/photo/photo?coachid=' + this.data.param_id + '&type=' + event.currentTarget.dataset.param;
+    var photoRouter = '../../coach/certificate/certificate?coachid=' + this.data.param_id + '&type=' + event.currentTarget.dataset.param;
     var photoTitle = '相册';
     commonData.routers(photoRouter, photoTitle);
   },
@@ -63,7 +63,7 @@ Page({
       header: {
         'content-type': 'application/x-www-form-urlencoded'  //发送post请求
         },success:function(res){
-        console.info(res)
+        console.info(res.data)
         if (res.statusCode == 200){
           that.setData({
             coach_name: res.data.name,
@@ -90,7 +90,7 @@ Page({
       header: {
         'content-type': 'application/x-www-form-urlencoded'  //发送post请求
       }, success: function (res) {
-        console.info(res)
+        console.info(res.data)
         if (res.statusCode == 200) {
           that.setData({
             credentials: res.data.credentials == undefined ? 0 : res.data.credentials,
@@ -157,7 +157,7 @@ Page({
       header: {
         'content-type': 'application/x-www-form-urlencoded'  //发送post请求
       }, success: function (res) {
-        console.info(res)
+        console.info(res.data)
         if (res.statusCode == 200) {
           that.setData({
             courseData:res.data
