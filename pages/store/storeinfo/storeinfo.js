@@ -44,7 +44,7 @@ Page({
       url: url_tmp + '/img/load2',
       data:{
         user_id: options.id,
-        type:32
+        type: 32
       },
       success(res) {
         _this.setData({

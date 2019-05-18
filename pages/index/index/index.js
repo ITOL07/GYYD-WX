@@ -41,7 +41,13 @@ Page({
     var coachTitle = '私教信息';
     commonData.routers(coachRouter, coachTitle);
   },
-  onLoad: function () {
+  onLoad:function(){
+    this.load();
+  },
+  onShow:function(){
+    this.load();
+  },
+  load: function () {
     var that= this;
     console.log("openid====" + app.globalData.openid)
     console.log("phoneNo====" + app.globalData.phoneNo)

@@ -16,7 +16,8 @@ Page({
     NewChanges: '',
     NewChangesAgain: '',
     success: false,
-    state: ''
+    status: 1,
+    state:''
   },
   /**
     * 获取验证码
@@ -51,6 +52,9 @@ Page({
     })
 
   },
+  // doGetCode:function(){
+  //   console.log("tap getcode")
+  // },
   doGetCode: function () {
     var that = this;
     that.setData({
@@ -58,7 +62,7 @@ Page({
       color: '#ccc',
     })
 
-    var phone = that.data.phone;
+    var phone = app.globalData.phoneNo;
     var currentTime = that.data.currentTime //把手机号跟倒计时值变例成js值
     var warn = null; //warn为当手机号为空或格式不正确时提示用户的文字，默认为空
     var url_tmp = fileData.getListConfig().url_test;
@@ -66,7 +70,7 @@ Page({
       url: url_tmp+'/user/isReg', //后端判断是否已被注册， 已被注册返回1 ，未被注册返回0
       method: "POST",
       data: {
-        phoneNo: that.data.phone
+        phoneNo: app.globalData.phoneNo
       },
       header: {
         'content-type': 'application/x-www-form-urlencoded'
@@ -92,7 +96,7 @@ Page({
             url: url_tmp+'/user/getvcode', //填写发送验证码接口
             method: "POST",
             data: {
-              phoneNo: that.data.phone
+              phoneNo: app.globalData.phoneNo
             },
             header: {
               'content-type': 'application/x-www-form-urlencoded'
@@ -140,7 +144,7 @@ Page({
             disabled: false,
             color: '#33FF99'
           })
-          return;
+          // return;
         }
       }
 
@@ -149,22 +153,8 @@ Page({
   },
   submit: function (e) {
     var that = this
-    if (this.data.Code == '') {
-      wx.showToast({
-        title: '请输入验证码',
-        image: '/images/error.png',
-        duration: 2000
-      })
-      return
-    } else if (this.data.Code != this.data.VerificationCode) {
-      wx.showToast({
-        title: '验证码错误',
-        image: '/images/error.png',
-        duration: 2000
-      })
-      return
-    }
-    else if (this.data.NewChanges == '') {
+    
+    if (this.data.NewChanges == '') {
       wx.showToast({
         title: '请输入密码',
         image: '/images/error.png',
@@ -180,7 +170,7 @@ Page({
       return
     } else {
       var that = this
-      var phone = that.data.phone;
+      var phone = app.globalData.phoneNo;
       var url_tmp = fileData.getListConfig().url_test;
       wx.request({
         url: url_tmp + '/user/forgetPass',
@@ -211,5 +201,27 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  changestate:function(){
+    console.log("验证码值为：++"+this.data.Code)
+    if (this.data.Code == '') {
+      wx.showToast({
+        title: '请输入验证码',
+        image: '/images/error.png',
+        duration: 2000
+      })
+      return
+    } else if (this.data.Code != this.data.VerificationCode) {
+      wx.showToast({
+        title: '验证码错误',
+        image: '/images/error.png',
+        duration: 2000
+      })
+      return
+    }else{
+      this.setData({
+        status:2
+      })
+    }
   }
 })

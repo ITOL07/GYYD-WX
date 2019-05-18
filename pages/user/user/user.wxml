@@ -14,6 +14,7 @@
 			<block wx:else>
 				<image bindtap="bindViewTap" src="{{userInfo.avatarUrl}}" mode="cover"></image>
 				<text>{{userInfo.nickName}}</text>
+        <text>{{tel}}</text>
 			</block>	
     </view>
     <view class="user_nav">

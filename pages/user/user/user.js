@@ -1,7 +1,7 @@
 // pages/user/user.js
 const app = getApp()
 var commonData = require("../../../utils/util.js"); 
-
+var fileData = require("../../../utils/data.js");
 Page({
 
   /**
@@ -103,10 +103,44 @@ Page({
       hasUserInfo: true
     })
   },
+  getPhoneNo:function(){
+    var url_tmp = fileData.getListConfig().url_test;
+    var _this = this
+    wx.request({
+      url: url_tmp +'/user/qry',
+      data:{
+        mem_id: app.globalData.user_id
+      },
+      success(res){
+        console.log(res)
+        app.globalData.phoneNo = res.data.userName
+        _this.setData({
+          tel: res.data.userName
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function () {
+   this.show();
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow:function(){
+    this.show();
+  },
+  show: function () {
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -133,20 +167,7 @@ Page({
         }
       })
     }
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+    this.getPhoneNo();
   },
 
   /**

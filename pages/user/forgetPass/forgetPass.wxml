@@ -1,14 +1,16 @@
 <view wx:if="{{!success}}">
   <view class="container">
-    <view wx:if="{{state==1}}">
+    <view wx:if="{{status==1}}">
       <view class="top text2">
         <text class="text1">1.输入原密码  </text>
         <text>></text>
         <text>  2.输入新密码</text>
       </view>
       <view class="middle">
-        <input placeholder='输入您的原密码' placeholder-class="placetext"></input>
+        <input placeholder='输入手机验证码' bindinput="handleVerificationCode" placeholder-class="placetext"></input>
+        <button class='button' catchtap='doGetCode' disabled='{{disabled}}' style="background-color:{{color}}" >{{text}}</button>
       </view>
+      
       <view class="bottom">
         <button bindtap="changestate">下一步</button>
       </view>
@@ -20,12 +22,13 @@
         <text class="text1">2.输入新密码 </text>
       </view>
       <view class="middle">
-        <input placeholder='输入新密码' placeholder-class="placetext"></input>
-        <input placeholder='确认新密码' placeholder-class="placetext"></input>
+        <input placeholder='输入新密码' type='password' bindinput="handleNewChanges" placeholder-class="placetext"></input>
+        <input placeholder='确认新密码' type='password' bindinput="handleNewChangesAgain" placeholder-class="placetext"></input>
         <text>密码长度8-32位，须包含 数字、字母、符号至少两种或以上元素</text>
       </view>
       <view class="bottom">
-        <button bindtap="changestate">确认提交</button>
+        <!-- <button wx:if="state==1" bindtap="changestate">下一步</button> -->
+        <button bindtap="submit">确认提交</button>
       </view>
     </view>
   </view>

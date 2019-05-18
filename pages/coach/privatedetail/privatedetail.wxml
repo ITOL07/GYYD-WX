@@ -26,15 +26,15 @@
           </view>
         </view>
 				<view class="header_right_bottom">
-					<view data-param='1'   bindtap="certificateClick">
+					<view data-param='23'   bindtap="certificateClick">
 						<image src="../../../static/images/coach/certificate.png"></image>
 						<text>证书({{credentials}})</text>
 					</view>
-					<view data-param='2' bindtap="caseClick">
+					<view data-param='24' bindtap="caseClick">
 						<image src="../../../static/images/coach/case.png"></image>
 						<text>案例({{cases}})</text>
 					</view>
-					<view data-param='3' bindtap="photoClick">
+					<view data-param='25' bindtap="photoClick">
 						<image src="../../../static/images/coach/photo.png"></image>
 						<text>相册({{albums}})</text>
 					</view>

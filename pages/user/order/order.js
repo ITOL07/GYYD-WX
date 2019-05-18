@@ -59,12 +59,13 @@ Page({
   buyCourse: function (e) {
     var _this = this
     var url_tmp = fileData.getListConfig().url_test;
-    console.log('重新支付订单号：' + e.currentTarget.id)
+    var o_no = e.currentTarget.id;
+    console.log('重新支付订单号：' + o_no)
     wx.request({
       url: url_tmp + '/member/qryPayInfo',
       data: {
         // order_no: '155757490201017'
-        order_no: e.currentTarget.id
+        order_no: o_no
       },
       method: 'POST',
       header: {
@@ -72,14 +73,14 @@ Page({
       },
       success(res) {
         console.log(res.data)
-        if (res.data.errno == "-1") {
-          wx.showToast({
-            title: res.data.errcode,
-            icon: 'none',
-            duration: 2000
-          });
-          return
-        }
+        // if (res.data.errno == "-1") {
+        //   wx.showToast({
+        //     title: res.data.errcode,
+        //     icon: 'none',
+        //     duration: 2000
+        //   });
+        //   return
+        // }
         
         wx.requestPayment({
           timeStamp: res.data.timestamp,
@@ -87,14 +88,14 @@ Page({
           package: res.data.package1,
           signType: 'MD5',
           paySign: res.data.sign,
-          success(res) {
-            console.log(_this.data.order_no + '支付成功：' + res)
+          success(res1) {
+            console.log(o_no + '支付成功：' + res1.errMsg)
             //发送支付状态，服务端更新状态
-            _this.sendPayRes(_this.data.order_no)
+            _this.sendPayRes(o_no)
           },
-          fail(res) {
-            console.log(_this.data.order_no + '支付失败' + res)
-            _this.sendPayRes(_this.data.order_no)
+          fail(res1) {
+            console.log(o_no + '支付失败' + res1.errMsg)
+            _this.sendPayRes(o_no)
           }
         })
       }

@@ -12,7 +12,7 @@ Page({
     icons_url:[],
     icons_name:[],
     coach_id: app.globalData.user_id,
-    type:'1',
+    type:'23',
     public_url:app.globalData.public_url,
     index:0
   },

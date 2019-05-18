@@ -37,7 +37,9 @@
         <text class="content2">{{CourseInfo.suggest}}</text>
       </view>
     </view>
-    <view class="footer">
+    
+  </scroll-view>
+  <view class="footer">
       <view class="left" bindtap="call">
         <image src="../../../static/images/littleicon/service.png"></image>
         <text>客服</text>
@@ -46,5 +48,4 @@
         <button bindtap='gotoOrderdtl'>立即购买</button>
       </view>
     </view>
-  </scroll-view>
 </view>
