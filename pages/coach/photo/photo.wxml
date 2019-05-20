@@ -1,9 +1,14 @@
 <!--pages/photo/photo.wxml-->
 <view class="container">
   <view class="header">
-    <image src="../../../static/images/coach/photo2.png"></image>
+    <image src="{{icons_url[index]}}"></image>
   </view>
   <view class="footer">
-		2/10
+		{{index+1}}/{{data_length}}
+  </view>
+  <view class="bottom" >
+    <image src="../../../static/images/littleicon/left.png" bindtap='changeImage' data-param='left'></image>
+    <image src="../../../static/images/littleicon/right.png"
+    bindtap='changeImage' data-param='right'></image>
   </view>
 </view>

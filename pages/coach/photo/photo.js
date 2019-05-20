@@ -1,5 +1,4 @@
-// pages/coach/photo/photo.js
-
+// pages/photo/photo.js
 const app = getApp()
 var fileData = require("../../../utils/data.js");
 var commonData = require("../../../utils/util.js");
@@ -9,10 +8,11 @@ Page({
    * 页面的初始数据
    */
   data: {
+    data_length:0,
     icons_url: [],
     icons_name: [],
     coach_id: app.globalData.user_id,
-    type: '23',
+    type: '25',
     public_url: app.globalData.public_url,
     index: 0
   },
@@ -38,11 +38,13 @@ Page({
         if (res.statusCode == 200) {
           that.setData({
             icons_name: res.data.icons_name,
-            icons_url: res.data.icons_url
+            icons_url: res.data.icons_url,
+            data_length: res.data.icons_url.length
           })
         }
         console.log(that.data.icons_name)
         console.log(that.data.icons_url)
+        console.log(that.data.data_length)
       }
     })
   },

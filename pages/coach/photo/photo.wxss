@@ -3,12 +3,14 @@
 }
 .header{
   width:100%;
-  height:1000rpx;
+  height:800rpx;
 	margin-top: 30rpx;
 }
 .header image{
-  width:100%;
-  height:100%;
+  width: 658rpx;
+  height: 465rpx;
+  border-radius: 20px;
+  margin: 100rpx 6%;
 }
 .footer{
   width:100%;
@@ -17,4 +19,15 @@
   color:#EE6F2D;
   text-align:center;
   margin-top: 40rpx;
+}
+.bottom{
+  width: 30%;
+  height:200rpx;
+  display:flex;
+  flex-direction:row;
+  justify-content:space-between;
+}
+.bottom image{
+  width: 36rpx;
+  height: 60rpx;
 }

@@ -9,6 +9,7 @@
 .header image{
   width: 658rpx;
   height: 465rpx;
+  border-radius: 20px;
   margin: 300rpx 6%;
 }
 .bottom{
