@@ -56,7 +56,7 @@
 			<scroll-view scroll-x class='scroll_body2'>
 				<view class="nav_bottom">
 					<view class="nav_all" wx:for="{{navData}}" wx:key="this">
-						<view id="{{item.club_Id}}" bindtap="storeClick">
+						<view id="{{item.clubId}}" bindtap="storeClick">
 							<image src="{{item.icon}}"></image>
 							<text>{{item.name}}</text>
               <text wx:if="{{item.dis>1&&item.dis<=1000}}">{{filters.toFix(item.dis/1,0)}}m</text>
