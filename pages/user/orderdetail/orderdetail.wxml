@@ -2,7 +2,7 @@
 <wxs module="filters" src="../../../utils/util.wxs"></wxs>
 <view class="container">
   <view class="header">
-    <image src="{{courseData.bz2}}"></image>
+    <image src="{{courseData.sale_pic}}"></image>
     <view class="name"> 
 			<view class="first">
 				<text>{{courseData.courseName}}</text>

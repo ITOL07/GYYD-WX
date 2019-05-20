@@ -103,7 +103,7 @@ Page({
   },
 
   //获取教练场地信息
-  getClubInfo: function () {
+  getClubInfo: function (param) {
     var _this = this
     wx.getLocation({
       //type: 'wgs84',  
@@ -119,7 +119,10 @@ Page({
         console.log("开始请求门店信息！！")
         var url_tmp = fileData.getListConfig().url_test;
         wx.request({
-          url: url_tmp + '/club/getClub',
+          url: url_tmp + '/coach/getMyClub',
+          data:{
+            coach_id: param
+          },
           success(res) {
             console.log(res.data)
             let tmp = [];
@@ -179,7 +182,7 @@ Page({
     //默认加载教练证件信息
     this.showCoachPapersNum(options.id);
     //默认加载场地信息
-    this.getClubInfo();
+    this.getClubInfo(options.id);
     //默认加载教授课程信息
     this.getCourseInfo(options.id);
   },
