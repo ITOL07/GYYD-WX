@@ -50,7 +50,7 @@ Page({
     var warn = null; //warn为当手机号为空或格式不正确时提示用户的文字，默认为空
     var url_tmp = fileData.getListConfig().url_test;
     wx.request({
-      url: url_tmp + '/user/isReg', //后端判断是否已被注册， 已被注册返回1 ，未被注册返回0
+      url: url_tmp + '/user/isReg', //后端判断是否已被注册， 已被注册返回0 ，未被注册返回-1
       method: "POST",
       data: {
         phoneNo: that.data.phone

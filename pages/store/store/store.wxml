@@ -17,16 +17,19 @@
             <view class="right1">
               <image src="../../../static/images/store/mendian.png"></image>
               <text>{{item.name}}</text>
-              <text wx:if="{{item.dis>1&&item.dis<=1000}}">距我{{filters.toFix(item.dis,0)}}m</text>
+              <!-- <text wx:if="{{item.dis>1&&item.dis<=1000}}">距我{{filters.toFix(item.dis,0)}}m</text>
             <text wx:if="{{item.dis>1000&&item.dis<=50000}}">距我{{filters.toFix(item.dis/1000,1)}}km</text>
-             <text wx:if="{{item.dis>50000}}">距我{{filters.toFix(item.dis/1000,0)}}km</text>
+             <text wx:if="{{item.dis>50000}}">距我{{filters.toFix(item.dis/1000,0)}}km</text> -->
             </view>
             <view class="right2">
-              <text>{{item.tel}}</text>
+              <text>{{item.address}}</text>
             </view>
             <view class="right3">
               <image src="../../../static/images/store/address.png"></image>
-              <text>{{item.address}}</text>
+              <!-- <text>{{item.address}}</text> -->
+              <text wx:if="{{item.dis>1&&item.dis<=1000}}">{{filters.toFix(item.dis,0)}}m</text>
+            <text wx:if="{{item.dis>1000&&item.dis<=50000}}">{{filters.toFix(item.dis/1000,1)}}km</text>
+             <text wx:if="{{item.dis>50000}}">{{filters.toFix(item.dis/1000,0)}}km</text>
             </view>
           </view>
         </view>
