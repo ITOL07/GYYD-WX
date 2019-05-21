@@ -22,8 +22,9 @@
     </view>
     <view wx:if="{{courseData.tryFlag==1}}" class="right">
       <!-- <text bindtap="bindMinus">-</text> -->
-     	<input type="number" value="{{1}}"></input> 
+     	<!-- <input type="number" value="{{1}}"></input>  -->
       <!-- <text bindtap="bindPlus">+</text> -->
+			<view class="num1">1</view>
     </view>
     <view wx:if="{{courseData.tryFlag==0}}" class="right">
       <text bindtap="bindMinus">-</text>
