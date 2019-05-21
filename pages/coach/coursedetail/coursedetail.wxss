@@ -210,4 +210,5 @@
   background:#FBBE44;
 	font-size: 32rpx;
 	color: #292A2E;
+	border-radius: 0;
 }
