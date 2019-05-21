@@ -16,7 +16,7 @@
             <view class="right1">
 							<view  class="right1_name">
 								<text>{{item.name}}</text>
-								<text>{{item.tel}}</text>
+								<text>累计授课{{item.total_count}}节</text>
 							</view>
 							<view class="right1_price">
               	<text>￥</text>

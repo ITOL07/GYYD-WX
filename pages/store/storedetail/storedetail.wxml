@@ -75,7 +75,7 @@
       </view>
       <view class="store_list" wx:if="{{listData!=null}}">
         <view wx:for="{{listData}}" wx:key="this" class="list_data">
-          <view class="list_left">
+          <view class="list_left" bindtap="getCoachInfo" id="{{item.coach_Id}}" data-club-id="{{storeListData.clubId}}">
             <image src="{{item.icon}}"></image>
           </view>
           <view class="list_right" bindtap="getCoachInfo" id="{{item.coach_Id}}" data-club-id="{{storeListData.clubId}}">
