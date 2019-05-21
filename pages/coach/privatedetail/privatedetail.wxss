@@ -51,7 +51,7 @@
 }
 .rate image{
   width: 19rpx;
-  height: 18rpx;
+  height: 19rpx;
 }
 .rate text{
   font-size: 22rpx;
@@ -65,9 +65,13 @@
 	align-items: center;
 	justify-content: space-around;
 }
-.phone image{
-  width: 20rpx;
+.phone image:nth-child(1){
+  width: 22rpx;
   height: 18rpx;
+}
+.phone image:nth-child(2){
+  width: 18rpx;
+  height: 22rpx;
 }
 .header_right_bottom{
   width:100%;
