@@ -148,15 +148,18 @@ Page({
 
     })
   },
-  getCourseInfo: function (param) {
+  getCourseInfo: function (para1,para2) {
     var that = this
     var url_tmp = fileData.getListConfig().url_test;
-    console.log('获取教练课程信息'+param)
+    console.log('获取教练课程信息'+para1)
     wx.request({
       // url: url_tmp + '/course/getCourseInfo',
       url: url_tmp + '/coach/qryCourse',
       method: 'POST',
-      data: { coach_id: param ,try_flag:''},//param
+      data: { 
+        coach_id: para1 ,
+        try_flag:'',
+        club_id: (typeof (para2) == "undefined") ? '' : para2},//param
       header: {
         'content-type': 'application/x-www-form-urlencoded'  //发送post请求
       }, success: function (res) {
@@ -173,7 +176,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log("教练详情页" + options.id)
+    console.log("教练详情页" + options.id+"club_id==="+options.club_id)
     this.setData({
       param_id: options.id
     });
@@ -184,7 +187,7 @@ Page({
     //默认加载场地信息
     this.getClubInfo(options.id);
     //默认加载教授课程信息
-    this.getCourseInfo(options.id);
+    this.getCourseInfo(options.id, options.club_id);
   },
 
   /**

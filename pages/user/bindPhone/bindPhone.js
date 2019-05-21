@@ -14,7 +14,8 @@ Page({
     VerificationCode: '',
     Code: '',
     success: false,
-    state: ''
+    state: '',
+    flag:''
   },
   /**
     * 获取验证码
@@ -134,6 +135,7 @@ Page({
 
   },
   submit: function (e) {
+   
     var that = this
     if (this.data.Code == '') {
       wx.showToast({
@@ -153,9 +155,15 @@ Page({
     else {
       var that = this
       var phone = that.data.phone;
-      var url_tmp = fileData.getListConfig().url_test;
+      if(that.data.flag==1){
+        console.log('解绑手机号')
+        var url_tmp = fileData.getListConfig().url_test + '/user/bindPhone';
+      }else{
+        var url_tmp = fileData.getListConfig().url_test+'/user/unBindPhone';
+        console.log('绑定手机号')
+      }
       wx.request({
-        url: url_tmp + '/user/bindPhone',
+        url: url_tmp,
         method: "POST",
         data: {
           phoneNo: phone,
@@ -165,8 +173,13 @@ Page({
           "content-type": "application/x-www-form-urlencoded"
         },
         success: function (res) {
+          if (that.data.flag == 1) {
+            var title = '解绑手机号成功~';
+          } else {
+            var title = '绑定手机号成功~';
+          }
           wx.showToast({
-            title: '绑定手机号成功~',
+            title: title,
             icon: 'loading',
             duration: 2000
           })
@@ -177,6 +190,12 @@ Page({
         }
       })
     }
+  },
+  onLoad:function(options){
+    console.log("绑定手机号===" + options.id)
+    this.setData({
+      flag: options.id
+    })
   },
   /**
    * 用户点击右上角分享

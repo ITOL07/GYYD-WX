@@ -99,7 +99,8 @@ Page({
 
 	},
 	getCoachInfo: function (e) {
-		var storedetailRouter = '../../coach/privatedetail/privatedetail?id=' + e.currentTarget.id;
+    var storedetailRouter = '../../coach/privatedetail/privatedetail?id=' + e.currentTarget.id + "&club_id=" + e.currentTarget.dataset.clubId;
+    console.log("coach_id=" + e.currentTarget.id + "   club_id==" + e.currentTarget.dataset.clubId)
 		var storedetailTitle = '教练详情';
 		commonData.routers(storedetailRouter, storedetailTitle);
 

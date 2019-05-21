@@ -78,7 +78,7 @@
           <view class="list_left">
             <image src="{{item.icon}}"></image>
           </view>
-          <view class="list_right" bindtap="getCoachInfo" id="{{item.coach_Id}}">
+          <view class="list_right" bindtap="getCoachInfo" id="{{item.coach_Id}}" data-club-id="{{storeListData.clubId}}">
             <view class="right1">
 							<view class="right1_name">
 								<text>{{item.name}}</text>

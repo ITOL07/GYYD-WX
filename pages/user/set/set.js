@@ -31,9 +31,13 @@ Page({
     })
   },
 
-  bindPhone:function(){
-    var addupRouter = '../../user/bindPhone/bindPhone';
-    var addupTitle = '绑定手机号';
+  bindPhone:function(options){
+    var addupRouter = '../../user/bindPhone/bindPhone?id='+options.currentTarget.id;
+    if(options.id=="0"){
+      var addupTitle = '绑定手机号';
+    } else{
+      var addupTitle = '解绑手机号';
+    }
     commonData.routers(addupRouter, addupTitle);
   },
 
