@@ -1,11 +1,12 @@
 /* pages/user/user.wxss */
 .user_head{
   width:100%;
-  height:400rpx;
+  height: 330rpx;
+  background:rgb(41, 42, 46);
   display:flex;
   flex-direction:column;
+	align-items: center;
 	position: relative;
-  background:rgb(41, 42, 46);
 }
 .user_head .img{
 	position: absolute;
@@ -14,30 +15,33 @@
 }
 .user_head .img image{
 	width: 750rpx;
-	height: 400rpx;
+	height: 330rpx;
 }
 .user_head image:nth-child(2){
-  width:150rpx;
-  height:150rpx;
-	border-radius: 50%; 
-  margin:auto;
+  width:130rpx;
+  height:130rpx;
+	border: 5rpx solid #FFFFFF;
+	border-radius: 50%;
+	margin-top: 50rpx; 
 	position: relative;
 }
-.user_head text{
+.user_head text:nth-child(3){
+	font-size: 38rpx;
   color: #FFFFFF;
-  text-align:center;
-	margin-bottom: 30rpx;
+	margin-top: 20rpx;
   position: relative;
 }
-.user_head .text2{
-  padding-bottom:40rpx;
+.user_head text:nth-child(4){
+	font-size: 22rpx;
+	color: #FFFFFF;
+	position: relative;
 }
 
 .user_nav{
   display:flex;
   flex-direction:row;
   width:100%;
-  height:170rpx;
+  height: 160rpx;
   box-sizing:border-box;
   justify-content:space-around;
   background:#FFFFFF;
@@ -70,8 +74,8 @@
 }
 .list_item{
 	width: 98%;
-	height: 90rpx;
-  border-bottom:2rpx solid #EEEEEE;
+	height: 88rpx;
+  border-bottom: 2rpx solid #EEEEEE;
 	margin-left: 2%;
   display:flex;
   flex-direction:row;

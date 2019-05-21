@@ -14,7 +14,8 @@
 			<block wx:else>
 				<image bindtap="bindViewTap" src="{{userInfo.avatarUrl}}" mode="cover"></image>
 				<text>{{userInfo.nickName}}</text>
-        <text>{{tel}}</text>
+        <text wx:if="{{tel!=null}}">{{tel}}</text>
+        <text wx:else bindtap="bindphone" class="unbind">未绑定手机号</text>
 			</block>	
     </view>
     <view class="user_nav">
