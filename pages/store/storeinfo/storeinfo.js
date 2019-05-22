@@ -50,11 +50,21 @@ Page({
         _this.setData({
           storeImg: res.data   
         })
-        console.log(_this.data.storeImg)  
+				console.log("storeImg=" + JSON.stringify(_this.data.storeImg))  
       }
     })
       
   },
+
+	previewImg: function (e) {
+		let imgs = []
+		let list = this.data.storeImg
+		for(let i=0;i<list.length;i++){
+			imgs.push(list[i].img_url)
+		}
+		commonData.previewImg(e, imgs)
+	},
+
   openLocation:function(){
     var _this=this
     // wx.getLocation({

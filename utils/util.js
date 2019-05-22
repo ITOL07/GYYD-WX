@@ -90,11 +90,27 @@ function wxlogin() {
   })
 }
 
+//点击图片查看大图
+//e表示当前查看的图片的下标，imgs表示将要预览的图片列表
+function previewImg(e, imgs) {
+	var index = e.currentTarget.dataset.index
+	var imgArr = imgs
+	wx.previewImage({
+		current: imgArr[index],     //当前图片地址
+		urls: imgArr,               //所有要预览的图片的地址集合 数组形式
+		success: function (res) {
+			console.log("width=" + res.width)
+		},
+		fail: function (res) { },
+		complete: function (res) { },
+	})
+}
+
 module.exports = {
   formatTime: formatTime,
   formatTimeHM: formatTimeHM,
   routers,
   distance,
   wxlogin: wxlogin,
-
+	previewImg: previewImg
 }

@@ -48,17 +48,7 @@ Page({
   },
 
 	previewImg: function (e) {
-		var index = e.currentTarget.dataset.index
-		var imgArr = this.data.icons_url
-		wx.previewImage({
-			current: imgArr[index],     //当前图片地址
-			urls: imgArr,               //所有要预览的图片的地址集合 数组形式
-			success: function (res) {
-				console.log("width=" + res.width)
-			},
-			fail: function (res) { },
-			complete: function (res) { },
-		})
+		commonData.previewImg(e, this.data.icons_url)
 	},
 
   changeImage:function(event){
