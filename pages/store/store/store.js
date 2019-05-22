@@ -57,6 +57,17 @@ Page({
               console.log('无符合条件记录')
             }
 
+						let s = ''
+						for (var i = 1; i < tmp.length; i++) {
+							for (var j = i; j > 0; j--) {
+								if (tmp[j].dis - tmp[j - 1].dis < 0) {
+									s = tmp[j];
+									tmp[j] = tmp[j - 1];
+									tmp[j - 1] = s;
+								}
+							}
+						}
+
             _this.setData({
               storeListData: tmp
             })
