@@ -1,6 +1,6 @@
 /* pages/certificate/certificate.wxss */
 .container{
-	height: 1200rpx;
+	 height: 1200rpx;
 	 background-color: #FFFFFF;
 }
 .header{
