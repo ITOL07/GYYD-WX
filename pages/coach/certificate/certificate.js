@@ -51,32 +51,32 @@ Page({
 		commonData.previewImg(e, this.data.icons_url)
 	},
 
-  changeImage:function(event){
-    var that = this
-    var num = that.data.index
-    var fx = event.currentTarget.dataset.param
-    var length = that.data.icons_url.length-1
-    console.log(length)
-    console.info(fx)
-    if(fx == 'left'){
-      if (num == 0) {
-        num = length
-      } else{
-        num = num-1
-      }
-    } else if (fx == 'right'){
-      if (num == length) {
-        num = 0
-      } else {
-        num = num + 1
-      }
-    }
-    console.log(num)
-      that.setData({
-        index:num
-      })
+  // changeImage:function(event){
+  //   var that = this
+  //   var num = that.data.index
+  //   var fx = event.currentTarget.dataset.param
+  //   var length = that.data.icons_url.length-1
+  //   console.log(length)
+  //   console.info(fx)
+  //   if(fx == 'left'){
+  //     if (num == 0) {
+  //       num = length
+  //     } else{
+  //       num = num-1
+  //     }
+  //   } else if (fx == 'right'){
+  //     if (num == length) {
+  //       num = 0
+  //     } else {
+  //       num = num + 1
+  //     }
+  //   }
+  //   console.log(num)
+  //     that.setData({
+  //       index:num
+  //     })
     
-  },
+  // },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

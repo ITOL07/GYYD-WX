@@ -1,13 +1,9 @@
 <!--pages/certificate/certificate.wxml-->
 <view class="container">
 	<view class='header'>      
-		<view wx:for='{{icons_url}}' wx:key="this">
-			<image  src='{{item}}' data-index='{{index}}' bindtap='previewImg'></image>
-		</view>
+		<block wx:for='{{icons_url}}' wx:key="this">
+			<image  src='{{item}}' data-index='{{index}}' bindtap='previewImg'
+							></image>
+		</block>
 	</view>
-  <view class="bottom" >
-    <image src="../../../static/images/littleicon/left.png" bindtap='changeImage' data-param='left'></image>
-    <image src="../../../static/images/littleicon/right.png"
-    bindtap='changeImage' data-param='right'></image>
-  </view>
 </view>
