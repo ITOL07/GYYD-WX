@@ -3,7 +3,7 @@
   <view wx:if="{{phoneNo==null}}" class="top" bindtap="bindPhone" id="0">
     <text>绑定手机号</text>
     <!-- <text>136****2345 ></text>  -->
-    <text>{{phoneNo}} ></text> 
+    <text>></text> 
   </view>
   <view wx:if="{{phoneNo!=null}}" class="top" bindtap="bindPhone" id="1">
     <text>解绑手机号</text>
