@@ -78,9 +78,16 @@
             <text>{{item.courseName}}</text>
             <text>{{item.brief}}</text>
             <view class="buy">
-              <text>￥</text>
-							<text>{{filters.toFix(item.min_price/1,0)}}</text>
-							<text>/课</text>
+							<view>
+								<text>￥</text>
+								<text>{{filters.toFix(item.min_price/1,0)}}</text>
+								<text>/课</text>
+							</view>
+							<button id="{{item.courseType}}" 
+											data-club-id="{{storeListData.clubId}}" 
+											data-club_name="{{storeListData.name}}" 
+											bindtap='gotobuy'>购买
+							</button>
             </view>
           </view>
         </view>

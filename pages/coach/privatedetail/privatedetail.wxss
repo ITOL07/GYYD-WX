@@ -184,6 +184,7 @@
 .list_item image{
   width: 320rpx;
   height: 260rpx;
+	border-radius: 5rpx;
 }
 .private_list text:nth-child(2){
   width:100%;
@@ -200,15 +201,31 @@
 	white-space: nowrap;
 }
 .buy{
-  
+  display:flex;
+  flex-direction:row;
+  width:100%;
+  align-items:center;
 }
-.buy text:nth-child(1), .buy text:nth-child(3){
+.buy view{
+  width: 65%;
+}
+.buy view text:nth-child(1), .buy view text:nth-child(3){
 	font-size: 22rpx;
   color:#F85F58;
 }
-.buy text:nth-child(2){
+.buy view text:nth-child(2){
 	font-size: 32rpx;
   color:#F85F58;
+}
+.buy button{
+	width:30%;
+  height:50rpx;
+  border-radius:20rpx;
+  font-size:18rpx;
+  text-align:center;
+  color:#FBBE44;
+  border:1px solid #FBBE44;
+  line-height:50rpx;
 }
 .comment{
   width:100%;
