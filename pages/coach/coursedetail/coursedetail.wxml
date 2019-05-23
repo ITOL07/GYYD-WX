@@ -3,7 +3,7 @@
 <view class="container">
   <scroll-view scroll-y="true" class="scroll_body">
     <view class="header">
-      <image src="{{CourseInfo.info_pic}}"></image>
+      <image src="{{CourseInfo.info_pic}}" mode="aspectFit"></image>
       <view class="header_list"> 
         <view class="header_list_item">
 					<view>
