@@ -3,7 +3,7 @@
 	<view class='header'>      
 		<block wx:for='{{icons_url}}' wx:key="this">
 			<image  src='{{item}}' data-index='{{index}}' bindtap='previewImg'
-							></image>
+							mode="aspectFit"></image>
 		</block>
 	</view>
 </view>
