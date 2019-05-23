@@ -1,47 +1,55 @@
-page{
-   background: #F0F0F0 ;
+.container{
+	height: 1200rpx;
+  background:#FFFFFF;
 }
-.row{
-  margin-top: 20rpx;
-  overflow: hidden;
-  line-height: 100rpx;
-  border-bottom: 1rpx solid #ccc;
-  margin-left: 20rpx;
-  margin-right: 20rpx;
-  color: #777;
-  background: #fff;
- 
+.container view:nth-child(1){
+	width: 100%;
 }
-.info-input{
-  height: 100rpx;
-  margin-left: 50rpx;
-  color: #777;
-    float: left;
+.top{
+  width: 94%;
+  margin: 30rpx 3%;
 }
-.info-input1{
-  height: 100rpx;
-  margin-left: 50rpx;
-  color: #777;
-    float: left;
-    width: 420rpx;
+.top text{
+  font-size: 26rpx;
+	margin-right: 30rpx;
 }
-.button{
-  width: 200rpx;
-  height: 70rpx;
-  line-height: 70rpx;
-  font-size: 28rpx;
-  background: #33FF99;
-  float: left;
-  margin-left: 10rpx;
-  margin-top: 15rpx;
-  color: #FFFFFF;
+.text1{
+  color:#FAC830;
 }
-.submit{
-  margin-top: 50rpx;
-  margin-left: 20rpx;
-  margin-right: 20rpx;
-  background: #00CCFF;
-  color: #FFFFFF;
+.text2{
+  color:#999999;
+}
+.middle{
+  width: 94%;
+  margin: 100rpx 3% 40rpx;
+}
+.middle input{
+  width:80%;
+	height: 95rpx;
+	font-size: 32rpx;
+	color: #333333;
+  border-bottom: 2rpx solid #EEEEEE;
+}
+.placetext{
+	font-size: 26rpx;
+	color: #999999;
+}
+.bottom{
+  width:100%;
+  margin-top: 90rpx;
+}
+.bottom button{
+  width: 72%;
+  height: 84rpx;
+  border-radius: 42rpx;
+  background:#F9CE0E;
+}
+.bottom text{
+	font-size: 22rpx;
+	color: #999999;
+	display: block;
+	text-align: center;
+	margin-top: 10rpx;
 }
 .success1{
 	width: 100%;

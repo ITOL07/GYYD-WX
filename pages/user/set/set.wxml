@@ -8,7 +8,7 @@
   <view wx:if="{{phoneNo!=null}}" class="top" bindtap="bindPhone" id="1">
     <text>解绑手机号</text>
     <!-- <text>136****2345 ></text>  -->
-    <text>{{phoneNo}} ></text> 
+    <text>{{phoneNo}}</text> 
   </view>
   <view class="top" bindtap='forgetPass'>
     <text>修改密码</text>

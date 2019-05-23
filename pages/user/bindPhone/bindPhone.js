@@ -15,7 +15,9 @@ Page({
     Code: '',
     success: false,
     state: '',
-    flag:''
+    flag:'',
+		status: 1,
+		phoneno: ''
   },
   /**
     * 获取验证码
@@ -28,7 +30,7 @@ Page({
   },
   handleInputPhone: function (e) {
     this.setData({
-      phone: e.detail.value
+      phone: e.detail.value,
     })
   },
   handleVerificationCode: function (e) {
@@ -43,9 +45,14 @@ Page({
     that.setData({
       disabled: true, //只要点击了按钮就让按钮禁用 （避免正常情况下多次触发定时器事件）
       color: '#ccc',
+			status: 2
     })
-
     var phone = that.data.phone;
+		let no = phone.substring(0, 3) + '***' + phone.substring(7, 11)
+		that.setData({
+			phoneno: no
+		})
+
     var currentTime = that.data.currentTime //把手机号跟倒计时值变例成js值
     var warn = null; //warn为当手机号为空或格式不正确时提示用户的文字，默认为空
     var url_tmp = fileData.getListConfig().url_test;
@@ -149,7 +156,7 @@ Page({
       wx.showToast({
         title: '验证码错误',
         // image: '/images/error.png',
-				icon: 'warn',
+				icon: 'clear',
         duration: 2000
       })
       return
