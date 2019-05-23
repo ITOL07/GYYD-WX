@@ -41,19 +41,37 @@ page{
   margin-left: 20rpx;
   margin-right: 20rpx;
   background: #00CCFF;
-   color: #FFFFFF;
+  color: #FFFFFF;
+}
+.success1{
+	width: 100%;
+	height: 1200rpx;
+  background-color: #ffffff;
 }
 .success{
-  background: #ffffff;
- 
+	width: 80%;
+	height: 600rpx;
+	padding: 15% 10%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.cheer1{
+  font-size: 32rpx;
+	color: #333333;
 }
 .cheer{
-  text-align: center;
-  line-height: 400rpx;
-  font-size: 60rpx;
-  position: relative;
+  font-size: 30rpx;
+	color: #666666;
 }
 .return{
-  margin: 20rpx;
- 
+	width: 85%;
+	height: 84rpx;
+	background-color: #EEEEEE;
+	border-radius: 42rpx;
+	font-size: 32rpx;
+	color: #292A2E;
+	line-height: 84rpx;
+	text-align: center;
+	margin-top: 60rpx;
 }

@@ -13,7 +13,15 @@
  </view>
  <button class='submit' bindtap='submit'>提交</button>
  </view>
- <view class = 'success' wx:if="{{success}}">
- <view class='cheer'><icon type="success" size="24"/> 绑定手机号成功，可以用手机号登录了哦，默认密码6个0，不要告诉别人哦</view>
- <button type = "default" class = 'return' bindtap='return_home'>返回首页</button>
+ <view class="success1" wx:if="{{success}}">
+	<view class = 'success'>
+		<icon type="success" size="70"/>
+		<text class='cheer1'>
+			绑定成功
+		</text>
+		<text class='cheer'>
+			您已成功绑定手机号，现在可以用手机号登录了，默认密码6个0，不要告诉别人！
+		</text>
+		<button type = "default" class = 'return' bindtap='return_home'>返回首页</button>
+	</view>
  </view>
