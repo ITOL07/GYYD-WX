@@ -29,6 +29,10 @@
   height: 29rpx;
 	margin-right: 5%;
 }
+.top_item1 input, .top_item2 input{
+	font-size: 32rpx;
+	color: #333333;
+}
 .place{
 	font-size: 26rpx;
 	color: #999999;
