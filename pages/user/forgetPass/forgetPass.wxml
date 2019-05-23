@@ -33,10 +33,12 @@
     </view>
   </view>
 </view>
-
-<view class='success' wx:if="{{success}}">
-  <view class='cheer'>
-    <icon type="success" size="24" /> 密码重置成功!
-  </view>
-  <button type="default" class='return' bindtap='return_home'>返回首页</button>
+<view class='success1' wx:if="{{success}}">
+	<view class='success' >
+		<icon type="success" size="70" />
+		<view class='cheer'>
+			密码重置成功!
+		</view>
+		<button type="default" class='return' bindtap='return_home'>返回首页</button>
+	</view>
 </view>

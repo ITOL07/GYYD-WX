@@ -157,14 +157,14 @@ Page({
     if (this.data.NewChanges == '') {
       wx.showToast({
         title: '请输入密码',
-        image: '/images/error.png',
+        icon: 'info',
         duration: 2000
       })
       return
     } else if (this.data.NewChangesAgain != this.data.NewChanges) {
       wx.showToast({
         title: '两次密码不一致',
-        image: '/images/error.png',
+        icon: 'warn',
         duration: 2000
       })
       return
@@ -207,14 +207,14 @@ Page({
     if (this.data.Code == '') {
       wx.showToast({
         title: '请输入验证码',
-        image: '/images/error.png',
+        icon: 'info',
         duration: 2000
       })
       return
     } else if (this.data.Code != this.data.VerificationCode) {
       wx.showToast({
         title: '验证码错误',
-        image: '/images/error.png',
+        icon: 'warn',
         duration: 2000
       })
       return
