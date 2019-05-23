@@ -14,10 +14,15 @@
   display:flex;
   flex-direction:row;
   justify-content:space-between;
+	align-items: center;
 }
 .top text, .top1 text{
   color:#666666;
   font-size: 30rpx;
+}
+.top image{
+	width: 20rpx;
+	height: 35rpx;
 }
 .else{
 	margin-top: 30rpx;

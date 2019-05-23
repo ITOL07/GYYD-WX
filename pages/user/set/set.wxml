@@ -3,7 +3,7 @@
   <view wx:if="{{phoneNo==null}}" class="top" bindtap="bindPhone" id="0">
     <text>绑定手机号</text>
     <!-- <text>136****2345 ></text>  -->
-    <text>></text> 
+    <image src="../../../static/images/littleicon/more.png"></image> 
   </view>
   <view wx:if="{{phoneNo!=null}}" class="top" bindtap="bindPhone" id="1">
     <text>解绑手机号</text>
@@ -12,7 +12,8 @@
   </view>
   <view class="top" bindtap='forgetPass'>
     <text>修改密码</text>
-    <text>></text> 
+    <image src="../../../static/images/littleicon/more.png"></image> 
+    <!-- <text>></text>  -->
   </view>
   <!-- <view wx:if="{{phoneNo==null}}"> 绑定微信</view> -->
   <view class="top else">
