@@ -12,21 +12,18 @@ Page({
 
   },
 
-  loadClick:function(){
-    var regRouter = '../../user/useragree/useragree';
-    var regTitle = '用户协议';
+  loadClick:function(options){
+    console.log(options)
+    var regRouter = '../../user/useragree/useragree?name='+options.currentTarget.id;
+    if (options.currentTarget.id=="priv"){
+      var regTitle = '用户隐私协议';
+    } else if(options.currentTarget.id == "lesson"){
+      var regTitle = '私教课协议';
+    } else{
+      var regTitle = '用户协议';
+    }
+    
     commonData.routers(regRouter, regTitle);
-
-    // var _this=this
-    // wx.request({
-    //   url: 'http://www.guyueyundong.com/images/member.pdf',
-    //   success(res){
-    //     console.log(res.data)
-    //   _this.setData({
-    //     tmp:res.data
-    //   })
-    //   }
-    // })
   },
   /**
    * 生命周期函数--监听页面加载

@@ -1,15 +1,15 @@
 <!--pages/agreement/agreement.wxml-->
 <view class="container">
-  <view class="list" bindtap='loadClick' >
+  <view class="list" bindtap='loadClick' id="user">
     <text>古越运动用户协议</text>
     <image src="../../../static/images/littleicon/more.png"></image>
   </view>
-  <!-- <view class="list">
-    <text>古越运动用户协议</text>
+  <view class="list" bindtap="loadClick" id="priv">
+    <text>古越会员隐私协议</text>
     <image src="../../../static/images/littleicon/more.png"></image>
   </view>
-  <view class="list" bindtap="loadClick">
-    <text>古越运动用户协议</text>
+  <view class="list" bindtap="loadClick" id="lesson">
+    <text>古越私教课协议</text>
     <image src="../../../static/images/littleicon/more.png"></image>
-  </view> -->
+  </view>
 </view>

@@ -17,10 +17,6 @@ Page({
       success: function (res) {
         console.log(res.system)
         console.log(res.system.indexOf("iOS"))
-        //var system = res.system.indexOf("IOS");
-        // that.setData({
-        // systemInfo: res
-        // });
       }
     })
   },
@@ -33,12 +29,13 @@ Page({
     
     var sysInfo = app.globalData.systemInfo
     console.log(sysInfo)
+    console.log("传入的文件名为"+options.name)
     
     if (sysInfo.indexOf("IOS")>-1){
       that.setData({
         flag:true
       })
-      that.getUrl()
+      that.getUrl(options.name)
       console.log('flag====' + that.data.flag)
     }
     var _this = this
@@ -46,10 +43,9 @@ Page({
       var url_tmp = fileData.getListConfig().url_test;
       var _this = this
       wx.request({
-        // url: url_tmp + '/coach/qry',
         url: url_tmp + '/doc/load',
         data: {
-          name: 'user',
+          name: options.name,
           type: '1'
         },
         method: 'POST',
@@ -58,9 +54,6 @@ Page({
         },
         success(res) {
           console.log(res.data)
-          // _this.setData({
-          //   url_doc: res.data.url
-          // })
           wx.downloadFile({
             url: res.data.url,
             success: function (res) {
@@ -79,19 +72,15 @@ Page({
           })
         }
       })
-      // that.getUrl()
-      
-
     }
   },
-  getUrl: function () {
+  getUrl: function (name) {
     var url_tmp = fileData.getListConfig().url_test;
     var _this = this
     wx.request({
-      // url: url_tmp + '/coach/qry',
       url: url_tmp + '/doc/load',
       data: {
-        name: 'user',
+        name: name,
         type: '1'
       },
       method: 'POST',

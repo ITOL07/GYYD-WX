@@ -1,6 +1,6 @@
 /* pages/agreement/agreement.wxss */
 .container{
-	height: 1200rpx;
+	height: 292rpx;
 	background-color: #FAFAFA;
 	padding-top: 22rpx;
 }
@@ -10,6 +10,7 @@
 	background-color: #FFFFFF;
 	padding: 0 3.5%;
   display:flex;
+  border-bottom: 2rpx solid #EEEEEE;
   flex-direction:row;
   align-items: center;
 	justify-content: space-between;
