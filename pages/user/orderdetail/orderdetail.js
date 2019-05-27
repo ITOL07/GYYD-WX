@@ -30,7 +30,7 @@ Page({
     index_coach: 0,
     count: 10,
     order_no: null,
-    sum:0.001*10,
+    sum:null,
     course_id:null,
     state_desc:null
   },
@@ -39,6 +39,7 @@ Page({
     /* 点击减号 */
     bindMinus: function () {
       var num = this.data.num;
+      var price = this.data.courseData.min_price;
       // 如果大于1时，才可以减 
       if (num > 10) {
         num--;
@@ -49,7 +50,7 @@ Page({
       this.setData({
         num: num,
         minusStatus: minusStatus,
-        sum: 0.001 * num
+        // sum: price * num
       });
       // this.triggerEvent('numChange', this.data.num);
     },
@@ -64,7 +65,7 @@ Page({
       this.setData({
         num: num,
         minusStatus: minusStatus,
-        sum: 0.001 * num
+        // sum: price * num
       });
       // this.triggerEvent('numChange', this.data.num);
     },
@@ -74,7 +75,7 @@ Page({
       // 将数值与状态写回 
       this.setData({
         num: num,
-        sum:0.001*num
+        // sum: price*num
       });
       this.triggerEvent('numChange', this.data.num);
     },
@@ -87,7 +88,8 @@ Page({
     })
     if (e.currentTarget.dataset.try_flag == 1) {
       _this.setData({
-        count: 1
+        count: 1,
+        num:1
       })
     }
     wx.request({
@@ -262,6 +264,11 @@ Page({
         _this.setData({
           courseData: res.data
         })
+        if(res.data.tryFlag=='1'){
+          _this.setData({
+            num:1
+          })
+        }
       }
     }) 
     console.log(club_idx+'coach_idx==='+coach_idx+'options.type==='+options.type)

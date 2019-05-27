@@ -59,7 +59,7 @@ Page({
     commonData.routers(addupRouter, addupTitle);
   },
   loadClick: function () {
-		var addupRouter = '../../user/addup/addup';
+    var addupRouter = '../../user/addup/addup';
     var addupTitle = '待预约';
     commonData.routers(addupRouter, addupTitle);
   },

@@ -11,8 +11,8 @@ Page({
     index_color: "#646967",
     index_activeColor: "#FFFFFF",
     index_interval: 3000,
-    index_duration: 1000,
-		autoplay: false,
+    index_duration: 30,
+		autoplay: true,
     //测试
     // swiperImg: fileData.getSwiperImgData(),
     swiperImg:null,

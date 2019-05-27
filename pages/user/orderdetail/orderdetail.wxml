@@ -55,8 +55,8 @@
   <view class="pay">
     <view class="pay_list">
       <text>总计</text>
-      <text>¥{{sum}}</text>
+      <text>¥{{courseData.min_price*num}}</text>
     </view>
-    <button bindtap="buyCourse" data-try_flag="0" data-price="{{sum}}" data-desc="{{courseData.courseName}}" data-count="{{num}}">去支付</button>
+    <button bindtap="buyCourse" data-try_flag="0" data-price="{{courseData.min_price*num}}" data-desc="{{courseData.courseName}}" data-count="{{num}}">去支付</button>
   </view>
 </view>
