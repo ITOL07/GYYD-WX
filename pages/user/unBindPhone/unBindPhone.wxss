@@ -1,0 +1,86 @@
+/* pages/user/unBindPhone/unBindPhone.wxss */
+.container{
+	height: 1200rpx;
+  background:#FFFFFF;
+}
+.container view:nth-child(1){
+	width: 100%;
+}
+.top{
+  width: 94%;
+  margin: 30rpx 3%;
+}
+.top text{
+  font-size: 26rpx;
+	margin-right: 30rpx;
+}
+.text1{
+  color:#FAC830;
+}
+.text2{
+  color:#999999;
+}
+.middle{
+  width: 94%;
+  margin: 100rpx 3% 40rpx;
+}
+.middle input{
+  width:80%;
+	height: 95rpx;
+	font-size: 32rpx;
+	color: #333333;
+  border-bottom: 2rpx solid #EEEEEE;
+}
+.placetext{
+	font-size: 26rpx;
+	color: #999999;
+}
+.bottom{
+  width:100%;
+  margin-top: 90rpx;
+}
+.bottom button{
+  width: 72%;
+  height: 84rpx;
+  border-radius: 42rpx;
+  background:#F9CE0E;
+}
+.bottom text{
+	font-size: 22rpx;
+	color: #999999;
+	display: block;
+	text-align: center;
+	margin-top: 10rpx;
+}
+.success1{
+	width: 100%;
+	height: 1200rpx;
+  background-color: #ffffff;
+}
+.success{
+	width: 80%;
+	height: 600rpx;
+	padding: 15% 10%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.cheer1{
+  font-size: 32rpx;
+	color: #333333;
+}
+.cheer{
+  font-size: 30rpx;
+	color: #666666;
+}
+.return{
+	width: 85%;
+	height: 84rpx;
+	background-color: #EEEEEE;
+	border-radius: 42rpx;
+	font-size: 32rpx;
+	color: #292A2E;
+	line-height: 84rpx;
+	text-align: center;
+	margin-top: 60rpx;
+}

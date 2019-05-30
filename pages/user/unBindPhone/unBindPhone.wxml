@@ -1,0 +1,45 @@
+<!--pages/user/unBindPhone/unBindPhone.wxml-->
+<view class="container" wx:if="{{!success}}">
+	<view wx:if="{{status==1}}">
+		<view class="top text2">
+			<text class="text1">1.请输入手机号</text>
+			<text>{{phoneno}}</text>
+			<text>2.输入验证码</text>
+		</view>
+		<view class="middle">
+			<input bindinput="handleInputPhone" placeholder='输入您的手机号' 
+						placeholder-class="placetext">
+			</input>
+		</view>
+		<view class="bottom">
+			<button bindtap="doGetCode">获取验证码</button>
+		</view>
+	</view>
+	<view wx:else>
+		<view class="top">
+			<text class="text1">1.请输入手机号</text>
+			<text class="text1">></text>
+			<text class="text1">2.输入验证码</text>
+		</view>
+		<view class="middle">
+			<input bindinput="handleVerificationCode" placeholder='输入验证码'
+						placeholder-class="placetext"></input>
+		</view>
+		<view class="bottom">
+			<button bindtap="submit">提交验证码</button>
+			<text>验证短信已发送到{{phoneno}}</text>
+		</view>
+	</view>
+</view>
+<view class="success1" wx:if="{{success}}">
+	<view class = 'success'>
+		<icon type="success" size="70"/>
+		<text class='cheer1'>
+			绑定成功
+		</text>
+		<text class='cheer'>
+			您已成功解绑手机号，期待您绑定新的手机号哦！
+		</text>
+		<button type = "default" class = 'return' bindtap='return_home'>返回首页</button>
+	</view>
+</view>

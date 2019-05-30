@@ -15,9 +15,9 @@ Page({
     Code: '',
     success: false,
     state: '',
-    flag:'',
-		status: 1,
-		phoneno: ''
+    flag: '',
+    status: 1,
+    phoneno: ''
   },
   /**
     * 获取验证码
@@ -39,19 +39,19 @@ Page({
       Code: e.detail.value
     })
   },
-  
+
   doGetCode: function () {
     var that = this;
     that.setData({
       disabled: true, //只要点击了按钮就让按钮禁用 （避免正常情况下多次触发定时器事件）
       color: '#ccc',
-			status: 2
+      status: 2
     })
     var phone = that.data.phone;
-		let no = phone.substring(0, 3) + '***' + phone.substring(7, 11)
-		that.setData({
-			phoneno: no
-		})
+    let no = phone.substring(0, 3) + '***' + phone.substring(7, 11)
+    that.setData({
+      phoneno: no
+    })
 
     var currentTime = that.data.currentTime //把手机号跟倒计时值变例成js值
     var warn = null; //warn为当手机号为空或格式不正确时提示用户的文字，默认为空
@@ -75,8 +75,8 @@ Page({
         } else if (phone.trim().length != 11 || !/^1[3|4|5|6|7|8|9]\d{9}$/.test(phone)) {
           warn = "手机号格式不正确";
         } //手机号已被注册提示信息
-        else if (that.data.state == 0) {  //判断是否被注册
-          warn = "手机号已被注册,请登录或者找回密码!";
+        else if (that.data.state == -1) {  //判断是否被注册
+          warn = "手机号未被绑定,请先绑定手机号或注册!";
           wx.navigateTo({
             url: '/pages/user/login/login',
           })
@@ -142,13 +142,13 @@ Page({
 
   },
   submit: function (e) {
-   
+
     var that = this
     if (this.data.Code == '') {
       wx.showToast({
         title: '请输入验证码',
         // image: '/images/error.png',
-				icon: 'info',
+        icon: 'info',
         duration: 2000
       })
       return
@@ -156,7 +156,7 @@ Page({
       wx.showToast({
         title: '验证码错误',
         // image: '/images/error.png',
-				icon: 'clear',
+        icon: 'clear',
         duration: 2000
       })
       return
@@ -164,11 +164,11 @@ Page({
     else {
       var that = this
       var phone = that.data.phone;
-      if(that.data.flag==1){
+      if (that.data.flag == 1) {
         console.log('解绑手机号')
         var url_tmp = fileData.getListConfig().url_test + '/user/unBindPhone';
-      }else{
-        var url_tmp = fileData.getListConfig().url_test+'/user/bindPhone';
+      } else {
+        var url_tmp = fileData.getListConfig().url_test + '/user/bindPhone';
         console.log('绑定手机号')
       }
       wx.request({
@@ -200,8 +200,8 @@ Page({
       })
     }
   },
-  onLoad:function(options){
-    console.log("绑定手机号===" + options.id)
+  onLoad: function (options) {
+    console.log("解绑手机号===" + options.id)
     this.setData({
       flag: options.id
     })

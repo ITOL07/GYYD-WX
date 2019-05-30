@@ -40,6 +40,15 @@ Page({
     }
     commonData.routers(addupRouter, addupTitle);
   },
+  unBindPhone: function (options) {
+    var addupRouter = '../../user/unBindPhone/unBindPhone?id=' + options.currentTarget.id;
+    if (options.id == "0") {
+      var addupTitle = '绑定手机号';
+    } else {
+      var addupTitle = '解绑手机号';
+    }
+    commonData.routers(addupRouter, addupTitle);
+  },
 
 	forgetPass: function(){
     var addupRouter = '../../user/forgetPass/forgetPass';
