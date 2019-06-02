@@ -33,7 +33,8 @@ Page({
 
   bindPhone:function(options){
     var addupRouter = '../../user/bindPhone/bindPhone?id='+options.currentTarget.id;
-    if(options.id=="0"){
+    console.log(options)
+    if (options.currentTarget.id=="0"){
       var addupTitle = '绑定手机号';
     } else{
       var addupTitle = '解绑手机号';
@@ -42,7 +43,7 @@ Page({
   },
   unBindPhone: function (options) {
     var addupRouter = '../../user/unBindPhone/unBindPhone?id=' + options.currentTarget.id;
-    if (options.id == "0") {
+    if (options.currentTarget.id == "0") {
       var addupTitle = '绑定手机号';
     } else {
       var addupTitle = '解绑手机号';

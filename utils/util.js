@@ -62,7 +62,10 @@ function wxlogin() {
         url: url_tmp + '/wxuser/login',
         data: {
           code: res.code,
-          type:1
+          type:1,
+          nickName: app.globalData.userInfo.nickName,
+          gender: app.globalData.userInfo.gender,
+          icon: app.globalData.userInfo.avatarUrl
         },
         method: 'POST',
         // dataType: 'json',

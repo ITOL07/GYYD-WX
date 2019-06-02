@@ -12,7 +12,7 @@ Page({
 		// courseData: fileData.getCourseData(),
 		courseData: null,
 		courseData_try: null,
-		listData: fileData.getListData(),
+		listData: null,
 		// listData: null,
 		storeListData: null,
 		club_id: null,
