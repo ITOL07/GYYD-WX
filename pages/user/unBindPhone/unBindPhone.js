@@ -1,5 +1,5 @@
 const app = getApp()
-var fileData = require("../../../utils/data.js");
+var util = require("../../../utils/util.js");
 var util = require('../../../utils/md5.js')
 Page({
 
@@ -55,7 +55,7 @@ Page({
 
     var currentTime = that.data.currentTime //把手机号跟倒计时值变例成js值
     var warn = null; //warn为当手机号为空或格式不正确时提示用户的文字，默认为空
-    var url_tmp = fileData.getListConfig().url_test;
+    var url_tmp = util.getListConfig().url_test;
     wx.request({
       url: url_tmp + '/user/isReg', //后端判断是否已被注册， 已被注册返回0 ，未被注册返回-1
       method: "POST",
@@ -166,9 +166,9 @@ Page({
       var phone = that.data.phone;
       if (that.data.flag == 1) {
         console.log('解绑手机号')
-        var url_tmp = fileData.getListConfig().url_test + '/user/unBindPhone';
+        var url_tmp = util.getListConfig().url_test + '/user/unBindPhone';
       } else {
-        var url_tmp = fileData.getListConfig().url_test + '/user/bindPhone';
+        var url_tmp = util.getListConfig().url_test + '/user/bindPhone';
         console.log('绑定手机号')
       }
       wx.request({

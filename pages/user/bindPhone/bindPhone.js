@@ -1,5 +1,5 @@
 const app = getApp()
-var fileData = require("../../../utils/data.js");
+var fileData = require("../../../utils/util.js");
 var util = require('../../../utils/md5.js')
 Page({
 
