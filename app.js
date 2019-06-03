@@ -28,6 +28,24 @@ App({
               }
             }
           })
+          //测试信息返回超时的情况
+          // wx.getUserInfo({
+          //   success: res => {
+          //     var that = this
+          //     setTimeout(function () {
+          //       // 可以将 res 发送给后台解码出 unionId
+          //       that.globalData.userInfo = res.userInfo
+
+          //       // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+          //       // 所以此处加入 callback 以防止这种情况
+          //       console.log('app1');
+          //       if (that.userInfoReadyCallback) {
+          //         console.log('app2');
+          //         that.userInfoReadyCallback(res)
+          //       }
+          //     }, 3000);
+          //   }
+          // })
         }
         else{
           wx.setStorageSync('logFlag', false)
@@ -96,6 +114,7 @@ App({
   //     that.doLogin();
   //   }
   // },
+  
   globalData: {
     userInfo: null,
     openid:null,

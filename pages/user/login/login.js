@@ -11,6 +11,7 @@ Page({
   data: {
     inputVal1: '',
     inputVal2: '',
+    userInfo:'',
     logflag: wx.getStorageSync("logFlag")
   },
   inputValue1: function (res) {
@@ -122,84 +123,30 @@ Page({
       }
     })  },
   wxlogin:function(){
-    wx.getSetting({
-      success: res => {
-        if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-          wx.getUserInfo({
-            success: res => {
-              // 可以将 res 发送给后台解码出 unionId
-              app.globalData.userInfo = res.userInfo
-              console.log('userInfo++++' + res.userInfo.data)
-              wx.setStorageSync('logFlag', true)
-              // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-              // 所以此处加入 callback 以防止这种情况
-              if (app.userInfoReadyCallback) {
-                app.userInfoReadyCallback(res)
-              }
-            }
-          })
-        }
-        else {
-          wx.setStorageSync('logFlag', false)
-        }
-      }
-    })
+   
     // 登录
     commonData.wxlogin()
-  },
-  getPhoneNumber: function (e) {
-    console.log(e.detail.iv);
-    console.log(e.detail.encryptedData);
-    wx.login({
-      success: res => {
-        console.log(res.code);
-        wx.request({
-          url: 'http://localhost:8099/user/getPhone',
-          data: {
-            'encryptedData': encodeURIComponent(e.detail.encryptedData),
-            'iv': e.detail.iv,
-            'code': res.code
-          },
-          method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
-          header: {
-            'content-type': 'application/json'
-          }, // 设置请求的 header
-          success: function (res) {
-            if (res.status == 1) {//我后台设置的返回值为1是正确
-              //存入缓存即可
-              wx.setStorageSync('phone', res.phone);
-            }
-          },
-          fail: function (err) {
-            console.log(err);
-          }
-        })
-      }
-    })
   },
   
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // var _this=this
-    // wx.getSetting({
-    //   success(res) {
-    //     console.log(res.authSetting['scope.userInfo'])
-    //     if (res.authSetting['scope.userInfo']){
-    //       _this.wxlogin()
-    //       _this.setData({
-    //         logflag: false
-    //       })
-    //       console.log("logflag====" + _this.data.logflag)
-    //     }
-    //   }
-    // })
-    console.log('logflag======'+this.data.logflag)
-    if (this.data.logflag){
+    console.log('logflag======' + this.data.logflag)
+
+    if (app.globalData.userInfo && this.data.logflag) {
       this.wxlogin()
     }
+
+    // 给app.js 定义一个方法。
+    app.userInfoReadyCallback = res => {
+      console.log('userInfoReadyCallback: ', res);
+      console.log('获取用户信息成功');
+      if (this.data.logflag){
+        this.wxlogin()
+      }
+     
+    };
   },
 
   /**
