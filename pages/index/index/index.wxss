@@ -143,4 +143,7 @@
 	width: 100%;
   font-size: 22rpx;
 	color: #666666;
+	overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
 }
