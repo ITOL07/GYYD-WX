@@ -195,7 +195,7 @@ function getAddupData() {
   var arr = [
     {
       id: '0',
-      imgurl: '../../../static/images/coach/course.png',
+			bz2: '../../../static/images/coach/course.png',
 			course_name: '增肌max',
       finish: '全部完成',
       introduce: '私人定制肌肉强化训练',
@@ -208,7 +208,7 @@ function getAddupData() {
     },
     {
       id: '1',
-			imgurl: '../../../static/images/coach/course.png',
+			bz2: '../../../static/images/coach/course.png',
 			course_name: '增肌max',
 			finish: '全部完成',
 			introduce: '私人定制肌肉强化训练',
@@ -221,7 +221,7 @@ function getAddupData() {
     },
     {
       id: '2',
-			imgurl: '../../../static/images/coach/course.png',
+			bz2: '../../../static/images/coach/course.png',
 			course_name: '增肌max',
 			finish: '全部完成',
 			introduce: '私人定制肌肉强化训练',
@@ -234,7 +234,7 @@ function getAddupData() {
     },
     {
       id: '3',
-			imgurl: '../../../static/images/coach/course.png',
+			bz2: '../../../static/images/coach/course.png',
 			course_name: '增肌max',
 			finish: '全部完成',
 			introduce: '私人定制肌肉强化训练',
@@ -247,7 +247,7 @@ function getAddupData() {
     },
     {
       id: '4',
-			imgurl: '../../../static/images/coach/course.png',
+			bz2: '../../../static/images/coach/course.png',
 			course_name: '增肌max',
 			finish: '全部完成',
 			introduce: '私人定制肌肉强化训练',
@@ -260,7 +260,7 @@ function getAddupData() {
     },
     {
       id: '5',
-			iimgurl: '../../../static/images/coach/course.png',
+			bz2: '../../../static/images/coach/course.png',
 			course_name: '增肌max',
 			finish: '全部完成',
 			introduce: '私人定制肌肉强化训练',

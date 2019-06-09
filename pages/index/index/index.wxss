@@ -139,11 +139,8 @@
 	line-height: 22rpx;
   color: #333333;
 }
-.right3{
-	width: 100%;
-}
 .right3 text{
-	width: 100%;
+	width: 95%;
   font-size: 22rpx;
 	color: #666666;
 	overflow:hidden; 

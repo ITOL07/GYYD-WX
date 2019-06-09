@@ -40,7 +40,11 @@
 					<text>|</text>
 					<text>门店地址</text>
 				</view>
-				<text class="point" bindtap="openLocation">{{storeData.address}}</text>
+				<text class="point1" bindtap="openLocation">{{storeData.address}}</text>
+				<map id="map" longitude="{{longitude}}" latitude="{{latitude}}" 
+						 scale="18" class="point" markers="{{markers}}" bindmarkertap="openLocation" 
+						 bindtap="openLocation">
+				</map>
 			</view>
 			<view class="storeimg">
 				<view>

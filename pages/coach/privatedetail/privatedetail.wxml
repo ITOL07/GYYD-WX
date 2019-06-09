@@ -30,10 +30,10 @@
 						<image src="../../../static/images/coach/certificate.png"></image>
 						<text>证书({{credentials}})</text>
 					</view>
-					<view data-param='24' bindtap="caseClick">
+					<!-- <view data-param='24' bindtap="caseClick">
 						<image src="../../../static/images/coach/case.png"></image>
 						<text>案例({{cases}})</text>
-					</view>
+					</view> -->
 					<view data-param='25' bindtap="photoClick">
 						<image src="../../../static/images/coach/photo.png"></image>
 						<text>相册({{albums}})</text>
