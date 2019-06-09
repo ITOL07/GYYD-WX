@@ -30,7 +30,8 @@
 						<image src="../../../static/images/coach/certificate.png"></image>
 						<text>证书({{credentials}})</text>
 					</view>
-					<view data-param='24' bindtap="caseClick">
+					<!-- <view data-param='24' bindtap="caseClick"> -->
+          <view data-param='24'>
 						<image src="../../../static/images/coach/case.png"></image>
 						<text>案例({{cases}})</text>
 					</view>
