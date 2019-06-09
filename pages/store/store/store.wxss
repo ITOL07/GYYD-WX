@@ -49,13 +49,13 @@
 }
 .list_right{
 	width: 70%;
-	height: 150rpx;
+	height: 160rpx;
   display: flex;
   flex-direction: column;
-	justify-content: space-between;
-	margin-top: -10rpx;
+	justify-content: space-around;
 }
 .right1{
+	height: 30rpx;
   display: flex;
   flex-direction:row;
 	align-items: center;
@@ -73,14 +73,18 @@
   color:#999999;
   font-size: 22rpx;
 	margin-left: 3%;
-	margin-top: 6rpx;
+}
+.right2{
+	padding-left: 8%;
+	white-space: wrap;
+	line-height: 30rpx;
 }
 .right2 text{
   font-size:25rpx;
-  margin-left:8%;
   color: #666666;
 }
 .right3 {
+	height: 30rpx;
 	display: flex;
 	flex-direction: row;
 	align-items: center;

@@ -1,11 +1,10 @@
 /* pages/certificate/certificate.wxss */
 .container{
-	 height: 1200rpx;
 	 background-color: #FFFFFF;
 }
 .header{
   width: 90%;
-	margin: 0 5%; 
+	margin-top: 2%; 
 	display: flex;
 	flex-direction: row;
 	align-content: center;
