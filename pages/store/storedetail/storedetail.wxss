@@ -259,9 +259,19 @@
   font-size: 22rpx;
   color: #333333;
 }
+.right3{
+	width: 100%;
+}
 .right3 text{
+	width: 100%;
   font-size: 22rpx;
   color: #666666;
+	overflow:hidden; 
+	text-overflow:ellipsis;
+	display:-webkit-box; 
+	-webkit-line-clamp:1;
+	-webkit-box-orient:vertical;
+	white-space: nowrap;
 }
 .scroll_body2{
   width:90%;
