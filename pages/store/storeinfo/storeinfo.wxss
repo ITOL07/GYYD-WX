@@ -87,7 +87,7 @@
 }
 .map{
   width: 100%;
-  height: 150rpx;
+  height: 450rpx;
   display: flex;
   flex-direction: column;
   margin-top:20rpx;
@@ -102,8 +102,13 @@
 	margin-bottom: 6rpx;
 	margin-right: 15rpx;
 }
-.point{
+.point1{
 	margin-left: 20rpx;
+}
+.point{
+	width: 90%; 
+	height: 300rpx;
+	margin: 0 5%;
 }
 .map text, .storeimg text{
 	font-size: 30rpx;

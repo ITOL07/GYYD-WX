@@ -75,7 +75,8 @@
   height: 22rpx;
 }
 .header_right_bottom{
-  width: 90%;
+  /* width: 90%; */
+	width: 40%;
   height:50%;
   display:flex;
   flex-direction:row;
@@ -150,16 +151,14 @@
   color:#666666;
 }
 
-.course{
 
-}
 .private_head{
 	margin-left: 3%;
 }
 .listall{
   width: 100%;
-  height: 900rpx;
 	margin-top: 10rpx;
+	margin-bottom: 50rpx;
   display:flex;
   flex-direction:row;
 	flex-wrap: wrap;

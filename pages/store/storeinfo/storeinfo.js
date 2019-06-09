@@ -9,7 +9,15 @@ Page({
     close_time: null,
     storeImg: null,
     latitude:null,
-    longitude:null
+    longitude:null,
+		markers: [{
+			iconPath: "../../../static/images/store/address.png",
+			id: 0,
+			latitude: 0,
+			longitude: 0,
+			width: 28,
+			height: 38
+		}]
   },
 
   /**
@@ -35,8 +43,15 @@ Page({
           latitude:res.data.la,
           longitude:res.data.lo
         })
-        
-        console.log("storeData====" + _this.data.storeData)
+				_this.data.markers[0].latitude = _this.data.latitude
+				_this.data.markers[0].longitude = _this.data.longitude
+				_this.setData({
+					markers: _this.data.markers
+				})
+				console.log("markers====" + JSON.stringify(_this.data.markers))
+				console.log("latitude====" + _this.data.latitude)
+				console.log("longitude====" + _this.data.longitude)
+				console.log("storeData====" + JSON.stringify(_this.data.storeData))
         console.log("close_time====" + _this.data.close_time)
       }
     }) 
@@ -72,11 +87,11 @@ Page({
       // success(res) {
     const latitude = _this.data.latitude
     const longitude = _this.data.longitude
-      wx.openLocation({
-        latitude,
-        longitude,
-        scale: 18
-      })
+		wx.openLocation({
+			latitude,
+			longitude,
+			scale: 18
+		})
     //  }
     // })
   },

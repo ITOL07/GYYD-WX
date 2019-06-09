@@ -34,7 +34,7 @@
           <view data-param='24'>
 						<image src="../../../static/images/coach/case.png"></image>
 						<text>案例({{cases}})</text>
-					</view>
+					</view> -->
 					<view data-param='25' bindtap="photoClick">
 						<image src="../../../static/images/coach/photo.png"></image>
 						<text>相册({{albums}})</text>
