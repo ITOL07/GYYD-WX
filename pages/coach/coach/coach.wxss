@@ -96,6 +96,14 @@
   color: #333333;
 }
 .list_right .right3 text{
+	width:102%;
   font-size: 22rpx;
   color: #666666;
+	overflow:hidden; 
+	text-overflow:ellipsis;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient:vertical;
+	white-space: nowrap;
+	display: inline-block; 
+	/* display:-webkit-box;  */
 }
