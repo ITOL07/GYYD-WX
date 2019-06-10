@@ -9,20 +9,23 @@
   height: 90rpx;
 	background-color: #FFFFFF;
 	line-height: 90rpx;
-	border: 2rpx solid #EEEEEE; 
+	border: 1rpx solid #EEEEEE; 
 	padding: 0 3.5%;
   display:flex;
   flex-direction:row;
   justify-content:space-between;
 	align-items: center;
 }
+.top1{
+	border-top: 0; 	
+}
 .top text, .top1 text{
   color:#666666;
   font-size: 30rpx;
 }
 .top image{
-	width: 20rpx;
-	height: 35rpx;
+	width: 12rpx;
+	height: 22rpx;
 }
 .else{
 	margin-top: 30rpx;

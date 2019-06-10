@@ -10,7 +10,7 @@
     <!-- <text>136****2345 ></text>  -->
     <text>{{phoneNo}}</text> 
   </view>
-  <view class="top" bindtap='forgetPass'>
+  <view class="top top1" bindtap='forgetPass'>
     <text>修改密码</text>
     <image src="../../../static/images/littleicon/more.png"></image> 
     <!-- <text>></text>  -->
