@@ -29,8 +29,8 @@
 	margin-right: 20rpx;
 }
 .top image:nth-child(2){
-	width: 20rpx;
-	height: 40rpx;
+	width: 12rpx;
+	height: 22rpx;
 }
 .bottom{
 	width: 100%;
