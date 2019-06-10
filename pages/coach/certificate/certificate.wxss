@@ -1,4 +1,7 @@
-/* pages/certificate/certificate.wxss */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
 .container{
 	 background-color: #FFFFFF;
 }
@@ -11,9 +14,17 @@
 	justify-content: space-between;
 	flex-wrap: wrap;
 }
-.header image{
-  width: 329rpx;
+.imgview{
+	display: inline-block;
+	width: 329rpx;
   height: 233rpx;
   border-radius: 5px;
 	margin: 2% 0;
+}
+.imgview image{
+  width: 100%;
+  height: 100%;
+}
+.fade_in {
+    animation: fadeIn 1s both;
 }

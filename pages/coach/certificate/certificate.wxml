@@ -1,9 +1,12 @@
 <!--pages/certificate/certificate.wxml-->
 <view class="container">
 	<view class='header'>      
-		<block wx:for='{{icons_url}}' wx:key="this">
-			<image  src='{{item}}' data-index='{{index}}' bindtap='previewImg'
-							mode="aspectFit"></image>
-		</block>
+		<view wx:for='{{icons_url}}' wx:key="this" class="imgview">
+			<image wx:if="{{ item.loaded }}" src="{{ item.url }}"
+						 bindtap='previewImg'	mode="aspectFit" class="fade_in"></image>
+		</view>
 	</view>
 </view>
+<!-- 引入图片预加载组件 -->
+<import src="../../../utils/img-loader.wxml"/>
+<template is="img-loader" data="{{ imgLoadList }}"></template>
