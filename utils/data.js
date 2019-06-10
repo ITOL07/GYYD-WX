@@ -58,7 +58,7 @@ function getListConfig() {
     {
     url_sc:'http://39.106.156.239:80',
     url_test: 'https://www.guyueyundong.com',
-    // url_test: 'http://localhost:8099'
+    // url_test: 'http://localhost:9099'
   }
   return arr;
 }

@@ -25,6 +25,7 @@ Page({
       url: url_tmp + '/member/qryLesson',
       data:{
         mem_id:app.globalData.user_id,
+        coach_id:'',
         status:(typeof(options.status) == "undefined") ? '' : options.status
       },
       success(res) {
