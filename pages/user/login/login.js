@@ -124,8 +124,34 @@ Page({
     })  },
   wxlogin:function(){
    
-    // 登录
-    commonData.wxlogin()
+    // 获取用户信息
+    wx.getSetting({
+      success: res => {
+        if (res.authSetting['scope.userInfo']) {
+          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
+          wx.getUserInfo({
+            success: res => {
+              // 可以将 res 发送给后台解码出 unionId
+              app.globalData.userInfo = res.userInfo
+              console.log('userInfo++++' + res.userInfo.data)
+              wx.setStorageSync('logFlag', true)
+              // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+              // 所以此处加入 callback 以防止这种情况
+              if (app.userInfoReadyCallback) {
+                // if (this.data.logflag) {
+                  console.log('网络延时')
+                  commonData.wxlogin()
+                // }
+              }
+            }
+          })
+         
+        }
+        else {
+          wx.setStorageSync('logFlag', false)
+        }
+      }
+    })
   },
   
   /**
@@ -135,7 +161,7 @@ Page({
     console.log('logflag======' + this.data.logflag)
 
     if (app.globalData.userInfo && this.data.logflag) {
-      this.wxlogin()
+      commonData.wxlogin()
     }
 
     // 给app.js 定义一个方法。
@@ -143,7 +169,7 @@ Page({
       console.log('userInfoReadyCallback: ', res);
       console.log('获取用户信息成功');
       if (this.data.logflag){
-        this.wxlogin()
+        commonData.wxlogin()
       }
      
     };
