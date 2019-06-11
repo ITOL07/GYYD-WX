@@ -54,7 +54,7 @@ Page({
 			success(res) {
 				console.log(res.data)
 				_this.setData({
-					courseData_try: res.data,
+          courseData_try: commonData.deWeight(res.data, 'courseType'),
 				})
 			}
 		})
@@ -63,7 +63,7 @@ Page({
 			success(res) {
 				console.log(res.data)
 				_this.setData({
-					courseData: res.data
+          courseData: commonData.deWeight(res.data, 'courseType')
 				})
 			}
 		})

@@ -166,7 +166,7 @@ Page({
         console.info(res.data)
         if (res.statusCode == 200) {
           that.setData({
-            courseData:res.data
+            courseData: commonData.deWeight(res.data,'courseType')
           })
         }
       }

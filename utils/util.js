@@ -12,6 +12,17 @@ function routers(routers,title){
   })
 }
 
+function deWeight(arr,param){
+  console.log("传入数组："+arr)
+  var hash = [];
+  arr = arr.reduce(function(x,y){
+    hash[y[param]] ? '': hash[y[param]]=true&&x.push(y);
+    return x;
+  },[])
+  console.log("返回去重数组：" + arr)
+  return arr
+}
+
 const formatTime = date => {
   const year = date.getFullYear()
   const month = date.getMonth() + 1
@@ -114,6 +125,7 @@ module.exports = {
   formatTimeHM: formatTimeHM,
   routers,
   distance,
+  deWeight: deWeight,
   wxlogin: wxlogin,
 	previewImg: previewImg
 }
