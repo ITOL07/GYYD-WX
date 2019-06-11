@@ -100,9 +100,16 @@ Page({
     // })
   },
 
-	previewImg: function (e) {
-		commonData.previewImg(e, this.data.icons_url)
-	},
+	// previewImg: function (e) {
+	// 	commonData.previewImg(e, this.data.icons_url)
+	// },
+  previewImg: function (e) {
+    var images = this.data.icons_url
+    images = images.map(item => {
+      return item.url
+    })
+    commonData.previewImg(e, images)
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
