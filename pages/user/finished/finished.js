@@ -44,7 +44,8 @@ Page({
       data: {
         mem_id: app.globalData.user_id,
         coach_id: '',
-        club_id: ''
+        club_id: '',
+        reg_date:''
       },
       success(res) {
         console.log(res.data)
