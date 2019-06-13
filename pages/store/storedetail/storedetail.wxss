@@ -210,6 +210,7 @@
 }
 .list_right{
   width:70%;
+  height:80%;
   display: flex;
   flex-direction: column;
 	justify-content: space-around;
@@ -243,13 +244,19 @@
 	font-size: 32rpx;
 	color: #F85F58;
 }
-.right2{
+/* .right2{
 	width: 35%;
   display: flex;
   flex-direction:row;
 	justify-content: space-between;
 	align-items: center;
   margin-top: 20rpx;
+}  */
+.right2{
+	width: 27%;
+  display: flex;
+  flex-direction:row;
+	justify-content: space-around;
 }
 .right2 image{
   width: 19rpx;

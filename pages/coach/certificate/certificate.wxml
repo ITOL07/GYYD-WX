@@ -2,8 +2,7 @@
 <view class="container">
 	<view class='header'>      
 		<view wx:for='{{icons_url}}' wx:key="this" class="imgview">
-			<image wx:if="{{ item.loaded }}" src="{{ item.url }}"
-						 bindtap='previewImg'	mode="aspectFit" class="fade_in"></image>
+			<image wx:if="{{ item.loaded }}" src="{{ item.url }}" data-index="{{index}}"  bindtap='previewImg'	mode="aspectFit" class="fade_in"></image>
 		</view>
 	</view>
 </view>

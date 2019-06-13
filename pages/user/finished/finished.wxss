@@ -1,0 +1,88 @@
+/* pages/addup/addup.wxss */
+.container{
+  background:#FFFFFF;
+}
+.list{
+  width: 95%;
+  height:	252rpx;
+	border-bottom: 2rpx solid #EEEEEE;
+  margin: 0 2.5%;
+  display:flex;
+  flex-direction:row;
+	align-items: center;
+	justify-content: space-between;
+	position: relative;
+}
+.left image{
+  width: 160rpx;
+  height: 160rpx;
+	border-radius: 8rpx;
+}
+.left view{
+	width: 47rpx;
+	height: 26rpx;
+	background-color: #FBBE44;
+	border-radius: 4rpx;
+	font-size: 20rpx;
+	color: #333333;
+	line-height: 26rpx;
+	text-align: center;
+	position: absolute;
+	left: 0;
+	top: 40rpx;
+}
+.right{
+  width: 72%;
+  height:180rpx;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.right .top{
+	width: 100%;
+  display:flex;
+  flex-direction:row;
+  justify-content:space-between;
+}
+.top text:nth-child(1){
+  font-size: 30rpx;
+  color:#333333;
+}
+.top text:nth-child(2){
+  font-size: 30rpx;
+  color:#F85F58;
+}
+.right .middle{
+	width: 100%;
+  display:flex;
+  flex-direction:row;
+  justify-content:space-between;
+	align-items: center;
+}
+.middle text{
+  font-size: 22rpx;
+  color:#999999;
+}
+.right .bottom{
+	width: 100%;
+  display:flex;
+  flex-direction:row;
+  justify-content:space-between;
+	align-items: center;
+}
+.bottom text:nth-child(1){
+  font-size: 30rpx;
+  color:#666666;
+}
+.bottom text:nth-child(2){
+  font-size: 26rpx;
+  color:#666666;
+}
+.tips{
+	width: 100%;
+	height: 80rpx;
+	text-align: center;
+	font-size: 28rpx;
+	color: #666666;
+	line-height: 80rpx;
+}

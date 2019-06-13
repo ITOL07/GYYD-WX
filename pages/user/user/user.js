@@ -49,13 +49,13 @@ Page({
     commonData.routers(addupRouter, addupTitle);
   },
   finishedClick: function () {
-    var addupRouter = '../../user/addup/addup?status=2';
-    var addupTitle = '已完成';
+    var addupRouter = '../../user/finished/finished';
+    var addupTitle = '已结束';
     commonData.routers(addupRouter, addupTitle);
   },
   appointmentClick: function () {
-    var addupRouter = '../../user/addup/addup?status=0';
-    var addupTitle = '预约中';
+    var addupRouter = '../../user/unfinished/unfinished';
+    var addupTitle = '待完成';
     commonData.routers(addupRouter, addupTitle);
   },
   loadClick: function () {

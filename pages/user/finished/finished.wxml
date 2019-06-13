@@ -1,0 +1,50 @@
+<!--pages/addup/addup.wxml-->
+<view class="container">
+  <scroll-view scroll-y="true" class="scroll_body"  wx:if="{{addupData.length+course_cancel.length>=1}}">
+		<view wx:for="{{addupData}}" wx:key="this" class="list"> 
+			<view class="left">
+				<image src="{{item.bz2}}"></image>
+				<view>私教</view>
+			</view>
+			<view class="right">
+				<view class="top">
+					<text>{{item.course_name}}</text>
+					<text>第{{item.seq_no}}节课</text>
+				</view>
+				<view class="middle">
+					<text>上课时间：{{item.start_time_1}}</text>
+					<text>共{{item.buy_count}}节</text>
+				</view>
+				<view class="bottom">
+					<text>{{item.coach_name}}</text>
+					<text>{{item.club_name}}</text>
+				</view>
+			</view>
+		</view>
+    <text>已取消</text>
+    <view wx:for="{{course_cancel}}" wx:key="this" class="list"> 
+			<view class="left">
+				<image src="{{item.bz2}}"></image>
+				<view>私教</view>
+			</view>
+			<view class="right">
+				<view class="top">
+					<text>{{item.courseName}}</text>
+					<text>第{{item.seqNo}}节课</text>
+				</view>
+				<view class="middle">
+					<text>上课时间：{{item.startTime1}}</text>
+					<text>共{{item.buy_count}}节</text>
+				</view>
+				<view class="bottom">
+					<text>{{item.coachName}}</text>
+					<text>{{item.clubName}}</text>
+				</view>
+			</view>
+		</view>
+  </scroll-view>
+	<view wx:else class="tips">
+		您还没有购课，请前往购买！
+	</view>
+</view>
+

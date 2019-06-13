@@ -25,11 +25,11 @@
       </view>
       <view class="nav_list" bindtap="finishedClick">
         <image src="../../../static/images/user/yiwancheng.png"></image>
-        <text>已完成</text>
+        <text>已结束</text>
       </view>
       <view class="nav_list" bindtap="appointmentClick">
         <image src="../../../static/images/user/yuyuezhong.png"></image>
-        <text>预约中</text>
+        <text>待完成</text>
       </view>
       <view class="nav_list" bindtap="loadClick">
         <image src="../../../static/images/user/daiyuyue.png"></image>

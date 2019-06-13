@@ -18,6 +18,8 @@
     "pages/user/message/message",
     "pages/user/order/order",
     "pages/user/addup/addup",
+    "pages/user/finished/finished",
+    "pages/user/unfinished/unfinished",
     "pages/user/file/file",
     "pages/user/useragree/useragree",
     "pages/user/orderdetail/orderdetail",
