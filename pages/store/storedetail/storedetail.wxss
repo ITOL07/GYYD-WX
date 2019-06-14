@@ -201,7 +201,11 @@
 	align-items: center;
 }
 .list_left{
-  width:20%;
+  width: 18%;
+	height: 70%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 } 
 .list_left image{
   width: 120rpx;
@@ -209,14 +213,15 @@
 	border-radius: 50%;
 }
 .list_right{
-  width:70%;
-  height:80%;
+  width: 72%;
+  height: 70%;
   display: flex;
   flex-direction: column;
 	justify-content: space-around;
 }
 .right1{
 	width: 100%;
+	line-height: 60rpx;
   display: flex;
   flex-direction:row;
 }
@@ -275,7 +280,7 @@
   color: #666666;
 	overflow:hidden; 
 	text-overflow:ellipsis;
-	display:-webkit-box; 
+	display: inline-block; 
 	-webkit-line-clamp:1;
 	-webkit-box-orient:vertical;
 	white-space: nowrap;
