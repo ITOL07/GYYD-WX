@@ -17,7 +17,8 @@ Page({
     NewChangesAgain: '',
     success: false,
     state2: 1,
-    state:''
+    state:'',
+    tel:''
   },
   /**
     * 获取验证码
@@ -60,6 +61,10 @@ Page({
     })
 
     var phone = that.data.phone;
+    let no = phone.substring(0, 3) + '***' + phone.substring(7, 11)
+    that.setData({
+      tel: no
+    })
     var currentTime = that.data.currentTime //把手机号跟倒计时值变例成js值
     var warn = null; //warn为当手机号为空或格式不正确时提示用户的文字，默认为空
     var url_tmp = fileData.getListConfig().url_test;

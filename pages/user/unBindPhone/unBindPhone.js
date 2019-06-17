@@ -1,6 +1,6 @@
 const app = getApp()
-var util = require("../../../utils/util.js");
-var util = require('../../../utils/md5.js')
+var util = require("../../../utils/data.js");
+var util1 = require('../../../utils/md5.js')
 Page({
 
   /**

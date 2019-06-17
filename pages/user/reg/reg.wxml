@@ -31,7 +31,7 @@
 			</view>
 			<view class="bottom">
 				<button bindtap="sendVcode">提交验证码</button>
-				<text>验证短信已发送到177***0000</text>
+				<text>验证短信已发送到{{tel}}</text>
 			</view>
 		</view>
 		<view wx:else>

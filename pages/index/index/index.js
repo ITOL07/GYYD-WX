@@ -79,6 +79,7 @@ Page({
     }
     var _this=this
     var url_tmp = fileData.getListConfig().url_test;
+    //获取活动图
     wx.request({
       // url: url_tmp + '/coach/qry',
       url: url_tmp + '/img/load1',
@@ -93,6 +94,7 @@ Page({
         })
       }
     }) 
+    //获取教练信息
     wx.request({
       // url: url_tmp + '/coach/qry',
       url: url_tmp + '/coach/getCoach',
@@ -103,17 +105,9 @@ Page({
         })
       }
     }) 
-    // wx.request({
-    //   // url: url_tmp + '/coach/qry',
-    //   url: url_tmp + '/club/getClub',
-    //   success(res) {
-    //     console.log(res.data)
-    //     _this.setData({
-    //       navData: res.data
-    //     })
-    //   }
-    // }) 
-    that.getClubInfo()
+    //获取场地信息
+    that.getClubInfo();
+    that.getPhoneNo();
   },
   getUserInfo: function(e) {
     console.log(e)
@@ -176,4 +170,21 @@ Page({
 
     })
   },
+  getPhoneNo:function(){
+    var _this = this
+    var url_tmp = fileData.getListConfig().url_test;
+    //获取活动图
+    wx.request({
+      url: url_tmp + '/user/getPhone',
+      data: {
+        //6为轮播图
+        open_id: app.globalData.openid
+      },
+      success(res) {
+        console.log(res.data)
+        app.globalData.phoneNo = res.data.userName
+        
+      }
+    }) 
+  }
 })

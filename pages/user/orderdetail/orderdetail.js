@@ -1,6 +1,7 @@
 // pages/orderdetail/orderdetail.js
 const app = getApp()
 var fileData = require("../../../utils/data.js");
+var commonData = require("../../../utils/util.js"); 
 Page({
 
   /**
@@ -32,7 +33,8 @@ Page({
     order_no: null,
     sum:null,
     course_id:null,
-    state_desc:null
+    state_desc:null,
+    
   },
 
     // 这里放置自定义方法
@@ -81,75 +83,91 @@ Page({
     },
   buyCourse: function (e) {
     var _this = this
-    var url_tmp = fileData.getListConfig().url_test;
-    _this.setData({
-      order_no: _this.getOrderNo(),
-     
-    })
-    if (e.currentTarget.dataset.try_flag == 1) {
-      _this.setData({
-        count: 1,
-        num:1
-      })
-    }
-    wx.request({
-      url: url_tmp + '/pay/id',
-      data: {
-        // desc: 'iPhone XS Max',
-        // order_no: '20190329000002'
-        desc: e.currentTarget.dataset.desc,
-        order_no: _this.data.order_no,
-        openid: app.globalData.openid,
-        // sale_id: e.currentTarget.dataset.saleid,
-        sale_id: _this.data.course_id,
-        try_flag: e.currentTarget.dataset.try_flag,
-        // price: e.currentTarget.dataset.price * _this.data.count
-        price: e.currentTarget.dataset.price,
-        count: e.currentTarget.dataset.count
-      },
-      method: 'POST',
-      header: {
-        'content-type': 'application/x-www-form-urlencoded' // 默认值
-      },
-
-      success(res) {
-        console.log("desc==" + _this.data.order_no + "openid===" + _this.data.openid)
-        console.log(res.data)
-        // console.log(res.data.errno)
-        if (res.data.errno == "-1") {
-          wx.showToast({
-            title: res.data.errcode,
-            icon: 'none',
-            duration: 2000
-          });
-          return
-        }
-        _this.setData({
-          timeStamp: res.data.timestamp,
-          nonceStr: res.data.noncestr,
-          package: res.data.package,
-          signType: 'MD5',
-          paySign: res.data.sign
-        })
-        wx.requestPayment({
-          timeStamp: _this.data.timeStamp,
-          nonceStr: _this.data.nonceStr,
-          package: _this.data.package,
-          signType: 'MD5',
-          paySign: _this.data.paySign,
-          success(res) {
-            console.log(_this.data.order_no + '支付成功：' + res)
-            //发送支付状态，服务端更新状态
-            _this.sendPayRes(_this.data.order_no)
-          },
-          fail(res) {
-            console.log(_this.data.order_no + '支付失败' + res)
-            _this.sendPayRes(_this.data.order_no)
+    var tel = app.globalData.phoneNo;
+    if(tel==null){
+      wx.showModal({
+        title: '绑定手机确认',
+        content: '点击确认绑定手机号',
+        success: function (sm) {
+          if (sm.confirm) {
+            console.log("用户点击确认")
+            var addupRouter = '../../user/bindPhone/bindPhone?id=0' ;
+            var addupTitle='绑定手机号'
+            commonData.routers(addupRouter, addupTitle);
+          } else if (sm.cancel) {
+            console.log('用户点击取消')
           }
+        }
+      })
+    }else {
+      var url_tmp = fileData.getListConfig().url_test;
+      _this.setData({
+        order_no: _this.getOrderNo(),
+      })
+      if (e.currentTarget.dataset.try_flag == 1) {
+        _this.setData({
+          count: 1,
+          num: 1
         })
       }
+      wx.request({
+        url: url_tmp + '/pay/id',
+        data: {
+          desc: e.currentTarget.dataset.desc,
+          order_no: _this.data.order_no,
+          openid: app.globalData.openid,
+          // sale_id: e.currentTarget.dataset.saleid,
+          sale_id: _this.data.course_id,
+          try_flag: e.currentTarget.dataset.try_flag,
+          // price: e.currentTarget.dataset.price * _this.data.count
+          price: e.currentTarget.dataset.price,
+          count: e.currentTarget.dataset.count
+        },
+        method: 'POST',
+        header: {
+          'content-type': 'application/x-www-form-urlencoded' // 默认值
+        },
 
-    })
+        success(res) {
+          console.log("desc==" + _this.data.order_no + "openid===" + _this.data.openid)
+          console.log(res.data)
+          // console.log(res.data.errno)
+          if (res.data.errno == "-1") {
+            wx.showToast({
+              title: res.data.errcode,
+              icon: 'none',
+              duration: 2000
+            });
+            return
+          }
+          _this.setData({
+            timeStamp: res.data.timestamp,
+            nonceStr: res.data.noncestr,
+            package: res.data.package,
+            signType: 'MD5',
+            paySign: res.data.sign
+          })
+          wx.requestPayment({
+            timeStamp: _this.data.timeStamp,
+            nonceStr: _this.data.nonceStr,
+            package: _this.data.package,
+            signType: 'MD5',
+            paySign: _this.data.paySign,
+            success(res) {
+              console.log(_this.data.order_no + '支付成功：' + res)
+              //发送支付状态，服务端更新状态
+              _this.sendPayRes(_this.data.order_no)
+            },
+            fail(res) {
+              console.log(_this.data.order_no + '支付失败' + res)
+              _this.sendPayRes(_this.data.order_no)
+            }
+          })
+        }
+
+      })
+    }
+    
   },
   sendPayRes: function (order_no) {
     var _this = this

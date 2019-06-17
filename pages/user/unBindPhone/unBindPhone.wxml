@@ -35,7 +35,7 @@
 	<view class = 'success'>
 		<icon type="success" size="70"/>
 		<text class='cheer1'>
-			绑定成功
+			解绑成功
 		</text>
 		<text class='cheer'>
 			您已成功解绑手机号，期待您绑定新的手机号哦！
