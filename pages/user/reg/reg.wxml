@@ -30,7 +30,7 @@
 							placeholder-class="placetext"></input>
 			</view>
 			<view class="bottom">
-				<button bindtap="submit">提交验证码</button>
+				<button bindtap="sendVcode">提交验证码</button>
 				<text>验证短信已发送到177***0000</text>
 			</view>
 		</view>

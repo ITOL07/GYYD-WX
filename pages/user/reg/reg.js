@@ -16,7 +16,8 @@ Page({
     NewChanges: '',
     NewChangesAgain: '',
     success: false,
-    state: '',
+    state2: 1,
+    state:''
   },
   /**
     * 获取验证码
@@ -100,7 +101,8 @@ Page({
             success: function (res) {
               console.log(res)
               that.setData({
-                VerificationCode: res.data.vericode
+                VerificationCode: res.data.vericode,
+                state2:2
               })
 
               //当手机号正确的时候提示用户短信验证码已经发送
@@ -146,9 +148,9 @@ Page({
 
     })
 
+
   },
-  submit: function (e) {
-    var that = this
+  sendVcode:function(){
     if (this.data.Code == '') {
       wx.showToast({
         title: '请输入验证码',
@@ -163,8 +165,16 @@ Page({
         duration: 2000
       })
       return
+    }else{
+      this.setData({
+        state2:3
+      })
     }
-    else if (this.data.NewChanges == '') {
+  },
+  submit: function (e) {
+    var that = this
+
+    if (this.data.NewChanges == '') {
       wx.showToast({
         title: '请输入密码',
         image: '/images/error.png',
