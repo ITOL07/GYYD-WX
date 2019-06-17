@@ -29,7 +29,7 @@
 						</view>
 					</view>
 					<view class="list_bottom">
-						<text>下单时间：{{item.recv_time}}</text>
+						<text>下单时间：{{item.recv_time}} 课时数：{{item.count}}</text>
 							<view wx:if="{{item.trade_state_desc=='订单未支付'}}">
 							<button>取消订单</button>
 							<button bindtap='buyCourse' id="{{item.order_no}}">支付</button>

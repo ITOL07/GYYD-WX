@@ -12,7 +12,7 @@
 					<text>第{{item.seq_no}}节课</text>
 				</view>
 				<view class="middle">
-					<text>上课时间：{{item.start_time_1}}</text>
+					<text>上课时间：{{item.datex}} {{item.timex}}</text>
 					<text>共{{item.buy_count}}节</text>
 				</view>
 				<view class="bottom">
@@ -33,7 +33,7 @@
 					<text>第{{item.seq_no}}节课</text>
 				</view>
 				<view class="middle">
-					<text>上课时间：{{item.start_time_1}}</text>
+					<text>上课时间：{{item.datex}} {{item.timex}}</text>
 					<text>共{{item.buy_count}}节</text>
 				</view>
 				<view class="bottom">
