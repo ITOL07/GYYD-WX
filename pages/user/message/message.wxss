@@ -54,3 +54,10 @@
   color:#666666;
   font-size: 22rpx;
 }
+.tips{
+	width: 100%;
+	font-size: 28rpx;
+	color: #666666;
+	line-height: 200rpx;
+	text-align: center;
+}

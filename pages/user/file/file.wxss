@@ -1,6 +1,5 @@
 /* container1 */
-.containe1r{
-	height: 1200rpx;
+.container1{
 	background-color: #FAFAFA;
 }
 
@@ -84,7 +83,7 @@
   text-align:left;
 	line-height: 50rpx;
   display:block;
-  margin-left:5%;
+  margin-left:3%;
 }
 .bottom .list text:last-child{
   color:#333333;
@@ -95,4 +94,12 @@
   /* color:#333333; */
   text-align:right;
   display:block;
+}
+.tips{
+	width: 100%;
+	background-color: #FFFFFF;
+	font-size: 28rpx;
+	color: #666666;
+	line-height: 200rpx;
+	text-align: center;
 }

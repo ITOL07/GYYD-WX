@@ -1,7 +1,6 @@
-<view class="container1">
+<view class="container1"  wx:if="{{student!=null}}">
 	<view class="displaycolumn top">
-	<!--档案标题部分-->
-		<view class="time">2018年12月04日</view>
+		<view class="time">{{date}}</view>
 		<view class="text">左滑查看历史档案</view>
 		<scroll-view wx:if="{{flag}}" bindscroll="scroll" scroll-x 
 								class="displayrow inside">
@@ -11,72 +10,75 @@
 			<view class="space" wx:for="{{navData}}" wx:key="this"></view>
 		</scroll-view>
 	</view>
-<view class="bottom">
+	<view class="bottom">
       <text class="body">身体数据</text>
       <view class="list">
         <image src="../../../static/images/user/tizhong.png"></image>
         <text>体重</text>
-        <text>60.0kg</text>
+        <text>{{student.weight}}kg</text>
       </view>
       <view class="list">
         <image src="../../../static/images/user/shengao.png"></image>
         <text>身高</text>
-        <text>173.0cm</text>
+        <text>{{student.height}}cm</text>
       </view>
       <view class="list">
         <image src="../../../static/images/user/tizhilv.png"></image>
         <text>体脂率</text>
-        <text>25%</text>
+        <text>{{student.fatrate}}%</text>
       </view>
       <view class="list">
         <image src="../../../static/images/user/bmi.png"></image>
         <text>BMI</text>
-        <text>27.3</text>
+        <text>{{student.bmi}}</text>
       </view>
       <view class="list">
         <image src="../../../static/images/user/jichudaixie.png"></image>
         <text>基础代谢</text>
-        <text>---</text>
+        <text>{{student.metabolism}}</text>
       </view>
       <view class="list">
         <image src="../../../static/images/user/jirou.png"></image>
         <text>肌肉</text>
-        <text>18.1kg</text>
+        <text>{{student.muscle}}kg</text>
       </view>
       <view class="list">
         <image src="../../../static/images/user/zhifanglv.png"></image>
         <text>脂肪</text>
-        <text>15.0kg</text>
+        <text>{{student.fat}}kg</text>
       </view>
       <view class="list">
         <image src="../../../static/images/user/xiongwei.png"></image>
         <text>胸围</text>
-        <text>82cm</text>
+        <text>{{student.bust}}cm</text>
       </view>
       <view class="list">
         <image src="../../../static/images/user/tunwei.png"></image>
         <text>臀围</text>
-        <text>86cm</text>
+        <text>{{student.hipline}}cm</text>
       </view>
       <view class="list">
         <image src="../../../static/images/user/yaowei.png"></image>
         <text>腰围</text>
-        <text>67cm</text>
+        <text>{{student.waist}}cm</text>
       </view>
       <view class="list">
         <image src="../../../static/images/user/datuiwei.png"></image>
         <text>大腿围</text>
-        <text>L:56cm  r:56cm</text>
+        <text>L:{{student.thigh.left}}cm  r:{{student.thigh.right}}cm</text>
       </view>
       <view class="list">
         <image src="../../../static/images/user/xiaotuiwei.png"></image>
         <text>小腿围</text>
-        <text>L:56cm  r:56cm</text>
+        <text>L:{{student.leg.left}}cm  r:{{student.leg.right}}cm</text>
       </view>
       <view class="list">
         <image src="../../../static/images/user/biwei.png"></image>
         <text>臂围</text>
-        <text>L:26cm  r:26cm</text>
+        <text>L:{{student.arm.left}}cm  r:{{student.arm.right}}cm</text>
       </view>
-    </view>
+  </view>
+</view>
+<view class="tips" wx:else>
+	你还没有身体档案，快去通知你的教练进行添加吧！
 </view>
