@@ -5,8 +5,8 @@
       <text class="{{selected==true?'selected':''}}" bindtap="switch1">课程提醒</text>
       <text class="{{selected==false?'selected':''}}" bindtap="switch2">系统通知</text>
     </view>
-    <view class="bottom">
-      <view wx:for="{{messageData}}" wx:key="this">
+    <view class="bottom" wx:if="{{messageData1!=null}}">
+      <view wx:for="{{messageData1}}" wx:key="this">
         <view class="list">
           <view class="list_top">
             <text class="text1">{{item.title}}{{item.type}}</text>
@@ -16,5 +16,8 @@
         </view>
       </view>
     </view>
+		<view class="tips">
+			您还没有消息通知，请移驾他处！！！
+		</view>
   </scroll-view>
 </view>

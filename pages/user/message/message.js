@@ -9,6 +9,7 @@ Page({
    */
   data: {
     messageData: fileData.getMessageData(),
+		messageData1: null,
 		selected: true
   },
 
