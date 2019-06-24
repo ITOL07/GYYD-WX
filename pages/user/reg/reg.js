@@ -73,7 +73,7 @@ Page({
       method: "POST",
       data: {
         phoneNo: that.data.phone
-      },
+      }, 
       header: {
         'content-type': 'application/x-www-form-urlencoded'
       },

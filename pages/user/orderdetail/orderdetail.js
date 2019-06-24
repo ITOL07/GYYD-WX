@@ -10,7 +10,7 @@ Page({
   data: {
     // 这里是一些组件内部数据
     // input默认是1 
-    num: 10,
+    
     // 使用data数据对象设置样式名 
     minusStatus: 'disabled',
     course_type:'',
@@ -34,7 +34,8 @@ Page({
     sum:null,
     course_id:null,
     state_desc:null,
-    
+    min_count:null,
+    // num: 10
   },
 
     // 这里放置自定义方法
@@ -42,12 +43,13 @@ Page({
     bindMinus: function () {
       var num = this.data.num;
       var price = this.data.courseData.min_price;
+      var min_count= this.data.min_count;
       // 如果大于1时，才可以减 
-      if (num > 10) {
+      if (num > min_count) {
         num--;
       }
       // 只有大于一件的时候，才能normal状态，否则disable状态 
-      var minusStatus = num <= 10 ? 'disabled' : 'normal';
+      var minusStatus = num <= min_count ? 'disabled' : 'normal';
       // 将数值与状态写回 
       this.setData({
         num: num,
@@ -59,10 +61,11 @@ Page({
     /* 点击加号 */
     bindPlus: function () {
       var num = this.data.num;
+      var min_count = this.data.min_count;
       // 不作过多考虑自增1 
       num++;
       // 只有大于一件的时候，才能normal状态，否则disable状态 
-      var minusStatus = num < 10 ? 'disabled' : 'normal';
+      var minusStatus = num < min_count ? 'disabled' : 'normal';
       // 将数值与状态写回 
       this.setData({
         num: num,
@@ -79,7 +82,7 @@ Page({
         num: num,
         // sum: price*num
       });
-      this.triggerEvent('numChange', this.data.num);
+      // this.triggerEvent('numChange', this.data.num);
     },
   buyCourse: function (e) {
     var _this = this
@@ -91,7 +94,7 @@ Page({
         success: function (sm) {
           if (sm.confirm) {
             console.log("用户点击确认")
-            var addupRouter = '../../user/bindPhone/bindPhone?id=0' ;
+            var addupRouter = '../../user/bindPhone/bindPhone?id=buy' ;
             var addupTitle='绑定手机号'
             commonData.routers(addupRouter, addupTitle);
           } else if (sm.cancel) {
@@ -280,11 +283,16 @@ Page({
       success(res) {
         console.log(res.data)
         _this.setData({
-          courseData: res.data
+          courseData: res.data,
+          min_count:res.data.min_count
         })
         if(res.data.tryFlag=='1'){
           _this.setData({
             num:1
+          })
+        } else {
+          _this.setData({
+            num:res.data.min_count
           })
         }
       }
