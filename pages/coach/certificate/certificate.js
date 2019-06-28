@@ -9,6 +9,7 @@ Page({
    */
   data: {
 		icons_url: [],
+    icons_url_s:[],
     icons_name:[],
     coach_id: app.globalData.user_id,
     type:'23',
@@ -16,7 +17,9 @@ Page({
   },
 
 	genImgListData: function (options) {
+    console.log("获取图片类型为" + options.type)
 		var images = []
+    var images_s=[]
 		var that = this
 		var url_tmp = fileData.getListConfig().url_test;
 		wx.request({
@@ -32,15 +35,23 @@ Page({
 			success: function (res) {
 				if (res.statusCode == 200) {
 					images = res.data.icons_url
+          images_s = res.data.icons_url_s
 					var img = images.map(item => {
 							return {
 								url: item,
 								loaded: false
 							}
 					})
+          var img_s = images_s.map(item => {
+            return {
+              url: item,
+              loaded: false
+            }
+          })
 					console.log("images:"+JSON.stringify(img)+"---end")
 					that.setData({
-						icons_url: img
+						icons_url: img,
+            icons_url_s:img_s
 					})
 				}
 			}
@@ -53,6 +64,9 @@ Page({
 		this.data.icons_url.forEach(item => {
 			this.imgLoader.load(item.url)
 		})
+    this.data.icons_url_s.forEach(item => {
+      this.imgLoader.load(item.url)
+    })
 	},
 	//加载完成后的回调
 	imageOnLoad(err, data) {
@@ -63,7 +77,12 @@ Page({
 				item.loaded = true
 			return item
 		})
-		this.setData({ icons_url })
+    const icons_url_s = this.data.icons_url_s.map(item => {
+      if (item.url == data.src)
+        item.loaded = true
+      return item
+    })
+    this.setData({ icons_url, icons_url_s})
 	},
 
   /**
