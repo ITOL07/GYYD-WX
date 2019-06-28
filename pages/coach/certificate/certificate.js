@@ -61,9 +61,9 @@ Page({
 
 	loadImages: function() {
 		//同时发起全部图片的加载
-		this.data.icons_url.forEach(item => {
-			this.imgLoader.load(item.url)
-		})
+		// this.data.icons_url.forEach(item => {
+		// 	this.imgLoader.load(item.url)
+		// })
     this.data.icons_url_s.forEach(item => {
       this.imgLoader.load(item.url)
     })
