@@ -70,10 +70,12 @@ Page({
 		wx.request({
 			url: url_tmp + '/club/qryCoach?club_id=' + options.id,
 			success(res) {
-				console.log(res.data)
-				_this.setData({
-					listData: res.data
-				})
+				console.log(res)
+        if (res.statusCode==200){
+          _this.setData({
+            listData: res.data
+          })
+        }
 			}
 		})
 		if (app.globalData.openid == null) {

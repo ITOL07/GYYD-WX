@@ -36,6 +36,10 @@
         <text class="title">运动建议</text>
         <text class="content2">{{CourseInfo.suggest}}</text>
       </view>
+       <view class="introduce_list">
+        <text class="title">约课流程</text>
+        <text class="content2">{{CourseInfo.process}}</text>
+      </view>
     </view>
     
   </scroll-view>
