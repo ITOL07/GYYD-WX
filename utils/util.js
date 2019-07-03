@@ -121,6 +121,14 @@ function previewImg(e, imgs) {
 	})
 }
 
+function share(){
+  console.log("用户点击转发")
+  return {
+    title: "这个小程序真棒",
+    path: "pages/user/login/login"
+  }
+}
+
 module.exports = {
   formatTime: formatTime,
   formatTimeHM: formatTimeHM,
@@ -128,5 +136,6 @@ module.exports = {
   distance,
   deWeight: deWeight,
   wxlogin: wxlogin,
-	previewImg: previewImg
+	previewImg: previewImg,
+  share:share
 }

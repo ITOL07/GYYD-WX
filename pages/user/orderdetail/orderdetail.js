@@ -35,6 +35,7 @@ Page({
     course_id:null,
     state_desc:null,
     min_count:null,
+    
     // num: 10
   },
 
@@ -86,7 +87,9 @@ Page({
     },
   buyCourse: function (e) {
     var _this = this
+    var openid = app.globalData.openid;
     var tel = app.globalData.phoneNo;
+    console.log("tel====="+tel)
     if(tel==null){
       wx.showModal({
         title: '绑定手机确认',
@@ -257,7 +260,8 @@ Page({
    */
   onLoad: function (options) {
     var _this = this
-    console.log("传入信息为 options： "+options)
+    var logflag=wx.getStorageSync("logFlag")
+    console.log("传入信息为 options： " + options + "logflag====" + logflag)
     console.log("传入的club_id为" + options.club_id + 'course_type为：' + options.type + 'coach_id为' + options.coach_id)
      
     var club_idx = (typeof (options.club_id) == "undefined") ? null : options.club_id
@@ -378,7 +382,68 @@ Page({
     console.log('选择的教练id为' + this.data.coach_id_list[this.data.index_coach])
     this.getCourseId(this.data.club_id,this.data.coach_id_list[this.data.index_coach])
   },
+  wxlogin: function () {
 
+    // 获取用户信息
+    wx.getSetting({
+      success: res => {
+        if (res.authSetting['scope.userInfo']) {
+          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
+          wx.getUserInfo({
+            success: res => {
+              // 可以将 res 发送给后台解码出 unionId
+              app.globalData.userInfo = res.userInfo
+              console.log('userInfo++++' + res.userInfo.data)
+              wx.setStorageSync('logFlag', true)
+              // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+              // 所以此处加入 callback 以防止这种情况
+              if (app.userInfoReadyCallback) {
+                // if (this.data.logflag) {
+                console.log('网络延时')
+                wx.login({
+                  success: res => {
+                    // 发送 res.code 到后台换取 openId, sessionKey, unionId
+                    var _this = this
+                    var url_tmp = fileData.getListConfig().url_test;
+                    wx.request({
+                      // url: 'https://www.guyueyundong.com/wxuser/login',
+                      url: url_tmp + '/wxuser/login',
+                      data: {
+                        code: res.code,
+                        type: 1,
+                        nickName: app.globalData.userInfo.nickName,
+                        gender: app.globalData.userInfo.gender,
+                        icon: app.globalData.userInfo.avatarUrl
+                      },
+                      method: 'POST',
+                      // dataType: 'json',
+                      header: {
+                        'content-type': 'application/x-www-form-urlencoded'  //发送post请求
+                      },
+                      success: function (res) {
+                        //请求成功的处理
+                        //console.log(code);
+                        app.globalData.openid = res.data.openid
+                        app.globalData.user_id = res.data.id
+                        console.log("发送code成功", res.data);
+                        console.log("发送code成功", res.data.openid);
+                        wx.setStorageSync('logFlag', true)
+                      }
+                    })
+                  }
+                })
+                // }
+              }
+            }
+          })
+
+        }
+        else {
+          wx.setStorageSync('logFlag', false)
+        }
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -425,6 +490,10 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    console.log("用户点击转发")
+    return {
+      title: "这个小程序真棒",
+      path: "pages/user/login/login"
+    }
   }
 })
