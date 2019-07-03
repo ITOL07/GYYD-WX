@@ -58,7 +58,7 @@
       <text>¥{{courseData.min_price*num}}</text>
     </view>
     <button wx:if="{{openid==null}}" open-type="getUserInfo" bindgetuserinfo="wxlogin">绑定微信</button>
-    <button wx:if="{{logflag==true}}" bindtap="buyCourse" data-try_flag="{{courseData.tryFlag}}" data-price="{{courseData.min_price*num}}" data-desc="{{courseData.courseName}}" data-count="{{num}}">去支付</button>
+    <button wx:if="{{openid!=null}}" bindtap="buyCourse" data-try_flag="{{courseData.tryFlag}}" data-price="{{courseData.min_price*num}}" data-desc="{{courseData.courseName}}" data-count="{{num}}">去支付</button>
     
   </view>
 </view>

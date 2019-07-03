@@ -35,7 +35,8 @@ Page({
     course_id:null,
     state_desc:null,
     min_count:null,
-    
+    logflag: wx.getStorageSync("logFlag"),
+    openid: app.globalData.openid
     // num: 10
   },
 
@@ -87,8 +88,9 @@ Page({
     },
   buyCourse: function (e) {
     var _this = this
-    var openid = app.globalData.openid;
+    // var openid = app.globalData.openid;
     var tel = app.globalData.phoneNo;
+    
     console.log("tel====="+tel)
     if(tel==null){
       wx.showModal({
@@ -260,8 +262,7 @@ Page({
    */
   onLoad: function (options) {
     var _this = this
-    var logflag=wx.getStorageSync("logFlag")
-    console.log("传入信息为 options： " + options + "logflag====" + logflag)
+    console.log("传入信息为 options： " + options)
     console.log("传入的club_id为" + options.club_id + 'course_type为：' + options.type + 'coach_id为' + options.coach_id)
      
     var club_idx = (typeof (options.club_id) == "undefined") ? null : options.club_id
@@ -273,7 +274,8 @@ Page({
       club_id: club_idx,
       coach_id: coach_idx,
       club_name: club_namex,
-      coach_name: coach_namex
+      coach_name: coach_namex,
+      openid: app.globalData.openid
     })
     var url_tmp = fileData.getListConfig().url_test;
     //根据课程类型加载课程讯息
@@ -427,7 +429,12 @@ Page({
                         app.globalData.user_id = res.data.id
                         console.log("发送code成功", res.data);
                         console.log("发送code成功", res.data.openid);
-                        wx.setStorageSync('logFlag', true)
+                        // var openid = app.globalData.openid;
+                        wx.setStorageSync('logFlag', true);
+                        _this.setData({
+                          logflag: true,
+                          openid: res.data.openid
+                        })
                       }
                     })
                   }
