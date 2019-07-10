@@ -100,7 +100,6 @@
 }
 .private_middle{
   width: 94%;
-  height:auto;
   display:flex;
   flex-direction:column;
 	margin: 0 3%;

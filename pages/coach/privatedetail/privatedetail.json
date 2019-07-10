@@ -1,3 +1,5 @@
 {
-  "navigationBarTitleText": "私教详情"
+  "navigationBarTitleText": "私教详情",
+	"enablePullDownRefresh": true,
+	"onReachBottomDistance": 50
 }
