@@ -94,15 +94,7 @@ Page({
           } //手机号已被注册提示信息
           else if (that.data.state == 0) {  //判断是否被注册
             warn = "手机号已被注册,请登录或者找回密码!";
-            if(that.data.flag=="buy"){
-              wx.navigateBack({
-                delta: 1
-              })
-            }else{
-              wx.navigateTo({
-                url: '/pages/user/login/login',
-              })
-            }  
+              
           }
           else {
             wx.request({
@@ -163,6 +155,16 @@ Page({
               color: '#33FF99'
             })
             return;
+          }else{
+            if (that.data.flag == "buy") {
+              wx.navigateBack({
+                delta: 1
+              })
+            } else {
+              wx.navigateTo({
+                url: '/pages/user/login/login',
+              })
+            }
           }
         }
 
