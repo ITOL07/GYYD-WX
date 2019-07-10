@@ -107,7 +107,10 @@ Page({
     }) 
     //获取场地信息
     that.getClubInfo();
-    that.getPhoneNo();
+    if(app.globalData.phoneNo==null){
+      that.getPhoneNo();
+    }
+    
   },
   getUserInfo: function(e) {
     console.log(e)
@@ -186,5 +189,12 @@ Page({
         
       }
     }) 
+  },
+  onShareAppMessage: function () {
+    console.log("用户点击转发")
+    return {
+      title: "这个小程序真棒",
+      path: "pages/user/login/login"
+    }
   }
 })

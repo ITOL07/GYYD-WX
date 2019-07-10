@@ -114,10 +114,19 @@ function previewImg(e, imgs) {
 		urls: imgArr,               //所有要预览的图片的地址集合 数组形式
 		success: function (res) {
 			console.log("width=" + res.width)
+      console.log("urls="+imgArr[index])
 		},
 		fail: function (res) { },
 		complete: function (res) { },
 	})
+}
+
+function share(){
+  console.log("用户点击转发")
+  return {
+    title: "这个小程序真棒",
+    path: "pages/user/login/login"
+  }
 }
 
 module.exports = {
@@ -127,5 +136,6 @@ module.exports = {
   distance,
   deWeight: deWeight,
   wxlogin: wxlogin,
-	previewImg: previewImg
+	previewImg: previewImg,
+  share:share
 }

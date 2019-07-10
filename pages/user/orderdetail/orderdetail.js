@@ -10,7 +10,7 @@ Page({
   data: {
     // 这里是一些组件内部数据
     // input默认是1 
-    num: 10,
+    
     // 使用data数据对象设置样式名 
     minusStatus: 'disabled',
     course_type:'',
@@ -34,7 +34,10 @@ Page({
     sum:null,
     course_id:null,
     state_desc:null,
-    
+    min_count:null,
+    logflag: wx.getStorageSync("logFlag"),
+    openid: app.globalData.openid
+    // num: 10
   },
 
     // 这里放置自定义方法
@@ -42,12 +45,13 @@ Page({
     bindMinus: function () {
       var num = this.data.num;
       var price = this.data.courseData.min_price;
+      var min_count= this.data.min_count;
       // 如果大于1时，才可以减 
-      if (num > 10) {
+      if (num > min_count) {
         num--;
       }
       // 只有大于一件的时候，才能normal状态，否则disable状态 
-      var minusStatus = num <= 10 ? 'disabled' : 'normal';
+      var minusStatus = num <= min_count ? 'disabled' : 'normal';
       // 将数值与状态写回 
       this.setData({
         num: num,
@@ -59,10 +63,11 @@ Page({
     /* 点击加号 */
     bindPlus: function () {
       var num = this.data.num;
+      var min_count = this.data.min_count;
       // 不作过多考虑自增1 
       num++;
       // 只有大于一件的时候，才能normal状态，否则disable状态 
-      var minusStatus = num < 10 ? 'disabled' : 'normal';
+      var minusStatus = num < min_count ? 'disabled' : 'normal';
       // 将数值与状态写回 
       this.setData({
         num: num,
@@ -79,11 +84,14 @@ Page({
         num: num,
         // sum: price*num
       });
-      this.triggerEvent('numChange', this.data.num);
+      // this.triggerEvent('numChange', this.data.num);
     },
   buyCourse: function (e) {
     var _this = this
+    // var openid = app.globalData.openid;
     var tel = app.globalData.phoneNo;
+    
+    console.log("tel====="+tel)
     if(tel==null){
       wx.showModal({
         title: '绑定手机确认',
@@ -91,7 +99,7 @@ Page({
         success: function (sm) {
           if (sm.confirm) {
             console.log("用户点击确认")
-            var addupRouter = '../../user/bindPhone/bindPhone?id=0' ;
+            var addupRouter = '../../user/bindPhone/bindPhone?id=buy' ;
             var addupTitle='绑定手机号'
             commonData.routers(addupRouter, addupTitle);
           } else if (sm.cancel) {
@@ -254,7 +262,7 @@ Page({
    */
   onLoad: function (options) {
     var _this = this
-    console.log("传入信息为 options： "+options)
+    console.log("传入信息为 options： " + options)
     console.log("传入的club_id为" + options.club_id + 'course_type为：' + options.type + 'coach_id为' + options.coach_id)
      
     var club_idx = (typeof (options.club_id) == "undefined") ? null : options.club_id
@@ -266,7 +274,8 @@ Page({
       club_id: club_idx,
       coach_id: coach_idx,
       club_name: club_namex,
-      coach_name: coach_namex
+      coach_name: coach_namex,
+      openid: app.globalData.openid
     })
     var url_tmp = fileData.getListConfig().url_test;
     //根据课程类型加载课程讯息
@@ -280,11 +289,16 @@ Page({
       success(res) {
         console.log(res.data)
         _this.setData({
-          courseData: res.data
+          courseData: res.data,
+          min_count:res.data.min_count
         })
         if(res.data.tryFlag=='1'){
           _this.setData({
             num:1
+          })
+        } else {
+          _this.setData({
+            num:res.data.min_count
           })
         }
       }
@@ -370,7 +384,73 @@ Page({
     console.log('选择的教练id为' + this.data.coach_id_list[this.data.index_coach])
     this.getCourseId(this.data.club_id,this.data.coach_id_list[this.data.index_coach])
   },
+  wxlogin: function () {
 
+    // 获取用户信息
+    wx.getSetting({
+      success: res => {
+        if (res.authSetting['scope.userInfo']) {
+          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
+          wx.getUserInfo({
+            success: res => {
+              // 可以将 res 发送给后台解码出 unionId
+              app.globalData.userInfo = res.userInfo
+              console.log('userInfo++++' + res.userInfo.data)
+              wx.setStorageSync('logFlag', true)
+              // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+              // 所以此处加入 callback 以防止这种情况
+              if (app.userInfoReadyCallback) {
+                // if (this.data.logflag) {
+                console.log('网络延时')
+                wx.login({
+                  success: res => {
+                    // 发送 res.code 到后台换取 openId, sessionKey, unionId
+                    var _this = this
+                    var url_tmp = fileData.getListConfig().url_test;
+                    wx.request({
+                      // url: 'https://www.guyueyundong.com/wxuser/login',
+                      url: url_tmp + '/wxuser/login',
+                      data: {
+                        code: res.code,
+                        type: 1,
+                        nickName: app.globalData.userInfo.nickName,
+                        gender: app.globalData.userInfo.gender,
+                        icon: app.globalData.userInfo.avatarUrl
+                      },
+                      method: 'POST',
+                      // dataType: 'json',
+                      header: {
+                        'content-type': 'application/x-www-form-urlencoded'  //发送post请求
+                      },
+                      success: function (res) {
+                        //请求成功的处理
+                        //console.log(code);
+                        app.globalData.openid = res.data.openid
+                        app.globalData.user_id = res.data.id
+                        console.log("发送code成功", res.data);
+                        console.log("发送code成功", res.data.openid);
+                        // var openid = app.globalData.openid;
+                        wx.setStorageSync('logFlag', true);
+                        _this.setData({
+                          logflag: true,
+                          openid: res.data.openid
+                        })
+                      }
+                    })
+                  }
+                })
+                // }
+              }
+            }
+          })
+
+        }
+        else {
+          wx.setStorageSync('logFlag', false)
+        }
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -417,6 +497,10 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    console.log("用户点击转发")
+    return {
+      title: "这个小程序真棒",
+      path: "pages/user/login/login"
+    }
   }
 })

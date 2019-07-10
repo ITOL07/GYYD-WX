@@ -39,6 +39,7 @@
 		<text class='cheer'>
 			您已成功绑定手机号，现在可以用手机号登录了，默认密码6个0，不要告诉别人！
 		</text>
-		<button type = "default" class = 'return' bindtap='return_home'>返回首页</button>
+		<button wx:if="{{flag=='buy'}}" type = "default" class = 'return' bindtap='return_buy'>返回支付页</button>
+    <button type = "default" class = 'return' bindtap='return_home'>返回首页</button>
 	</view>
 </view>

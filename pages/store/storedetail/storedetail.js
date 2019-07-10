@@ -70,17 +70,19 @@ Page({
 		wx.request({
 			url: url_tmp + '/club/qryCoach?club_id=' + options.id,
 			success(res) {
-				console.log(res.data)
-				_this.setData({
-					listData: res.data
-				})
+				console.log(res)
+        if (res.statusCode==200){
+          _this.setData({
+            listData: res.data
+          })
+        }
 			}
 		})
-		if (app.globalData.openid == null) {
-			console.log("openid为空，请绑定微信，否则不能支付哦")
-			console.log("调用微信登录接口....")
-			commonData.wxlogin()
-		}
+		// if (app.globalData.openid == null) {
+		// 	console.log("openid为空，请绑定微信，否则不能支付哦")
+		// 	console.log("调用微信登录接口....")
+		// 	commonData.wxlogin()
+		// }
 
 	},
 	bindStoreInfo: function () {
@@ -150,8 +152,12 @@ Page({
   /**
    * 用户点击右上角分享
    */
-	onShareAppMessage: function () {
-
-	}
+  onShareAppMessage: function () {
+    console.log("用户点击转发")
+    return {
+      title: "这个小程序真棒",
+      path: "pages/user/login/login"
+    }
+  }
 
 })
