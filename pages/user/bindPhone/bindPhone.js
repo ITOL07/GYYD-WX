@@ -155,16 +155,6 @@ Page({
               color: '#33FF99'
             })
             return;
-          }else{
-            if (that.data.flag == "buy") {
-              wx.navigateBack({
-                delta: 1
-              })
-            } else {
-              wx.navigateTo({
-                url: '/pages/user/login/login',
-              })
-            }
           }
         }
 
@@ -229,6 +219,15 @@ Page({
           that.setData({
             success: true
           })
+            if(that.data.flag == "buy") {
+          wx.navigateBack({
+            delta: 1
+          })
+        } else {
+          wx.navigateTo({
+            url: '/pages/user/login/login',
+          })
+        }
         }
       })
     }
