@@ -77,7 +77,8 @@ Page({
         url: url_tmp + '/user/isReg', //后端判断是否已被注册， 已被注册返回0 ，未被注册返回-1
         method: "POST",
         data: {
-          phoneNo: that.data.phone
+          phoneNo: that.data.phone,
+          type:1
         },
         header: {
           'content-type': 'application/x-www-form-urlencoded'
@@ -94,7 +95,7 @@ Page({
           } //手机号已被注册提示信息
           else if (that.data.state == 0) {  //判断是否被注册
             warn = "手机号已被注册,请登录或者找回密码!";
-              
+            
           }
           else {
             wx.request({

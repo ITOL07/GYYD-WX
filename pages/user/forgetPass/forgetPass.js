@@ -70,7 +70,8 @@ Page({
       url: url_tmp+'/user/isReg', //后端判断是否已被注册， 已被注册返回1 ，未被注册返回0
       method: "POST",
       data: {
-        phoneNo: app.globalData.phoneNo
+        phoneNo: app.globalData.phoneNo,
+        type:1
       },
       header: {
         'content-type': 'application/x-www-form-urlencoded'
