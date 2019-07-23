@@ -1,4 +1,8 @@
 /**index.wxss**/
+.container{
+	overflow: hidden;
+}
+
 .index_head{
   width: 95%;
   height: 320rpx;
@@ -69,7 +73,7 @@
 .list{
   width: 100%;
 	background-color: #FFFFFF;
-	padding: 0 2.5%;
+	padding: 0 2.5% 70rpx;
 }
 .list_data{
   width:100%;
