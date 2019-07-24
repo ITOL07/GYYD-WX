@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <wxs module="filters" src="../../../utils/util.wxs"></wxs>
 <view class="container">
-  <scroll-view scroll-y="true" class="scroll_body">
+  <!-- <scroll-view scroll-y="true" class="scroll_body"> -->
     <!-- 轮播图 -->
     <view class="index_head">
 			<!--test-->
@@ -71,5 +71,5 @@
         </view>
       </view>
     </view>
-  </scroll-view>
+  <!-- </scroll-view> -->
 </view>

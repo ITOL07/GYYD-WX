@@ -73,7 +73,7 @@
 .list{
   width: 100%;
 	background-color: #FFFFFF;
-	padding: 0 2.5% 70rpx;
+	padding: 0 2.5% 30rpx;
 }
 .list_data{
   width:100%;
