@@ -1,7 +1,7 @@
 <!--pages/store/store.wxml-->
 <wxs module="filters" src="../../../utils/util.wxs"></wxs>
 <view class="container">
-  <scroll-view scroll-y="true" class="scroll_body">
+  <!-- <scroll-view scroll-y="true" class="scroll_body"> -->
     <view class="head"> 
       <image src="../../../static/images/store/sousuo.png"></image>
       <text>选择门店</text>
@@ -35,5 +35,5 @@
         </view>
       </view>
     </view>
-  </scroll-view>
+  <!-- </scroll-view> -->
 </view>

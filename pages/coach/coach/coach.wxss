@@ -1,5 +1,7 @@
 /* pages/coach/coach.wxss */
 .container{
+	height: auto;
+	overflow: hidden;
   background:#FFFFFF;
 }
 .head{
@@ -26,6 +28,10 @@
   color:#999999;
 }
 
+.bottom{
+	width: 100%;
+	padding-bottom: 30rpx;
+}
 .list_data{
   width: 94%;
   height: 214rpx;

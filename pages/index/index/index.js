@@ -2,7 +2,7 @@
 //获取应用实例
 const app = getApp()
 var fileData = require("../../../utils/data.js");
-var commonData = require("../../../utils/util.js"); 
+var commonData = require("../../../utils/util.js");
 
 Page({ 
   data: {
