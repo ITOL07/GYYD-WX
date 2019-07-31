@@ -38,15 +38,15 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#292A2E",
+    "navigationBarBackgroundColor": "#FFFFFF",
     "navigationBarTitleText": "古越运动",
-    "navigationBarTextStyle": "white",
+    "navigationBarTextStyle": "black",
     "enablePullDownRefresh": false
   },
   "tabBar": {
     "color": "#999999",
     "selectedColor": "#F9CE0E",
-    "backgroundColor": "#333752",
+    "backgroundColor": "#FFFFFF",
     "borderStyle": "white",
     "list": [
       {

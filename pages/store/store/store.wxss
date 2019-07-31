@@ -1,5 +1,7 @@
 /* pages/store/store.wxss */
 .container{
+	height: auto;
+	overflow: hidden;
   background:#FFFFFF;
 }
 .head{
@@ -23,6 +25,7 @@
 }
 .bottom{
   width:100%;
+	padding-bottom: 30rpx; 
 }
 .list_data{
   width:100%;

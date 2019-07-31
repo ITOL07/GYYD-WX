@@ -1,4 +1,8 @@
 /* pages/storedetail/storedetail.wxss */
+.container{
+	height: auto;
+	overflow: hidden;
+}
 .detail_header{
   width: 94%;
   height: 230rpx;
@@ -172,6 +176,7 @@
 .detail_store{
   width: 100%;
   background:#FFFFFF;
+	padding-bottom:  30rpx;
   display: flex;
   flex-direction: column;
 }

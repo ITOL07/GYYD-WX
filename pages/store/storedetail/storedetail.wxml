@@ -1,7 +1,7 @@
 <!--pages/storedetail/storedetail.wxml-->
 <wxs module="filters" src="../../../utils/util.wxs"></wxs>
 <view class="container">
-  <scroll-view scroll-y="true" class="scroll_body">
+  <!-- <scroll-view scroll-y="true" class="scroll_body"> -->
   <!-- <view wx:for="{{storeListData}}" wx:key="this"> -->
   <view class="detail_header" bindtap='bindStoreInfo'>
     <image class="header_left" src="{{storeListData.icon}}"></image>
@@ -106,5 +106,5 @@
       </view>
 			<view wx:else class="tips">这个店里暂时没有私教！</view>
     </view>
-  </scroll-view>
+  <!-- </scroll-view> -->
 </view>

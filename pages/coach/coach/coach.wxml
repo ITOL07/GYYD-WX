@@ -1,6 +1,6 @@
 <!--pages/coach/coach.wxml-->
 <view class="container">
-  <scroll-view scroll-y="true" class="scroll_body">
+  <!-- <scroll-view scroll-y="true" class="scroll_body"> -->
     <view class="head">
       <image src="../../../static/images/store/sousuo.png"></image>
       <text>选择教练</text>
@@ -38,5 +38,5 @@
       </view>
       </view>
     </view>
-  </scroll-view>
+  <!-- </scroll-view> -->
 </view>
