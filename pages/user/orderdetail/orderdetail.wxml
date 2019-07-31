@@ -37,7 +37,7 @@
 		<picker bindchange="bindPickerChange_club" value="{{index_club}}" range="{{club_name_list}}"
 						disabled="{{club_name=='null'?false:true}}">
 			<view>
-				{{club_name=='null'?club_name_list[index_club]:club_name}}
+				{{club_name=='null'?club_name_list[index_club]:club_name}}{{club_name=='null'?'▽':''}}
 			</view>
     </picker>
     <!-- <text class="text2">{{club_name==null?club_name_list[index]:club_name}}</text> -->
@@ -47,7 +47,7 @@
     <picker bindchange="bindPickerChange_coach" value="{{index_coach}}"
 						range="{{coach_name_list}}" disabled="{{coach_name=='null'?false:true}}">
 			<view>
-				{{coach_name=='null'?coach_name_list[index_coach]:coach_name}}
+				{{coach_name=='null'?coach_name_list[index_coach]:coach_name}}{{coach_name=='null'?'▽':''}}
 			</view>
     </picker>
     <!-- <text class="text2">{{coach_name==null?coach_name_list[index]:coach_name}}</text> -->

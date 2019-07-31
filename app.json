@@ -32,6 +32,7 @@
     "pages/user/bindPhone/bindPhone",
     "pages/user/unBindPhone/unBindPhone",
     "pages/user/forgetPass/forgetPass",
+    "pages/user/courseinfo/courseinfo",
     "pages/user/msg/msg_success",
     "pages/user/msg/msg_fail"
   ],

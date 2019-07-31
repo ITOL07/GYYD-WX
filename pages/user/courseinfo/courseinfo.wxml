@@ -1,0 +1,29 @@
+<!--pages/addup/addup.wxml-->
+<view class="container">
+  <scroll-view scroll-y="true" class="scroll_body"  wx:if="{{addupData.length>=1}}">
+		<view wx:for="{{addupData}}" wx:key="this" class="list"> 
+			<view class="left">
+				<image src="{{item.bz2}}"></image>
+				<view>私教</view>
+			</view>
+			<view class="right">
+				<view class="top">
+					<text>{{item.course_name}}</text>
+					<text>{{item.rem==0?"全部完成":"剩余"+item.rem+"课"}}</text>
+				</view>
+				<view class="middle">
+					<text>{{item.brief}}</text>
+					<text1>共{{item.total_lesson}}节</text1>
+				</view>
+				<view class="bottom">
+					<text>{{item.coach_name}}</text>
+					<text>{{item.club_name}}</text>
+				</view>
+			</view>
+		</view>
+  </scroll-view>
+	<view wx:else class="tips">
+		您还没有购课，请前往购买！
+	</view>
+</view>
+

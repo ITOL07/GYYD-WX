@@ -133,6 +133,35 @@ Page({
       }
     })
   },
+  cancel: function (e){
+    console.log("cancel order:" + e.currentTarget.dataset.order_no);
+    var url_tmp = fileData.getListConfig().url_test;
+    var _this=this
+    wx.showModal({
+      title: '取消订单确认',
+      content: '亲，确定要取消这笔订单吗？',
+      success: function (sm) {
+        if (sm.confirm) {
+
+          wx.request({
+            url: url_tmp + '/member/cancelOrder',
+            method: 'post',
+            data: {
+              order_no: e.currentTarget.dataset.order_no,
+            },
+            header: {
+              'content-type': 'application/x-www-form-urlencoded'
+            }, success: function (res) {
+              console.log(res.data) ;
+              _this.getOrderData(orderStatus);             
+            }
+          })
+        } else if (sm.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

@@ -1,6 +1,6 @@
 <!--pages/login/login.wxml-->
 <view wx:if="{{logflag==false}}"class="container">
-  <view class="top">
+  <!-- <view class="top">
     <view class="top_item1"> 
       <image src="../../../static/images/user/phone.png"></image>
       <input placeholder='请输入手机号' placeholder-class="place" bindinput="inputValue1" type="text"></input>
@@ -18,11 +18,12 @@
       <text bindtap="forgetClick">忘记密码</text>
       <text bindtap="justLook">随便看看</text>
     </view>
-  </view>
+  </view> -->
   <view class="bottom">
-		<view>第三方登录</view>
+		
 		<button class='wxbtn' open-type="getUserInfo" bindgetuserinfo="wxlogin">
 			<image src="../../../static/images/user/wx.png" bindtap="wxlogin"></image>
 		</button>
+    <view>第三方登录</view>
   </view>
 </view>

@@ -44,7 +44,7 @@ Page({
   },
 
   addupClick: function(){
-		var addupRouter = '../../user/addup/addup';
+    var addupRouter = '../../user/courseinfo/courseinfo';
     var addupTitle = '累计购课';
     commonData.routers(addupRouter, addupTitle);
   },
