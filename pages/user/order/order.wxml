@@ -39,7 +39,7 @@
 			</view>
     </view>
 		<view class="tips" wx:else>
-			您还没有下订单!bindap'
+			您还没有下订单!
 		</view>
   </scroll-view>
 </view>
